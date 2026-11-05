@@ -629,7 +629,7 @@
     },
     "低模": {
      "animations": 0,
-     "bytes": 505964,
+     "bytes": 505968,
      "joints": 0,
      "material_names": [
       "ancient",
@@ -3099,6 +3099,347 @@
     }
    },
    "team": "通用"
+  },
+  "建筑/零件/原木": {
+   "asset": "原木",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 9464,
+     "joints": 0,
+     "material_names": [
+      "wood_dark",
+      "wood_warm"
+     ],
+     "materials": 2,
+     "meshes": 2,
+     "nodes": 2,
+     "path": "建筑/零件/原木.glb",
+     "size_xyz": [
+      1.71,
+      0.43,
+      0.42
+     ],
+     "tri": 240
+    }
+   },
+   "team": "零件"
+  },
+  "建筑/零件/双扇石门": {
+   "asset": "双扇石门",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 156864,
+     "joints": 0,
+     "material_names": [
+      "ancient_mid",
+      "bronze",
+      "bronze_dark",
+      "door_stone",
+      "iron"
+     ],
+     "materials": 5,
+     "meshes": 5,
+     "nodes": 5,
+     "path": "建筑/零件/双扇石门.glb",
+     "size_xyz": [
+      3.04,
+      2.06,
+      0.44
+     ],
+     "tri": 2664
+    }
+   },
+   "team": "零件"
+  },
+  "建筑/零件/吊链": {
+   "asset": "吊链",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 21664,
+     "joints": 0,
+     "material_names": [
+      "iron"
+     ],
+     "materials": 1,
+     "meshes": 1,
+     "nodes": 1,
+     "path": "建筑/零件/吊链.glb",
+     "size_xyz": [
+      0.11,
+      1.8,
+      0.11
+     ],
+     "tri": 352
+    }
+   },
+   "team": "零件"
+  },
+  "建筑/零件/地面铁栅": {
+   "asset": "地面铁栅",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 30280,
+     "joints": 0,
+     "material_names": [
+      "bronze",
+      "bronze_dark"
+     ],
+     "materials": 2,
+     "meshes": 2,
+     "nodes": 2,
+     "path": "建筑/零件/地面铁栅.glb",
+     "size_xyz": [
+      1.05,
+      0.23,
+      0.72
+     ],
+     "tri": 484
+    }
+   },
+   "team": "零件"
+  },
+  "建筑/零件/垂根": {
+   "asset": "垂根",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 16532,
+     "joints": 0,
+     "material_names": [
+      "wood_dark"
+     ],
+     "materials": 1,
+     "meshes": 1,
+     "nodes": 1,
+     "path": "建筑/零件/垂根.glb",
+     "size_xyz": [
+      0.16,
+      0.65,
+      0.07
+     ],
+     "tri": 264
+    }
+   },
+   "team": "零件"
+  },
+  "建筑/零件/断柱": {
+   "asset": "断柱",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 17396,
+     "joints": 0,
+     "material_names": [
+      "ancient",
+      "ancient_pale"
+     ],
+     "materials": 2,
+     "meshes": 2,
+     "nodes": 2,
+     "path": "建筑/零件/断柱.glb",
+     "size_xyz": [
+      0.54,
+      2.54,
+      0.54
+     ],
+     "tri": 264
+    }
+   },
+   "team": "零件"
+  },
+  "建筑/零件/旗帜": {
+   "asset": "旗帜",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 11632,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "wood_dark"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 3,
+     "path": "建筑/零件/旗帜.glb",
+     "size_xyz": [
+      1.0,
+      1.35,
+      0.07
+     ],
+     "tri": 172
+    }
+   },
+   "team": "零件"
+  },
+  "建筑/零件/木桶": {
+   "asset": "木桶",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 17856,
+     "joints": 0,
+     "material_names": [
+      "bronze_dark",
+      "wood_mid"
+     ],
+     "materials": 2,
+     "meshes": 2,
+     "nodes": 2,
+     "path": "建筑/零件/木桶.glb",
+     "size_xyz": [
+      0.64,
+      0.81,
+      0.64
+     ],
+     "tri": 547
+    }
+   },
+   "team": "零件"
+  },
+  "建筑/零件/木箱": {
+   "asset": "木箱",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 19936,
+     "joints": 0,
+     "material_names": [
+      "wood_dark",
+      "wood_warm"
+     ],
+     "materials": 2,
+     "meshes": 2,
+     "nodes": 2,
+     "path": "建筑/零件/木箱.glb",
+     "size_xyz": [
+      0.65,
+      0.5,
+      0.65
+     ],
+     "tri": 308
+    }
+   },
+   "team": "零件"
+  },
+  "建筑/零件/火盆": {
+   "asset": "火盆",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 24372,
+     "joints": 0,
+     "material_names": [
+      "ancient",
+      "bronze",
+      "coal",
+      "ember"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/零件/火盆.glb",
+     "size_xyz": [
+      0.79,
+      0.61,
+      0.84
+     ],
+     "tri": 506
+    }
+   },
+   "team": "零件"
+  },
+  "建筑/零件/铁栅": {
+   "asset": "铁栅",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 30272,
+     "joints": 0,
+     "material_names": [
+      "bronze",
+      "bronze_dark"
+     ],
+     "materials": 2,
+     "meshes": 2,
+     "nodes": 2,
+     "path": "建筑/零件/铁栅.glb",
+     "size_xyz": [
+      1.1,
+      0.13,
+      0.8
+     ],
+     "tri": 484
+    }
+   },
+   "team": "零件"
+  },
+  "建筑/零件/陶罐": {
+   "asset": "陶罐",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 4232,
+     "joints": 0,
+     "material_names": [
+      "copper"
+     ],
+     "materials": 1,
+     "meshes": 1,
+     "nodes": 1,
+     "path": "建筑/零件/陶罐.glb",
+     "size_xyz": [
+      0.32,
+      0.2,
+      0.32
+     ],
+     "tri": 128
+    }
+   },
+   "team": "零件"
+  },
+  "建筑/零件/骨堆": {
+   "asset": "骨堆",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 32804,
+     "joints": 0,
+     "material_names": [
+      "bone",
+      "bone_dark"
+     ],
+     "materials": 2,
+     "meshes": 2,
+     "nodes": 2,
+     "path": "建筑/零件/骨堆.glb",
+     "size_xyz": [
+      0.66,
+      0.31,
+      0.78
+     ],
+     "tri": 528
+    }
+   },
+   "team": "零件"
   }
  }
 }
