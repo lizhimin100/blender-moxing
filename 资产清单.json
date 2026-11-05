@@ -1,0 +1,3104 @@
+{
+ "单位": "米（1 unit = 1 m）· 原点 = 占地中心 · 脚底/地面 z = 0 · 正面朝 −Z",
+ "口径": {
+  "animations": "动作数（仅单位）",
+  "joints": "蒙皮骨骼数（仅单位）",
+  "materials": "材质槽位数 = 每个网格的 draw call 上限",
+  "size_xyz": "包围盒 X × Y × Z",
+  "tri": "三角面数，GLB 里索引数 / 3"
+ },
+ "生成": "python build/mk_manifest.py",
+ "资产": {
+  "单位/联盟/剑士": {
+   "asset": "剑士",
+   "cat": "单位",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 1876176,
+     "joints": 23,
+     "material_names": [
+      "cloth",
+      "cloth_dark",
+      "dark",
+      "earth",
+      "earth_dark",
+      "gold",
+      "iron",
+      "skin",
+      "steel",
+      "steel_dark",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_warm"
+     ],
+     "materials": 14,
+     "meshes": 14,
+     "nodes": 38,
+     "path": "单位/产出/联盟/剑士/剑士.glb",
+     "size_xyz": [
+      1.23,
+      2.57,
+      0.55
+     ],
+     "tri": 26714
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 1001132,
+     "joints": 23,
+     "material_names": [
+      "cloth",
+      "cloth_dark",
+      "dark",
+      "earth",
+      "earth_dark",
+      "gold",
+      "iron",
+      "skin",
+      "steel",
+      "steel_dark",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_warm"
+     ],
+     "materials": 14,
+     "meshes": 14,
+     "nodes": 38,
+     "path": "单位/产出/联盟/剑士/剑士_低模.glb",
+     "size_xyz": [
+      1.23,
+      2.57,
+      0.55
+     ],
+     "tri": 10290
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 321280,
+     "joints": 23,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 27,
+     "path": "单位/产出/联盟/剑士/剑士_手游_中.glb",
+     "size_xyz": [
+      1.23,
+      2.57,
+      0.56
+     ],
+     "tri": 3578
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 934200,
+     "joints": 23,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 27,
+     "path": "单位/产出/联盟/剑士/剑士_手游_近.glb",
+     "size_xyz": [
+      1.23,
+      2.57,
+      0.55
+     ],
+     "tri": 10290
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 229904,
+     "joints": 23,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 27,
+     "path": "单位/产出/联盟/剑士/剑士_手游_远.glb",
+     "size_xyz": [
+      1.23,
+      2.57,
+      0.56
+     ],
+     "tri": 2562
+    }
+   },
+   "team": "联盟"
+  },
+  "单位/联盟/方块人_农民": {
+   "asset": "方块人_农民",
+   "cat": "单位",
+   "files": {
+    "hero": {
+     "animations": 9,
+     "bytes": 1192124,
+     "joints": 25,
+     "material_names": [
+      "主体",
+      "team",
+      "team_trim"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 30,
+     "path": "单位/产出/联盟/农民/方块人_农民.glb",
+     "size_xyz": [
+      0.85,
+      1.62,
+      0.72
+     ],
+     "tri": 5076
+    }
+   },
+   "team": "联盟"
+  },
+  "单位/联盟/方块人_弩兵": {
+   "asset": "方块人_弩兵",
+   "cat": "单位",
+   "files": {
+    "hero": {
+     "animations": 7,
+     "bytes": 1318340,
+     "joints": 24,
+     "material_names": [
+      "主体",
+      "team",
+      "team_trim"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 29,
+     "path": "单位/产出/联盟/弩兵/方块人_弩兵.glb",
+     "size_xyz": [
+      0.67,
+      1.7,
+      0.91
+     ],
+     "tri": 8658
+    }
+   },
+   "team": "联盟"
+  },
+  "单位/联盟/方块人_矮人火枪手": {
+   "asset": "方块人_矮人火枪手",
+   "cat": "单位",
+   "files": {
+    "hero": {
+     "animations": 7,
+     "bytes": 1635912,
+     "joints": 25,
+     "material_names": [
+      "主体",
+      "team",
+      "team_trim"
+     ],
+     "materials": 3,
+     "meshes": 4,
+     "nodes": 31,
+     "path": "单位/产出/联盟/矮人火枪手/方块人_矮人火枪手.glb",
+     "size_xyz": [
+      0.81,
+      1.42,
+      0.68
+     ],
+     "tri": 8992
+    },
+    "低模": {
+     "animations": 7,
+     "bytes": 896548,
+     "joints": 25,
+     "material_names": [
+      "主体",
+      "team",
+      "team_trim"
+     ],
+     "materials": 3,
+     "meshes": 4,
+     "nodes": 31,
+     "path": "单位/产出/联盟/矮人火枪手/方块人_矮人火枪手_低模.glb",
+     "size_xyz": [
+      0.82,
+      1.42,
+      0.68
+     ],
+     "tri": 2824
+    },
+    "武器": {
+     "animations": 0,
+     "bytes": 178296,
+     "joints": 2,
+     "material_names": [
+      "主体",
+      "team"
+     ],
+     "materials": 2,
+     "meshes": 1,
+     "nodes": 5,
+     "path": "单位/产出/联盟/矮人火枪手/方块人_矮人火枪手_武器.glb",
+     "size_xyz": [
+      0.13,
+      1.05,
+      0.46
+     ],
+     "tri": 1520
+    },
+    "身体": {
+     "animations": 7,
+     "bytes": 1459716,
+     "joints": 25,
+     "material_names": [
+      "主体",
+      "team",
+      "team_trim"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 30,
+     "path": "单位/产出/联盟/矮人火枪手/方块人_矮人火枪手_身体.glb",
+     "size_xyz": [
+      0.81,
+      1.39,
+      0.56
+     ],
+     "tri": 7472
+    }
+   },
+   "team": "联盟"
+  },
+  "单位/联盟/方块人_联盟步兵": {
+   "asset": "方块人_联盟步兵",
+   "cat": "单位",
+   "files": {
+    "hero": {
+     "animations": 6,
+     "bytes": 812184,
+     "joints": 25,
+     "material_names": [
+      "主体",
+      "team",
+      "team_trim"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 30,
+     "path": "单位/产出/联盟/联盟步兵/方块人_联盟步兵.glb",
+     "size_xyz": [
+      1.16,
+      1.75,
+      0.63
+     ],
+     "tri": 3356
+    }
+   },
+   "team": "联盟"
+  },
+  "单位/野怪/豺狼人战士": {
+   "asset": "豺狼人战士",
+   "cat": "单位",
+   "files": {
+    "hero": {
+     "animations": 11,
+     "bytes": 1831820,
+     "joints": 37,
+     "material_names": [
+      "主体",
+      "M_eye",
+      "M_tribe"
+     ],
+     "materials": 3,
+     "meshes": 4,
+     "nodes": 43,
+     "path": "单位/产出/野怪/豺狼人/豺狼人战士/豺狼人战士.glb",
+     "size_xyz": [
+      1.06,
+      1.91,
+      1.14
+     ],
+     "tri": 3992
+    }
+   },
+   "team": "野怪"
+  },
+  "单位/野怪/豺狼人斥候": {
+   "asset": "豺狼人斥候",
+   "cat": "单位",
+   "files": {
+    "hero": {
+     "animations": 11,
+     "bytes": 1763848,
+     "joints": 36,
+     "material_names": [
+      "主体",
+      "M_eye",
+      "M_tribe"
+     ],
+     "materials": 3,
+     "meshes": 4,
+     "nodes": 42,
+     "path": "单位/产出/野怪/豺狼人/豺狼人斥候/豺狼人斥候.glb",
+     "size_xyz": [
+      0.83,
+      1.92,
+      1.1
+     ],
+     "tri": 3582
+    }
+   },
+   "team": "野怪"
+  },
+  "地形/地块/裂纹泥地": {
+   "asset": "裂纹泥地",
+   "cat": "地形",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 498572,
+     "joints": 0,
+     "material_names": [
+      "earth_dark",
+      "td_crack",
+      "td_dry_grass",
+      "td_plate_a",
+      "td_plate_b",
+      "td_plate_c",
+      "td_rock"
+     ],
+     "materials": 7,
+     "meshes": 7,
+     "nodes": 7,
+     "path": "地形/产出/地块/裂纹泥地.glb",
+     "size_xyz": [
+      8.03,
+      0.54,
+      8.02
+     ],
+     "tri": 9420
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 350236,
+     "joints": 0,
+     "material_names": [
+      "earth_dark",
+      "td_crack",
+      "td_dry_grass",
+      "td_plate_a",
+      "td_plate_b",
+      "td_plate_c",
+      "td_rock"
+     ],
+     "materials": 7,
+     "meshes": 7,
+     "nodes": 7,
+     "path": "地形/产出/地块/裂纹泥地_低模.glb",
+     "size_xyz": [
+      8.04,
+      0.54,
+      8.03
+     ],
+     "tri": 3224
+    }
+   },
+   "team": "地块"
+  },
+  "建筑/失落帝国/地下城入口": {
+   "asset": "地下城入口",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 1302520,
+     "joints": 0,
+     "material_names": [
+      "ancient",
+      "ancient_dark",
+      "ancient_pale",
+      "ash",
+      "bronze",
+      "bronze_dark",
+      "coal",
+      "depth_glow",
+      "earth",
+      "earth_dark",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "moss_dark",
+      "paving",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 21,
+     "meshes": 21,
+     "nodes": 21,
+     "path": "建筑/产出/失落帝国/地下城入口/地下城入口.glb",
+     "size_xyz": [
+      14.6,
+      9.18,
+      12.17
+     ],
+     "tri": 22820
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 647056,
+     "joints": 0,
+     "material_names": [
+      "ancient",
+      "ancient_dark",
+      "ancient_pale",
+      "ash",
+      "bronze",
+      "bronze_dark",
+      "coal",
+      "depth_glow",
+      "earth",
+      "earth_dark",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "moss_dark",
+      "paving",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 21,
+     "meshes": 21,
+     "nodes": 21,
+     "path": "建筑/产出/失落帝国/地下城入口/地下城入口_低模.glb",
+     "size_xyz": [
+      14.6,
+      9.18,
+      12.17
+     ],
+     "tri": 8696
+    },
+    "建造": {
+     "animations": 1,
+     "bytes": 1088496,
+     "joints": 15,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光",
+      "site_timber",
+      "site_timber_dark",
+      "site_rope",
+      "site_stone",
+      "site_iron",
+      "site_cloth"
+     ],
+     "materials": 10,
+     "meshes": 2,
+     "nodes": 18,
+     "path": "建筑/产出/失落帝国/地下城入口/地下城入口_建造.glb",
+     "size_xyz": [
+      18.27,
+      9.18,
+      14.71
+     ],
+     "tri": 12636
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 212976,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/失落帝国/地下城入口/地下城入口_手游_中.glb",
+     "size_xyz": [
+      14.6,
+      9.18,
+      12.17
+     ],
+     "tri": 2970
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 645244,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/失落帝国/地下城入口/地下城入口_手游_近.glb",
+     "size_xyz": [
+      14.6,
+      9.18,
+      12.17
+     ],
+     "tri": 8696
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 365180,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/失落帝国/地下城入口/地下城入口_手游_远.glb",
+     "size_xyz": [
+      14.6,
+      9.12,
+      12.15
+     ],
+     "tri": 4908
+    }
+   },
+   "team": "失落帝国"
+  },
+  "建筑/失落帝国/地牢": {
+   "asset": "地牢",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 1051220,
+     "joints": 0,
+     "material_names": [
+      "ancient",
+      "ancient_dark",
+      "ancient_mid",
+      "ancient_pale",
+      "bone",
+      "bone_dark",
+      "bronze",
+      "bronze_dark",
+      "coal",
+      "door_stone",
+      "earth",
+      "earth_dark",
+      "ember",
+      "iron",
+      "moss_dark",
+      "team",
+      "team_trim",
+      "void",
+      "wood_dark"
+     ],
+     "materials": 19,
+     "meshes": 19,
+     "nodes": 19,
+     "path": "建筑/产出/失落帝国/地牢/地牢.glb",
+     "size_xyz": [
+      10.08,
+      4.94,
+      9.93
+     ],
+     "tri": 15488
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 505964,
+     "joints": 0,
+     "material_names": [
+      "ancient",
+      "ancient_dark",
+      "ancient_mid",
+      "ancient_pale",
+      "bone",
+      "bone_dark",
+      "bronze",
+      "bronze_dark",
+      "coal",
+      "door_stone",
+      "earth",
+      "earth_dark",
+      "ember",
+      "iron",
+      "moss_dark",
+      "team",
+      "team_trim",
+      "void",
+      "wood_dark"
+     ],
+     "materials": 19,
+     "meshes": 19,
+     "nodes": 19,
+     "path": "建筑/产出/失落帝国/地牢/地牢_低模.glb",
+     "size_xyz": [
+      10.08,
+      4.94,
+      9.93
+     ],
+     "tri": 6768
+    },
+    "建造": {
+     "animations": 1,
+     "bytes": 817624,
+     "joints": 13,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光",
+      "site_timber",
+      "site_timber_dark",
+      "site_rope",
+      "site_stone",
+      "site_iron",
+      "site_cloth"
+     ],
+     "materials": 10,
+     "meshes": 2,
+     "nodes": 16,
+     "path": "建筑/产出/失落帝国/地牢/地牢_建造.glb",
+     "size_xyz": [
+      13.74,
+      4.94,
+      12.43
+     ],
+     "tri": 9580
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 153264,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "主体",
+      "自发光"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 3,
+     "path": "建筑/产出/失落帝国/地牢/地牢_手游_中.glb",
+     "size_xyz": [
+      10.08,
+      4.94,
+      9.94
+     ],
+     "tri": 1988
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 506440,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/失落帝国/地牢/地牢_手游_近.glb",
+     "size_xyz": [
+      10.08,
+      4.94,
+      9.93
+     ],
+     "tri": 6768
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 97448,
+     "joints": 0,
+     "material_names": [
+      "主体",
+      "自发光"
+     ],
+     "materials": 2,
+     "meshes": 2,
+     "nodes": 2,
+     "path": "建筑/产出/失落帝国/地牢/地牢_手游_远.glb",
+     "size_xyz": [
+      10.08,
+      4.92,
+      9.94
+     ],
+     "tri": 1180
+    }
+   },
+   "team": "失落帝国"
+  },
+  "建筑/失落帝国/折壳入口": {
+   "asset": "折壳入口",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 1545268,
+     "joints": 0,
+     "material_names": [
+      "door_stone",
+      "ancient",
+      "ancient_dark",
+      "ancient_pale",
+      "ash",
+      "bone",
+      "bone_dark",
+      "bronze",
+      "bronze_dark",
+      "coal",
+      "depth_glow",
+      "earth",
+      "earth_dark",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "moss_dark",
+      "paving",
+      "team",
+      "team_trim",
+      "void",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 24,
+     "meshes": 25,
+     "nodes": 25,
+     "path": "建筑/产出/失落帝国/折壳入口/折壳入口.glb",
+     "size_xyz": [
+      12.98,
+      4.56,
+      10.62
+     ],
+     "tri": 36526
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 535304,
+     "joints": 0,
+     "material_names": [
+      "door_stone",
+      "ancient",
+      "ancient_dark",
+      "ancient_pale",
+      "ash",
+      "bone",
+      "bone_dark",
+      "bronze",
+      "bronze_dark",
+      "coal",
+      "depth_glow",
+      "earth",
+      "earth_dark",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "moss_dark",
+      "paving",
+      "team",
+      "team_trim",
+      "void",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 24,
+     "meshes": 25,
+     "nodes": 25,
+     "path": "建筑/产出/失落帝国/折壳入口/折壳入口_低模.glb",
+     "size_xyz": [
+      12.98,
+      4.56,
+      10.62
+     ],
+     "tri": 7112
+    },
+    "建造": {
+     "animations": 1,
+     "bytes": 852356,
+     "joints": 13,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光",
+      "site_timber",
+      "site_timber_dark",
+      "site_rope",
+      "site_stone",
+      "site_iron",
+      "site_cloth"
+     ],
+     "materials": 10,
+     "meshes": 2,
+     "nodes": 16,
+     "path": "建筑/产出/失落帝国/折壳入口/折壳入口_建造.glb",
+     "size_xyz": [
+      16.64,
+      4.56,
+      13.39
+     ],
+     "tri": 9948
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 253756,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "主体"
+     ],
+     "materials": 2,
+     "meshes": 2,
+     "nodes": 2,
+     "path": "建筑/产出/失落帝国/折壳入口/折壳入口_手游_中.glb",
+     "size_xyz": [
+      12.99,
+      4.57,
+      10.62
+     ],
+     "tri": 3441
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 530164,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/失落帝国/折壳入口/折壳入口_手游_近.glb",
+     "size_xyz": [
+      12.98,
+      4.56,
+      10.62
+     ],
+     "tri": 7112
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 228356,
+     "joints": 0,
+     "material_names": [
+      "主体",
+      "自发光"
+     ],
+     "materials": 2,
+     "meshes": 2,
+     "nodes": 2,
+     "path": "建筑/产出/失落帝国/折壳入口/折壳入口_手游_远.glb",
+     "size_xyz": [
+      12.99,
+      4.57,
+      10.62
+     ],
+     "tri": 2939
+    }
+   },
+   "team": "失落帝国"
+  },
+  "建筑/联盟/伐木场": {
+   "asset": "伐木场",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 2037488,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "earth",
+      "glass",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof",
+      "roof_edge",
+      "roof_pale",
+      "sand",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 19,
+     "meshes": 19,
+     "nodes": 19,
+     "path": "建筑/产出/联盟/伐木场/伐木场.glb",
+     "size_xyz": [
+      16.81,
+      7.72,
+      10.92
+     ],
+     "tri": 32968
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 762580,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "earth",
+      "glass",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof",
+      "roof_edge",
+      "roof_pale",
+      "sand",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 19,
+     "meshes": 19,
+     "nodes": 19,
+     "path": "建筑/产出/联盟/伐木场/伐木场_低模.glb",
+     "size_xyz": [
+      16.81,
+      7.72,
+      10.92
+     ],
+     "tri": 11324
+    },
+    "建造": {
+     "animations": 1,
+     "bytes": 1183688,
+     "joints": 15,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光",
+      "site_timber",
+      "site_timber_dark",
+      "site_rope",
+      "site_stone",
+      "site_iron",
+      "site_cloth"
+     ],
+     "materials": 10,
+     "meshes": 2,
+     "nodes": 18,
+     "path": "建筑/产出/联盟/伐木场/伐木场_建造.glb",
+     "size_xyz": [
+      20.48,
+      8.2,
+      14.31
+     ],
+     "tri": 15264
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 519164,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/伐木场/伐木场_手游_中.glb",
+     "size_xyz": [
+      16.81,
+      7.72,
+      10.92
+     ],
+     "tri": 8052
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 763060,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/伐木场/伐木场_手游_近.glb",
+     "size_xyz": [
+      16.81,
+      7.72,
+      10.92
+     ],
+     "tri": 11324
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 138688,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/伐木场/伐木场_手游_远.glb",
+     "size_xyz": [
+      16.81,
+      7.69,
+      10.7
+     ],
+     "tri": 1812
+    }
+   },
+   "team": "联盟"
+  },
+  "建筑/联盟/兵营": {
+   "asset": "兵营",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 3487344,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "earth",
+      "earth_dark",
+      "glass",
+      "glow",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof_edge",
+      "roof_wood",
+      "sand",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_warm"
+     ],
+     "materials": 19,
+     "meshes": 19,
+     "nodes": 19,
+     "path": "建筑/产出/联盟/兵营/兵营.glb",
+     "size_xyz": [
+      11.08,
+      11.75,
+      14.73
+     ],
+     "tri": 81008
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 1278900,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "earth",
+      "earth_dark",
+      "glass",
+      "glow",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof_edge",
+      "roof_wood",
+      "sand",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_warm"
+     ],
+     "materials": 19,
+     "meshes": 19,
+     "nodes": 19,
+     "path": "建筑/产出/联盟/兵营/兵营_低模.glb",
+     "size_xyz": [
+      11.08,
+      11.6,
+      14.73
+     ],
+     "tri": 17440
+    },
+    "建造": {
+     "animations": 1,
+     "bytes": 1760488,
+     "joints": 16,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光",
+      "site_timber",
+      "site_timber_dark",
+      "site_rope",
+      "site_stone",
+      "site_iron",
+      "site_cloth"
+     ],
+     "materials": 10,
+     "meshes": 2,
+     "nodes": 19,
+     "path": "建筑/产出/联盟/兵营/兵营_建造.glb",
+     "size_xyz": [
+      14.75,
+      11.6,
+      20.99
+     ],
+     "tri": 21764
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 534696,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/兵营/兵营_手游_中.glb",
+     "size_xyz": [
+      11.08,
+      11.38,
+      14.73
+     ],
+     "tri": 7632
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 1279132,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/兵营/兵营_手游_近.glb",
+     "size_xyz": [
+      11.08,
+      11.6,
+      14.73
+     ],
+     "tri": 17440
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 92528,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 3,
+     "path": "建筑/产出/联盟/兵营/兵营_手游_远.glb",
+     "size_xyz": [
+      10.96,
+      10.08,
+      14.22
+     ],
+     "tri": 1224
+    }
+   },
+   "team": "联盟"
+  },
+  "建筑/联盟/农场": {
+   "asset": "农场",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 1910852,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "earth",
+      "earth_dark",
+      "glass",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof_edge",
+      "roof_pale",
+      "roof_wood",
+      "sand",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 20,
+     "meshes": 20,
+     "nodes": 20,
+     "path": "建筑/产出/联盟/农场/农场.glb",
+     "size_xyz": [
+      15.35,
+      10.11,
+      12.75
+     ],
+     "tri": 29466
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 728924,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "earth",
+      "earth_dark",
+      "glass",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof_edge",
+      "roof_pale",
+      "roof_wood",
+      "sand",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 20,
+     "meshes": 20,
+     "nodes": 20,
+     "path": "建筑/产出/联盟/农场/农场_低模.glb",
+     "size_xyz": [
+      15.35,
+      10.11,
+      12.75
+     ],
+     "tri": 10321
+    },
+    "建造": {
+     "animations": 1,
+     "bytes": 1207480,
+     "joints": 16,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光",
+      "site_timber",
+      "site_timber_dark",
+      "site_rope",
+      "site_stone",
+      "site_iron",
+      "site_cloth"
+     ],
+     "materials": 10,
+     "meshes": 2,
+     "nodes": 19,
+     "path": "建筑/产出/联盟/农场/农场_建造.glb",
+     "size_xyz": [
+      19.02,
+      10.4,
+      17.96
+     ],
+     "tri": 14813
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 348872,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/农场/农场_手游_中.glb",
+     "size_xyz": [
+      15.35,
+      9.32,
+      12.75
+     ],
+     "tri": 5120
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 728316,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/农场/农场_手游_近.glb",
+     "size_xyz": [
+      15.35,
+      10.11,
+      12.75
+     ],
+     "tri": 10321
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 215680,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 3,
+     "path": "建筑/产出/联盟/农场/农场_手游_远.glb",
+     "size_xyz": [
+      15.35,
+      9.22,
+      12.75
+     ],
+     "tri": 3174
+    }
+   },
+   "team": "联盟"
+  },
+  "建筑/联盟/哨塔": {
+   "asset": "哨塔",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 1797124,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "earth",
+      "ember",
+      "flame_in",
+      "glass",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof",
+      "roof_edge",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 19,
+     "meshes": 19,
+     "nodes": 19,
+     "path": "建筑/产出/联盟/哨塔/哨塔.glb",
+     "size_xyz": [
+      7.14,
+      17.34,
+      7.11
+     ],
+     "tri": 25332
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 699840,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "earth",
+      "ember",
+      "flame_in",
+      "glass",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof",
+      "roof_edge",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 19,
+     "meshes": 19,
+     "nodes": 19,
+     "path": "建筑/产出/联盟/哨塔/哨塔_低模.glb",
+     "size_xyz": [
+      7.16,
+      17.34,
+      7.12
+     ],
+     "tri": 9624
+    },
+    "建造": {
+     "animations": 1,
+     "bytes": 1251984,
+     "joints": 18,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光",
+      "site_timber",
+      "site_timber_dark",
+      "site_rope",
+      "site_stone",
+      "site_iron",
+      "site_cloth"
+     ],
+     "materials": 10,
+     "meshes": 2,
+     "nodes": 21,
+     "path": "建筑/产出/联盟/哨塔/哨塔_建造.glb",
+     "size_xyz": [
+      10.83,
+      17.34,
+      9.46
+     ],
+     "tri": 14692
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 361700,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/哨塔/哨塔_手游_中.glb",
+     "size_xyz": [
+      7.16,
+      17.34,
+      7.12
+     ],
+     "tri": 5036
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 700020,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/哨塔/哨塔_手游_近.glb",
+     "size_xyz": [
+      7.16,
+      17.34,
+      7.12
+     ],
+     "tri": 9624
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 235356,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 3,
+     "path": "建筑/产出/联盟/哨塔/哨塔_手游_远.glb",
+     "size_xyz": [
+      7.08,
+      17.34,
+      7.1
+     ],
+     "tri": 3228
+    }
+   },
+   "team": "联盟"
+  },
+  "建筑/联盟/城镇大厅": {
+   "asset": "城镇大厅",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 2896792,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "glass",
+      "glow",
+      "gold",
+      "iron",
+      "roof",
+      "roof_edge",
+      "roof_pale",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark"
+     ],
+     "materials": 14,
+     "meshes": 14,
+     "nodes": 14,
+     "path": "建筑/产出/联盟/城镇大厅/城镇大厅.glb",
+     "size_xyz": [
+      18.1,
+      25.21,
+      8.99
+     ],
+     "tri": 44338
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 1188732,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "glass",
+      "glow",
+      "gold",
+      "iron",
+      "roof",
+      "roof_edge",
+      "roof_pale",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark"
+     ],
+     "materials": 14,
+     "meshes": 14,
+     "nodes": 14,
+     "path": "建筑/产出/联盟/城镇大厅/城镇大厅_低模.glb",
+     "size_xyz": [
+      18.1,
+      25.18,
+      8.99
+     ],
+     "tri": 17340
+    },
+    "建造": {
+     "animations": 1,
+     "bytes": 1833152,
+     "joints": 18,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光",
+      "site_timber",
+      "site_timber_dark",
+      "site_rope",
+      "site_stone",
+      "site_iron",
+      "site_cloth"
+     ],
+     "materials": 10,
+     "meshes": 2,
+     "nodes": 21,
+     "path": "建筑/产出/联盟/城镇大厅/城镇大厅_建造.glb",
+     "size_xyz": [
+      21.77,
+      25.18,
+      11.58
+     ],
+     "tri": 22936
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 688532,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/城镇大厅/城镇大厅_手游_中.glb",
+     "size_xyz": [
+      18.1,
+      25.15,
+      8.99
+     ],
+     "tri": 10368
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 1193888,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/城镇大厅/城镇大厅_手游_近.glb",
+     "size_xyz": [
+      18.1,
+      25.18,
+      8.99
+     ],
+     "tri": 17340
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 267896,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/城镇大厅/城镇大厅_手游_远.glb",
+     "size_xyz": [
+      18.1,
+      25.15,
+      8.73
+     ],
+     "tri": 3954
+    }
+   },
+   "team": "联盟"
+  },
+  "建筑/联盟/神秘圣地": {
+   "asset": "神秘圣地",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 2303656,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "crystal",
+      "crystal_pale",
+      "earth",
+      "earth_dark",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof_edge",
+      "roof_pale",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark"
+     ],
+     "materials": 17,
+     "meshes": 17,
+     "nodes": 17,
+     "path": "建筑/产出/联盟/神秘圣地/神秘圣地.glb",
+     "size_xyz": [
+      13.7,
+      16.14,
+      14.17
+     ],
+     "tri": 32132
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 909272,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "crystal",
+      "crystal_pale",
+      "earth",
+      "earth_dark",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof_edge",
+      "roof_pale",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark"
+     ],
+     "materials": 17,
+     "meshes": 17,
+     "nodes": 17,
+     "path": "建筑/产出/联盟/神秘圣地/神秘圣地_低模.glb",
+     "size_xyz": [
+      13.7,
+      16.18,
+      14.17
+     ],
+     "tri": 13018
+    },
+    "建造": {
+     "animations": 1,
+     "bytes": 1520028,
+     "joints": 18,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光",
+      "site_timber",
+      "site_timber_dark",
+      "site_rope",
+      "site_stone",
+      "site_iron",
+      "site_cloth"
+     ],
+     "materials": 10,
+     "meshes": 2,
+     "nodes": 21,
+     "path": "建筑/产出/联盟/神秘圣地/神秘圣地_建造.glb",
+     "size_xyz": [
+      17.37,
+      16.18,
+      16.58
+     ],
+     "tri": 18614
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 628468,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/神秘圣地/神秘圣地_手游_中.glb",
+     "size_xyz": [
+      13.7,
+      16.18,
+      14.17
+     ],
+     "tri": 9250
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 908740,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/神秘圣地/神秘圣地_手游_近.glb",
+     "size_xyz": [
+      13.7,
+      16.18,
+      14.17
+     ],
+     "tri": 13018
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 283200,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/神秘圣地/神秘圣地_手游_远.glb",
+     "size_xyz": [
+      13.7,
+      16.18,
+      14.17
+     ],
+     "tri": 4160
+    }
+   },
+   "team": "联盟"
+  },
+  "建筑/联盟/箭塔": {
+   "asset": "箭塔",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 1259584,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "earth",
+      "ember",
+      "flame_in",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof",
+      "roof_edge",
+      "roof_pale",
+      "sand",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 20,
+     "meshes": 20,
+     "nodes": 20,
+     "path": "建筑/产出/联盟/箭塔/箭塔.glb",
+     "size_xyz": [
+      7.08,
+      17.46,
+      7.03
+     ],
+     "tri": 18282
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 522944,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "earth",
+      "ember",
+      "flame_in",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof",
+      "roof_edge",
+      "roof_pale",
+      "sand",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 20,
+     "meshes": 20,
+     "nodes": 20,
+     "path": "建筑/产出/联盟/箭塔/箭塔_低模.glb",
+     "size_xyz": [
+      7.08,
+      17.46,
+      7.03
+     ],
+     "tri": 7140
+    },
+    "建造": {
+     "animations": 1,
+     "bytes": 1074776,
+     "joints": 18,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光",
+      "site_timber",
+      "site_timber_dark",
+      "site_rope",
+      "site_stone",
+      "site_iron",
+      "site_cloth"
+     ],
+     "materials": 10,
+     "meshes": 2,
+     "nodes": 21,
+     "path": "建筑/产出/联盟/箭塔/箭塔_建造.glb",
+     "size_xyz": [
+      10.75,
+      17.46,
+      9.37
+     ],
+     "tri": 12208
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 223636,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/箭塔/箭塔_手游_中.glb",
+     "size_xyz": [
+      7.08,
+      17.46,
+      6.84
+     ],
+     "tri": 3082
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 522292,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/箭塔/箭塔_手游_近.glb",
+     "size_xyz": [
+      7.08,
+      17.46,
+      7.03
+     ],
+     "tri": 7140
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 136452,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 3,
+     "path": "建筑/产出/联盟/箭塔/箭塔_手游_远.glb",
+     "size_xyz": [
+      7.08,
+      17.46,
+      6.84
+     ],
+     "tri": 1882
+    }
+   },
+   "team": "联盟"
+  },
+  "建筑/联盟/蒸汽车坊": {
+   "asset": "蒸汽车坊",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 1661160,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "earth",
+      "earth_dark",
+      "ember",
+      "flame_in",
+      "glass",
+      "glow",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof",
+      "roof_edge",
+      "sand",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 22,
+     "meshes": 22,
+     "nodes": 22,
+     "path": "建筑/产出/联盟/蒸汽车坊/蒸汽车坊.glb",
+     "size_xyz": [
+      12.16,
+      10.04,
+      14.48
+     ],
+     "tri": 23507
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 693368,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "earth",
+      "earth_dark",
+      "ember",
+      "flame_in",
+      "glass",
+      "glow",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof",
+      "roof_edge",
+      "sand",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 22,
+     "meshes": 22,
+     "nodes": 22,
+     "path": "建筑/产出/联盟/蒸汽车坊/蒸汽车坊_低模.glb",
+     "size_xyz": [
+      12.16,
+      10.04,
+      14.48
+     ],
+     "tri": 9795
+    },
+    "建造": {
+     "animations": 1,
+     "bytes": 1158840,
+     "joints": 16,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光",
+      "site_timber",
+      "site_timber_dark",
+      "site_rope",
+      "site_stone",
+      "site_iron",
+      "site_cloth"
+     ],
+     "materials": 10,
+     "meshes": 2,
+     "nodes": 19,
+     "path": "建筑/产出/联盟/蒸汽车坊/蒸汽车坊_建造.glb",
+     "size_xyz": [
+      16.58,
+      10.4,
+      16.82
+     ],
+     "tri": 14119
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 374424,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/蒸汽车坊/蒸汽车坊_手游_中.glb",
+     "size_xyz": [
+      12.16,
+      10.04,
+      14.48
+     ],
+     "tri": 5470
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 690824,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/蒸汽车坊/蒸汽车坊_手游_近.glb",
+     "size_xyz": [
+      12.16,
+      10.04,
+      14.48
+     ],
+     "tri": 9795
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 177320,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/蒸汽车坊/蒸汽车坊_手游_远.glb",
+     "size_xyz": [
+      12.16,
+      9.92,
+      14.48
+     ],
+     "tri": 2380
+    }
+   },
+   "team": "联盟"
+  },
+  "建筑/联盟/酒馆内部": {
+   "asset": "酒馆内部",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 1808684,
+     "joints": 0,
+     "material_names": [
+      "ancient_dark",
+      "ash",
+      "bronze_dark",
+      "cloth_cream",
+      "coal",
+      "copper",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "glass",
+      "glow",
+      "iron",
+      "moss_dark",
+      "plaster",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 21,
+     "meshes": 21,
+     "nodes": 21,
+     "path": "建筑/产出/联盟/酒馆内部/酒馆内部.glb",
+     "size_xyz": [
+      10.83,
+      3.49,
+      9.08
+     ],
+     "tri": 33189
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 682204,
+     "joints": 0,
+     "material_names": [
+      "ancient_dark",
+      "ash",
+      "bronze_dark",
+      "cloth_cream",
+      "coal",
+      "copper",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "glass",
+      "glow",
+      "iron",
+      "moss_dark",
+      "plaster",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 21,
+     "meshes": 21,
+     "nodes": 21,
+     "path": "建筑/产出/联盟/酒馆内部/酒馆内部_低模.glb",
+     "size_xyz": [
+      10.83,
+      3.49,
+      9.08
+     ],
+     "tri": 9754
+    },
+    "建造": {
+     "animations": 1,
+     "bytes": 987164,
+     "joints": 13,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光",
+      "site_timber",
+      "site_timber_dark",
+      "site_rope",
+      "site_stone",
+      "site_iron",
+      "site_cloth"
+     ],
+     "materials": 10,
+     "meshes": 2,
+     "nodes": 16,
+     "path": "建筑/产出/联盟/酒馆内部/酒馆内部_建造.glb",
+     "size_xyz": [
+      14.5,
+      3.8,
+      11.42
+     ],
+     "tri": 12566
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 282432,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "主体",
+      "自发光"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 3,
+     "path": "建筑/产出/联盟/酒馆内部/酒馆内部_手游_中.glb",
+     "size_xyz": [
+      10.83,
+      3.49,
+      9.08
+     ],
+     "tri": 4036
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 680876,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/酒馆内部/酒馆内部_手游_近.glb",
+     "size_xyz": [
+      10.83,
+      3.49,
+      9.08
+     ],
+     "tri": 9754
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 473900,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/酒馆内部/酒馆内部_手游_远.glb",
+     "size_xyz": [
+      10.83,
+      3.49,
+      8.8
+     ],
+     "tri": 6758
+    }
+   },
+   "team": "联盟"
+  },
+  "建筑/联盟/铁匠铺": {
+   "asset": "铁匠铺",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 2577904,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "earth",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "glow",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof",
+      "roof_edge",
+      "roof_wood",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_warm"
+     ],
+     "materials": 20,
+     "meshes": 20,
+     "nodes": 20,
+     "path": "建筑/产出/联盟/铁匠铺/铁匠铺.glb",
+     "size_xyz": [
+      9.93,
+      11.82,
+      11.81
+     ],
+     "tri": 52540
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 1044240,
+     "joints": 0,
+     "material_names": [
+      "coal",
+      "earth",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "glow",
+      "gold",
+      "iron",
+      "moss",
+      "paving",
+      "roof",
+      "roof_edge",
+      "roof_wood",
+      "stone_dark",
+      "stone_light",
+      "stone_mid",
+      "team",
+      "team_trim",
+      "wood_dark",
+      "wood_warm"
+     ],
+     "materials": 20,
+     "meshes": 20,
+     "nodes": 20,
+     "path": "建筑/产出/联盟/铁匠铺/铁匠铺_低模.glb",
+     "size_xyz": [
+      9.93,
+      11.83,
+      11.81
+     ],
+     "tri": 14614
+    },
+    "建造": {
+     "animations": 1,
+     "bytes": 1522552,
+     "joints": 16,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光",
+      "site_timber",
+      "site_timber_dark",
+      "site_rope",
+      "site_stone",
+      "site_iron",
+      "site_cloth"
+     ],
+     "materials": 10,
+     "meshes": 2,
+     "nodes": 19,
+     "path": "建筑/产出/联盟/铁匠铺/铁匠铺_建造.glb",
+     "size_xyz": [
+      13.6,
+      11.83,
+      16.51
+     ],
+     "tri": 18938
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 498492,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/铁匠铺/铁匠铺_手游_中.glb",
+     "size_xyz": [
+      9.93,
+      11.83,
+      11.81
+     ],
+     "tri": 7276
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 1043208,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "team_trim",
+      "主体",
+      "自发光"
+     ],
+     "materials": 4,
+     "meshes": 4,
+     "nodes": 4,
+     "path": "建筑/产出/联盟/铁匠铺/铁匠铺_手游_近.glb",
+     "size_xyz": [
+      9.93,
+      11.83,
+      11.81
+     ],
+     "tri": 14614
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 137372,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "主体",
+      "自发光"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 3,
+     "path": "建筑/产出/联盟/铁匠铺/铁匠铺_手游_远.glb",
+     "size_xyz": [
+      9.44,
+      11.83,
+      11.81
+     ],
+     "tri": 1796
+    }
+   },
+   "team": "联盟"
+  },
+  "建筑/通用/火堆": {
+   "asset": "火堆",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 257376,
+     "joints": 0,
+     "material_names": [
+      "ash",
+      "coal",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "iron",
+      "stone_dark",
+      "stone_mid",
+      "team",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 12,
+     "meshes": 12,
+     "nodes": 12,
+     "path": "建筑/产出/通用/火堆/火堆.glb",
+     "size_xyz": [
+      3.17,
+      1.89,
+      2.72
+     ],
+     "tri": 3738
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 120560,
+     "joints": 0,
+     "material_names": [
+      "ash",
+      "coal",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "iron",
+      "stone_dark",
+      "stone_mid",
+      "team",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 12,
+     "meshes": 12,
+     "nodes": 12,
+     "path": "建筑/产出/通用/火堆/火堆_低模.glb",
+     "size_xyz": [
+      3.17,
+      1.96,
+      2.72
+     ],
+     "tri": 1500
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 107040,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "主体",
+      "自发光"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 3,
+     "path": "建筑/产出/通用/火堆/火堆_手游_中.glb",
+     "size_xyz": [
+      3.17,
+      1.96,
+      2.72
+     ],
+     "tri": 1244
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 127012,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "主体",
+      "自发光"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 3,
+     "path": "建筑/产出/通用/火堆/火堆_手游_近.glb",
+     "size_xyz": [
+      3.17,
+      1.96,
+      2.72
+     ],
+     "tri": 1500
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 107040,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "主体",
+      "自发光"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 3,
+     "path": "建筑/产出/通用/火堆/火堆_手游_远.glb",
+     "size_xyz": [
+      3.17,
+      1.96,
+      2.72
+     ],
+     "tri": 1244
+    }
+   },
+   "team": "通用"
+  },
+  "建筑/通用/火把": {
+   "asset": "火把",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 183836,
+     "joints": 0,
+     "material_names": [
+      "ash",
+      "cloth_cream",
+      "coal",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "iron",
+      "stone_mid",
+      "wood_dark",
+      "wood_mid"
+     ],
+     "materials": 10,
+     "meshes": 10,
+     "nodes": 10,
+     "path": "建筑/产出/通用/火把/火把.glb",
+     "size_xyz": [
+      0.48,
+      2.46,
+      0.48
+     ],
+     "tri": 3004
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 86624,
+     "joints": 0,
+     "material_names": [
+      "ash",
+      "cloth_cream",
+      "coal",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "iron",
+      "stone_mid",
+      "wood_dark",
+      "wood_mid"
+     ],
+     "materials": 10,
+     "meshes": 10,
+     "nodes": 10,
+     "path": "建筑/产出/通用/火把/火把_低模.glb",
+     "size_xyz": [
+      0.48,
+      2.52,
+      0.48
+     ],
+     "tri": 1055
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 24224,
+     "joints": 0,
+     "material_names": [
+      "主体"
+     ],
+     "materials": 1,
+     "meshes": 1,
+     "nodes": 1,
+     "path": "建筑/产出/通用/火把/火把_手游_中.glb",
+     "size_xyz": [
+      0.48,
+      2.14,
+      0.48
+     ],
+     "tri": 175
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 94116,
+     "joints": 0,
+     "material_names": [
+      "主体",
+      "自发光"
+     ],
+     "materials": 2,
+     "meshes": 2,
+     "nodes": 2,
+     "path": "建筑/产出/通用/火把/火把_手游_近.glb",
+     "size_xyz": [
+      0.48,
+      2.52,
+      0.48
+     ],
+     "tri": 1055
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 85760,
+     "joints": 0,
+     "material_names": [
+      "主体",
+      "自发光"
+     ],
+     "materials": 2,
+     "meshes": 2,
+     "nodes": 2,
+     "path": "建筑/产出/通用/火把/火把_手游_远.glb",
+     "size_xyz": [
+      0.48,
+      2.52,
+      0.48
+     ],
+     "tri": 943
+    }
+   },
+   "team": "通用"
+  },
+  "建筑/通用/火炬": {
+   "asset": "火炬",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 301340,
+     "joints": 0,
+     "material_names": [
+      "ash",
+      "bronze",
+      "bronze_dark",
+      "coal",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "iron",
+      "stone_light",
+      "stone_mid",
+      "team"
+     ],
+     "materials": 11,
+     "meshes": 11,
+     "nodes": 11,
+     "path": "建筑/产出/通用/火炬/火炬.glb",
+     "size_xyz": [
+      0.96,
+      2.08,
+      0.96
+     ],
+     "tri": 5598
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 124812,
+     "joints": 0,
+     "material_names": [
+      "ash",
+      "bronze",
+      "bronze_dark",
+      "coal",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "iron",
+      "stone_light",
+      "stone_mid",
+      "team"
+     ],
+     "materials": 11,
+     "meshes": 11,
+     "nodes": 11,
+     "path": "建筑/产出/通用/火炬/火炬_低模.glb",
+     "size_xyz": [
+      0.96,
+      2.12,
+      0.96
+     ],
+     "tri": 1604
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 77812,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "主体",
+      "自发光"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 3,
+     "path": "建筑/产出/通用/火炬/火炬_手游_中.glb",
+     "size_xyz": [
+      0.96,
+      1.94,
+      0.94
+     ],
+     "tri": 830
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 132168,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "主体",
+      "自发光"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 3,
+     "path": "建筑/产出/通用/火炬/火炬_手游_近.glb",
+     "size_xyz": [
+      0.96,
+      2.12,
+      0.96
+     ],
+     "tri": 1604
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 104872,
+     "joints": 0,
+     "material_names": [
+      "team",
+      "主体",
+      "自发光"
+     ],
+     "materials": 3,
+     "meshes": 3,
+     "nodes": 3,
+     "path": "建筑/产出/通用/火炬/火炬_手游_远.glb",
+     "size_xyz": [
+      0.96,
+      2.12,
+      0.96
+     ],
+     "tri": 1210
+    }
+   },
+   "team": "通用"
+  },
+  "建筑/通用/营火": {
+   "asset": "营火",
+   "cat": "建筑",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 286248,
+     "joints": 0,
+     "material_names": [
+      "ash",
+      "coal",
+      "copper",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "iron",
+      "stone_dark",
+      "stone_mid",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 12,
+     "meshes": 12,
+     "nodes": 12,
+     "path": "建筑/产出/通用/营火/营火.glb",
+     "size_xyz": [
+      2.05,
+      1.07,
+      1.56
+     ],
+     "tri": 4492
+    },
+    "低模": {
+     "animations": 0,
+     "bytes": 107192,
+     "joints": 0,
+     "material_names": [
+      "ash",
+      "coal",
+      "copper",
+      "ember",
+      "flame_in",
+      "flame_out",
+      "iron",
+      "stone_dark",
+      "stone_mid",
+      "wood_dark",
+      "wood_mid",
+      "wood_warm"
+     ],
+     "materials": 12,
+     "meshes": 12,
+     "nodes": 12,
+     "path": "建筑/产出/通用/营火/营火_低模.glb",
+     "size_xyz": [
+      2.05,
+      1.08,
+      1.56
+     ],
+     "tri": 1344
+    },
+    "手游_中": {
+     "animations": 0,
+     "bytes": 28776,
+     "joints": 0,
+     "material_names": [
+      "主体"
+     ],
+     "materials": 1,
+     "meshes": 1,
+     "nodes": 1,
+     "path": "建筑/产出/通用/营火/营火_手游_中.glb",
+     "size_xyz": [
+      1.4,
+      0.89,
+      1.56
+     ],
+     "tri": 248
+    },
+    "手游_近": {
+     "animations": 0,
+     "bytes": 112580,
+     "joints": 0,
+     "material_names": [
+      "主体",
+      "自发光"
+     ],
+     "materials": 2,
+     "meshes": 2,
+     "nodes": 2,
+     "path": "建筑/产出/通用/营火/营火_手游_近.glb",
+     "size_xyz": [
+      2.05,
+      1.08,
+      1.56
+     ],
+     "tri": 1344
+    },
+    "手游_远": {
+     "animations": 0,
+     "bytes": 112580,
+     "joints": 0,
+     "material_names": [
+      "主体",
+      "自发光"
+     ],
+     "materials": 2,
+     "meshes": 2,
+     "nodes": 2,
+     "path": "建筑/产出/通用/营火/营火_手游_远.glb",
+     "size_xyz": [
+      2.05,
+      1.08,
+      1.56
+     ],
+     "tri": 1344
+    }
+   },
+   "team": "通用"
+  }
+ }
+}

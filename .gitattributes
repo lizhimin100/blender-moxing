@@ -1,2 +1,12 @@
+# 二进制：不做 diff、不做换行转换
 *.glb binary
 *.png binary
+*.jpg binary
+*.exr binary
+
+# 文本统一 LF，避免 Windows 上 CRLF 把每份文档都标记成改动
+* text=auto eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.gdshader text eol=lf
