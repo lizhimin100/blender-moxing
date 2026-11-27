@@ -1,0 +1,94 @@
+{
+  "id": "箭塔",
+  "src": "箭塔_手游_近.glb",
+  "footprint": [
+    7.08,
+    7.026
+  ],
+  "height": 17.46,
+  "yaw": 0,
+  "attach": {
+    "hoist": [
+      -4.09,
+      -3.6,
+      3.4
+    ],
+    "banner": [
+      -3.84,
+      4.026,
+      0.0
+    ]
+  },
+  "body": [
+    -3.54,
+    3.54,
+    -3.3,
+    3.726
+  ],
+  "bbox_lo": [
+    -3.54,
+    -3.3,
+    0.0
+  ],
+  "bbox_hi": [
+    3.54,
+    3.726,
+    17.46
+  ],
+  "z0": 1.0,
+  "z_rev1": 17.46,
+  "rev": 3.359,
+  "t_rev0": 0.46,
+  "t_rev1": 3.819,
+  "t_dis0": 4.079,
+  "t_dis1": 4.759,
+  "t_clean": 4.819,
+  "t_end": 5.769,
+  "lifts": [
+    0.505,
+    0.954,
+    1.403,
+    1.852,
+    2.301,
+    2.75
+  ],
+  "n_lifts": 6,
+  "reveal": {
+    "axis": "z",
+    "z0": 1.0,
+    "z1": 17.46,
+    "t0": 0.46,
+    "t1": 3.819
+  },
+  "body_size": [
+    7.08,
+    7.026,
+    17.46
+  ],
+  "n_bands": 0,
+  "file": "箭塔_建造.glb",
+  "bytes": 1074776,
+  "detail": "low",
+  "src_tris": 7140,
+  "src_verts": 14346,
+  "check": {
+    "BODY_RIG": 0,
+    "body_parent": null,
+    "body_mod": [],
+    "body_anim": false,
+    "body_tris": 7140,
+    "body_verts": 14346,
+    "src_tris": 7140,
+    "src_verts": 14346,
+    "BODY_TRIS": 0,
+    "BVH_CROSS": 0,
+    "BOX_TALL": 0,
+    "scaf_top": 13.75,
+    "SCAF_OVER": 0.0,
+    "reveal_z0": 1.0,
+    "reveal_z1": 17.46,
+    "tri_body": 7140,
+    "tri_site": 5068,
+    "ok": true
+  }
+}

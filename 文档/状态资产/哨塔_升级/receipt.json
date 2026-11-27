@@ -1,0 +1,61 @@
+{
+  "file": "哨塔_升级.glb",
+  "bytes": 739856,
+  "meshes": 4,
+  "tris": 10260,
+  "materials": [
+    "team",
+    "team_trim",
+    "主体",
+    "自发光"
+  ],
+  "mat_count": 4,
+  "bbox_min": [
+    -5.25,
+    -4.52,
+    0.0
+  ],
+  "bbox_max": [
+    5.217,
+    4.84,
+    12.65
+  ],
+  "size": [
+    10.467,
+    9.36,
+    12.65
+  ],
+  "grounded": true,
+  "zmin": 0.0,
+  "front_ok": true,
+  "mats_ok": true,
+  "tris_ok": true,
+  "skins": 0,
+  "animations": [],
+  "static_ok": true,
+  "ok": true,
+  "asset_name": "哨塔_升级",
+  "kind": "升级态",
+  "cut_z": 10.55,
+  "note": "一本/二本共用；队色与旗由引擎侧切换",
+  "lifts": 4,
+  "body": [
+    -3.4,
+    3.4,
+    -2.69,
+    3.6
+  ],
+  "plot": [
+    -3.58,
+    3.58,
+    -3.34,
+    3.78
+  ],
+  "kept": 308,
+  "removed": 195,
+  "caps": 13,
+  "chunks": 13,
+  "hints": 26,
+  "front_landmark_y": 2.433,
+  "front_landmark_ok": true
+}

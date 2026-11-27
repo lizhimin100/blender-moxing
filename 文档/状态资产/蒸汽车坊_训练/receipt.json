@@ -1,0 +1,42 @@
+{
+  "file": "蒸汽车坊_训练.glb",
+  "bytes": 692304,
+  "meshes": 4,
+  "tris": 9819,
+  "materials": [
+    "team",
+    "team_trim",
+    "主体",
+    "自发光"
+  ],
+  "mat_count": 4,
+  "bbox_min": [
+    -7.38,
+    -7.05,
+    0.0
+  ],
+  "bbox_max": [
+    4.78,
+    7.761,
+    10.04
+  ],
+  "size": [
+    12.16,
+    14.811,
+    10.04
+  ],
+  "grounded": true,
+  "zmin": 0.0,
+  "front_ok": true,
+  "mats_ok": true,
+  "tris_ok": true,
+  "skins": 0,
+  "animations": [],
+  "static_ok": true,
+  "ok": true,
+  "asset_name": "蒸汽车坊_训练",
+  "kind": "训练态",
+  "note": "门开 108°、阀轮转 90°、门内透光",
+  "parts": 364,
+  "fx_parts": 2
+}

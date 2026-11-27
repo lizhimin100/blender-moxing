@@ -1,0 +1,219 @@
+ITEMS 488
+=== CLIP_CROSS 0 ===
+=== CLIP_INNER 960 (前 24) ===
+   8  yard_soil                <-> plinth_lo
+   8  yard_soil                <-> plinth_shed
+   4  yard_soil                <-> path
+   4  yard_soil                <-> path.001
+   6  yard_soil                <-> yard_curb
+   8  yard_soil                <-> yard_curb_b
+   8  yard_soil                <-> gate_step0
+   8  yard_soil                <-> gate_step1
+  12  yard_soil                <-> tower_foot
+   8  yard_soil                <-> tower_step0
+   8  yard_soil                <-> tower_step1
+   3  yard_soil                <-> field_base
+   4  yard_soil                <-> row
+   4  yard_soil                <-> row_end
+   4  yard_soil                <-> row_end.001
+   4  yard_soil                <-> row.001
+   4  yard_soil                <-> row_end.002
+   4  yard_soil                <-> row_end.003
+   4  yard_soil                <-> row.002
+   4  yard_soil                <-> row_end.004
+   4  yard_soil                <-> row_end.005
+  16  yard_soil                <-> well_wall
+   4  yard_soil                <-> hay_bale
+   4  yard_soil                <-> hay_rope
+=== CONTAIN 49 ===
+   win_barn_mull             in  barn_gable.001
+   win_barn_mull.001         in  barn_gable.001
+   win_loft_mull             in  barn_gable.001
+   barn_floor_in             in  barn_dado
+   gable_rail.001            in  roof_main
+   gable_rail.003            in  roof_main
+   gate_l_panel              in  gate_l_brace
+   gate_l_panel_t            in  gate_l_brace
+   gate_r_panel              in  gate_r_brace
+   gate_r_panel_t            in  gate_r_brace
+   win_loft_glass            in  roof_main
+   win_loft_head             in  roof_main
+   win_loft_sill             in  roof_main
+   win_loft_jamb             in  roof_main
+   win_loft_jamb.001         in  roof_main
+   win_loft_mull             in  roof_main
+   vent_body                 in  roof_main
+   vent_cap                  in  roof_main
+   vent_slat                 in  roof_main
+   vent_body.001             in  roof_main
+   vent_cap.001              in  roof_main
+   vent_slat.001             in  roof_main
+   roof_patch                in  roof_main
+   roof_patch.001            in  roof_main
+   roof_patch.002            in  roof_main
+   roof_patch.003            in  roof_main
+   twin_d_glass              in  tower_body
+   twin_d_fu.001             in  tower_body
+   twin_d_mull               in  tower_body
+   tloop_hole.001            in  tower_body
+   tloop_hole.002            in  tower_body
+   tloop_hole.003            in  tower_body
+   twin_d_ft                 in  tower_band_low
+   tower_rim                 in  tower_roof
+   tower_rim.001             in  tower_roof
+   tower_rim.002             in  tower_roof
+   twin_d_mull               in  twin_d_glass
+   shed_low                  in  shed_side
+   shed_post                 in  shed_side
+   shed_post.001             in  shed_side
+=== COPLANAR_UP 0 ===
+=== COPLANAR 210 ===
+   yard_soil                <-> plinth_lo                 @(2, -1) d=+0.000
+   yard_soil                <-> plinth_shed               @(2, -1) d=+0.000
+   yard_soil                <-> gate_step0                @(2, -1) d=+0.000
+   yard_soil                <-> gate_step1                @(2, -1) d=+0.000
+   yard_soil                <-> tower_step0               @(2, -1) d=+0.000
+   yard_soil                <-> tower_step1               @(2, -1) d=+0.000
+   plinth_lo                <-> plinth_shed               @(2, -1) d=+0.000
+   plinth_lo                <-> gate_step0                @(2, -1) d=+0.000
+   barn_gable.001           <-> barn_dado                 @(2, -1) d=+0.620
+   barn_gable.001           <-> barn_col.002              @(2, -1) d=+0.620
+   barn_gable.001           <-> barn_col.003              @(2, -1) d=+0.620
+   barn_gable.001           <-> win_barn_sill             @(1, -1) d=-2.500
+   barn_gable.001           <-> win_barn_mull             @(0, -1) d=+4.200
+   barn_gable.001           <-> win_barn_mull.001         @(0, -1) d=+4.200
+   barn_gable.001           <-> win_loft_mull             @(0, -1) d=+4.200
+   barn_back                <-> barn_dado                 @(2, -1) d=+0.620
+   barn_back                <-> barn_col                  @(2, -1) d=+0.620
+   barn_back                <-> barn_col.002              @(2, -1) d=+0.620
+   barn_front               <-> barn_dado                 @(2, -1) d=+0.620
+   barn_front               <-> barn_col.001              @(2, -1) d=+0.620
+   barn_front               <-> gate_jamb                 @(2, -1) d=+0.620
+   barn_front.001           <-> barn_front_T              @(1, -1) d=+2.260
+   barn_front.001           <-> barn_dado                 @(2, -1) d=+0.620
+   barn_front.001           <-> barn_col.003              @(2, -1) d=+0.620
+   barn_front.001           <-> gate_jamb.001             @(2, -1) d=+0.620
+   barn_front_T             <-> barn_rail                 @(2, -1) d=+4.340
+   barn_front_T             <-> barn_rail.001             @(2, -1) d=+4.340
+   barn_dado                <-> barn_col                  @(2, -1) d=+0.620
+   barn_dado                <-> barn_col.001              @(2, -1) d=+0.620
+   barn_dado                <-> barn_col.002              @(2, -1) d=+0.620
+   barn_dado                <-> barn_col.003              @(2, -1) d=+0.620
+   barn_dado                <-> gate_jamb                 @(2, -1) d=+0.620
+   barn_dado                <-> gate_jamb.001             @(2, -1) d=+0.620
+   barn_dado                <-> gate_l_leaf               @(2, -1) d=+0.620
+   barn_dado                <-> gate_r_leaf               @(2, -1) d=+0.620
+   barn_dado                <-> front_stud                @(1, -1) d=+2.370
+   barn_rail.004            <-> tower_body                @(0, -1) d=+4.130
+   gate_jamb                <-> gate_head                 @(1, -1) d=+2.210
+   gate_jamb.001            <-> gate_head.002             @(1, -1) d=+2.210
+   gate_l_rail              <-> gate_l_brace              @(1, 1) d=+2.484
+   gate_l_rail.001          <-> gate_l_brace              @(1, 1) d=+2.484
+   gate_l_rail.001          <-> gate_l_hinge.002          @(2, -1) d=+3.530
+   gate_l_brace             <-> gate_l_panel              @(1, 1) d=+2.486
+   gate_l_brace             <-> gate_l_panel_t            @(1, 1) d=+2.486
+   gate_r_rail              <-> gate_r_brace              @(1, 1) d=+2.484
+   gate_r_rail.001          <-> gate_r_brace              @(1, 1) d=+2.484
+   gate_r_rail.001          <-> gate_r_hinge.002          @(2, -1) d=+3.530
+   gate_r_brace             <-> gate_r_panel              @(1, 1) d=+2.486
+   gate_r_brace             <-> gate_r_panel_t            @(1, 1) d=+2.486
+   barn_floor_in            <-> hay_inside                @(2, -1) d=+0.620
+   front_stud               <-> front_rail                @(1, -1) d=+2.370
+   win_front_head           <-> win_front_jamb            @(0, -1) d=+3.010
+   win_front_head           <-> win_front_jamb.001        @(0, 1) d=+3.950
+   win_front_sill           <-> win_front_jamb            @(1, -1) d=+2.485
+   win_front_sill           <-> win_front_jamb.001        @(1, -1) d=+2.485
+   win_barn_head            <-> win_barn_jamb             @(1, -1) d=-2.460
+   win_barn_head            <-> win_barn_jamb.001         @(1, 1) d=-1.440
+   win_barn_sill            <-> win_barn_jamb             @(0, -1) d=+4.185
+   win_barn_sill            <-> win_barn_jamb.001         @(0, -1) d=+4.185
+   win_barn_head.001        <-> win_barn_jamb.002         @(1, -1) d=-1.260
+   win_barn_head.001        <-> win_barn_jamb.003         @(1, 1) d=-0.240
+   win_barn_sill.001        <-> win_barn_jamb.002         @(0, -1) d=+4.185
+   win_barn_sill.001        <-> win_barn_jamb.003         @(0, -1) d=+4.185
+   win_barn_s_head          <-> win_barn_s_jamb           @(1, -1) d=+0.880
+   win_barn_s_head          <-> win_barn_s_jamb.001       @(1, 1) d=+1.820
+   win_barn_s_sill          <-> win_barn_s_jamb           @(0, 1) d=-4.185
+   win_barn_s_sill          <-> win_barn_s_jamb.001       @(0, 1) d=-4.185
+   win_loft_head            <-> win_loft_jamb             @(1, -1) d=-0.930
+   win_loft_head            <-> win_loft_jamb.001         @(1, 1) d=-0.170
+   win_loft_sill            <-> win_loft_jamb             @(0, -1) d=+4.185
+   win_loft_sill            <-> win_loft_jamb.001         @(0, -1) d=+4.185
+   roof_rib.006             <-> tower_body                @(0, -1) d=+4.135
+   roof_barge               <-> roof_ridge                @(0, -1) d=-4.670
+   roof_barge.001           <-> roof_ridge                @(0, 1) d=+4.670
+   tower_foot_cap           <-> tower_body                @(2, -1) d=+1.500
+   tower_flag.001           <-> tower_flag.002            @(1, -1) d=+1.535
+   tower_door_jamb          <-> tower_door_arch0          @(1, -1) d=+3.050
+   tower_door_jamb.001      <-> tower_door_arch0          @(1, -1) d=+3.050
+   tower_door_band.001      <-> tower_door_panel          @(1, 1) d=+3.250
+   twin_f_ft                <-> twin_f_fu                 @(1, 1) d=+3.175
+   twin_f_ft                <-> twin_f_fu.001             @(1, 1) d=+3.175
+   twin_f_ft.001            <-> twin_f_fu                 @(1, 1) d=+3.175
+   twin_f_ft.001            <-> twin_f_fu.001             @(1, 1) d=+3.175
+   twin_a_ft                <-> twin_a_fu                 @(0, 1) d=+7.285
+   twin_a_ft                <-> twin_a_fu.001             @(0, 1) d=+7.285
+   twin_a_ft.001            <-> twin_a_fu                 @(0, 1) d=+7.285
+   twin_a_ft.001            <-> twin_a_fu.001             @(0, 1) d=+7.285
+   twin_b_ft                <-> twin_b_fu                 @(0, 1) d=+7.285
+   twin_b_ft                <-> twin_b_fu.001             @(0, 1) d=+7.285
+   twin_b_ft.001            <-> twin_b_fu                 @(0, 1) d=+7.285
+   twin_b_ft.001            <-> twin_b_fu.001             @(0, 1) d=+7.285
+   twin_c_ft                <-> twin_c_fu                 @(1, -1) d=-0.075
+   twin_c_ft                <-> twin_c_fu.001             @(1, -1) d=-0.075
+   twin_c_ft.001            <-> twin_c_fu                 @(1, -1) d=-0.075
+   twin_c_ft.001            <-> twin_c_fu.001             @(1, -1) d=-0.075
+   shed_back                <-> shed_side                 @(2, -1) d=+0.420
+   shed_back                <-> shed_low                  @(2, -1) d=+0.420
+   shed_back                <-> shed_post                 @(2, -1) d=+0.420
+   shed_side                <-> shed_low                  @(2, -1) d=+0.420
+   shed_side                <-> shed_post                 @(2, -1) d=+0.420
+   shed_side                <-> shed_post.001             @(2, -1) d=+0.420
+   shed_side                <-> shed_post.002             @(2, -1) d=+0.420
+   shed_low                 <-> shed_post                 @(2, -1) d=+0.420
+   shed_low                 <-> shed_post.001             @(2, -1) d=+0.420
+   shed_low                 <-> shed_post.002             @(2, -1) d=+0.420
+   field_base               <-> row                       @(2, -1) d=+0.160
+   field_base               <-> row.001                   @(2, -1) d=+0.160
+   field_base               <-> row.002                   @(2, -1) d=+0.160
+   wheat.001                <-> wheat.002                 @(1, -1) d=+3.890
+   wheat.004                <-> wheat.005                 @(1, -1) d=+4.237
+   wheat.007                <-> wheat.008                 @(1, -1) d=+4.583
+   wheat.010                <-> wheat.011                 @(1, -1) d=+4.930
+   wheat.013                <-> wheat.014                 @(1, -1) d=+5.277
+   wheat.016                <-> wheat.017                 @(1, -1) d=+5.623
+   wheat.019                <-> wheat.020                 @(1, -1) d=+5.970
+   wheat.022                <-> wheat.023                 @(1, -1) d=+6.317
+   wheat.025                <-> wheat.026                 @(1, -1) d=+6.663
+   wheat.028                <-> wheat.029                 @(1, -1) d=+7.010
+   wheat.031                <-> wheat.032                 @(1, -1) d=+7.357
+   wheat.034                <-> wheat.035                 @(1, -1) d=+7.703
+   wheat.037                <-> wheat.038                 @(1, -1) d=+8.050
+   pumpkin.001              <-> pumpkin_vine.001          @(2, -1) d=+0.380
+   pumpkin.002              <-> pumpkin_vine.002          @(2, -1) d=+0.380
+   pumpkin.003              <-> pumpkin_vine.003          @(2, -1) d=+0.380
+   pumpkin.004              <-> pumpkin_vine.004          @(2, -1) d=+0.380
+   pumpkin.005              <-> pumpkin_vine.005          @(2, -1) d=+0.380
+   pumpkin.006              <-> pumpkin_vine.006          @(2, -1) d=+0.380
+   pumpkin.007              <-> pumpkin_vine.007          @(2, -1) d=+0.380
+   pumpkin.008              <-> pumpkin_vine.008          @(2, -1) d=+0.380
+   pumpkin.009              <-> pumpkin_vine.009          @(2, -1) d=+0.380
+   pumpkin.010              <-> pumpkin_vine.010          @(2, -1) d=+0.380
+   pumpkin.011              <-> pumpkin_vine.011          @(2, -1) d=+0.380
+   pumpkin.012              <-> pumpkin_vine.012          @(2, -1) d=+0.380
+   tuft.001                 <-> tuft.002                  @(2, -1) d=+0.153
+   tuft.003                 <-> tuft.004                  @(2, -1) d=+0.153
+   tuft.003                 <-> tuft.005                  @(2, -1) d=+0.153
+   tuft.004                 <-> tuft.005                  @(2, -1) d=+0.153
+   tuft.006                 <-> tuft.007                  @(2, -1) d=+0.153
+   tuft.006                 <-> tuft.008                  @(2, -1) d=+0.153
+   tuft.007                 <-> tuft.008                  @(2, -1) d=+0.153
+   tuft.009                 <-> tuft.010                  @(2, -1) d=+0.153
+   tuft.009                 <-> tuft.011                  @(2, -1) d=+0.153
+   tuft.010                 <-> tuft.011                  @(2, -1) d=+0.153
+   fence_f1_post.001        <-> gate_post                 @(2, -1) d=+0.500
+   fence_f2_post            <-> gate_post.001             @(2, -1) d=+0.500
+   crest_barn_edge          <-> crest_barn_rim            @(1, -1) d=+2.510
+   crest_barn_rim           <-> crest_barn_field          @(1, -1) d=+2.514
+=== FLOAT 0 ===
+DONE

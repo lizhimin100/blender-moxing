@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>建造系统 · 铁誓军团</title>
+<style>
+  :root{
+    --bg:#0d0f14; --panel:#141821; --panel2:#1a1f2b; --line:#232937;
+    --txt:#e8ebf2; --dim:#8b93a3; --accent:#c9a227; --team:#2E5FB4;
+    --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--txt);overflow:hidden;
+    font:13px/1.55 "Inter","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  #app{display:flex;height:100%}
+  /* ── 侧栏 ── */
+  aside{width:280px;min-width:280px;background:var(--panel);border-right:1px solid var(--line);
+    display:flex;flex-direction:column;overflow:hidden}
+  .brand{padding:18px 16px 14px;border-bottom:1px solid var(--line)}
+  .brand h1{margin:0;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .brand p{margin:5px 0 0;font-size:11px;color:var(--dim);letter-spacing:.03em}
+  .scroll{overflow-y:auto;flex:1;padding-bottom:20px}
+  .scroll::-webkit-scrollbar{width:7px}
+  .scroll::-webkit-scrollbar-thumb{background:#2b3140;border-radius:4px}
+  section{padding:13px 14px;border-bottom:1px solid var(--line)}
+  section h2{margin:0 0 9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+  .mods{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .mod{background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:8px 9px;
+    cursor:pointer;transition:.12s;text-align:left;font:inherit;color:inherit}
+  .mod:hover{border-color:#3b4457;background:#1f2431}
+  .mod.on{border-color:var(--accent);background:#221f14;box-shadow:inset 0 0 0 1px #3a3113}
+  .mod b{display:block;font-size:12px;font-weight:600}
+  .mod span{display:block;font-size:10px;color:var(--dim);margin-top:1px;font-family:var(--mono)}
+  .ph{display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:4px;cursor:pointer;
+    border:1px solid transparent;font-size:12px}
+  .ph:hover{background:var(--panel2)}
+  .ph.on{background:#241f12;border-color:#4a3c14;color:#f0d98a}
+  .ph i{width:7px;height:7px;border-radius:2px;display:block}
+  .ph em{margin-left:auto;font-style:normal;font-family:var(--mono);font-size:10px;color:var(--dim)}
+  .sws{display:flex;gap:7px}
+  .sw{width:30px;height:30px;border-radius:5px;cursor:pointer;border:2px solid transparent;
+    transition:.12s;position:relative}
+  .sw:hover{transform:translateY(-1px)}
+  .sw.on{border-color:#fff;box-shadow:0 0 0 2px var(--bg),0 0 12px rgba(255,255,255,.16)}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:3px 0;font-size:12px}
+  .row label{color:#c3c9d6}
+  input[type=range]{-webkit-appearance:none;width:100%;height:3px;background:#2c3240;border-radius:2px;outline:none}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;border-radius:50%;
+    background:var(--accent);cursor:pointer;box-shadow:0 0 0 3px rgba(201,162,39,.16)}
+  .ck{display:flex;align-items:center;gap:7px;font-size:11.5px;color:#c3c9d6;cursor:pointer;padding:3px 0}
+  .ck input{accent-color:var(--accent)}
+  .cam{display:flex;gap:5px}
+  .cam button{flex:1;background:var(--panel2);border:1px solid var(--line);color:#c3c9d6;
+    border-radius:4px;padding:5px 0;font:inherit;font-size:11px;cursor:pointer}
+  .cam button:hover{border-color:#3b4457;color:#fff}
+  /* ── 舞台 ── */
+  main{flex:1;position:relative;min-width:0;display:flex;flex-direction:column}
+  #view{position:relative;flex:1;min-height:0}
+  canvas{display:block}
+  .hud{position:absolute;left:20px;top:18px;pointer-events:none}
+  .hud h2{margin:0;font-size:20px;font-weight:600;letter-spacing:.02em}
+  .hud p{margin:4px 0 0;font-size:11px;color:var(--dim);font-family:var(--mono);letter-spacing:.03em}
+  .badge{display:inline-block;margin-top:9px;font:10px/1 var(--mono);letter-spacing:.1em;
+    padding:5px 8px;border:1px solid #3a3222;background:#211d12;color:var(--accent);border-radius:3px}
+  .stat{position:absolute;right:20px;top:18px;text-align:right;font:10px/1.7 var(--mono);color:#5d6577;
+    pointer-events:none;white-space:pre}
+  .tl{margin:0 20px 16px;background:rgba(16,19,26,.92);
+    border:1px solid var(--line);border-radius:8px;padding:11px 14px 10px;backdrop-filter:blur(8px)}
+  .tl .top{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+  .tl button{background:#20262f;border:1px solid var(--line);color:var(--txt);border-radius:4px;
+    padding:5px 10px;font:inherit;font-size:11px;cursor:pointer}
+  .tl button:hover{background:#293040}
+  .tl .t{font:11px/1 var(--mono);color:var(--dim)}
+  .tl .nm{font-size:12px;font-weight:600;letter-spacing:.02em}
+  .track{position:relative;height:26px;border-radius:4px;overflow:hidden;cursor:pointer;
+    background:#171b23;display:flex}
+  .seg{height:100%;position:relative;transition:filter .15s}
+  .seg:hover{filter:brightness(1.35)}
+  .seg span{position:absolute;left:6px;top:6px;font:9px/1 var(--mono);color:rgba(255,255,255,.62);
+    letter-spacing:.06em;white-space:nowrap}
+  .bandtick{position:absolute;top:0;bottom:0;width:1px;background:rgba(255,255,255,.13)}
+  .head{position:absolute;top:-2px;bottom:-2px;width:2px;background:#f2e6b8;
+    box-shadow:0 0 8px rgba(242,230,184,.7);pointer-events:none}
+  .foot{position:absolute;left:20px;bottom:12px;font:10px/1.7 var(--mono);color:#4e5566;pointer-events:none}
+  .loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    background:rgba(13,15,20,.86);color:var(--dim);font:11px/1 var(--mono);letter-spacing:.14em;z-index:9}
+  .toast{position:absolute;left:50%;top:22px;transform:translateX(-50%);background:#241f12;
+    border:1px solid #4a3c14;color:#f0d98a;font-size:11px;padding:6px 12px;border-radius:4px;
+    opacity:0;transition:.25s;pointer-events:none}
+  .toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div id="app">
+  <aside>
+    <div class="brand">
+      <h1>Build System</h1>
+      <p>一套骨架 · 九座通用 / 低模 → 细分</p>
+    </div>
+    <div class="scroll">
+      <section>
+        <h2>建筑 Buildings</h2>
+        <div class="mods" id="list"></div>
+      </section>
+      <section>
+        <h2>阶段 Phases</h2>
+        <div id="phases"></div>
+      </section>
+      <section>
+        <h2>阵营色 Team</h2>
+        <div class="sws" id="teams"></div>
+        <div class="row" style="margin-top:10px"><label>播放速度</label><span class="t" id="spdv">1.00×</span></div>
+        <input type="range" id="spd" min="0.25" max="2" step="0.05" value="1">
+      </section>
+      <section>
+        <h2>显示 Display</h2>
+        <label class="ck"><input type="checkbox" id="dbgGrid" checked> 地面网格</label>
+        <label class="ck"><input type="checkbox" id="dbgShadow" checked> 接触阴影</label>
+        <label class="ck"><input type="checkbox" id="dbgWire"> 线框</label>
+        <label class="ck"><input type="checkbox" id="dbgBand"> 分层描边</label>
+        <label class="ck"><input type="checkbox" id="dbgHi"> 细分档（仅示范座）</label>
+        <div class="cam" style="margin-top:8px">
+          <button data-cam="q">3/4</button><button data-cam="t">俯视</button><button data-cam="f">正面</button>
+        </div>
+      </section>
+    </div>
+  </aside>
+  <main>
+   <div id="view">
+    <div class="hud">
+      <h2 id="hName">—</h2>
+      <p id="hSub"></p>
+      <div class="badge" id="hBadge">BUILD</div>
+    </div>
+    <div class="stat" id="stat"></div>
+    <div class="foot" id="foot">左键旋转 · 右键平移 · 滚轮缩放 · 空格 播放/暂停</div>
+    <div class="loading" id="loading">载入建造资产…</div>
+    <div class="toast" id="toast"></div>
+   </div>
+    <div class="tl">
+      <div class="top">
+        <button id="play">暂停</button>
+        <button id="loop">循环 开</button>
+        <span class="nm" id="tlName">—</span>
+        <span class="t" id="tlTime">0.00 / 0.00s</span>
+        <span class="t" id="tlInfo" style="margin-left:auto"></span>
+      </div>
+      <div class="track" id="track"><div class="head" id="head" style="left:0"></div></div>
+    </div>
+  </main>
+</div>
+<script type="importmap">
+{ "imports": {
+    "three": "./preview/vendor/three.module.js",
+    "three/addons/": "./preview/vendor/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from './preview/vendor/GLTFLoader.js';
+import { OrbitControls } from './preview/vendor/OrbitControls.js';
+
+const DATA = {"buildings": [{"id": "箭塔", "cn": "箭塔", "file": "assets/箭塔/箭塔_建造.glb", "hi": "assets/箭塔/箭塔_建造_细分.glb", "t": 4.744, "bands": [0.86, 1.119, 1.379, 1.638, 1.897, 2.157, 2.416, 2.675, 2.935], "lifts": [0.56, 0.66, 0.76, 0.86], "dismantle": 3.574, "scaf": 0.46, "rise0": 0.86, "rise1": 3.194, "nb": 9, "nl": 4, "fp": [7.08, 7.026], "h": 17.46, "kb": 1461, "kb_hi": 2278, "tri_body": 10024, "tri_site": 3868, "draw": 12}, {"id": "城镇大厅", "cn": "城镇大厅", "file": "assets/城镇大厅/城镇大厅_建造.glb", "hi": null, "t": 5.398, "bands": [0.86, 1.192, 1.524, 1.856, 2.188, 2.52, 2.852, 3.184, 3.516], "lifts": [0.56, 0.66, 0.76, 0.86], "dismantle": 4.228, "scaf": 0.46, "rise0": 0.86, "rise1": 3.848, "nb": 9, "nl": 4, "fp": [18.1, 8.99], "h": 25.15, "kb": 2912, "kb_hi": null, "tri_body": 24074, "tri_site": 4204, "draw": 12}, {"id": "兵营", "cn": "兵营", "file": "assets/兵营/兵营_建造.glb", "hi": null, "t": 4.146, "bands": [0.86, 1.166, 1.472, 1.778, 2.084, 2.39], "lifts": [0.56, 0.66, 0.76], "dismantle": 3.076, "scaf": 0.46, "rise0": 0.86, "rise1": 2.696, "nb": 6, "nl": 3, "fp": [11.08, 14.73], "h": 11.6, "kb": 2946, "kb_hi": null, "tri_body": 24026, "tri_site": 3628, "draw": 12}, {"id": "铁匠铺", "cn": "铁匠铺", "file": "assets/铁匠铺/铁匠铺_建造.glb", "hi": null, "t": 4.166, "bands": [0.86, 1.169, 1.479, 1.788, 2.097, 2.406], "lifts": [0.56, 0.66, 0.76], "dismantle": 3.096, "scaf": 0.46, "rise0": 0.86, "rise1": 2.716, "nb": 6, "nl": 3, "fp": [9.931, 11.81], "h": 11.83, "kb": 2424, "kb_hi": null, "tri_body": 19552, "tri_site": 3628, "draw": 12}, {"id": "农场", "cn": "农场", "file": "assets/农场/农场_建造.glb", "hi": null, "t": 4.019, "bands": [0.86, 1.202, 1.544, 1.886, 2.227], "lifts": [0.56, 0.66, 0.76], "dismantle": 2.949, "scaf": 0.46, "rise0": 0.86, "rise1": 2.569, "nb": 5, "nl": 3, "fp": [15.35, 12.75], "h": 10.11, "kb": 1816, "kb_hi": null, "tri_body": 14042, "tri_site": 3748, "draw": 12}, {"id": "哨塔", "cn": "哨塔", "file": "assets/哨塔/哨塔_建造.glb", "hi": null, "t": 4.734, "bands": [0.86, 1.15, 1.441, 1.731, 2.022, 2.312, 2.603, 2.893], "lifts": [0.56, 0.66, 0.76, 0.86], "dismantle": 3.564, "scaf": 0.46, "rise0": 0.86, "rise1": 3.184, "nb": 8, "nl": 4, "fp": [7.16, 7.12], "h": 17.34, "kb": 1754, "kb_hi": null, "tri_body": 12764, "tri_site": 3868, "draw": 12}, {"id": "伐木场", "cn": "伐木场", "file": "assets/伐木场/伐木场_建造.glb", "hi": null, "t": 3.717, "bands": [0.86, 1.237, 1.613, 1.99], "lifts": [0.56, 0.66], "dismantle": 2.747, "scaf": 0.46, "rise0": 0.86, "rise1": 2.367, "nb": 4, "nl": 2, "fp": [16.811, 10.921], "h": 7.725, "kb": 1756, "kb_hi": null, "tri_body": 14331, "tri_site": 3292, "draw": 12}, {"id": "神秘圣地", "cn": "神秘圣地", "file": "assets/神秘圣地/神秘圣地_建造.glb", "hi": null, "t": 4.635, "bands": [0.86, 1.138, 1.416, 1.694, 1.973, 2.251, 2.529, 2.807], "lifts": [0.56, 0.66, 0.76, 0.86], "dismantle": 3.465, "scaf": 0.46, "rise0": 0.86, "rise1": 3.085, "nb": 8, "nl": 4, "fp": [13.7, 14.17], "h": 16.18, "kb": 2319, "kb_hi": null, "tri_body": 18590, "tri_site": 4204, "draw": 12}, {"id": "蒸汽车坊", "cn": "蒸汽车坊", "file": "assets/蒸汽车坊/蒸汽车坊_建造.glb", "hi": null, "t": 4.013, "bands": [0.86, 1.201, 1.541, 1.882, 2.223], "lifts": [0.56, 0.66, 0.76], "dismantle": 2.943, "scaf": 0.46, "rise0": 0.86, "rise1": 2.563, "nb": 5, "nl": 3, "fp": [12.16, 14.48], "h": 10.04, "kb": 1690, "kb_hi": null, "tri_body": 12658, "tri_site": 3628, "draw": 12}]};
+const TEAMS = [
+  { id:'blue',  name:'铁誓蓝', main:'#2E5FB4', trim:'#F1CD79' },
+  { id:'red',   name:'赤刃红', main:'#B4382E', trim:'#F0C879' },
+  { id:'green', name:'苍苔绿', main:'#2F7A5A', trim:'#D8C58A' },
+];
+
+const S = {
+  b: null, gltf: null, mixer: null, action: null, clip: null,
+  t: 0, playing: true, loop: true, speed: 1, team: TEAMS[0],
+  mats: [], bandEdges: [], bandLines: null, detail: 'low',
+};
+
+const $ = (id) => document.getElementById(id);
+
+/* ── 渲染器 / 场景 ── */
+const canvas = document.createElement('canvas');
+document.getElementById('view').appendChild(canvas);
+const renderer = new THREE.WebGLRenderer({ canvas, antialias:true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.24;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#0d0f14');
+scene.fog = new THREE.Fog('#0d0f14', 120, 260);
+
+const camera = new THREE.PerspectiveCamera(32, 1, 0.5, 600);
+const controls = new OrbitControls(camera, canvas);
+controls.enableDamping = true;
+controls.dampingFactor = 0.075;
+controls.minDistance = 6;
+controls.maxDistance = 160;
+controls.maxPolarAngle = Math.PI * 0.495;
+
+/* 环境光：不用 PMREM（无头/软渲染下会崩），靠半球光 + 三点光把金属托起来 */
+const hemi = new THREE.HemisphereLight('#cfdae6', '#2b2a22', 0.85);
+scene.add(hemi);
+const key = new THREE.DirectionalLight('#fff6ea', 2.35);
+key.position.set(-16, 26, -14);
+key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048);
+key.shadow.bias = -0.0006;
+key.shadow.normalBias = 0.03;
+key.shadow.camera.left = -20; key.shadow.camera.right = 20;
+key.shadow.camera.top = 20; key.shadow.camera.bottom = -20;
+key.shadow.camera.near = 1; key.shadow.camera.far = 90;
+scene.add(key);
+const fill = new THREE.DirectionalLight('#a9c6ff', 0.62);
+fill.position.set(18, 10, 12);
+scene.add(fill);
+const rim = new THREE.DirectionalLight('#dce8ff', 0.35);
+rim.position.set(6, 14, 20);
+scene.add(rim);
+
+/* 地面 */
+const ground = new THREE.Mesh(
+  new THREE.PlaneGeometry(400, 400),
+  new THREE.MeshStandardMaterial({ color:'#333b2c', roughness:1, metalness:0 })
+);
+ground.rotation.x = -Math.PI / 2;
+ground.receiveShadow = true;
+scene.add(ground);
+
+const grid = new THREE.GridHelper(120, 60, '#39422f', '#2f3729');
+grid.material.opacity = 0.55;
+grid.material.transparent = true;
+grid.position.y = 0.005;
+scene.add(grid);
+
+/* ── 侧栏 ── */
+function buildList() {
+  const host = $('list');
+  DATA.buildings.forEach((b) => {
+    const el = document.createElement('button');
+    el.className = 'mod' + (b.id === DATA.buildings[0].id ? ' on' : '');
+    el.dataset.id = b.id;
+    el.innerHTML = `<b>${b.cn}</b><span>${b.nb} 层 · ${b.nl} 步</span>`;
+    el.onclick = () => load(b.id);
+    host.appendChild(el);
+  });
+}
+
+const TEAM_HOST = $('teams');
+TEAMS.forEach((t, i) => {
+  const el = document.createElement('div');
+  el.className = 'sw' + (i === 0 ? ' on' : '');
+  el.style.background = `linear-gradient(135deg, ${t.main} 0 62%, ${t.trim} 62% 100%)`;
+  el.title = t.name;
+  el.onclick = () => {
+    S.team = t;
+    document.querySelectorAll('.sw').forEach((x) => x.classList.remove('on'));
+    el.classList.add('on');
+    applyTeam();
+  };
+  TEAM_HOST.appendChild(el);
+});
+
+function applyTeam() {
+  const m = new THREE.Color(S.team.main);
+  const tr = new THREE.Color(S.team.trim);
+  S.mats.forEach((mat) => {
+    if (mat.name === 'team') mat.color.copy(m);
+    if (mat.name === 'team_trim') mat.color.copy(tr);
+  });
+}
+
+/* ── 阶段 ── */
+function phasesOf(b) {
+  return [
+    { n:'场地放线', a:0, z:b.scaf, c:'#6f6248' },
+    { n:'立架', a:b.scaf, z:b.rise0, c:'#8a7440' },
+    { n:'拔地而起', a:b.rise0, z:b.dismantle, c:'#c9a227' },
+    { n:'撤架清场', a:b.dismantle, z:b.t, c:'#4c5568' },
+  ];
+}
+
+function buildPhases(b) {
+  const host = $('phases');
+  host.innerHTML = '';
+  const phs = phasesOf(b);
+  phs.forEach((p) => {
+    const el = document.createElement('div');
+    el.className = 'ph';
+    el.innerHTML = `<i style="background:${p.c}"></i>${p.n}<em>${p.a.toFixed(2)}s</em>`;
+    el.onclick = () => { setTime(p.a + 0.02); S.playing = true; $('play').textContent = '暂停'; };
+    host.appendChild(el);
+  });
+  const tr = $('track');
+  tr.querySelectorAll('.seg,.bandtick').forEach((x) => x.remove());
+  phs.forEach((p) => {
+    const d = document.createElement('div');
+    d.className = 'seg';
+    d.style.width = ((p.z - p.a) / b.t * 100) + '%';
+    d.style.background = p.c;
+    d.innerHTML = `<span>${p.n}</span>`;
+    d.onclick = (e) => { e.stopPropagation(); setTime(p.a + 0.03); };
+    tr.insertBefore(d, $('head'));
+  });
+  b.bands.forEach((t) => {
+    const d = document.createElement('div');
+    d.className = 'bandtick';
+    d.style.left = (t / b.t * 100) + '%';
+    tr.insertBefore(d, $('head'));
+  });
+}
+
+/* ── 载入 ── */
+async function load(id, detail) {
+  const b = DATA.buildings.find((x) => x.id === id) || DATA.buildings[0];
+  S.b = b;
+  S.detail = detail || 'low';
+  const file = S.detail === 'hi' && b.hi ? b.hi : b.file;
+  $('loading').style.display = 'flex';
+  $('loading').textContent = '载入 ' + b.cn + (S.detail === 'hi' && b.hi ? ' · 细分档' : ' · 低模档');
+  document.querySelectorAll('.mod').forEach((x) => x.classList.toggle('on', x.dataset.id === b.id));
+
+  if (S.gltf) {
+    scene.remove(S.gltf.scene);
+    S.gltf = null;
+    S.mixer = null;
+    S.mats = [];
+  }
+  const loader = new GLTFLoader();
+  const g = await loader.loadAsync(file);
+  S.gltf = g;
+  const root = g.scene;
+  root.traverse((o) => {
+    if (o.isMesh) {
+      o.castShadow = true;
+      o.receiveShadow = true;
+      o.frustumCulled = false;
+      const mats = Array.isArray(o.material) ? o.material : [o.material];
+      mats.forEach((m) => { if (m && !S.mats.includes(m)) S.mats.push(m); });
+    }
+  });
+  scene.add(root);
+
+  const box = new THREE.Box3().setFromObject(root);
+  const size = box.getSize(new THREE.Vector3());
+  S.center = new THREE.Vector3(0, size.y * 0.38, 0);
+  S.size = size;
+  S.radius = Math.max(size.x, size.y, size.z);
+
+  S.clip = g.animations.find((a) => a.name === 'build') || g.animations[0];
+  S.mixer = new THREE.AnimationMixer(root);
+  S.action = S.mixer.clipAction(S.clip);
+  S.action.play();
+
+  $('hName').textContent = b.cn;
+  $('hSub').textContent = `${b.fp[0].toFixed(1)} × ${b.fp[1].toFixed(1)} × ${b.h.toFixed(1)} m`;
+  $('hBadge').textContent = `${b.nb} LAYERS · ${b.nl} LIFTS · ${((S.detail === 'hi' && b.kb_hi ? b.kb_hi : b.kb)/1024).toFixed(2)} MB`;
+  $('tlName').textContent = b.cn + ' · 建造';
+  $('tlInfo').textContent = `${b.kb} KB · ${b.nb} 层 · clip ${S.clip.duration.toFixed(2)}s`;
+  $('stat').textContent = `tris ${b.tri_body + b.tri_site}\nbody ${b.tri_body} + site ${b.tri_site}\nmats 10 · draw ${b.draw}`;
+
+  $('dbgHi').disabled = !b.hi;
+  $('dbgHi').checked = S.detail === 'hi' && !!b.hi;
+  const tq = new URLSearchParams(location.search).get('team');
+  if (tq) {
+    const tm = TEAMS.find((x) => x.id === tq);
+    if (tm) {
+      S.team = tm;
+      document.querySelectorAll('.sw').forEach((x, i) => x.classList.toggle('on', TEAMS[i].id === tq));
+    }
+  }
+  buildPhases(b);
+  applyTeam();
+  const q = new URLSearchParams(location.search);
+  setCam(q.get('cam') || 'q');
+  const t0 = q.has('t') ? Math.max(0, +q.get('t')) : 0;
+  setTime(t0);
+  S.playing = !q.has('t') && !q.has('pause');
+  $('play').textContent = S.playing ? '暂停' : '播放';
+  $('loading').style.display = 'none';
+  $('dbgBand').checked = false;
+  S.bandEdges = b.bands.concat([b.h]);
+  buildBandLines();
+}
+
+/* 分层描边：每层一条水平框，用极淡的线提示"层" */
+function buildBandLines() {
+  if (S.bandLines) { scene.remove(S.bandLines); S.bandLines = null; }
+  const b = S.b;
+  const g = new THREE.BufferGeometry();
+  const pts = [];
+  const w = b.fp[0] * 0.5 + 0.30, d = b.fp[1] * 0.5 + 0.30;
+  b.bands.concat([b.h]).forEach((z) => {
+    pts.push(-w, z, -d, w, z, -d, w, z, -d, w, z, d,
+             w, z, d, -w, z, d, -w, z, d, -w, z, -d);
+  });
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
+  const m = new THREE.LineBasicMaterial({ color:'#c9a227', transparent:true, opacity:0.30 });
+  S.bandLines = new THREE.LineSegments(g, m);
+  S.bandLines.visible = false;
+  scene.add(S.bandLines);
+}
+
+/* ── 相机 ── */
+function setCam(kind) {
+  if (!S.center) return;
+  const r = S.radius;
+  const c = S.center;
+  const half = THREE.MathUtils.degToRad(camera.fov * 0.5);
+  const fitH = (S.size.y * 0.55 + 1.4) / Math.tan(half);
+  const fitW = (Math.hypot(S.size.x, S.size.z) * 0.55 + 1.4) / (Math.tan(half) * Math.max(camera.aspect, 0.6));
+  const dist = Math.max(fitH, fitW) * 1.10;
+  let az = -34, el = 26;
+  if (kind === 't') el = 62;
+  if (kind === 'f') { az = 0; el = 12; }
+  const a = az * Math.PI / 180, e = el * Math.PI / 180;
+  camera.position.set(
+    c.x + Math.sin(a) * Math.cos(e) * dist,
+    c.y + Math.sin(e) * dist + r * 0.12,
+    c.z - Math.cos(a) * Math.cos(e) * dist
+  );
+  camera.fov = kind === 'f' ? 22 : 30;
+  camera.updateProjectionMatrix();
+  controls.target.copy(c);
+  controls.update();
+}
+
+/* ── 时间轴 ── */
+function setTime(t) {
+  if (!S.clip) return;
+  S.t = Math.max(0, Math.min(S.clip.duration, t));
+  S.action.time = S.t;
+  S.mixer.update(0);
+  $('head').style.left = (S.t / S.clip.duration * 100) + '%';
+  $('tlTime').textContent = `${S.t.toFixed(2)} / ${S.clip.duration.toFixed(2)}s`;
+  const phs = phasesOf(S.b);
+  let cur = 0;
+  phs.forEach((p, i) => { if (S.t >= p.a) cur = i; });
+  document.querySelectorAll('.ph').forEach((el, i) => el.classList.toggle('on', i === cur));
+}
+
+$('play').onclick = () => {
+  S.playing = !S.playing;
+  $('play').textContent = S.playing ? '暂停' : '播放';
+  if (S.playing && S.t >= S.clip.duration - 0.01) setTime(0);
+};
+$('loop').onclick = () => {
+  S.loop = !S.loop;
+  $('loop').textContent = '循环 ' + (S.loop ? '开' : '关');
+};
+$('spd').oninput = (e) => {
+  S.speed = +e.target.value;
+  $('spdv').textContent = S.speed.toFixed(2) + '×';
+};
+$('dbgGrid').onchange = (e) => { grid.visible = e.target.checked; };
+$('dbgShadow').onchange = (e) => {
+  renderer.shadowMap.enabled = e.target.checked;
+  ground.material.needsUpdate = true;
+};
+$('dbgWire').onchange = (e) => {
+  S.mats.forEach((m) => { m.wireframe = e.target.checked; });
+};
+$('dbgBand').onchange = (e) => {
+  if (S.bandLines) S.bandLines.visible = e.target.checked;
+};
+$('dbgHi').onchange = (e) => { load(S.b.id, e.target.checked ? 'hi' : 'low'); };
+document.querySelectorAll('.cam button').forEach((b) => {
+  b.onclick = () => setCam(b.dataset.cam);
+});
+
+const track = $('track');
+let drag = false;
+const seek = (e) => {
+  const r = track.getBoundingClientRect();
+  setTime((e.clientX - r.left) / r.width * S.clip.duration);
+};
+track.addEventListener('pointerdown', (e) => { drag = true; seek(e); });
+addEventListener('pointermove', (e) => { if (drag) seek(e); });
+addEventListener('pointerup', () => { drag = false; });
+addEventListener('keydown', (e) => {
+  if (e.code === 'Space') { e.preventDefault(); $('play').click(); }
+});
+addEventListener('resize', resize);
+function resize() {
+  const w = canvas.parentElement.clientWidth, h = canvas.parentElement.clientHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+}
+resize();
+addEventListener('resize', resize);
+new ResizeObserver(resize).observe(canvas.parentElement);
+
+const clock = new THREE.Clock();
+function tick() {
+  requestAnimationFrame(tick);
+  const dt = clock.getDelta();
+  if (S.playing && S.clip) {
+    let t = S.t + dt * S.speed;
+    if (t >= S.clip.duration) {
+      if (S.loop) t = 0;
+      else { t = S.clip.duration; S.playing = false; $('play').textContent = '播放'; }
+    }
+    setTime(t);
+  }
+  controls.update();
+  renderer.render(scene, camera);
+}
+
+buildList();
+const __q = new URLSearchParams(location.search);
+load(__q.get('b') || DATA.buildings[0].id, __q.get('detail') || 'low');
+tick();
+</script>
+</body>
+</html>

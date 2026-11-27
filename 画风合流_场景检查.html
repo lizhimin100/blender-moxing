@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>画风合流检查 · 联盟建筑 / 方块人 / 秘法精模</title>
+<style>
+  :root{
+    --bg:#101318; --panel:rgba(18,21,27,.93); --line:#2a303b; --txt:#e8ebf0; --dim:#8892a1;
+    --gold:#d9ae55; --cyan:#4fd8ff; --warn:#e0813c;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--txt);
+    font:13px/1.6 "Inter","PingFang SC","Microsoft YaHei",system-ui,sans-serif;}
+  #view{position:fixed;inset:0}
+  #panel{position:fixed;left:14px;top:14px;z-index:5;width:262px;background:var(--panel);
+    border:1px solid var(--line);border-radius:12px;padding:12px 13px 14px;backdrop-filter:blur(10px);
+    max-height:calc(100vh - 28px);overflow:auto}
+  #panel h1{margin:0;font-size:12px;letter-spacing:.06em;font-weight:600;color:#f0e6d2}
+  #panel .sub{font-size:10px;letter-spacing:.14em;color:var(--dim);margin:3px 0 12px}
+  .lab{font-size:10px;letter-spacing:.14em;color:var(--dim);margin:13px 0 6px;
+    padding-top:11px;border-top:1px solid #20242c}
+  .lab:first-of-type{border-top:0;padding-top:0;margin-top:6px}
+  .row{display:flex;gap:5px;flex-wrap:wrap}
+  button{background:#191d24;color:var(--txt);border:1px solid var(--line);border-radius:6px;
+    padding:5px 9px;font:inherit;font-size:11.5px;cursor:pointer;transition:.12s}
+  button:hover{border-color:#3b4557;background:#1e232b}
+  button.on{border-color:var(--gold);background:#241f12;color:#f2dc9b}
+  .stat{font-size:11px;color:var(--dim);display:flex;justify-content:space-between;gap:8px;
+    padding:2.5px 0;font-variant-numeric:tabular-nums}
+  .stat b{color:#cfd6e2;font-weight:500}
+  .stat.hot b{color:var(--warn)}
+  .stat.cool b{color:#7fc7a4}
+  #hud{position:fixed;left:14px;bottom:14px;z-index:5;font:11px/1.7 ui-monospace,Consolas,monospace;
+    color:var(--dim);background:rgba(18,21,27,.86);border:1px solid var(--line);border-radius:8px;
+    padding:7px 10px;white-space:pre}
+  #tip{position:fixed;right:16px;bottom:14px;z-index:5;text-align:right;font-size:11px;color:var(--dim)}
+  #loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:20;
+    background:var(--bg);color:var(--dim);letter-spacing:.22em;font-size:12px;transition:opacity .5s}
+  #loading.hide{opacity:0;pointer-events:none}
+  .hint{font-size:10.5px;color:#6d7787;margin-top:7px;line-height:1.5}
+</style>
+</head>
+<body>
+<div id="view"></div>
+<div id="loading">搭场景中…</div>
+
+<div id="panel">
+  <h1>画风合流检查</h1>
+  <div class="sub">1 unit = 1 m · 真实比例</div>
+
+  <div class="lab">机位</div>
+  <div class="row" id="views">
+    <button data-v="overview" class="on">全景</button>
+    <button data-v="rts">RTS 45°</button>
+    <button data-v="close">兵线</button>
+    <button data-v="hall">建筑</button>
+  </div>
+
+  <div class="lab">材质校准</div>
+  <div class="row" id="fixes">
+    <button data-f="unify">统一材质档</button>
+    <button data-f="team">对齐队色</button>
+  </div>
+  <div class="hint">统一档：把金属度压到 0、粗糙度抬到 ≥0.75，看精模是否还"跳"。</div>
+
+  <div class="lab">隔离</div>
+  <div class="row" id="iso">
+    <button data-i="units" class="on">单位</button>
+    <button data-i="build" class="on">建筑</button>
+    <button data-i="anim" class="on">动作</button>
+  </div>
+
+  <div class="lab">实测口径</div>
+  <div id="stats"></div>
+</div>
+
+<div id="hud"></div>
+<div id="tip">左键旋转 · 右键平移 · 滚轮缩放</div>
+
+<script type="importmap">
+{ "imports": {
+    "three": "./preview/vendor/three.module.js",
+    "three/addons/": "./preview/vendor/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from './preview/vendor/GLTFLoader.js';
+import { OrbitControls } from './preview/vendor/OrbitControls.js';
+
+/* ---------------- 资产表 ---------------- */
+const B = 'assets/建筑/联盟/';
+const U = 'assets/单位/联盟/';
+
+const BUILDINGS = [
+  { name:'城镇大厅', url:B+'城镇大厅/城镇大厅.glb', x:  0, z:-40, ry: Math.PI + 0.06 },
+  { name:'兵营',     url:B+'兵营/兵营.glb',         x:-27, z:-25, ry: Math.PI - 0.10 },
+  { name:'铁匠铺',   url:B+'铁匠铺/铁匠铺.glb',     x: 25, z:-25, ry: Math.PI + 0.12 },
+  { name:'农场',     url:B+'农场/农场.glb',         x:-46, z:-34, ry: Math.PI - 0.04 },
+  { name:'神秘圣地', url:B+'神秘圣地/神秘圣地.glb', x: 42, z:-32, ry: Math.PI + 0.05 },
+  { name:'哨塔',     url:B+'哨塔/哨塔.glb',         x:-15, z:-14, ry: Math.PI },
+  { name:'哨塔',     url:B+'哨塔/哨塔.glb',         x: 17, z:-14, ry: Math.PI },
+];
+
+const UNITS = [
+  { name:'魔金傀儡', url:U+'魔金傀儡/魔金傀儡.glb',        x:  4.6, z:  2.6, ry: Math.PI - 0.22, big:1 },
+  { name:'破法者',   url:U+'破法者/破法者.glb',            x: -1.4, z:  1.8, ry: Math.PI + 0.14 },
+  { name:'破法者',   url:U+'破法者/破法者.glb',            x:  1.6, z:  8.4, ry: Math.PI - 0.35 },
+  { name:'联盟步兵', url:U+'联盟步兵/方块人_联盟步兵.glb',   x: -8.0, z:  5.0, ry: Math.PI + 0.08 },
+  { name:'联盟步兵', url:U+'联盟步兵/方块人_联盟步兵.glb',   x:-10.2, z:  8.6, ry: Math.PI - 0.18 },
+  { name:'联盟步兵', url:U+'联盟步兵/方块人_联盟步兵.glb',   x: -7.4, z: 10.4, ry: Math.PI + 0.30 },
+  { name:'弩兵',     url:U+'弩兵/方块人_弩兵.glb',          x: -5.0, z: 12.6, ry: Math.PI - 0.10 },
+  { name:'弩兵',     url:U+'弩兵/方块人_弩兵.glb',          x: -3.0, z: 14.6, ry: Math.PI + 0.16 },
+  { name:'矮人火枪手',url:U+'矮人火枪手/方块人_矮人火枪手.glb', x: 8.4, z: 8.2, ry: Math.PI + 0.12 },
+  { name:'矮人火枪手',url:U+'矮人火枪手/方块人_矮人火枪手.glb', x:10.6, z:11.0, ry: Math.PI - 0.20 },
+  { name:'农民',     url:U+'农民/方块人_农民.glb',          x:-13.6, z:11.2, ry: Math.PI + 0.24 },
+  { name:'农民',     url:U+'农民/方块人_农民.glb',          x:-15.4, z: 8.0, ry: Math.PI - 0.06 },
+];
+
+/* ---------------- 渲染器 ---------------- */
+const host = document.getElementById('view');
+const renderer = new THREE.WebGLRenderer({ antialias:true, powerPreference:'high-performance' });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.02;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+host.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+const SKY_LO = new THREE.Color('#9aa79b'), SKY_HI = new THREE.Color('#c8d2d4');
+scene.background = SKY_HI.clone();
+scene.fog = new THREE.Fog(new THREE.Color('#b3bdb6'), 120, 300);
+
+const camera = new THREE.PerspectiveCamera(42, innerWidth/innerHeight, 0.2, 800);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.075;
+controls.minDistance = 2.5;
+controls.maxDistance = 160;
+controls.maxPolarAngle = Math.PI * 0.482;
+controls.target.set(0, 4, -14);
+
+/* 天空球 + 环境 */
+const skyMat = new THREE.ShaderMaterial({
+  side: THREE.BackSide, depthWrite:false,
+  uniforms:{ lo:{value:SKY_LO}, hi:{value:SKY_HI} },
+  vertexShader:'varying vec3 vP; void main(){ vP=position; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }',
+  fragmentShader:`varying vec3 vP; uniform vec3 lo; uniform vec3 hi;
+    void main(){ float h=clamp(normalize(vP).y*0.5+0.5,0.0,1.0);
+      vec3 c=mix(lo,hi,smoothstep(0.30,0.92,h));
+      gl_FragColor=vec4(c,1.0); }`
+});
+const sky = new THREE.Mesh(new THREE.SphereGeometry(300, 32, 20), skyMat);
+scene.add(sky);
+
+const pmrem = new THREE.PMREMGenerator(renderer);
+const envScene = new THREE.Scene();
+envScene.add(new THREE.Mesh(new THREE.SphereGeometry(50, 32, 20), skyMat.clone()));
+scene.environment = pmrem.fromScene(envScene, 0.06).texture;
+
+/* 布光：和图标/预览同一套思路，一主一补一轮廓 */
+scene.add(new THREE.HemisphereLight(0xc8d6e2, 0x3a3524, 0.62));
+const key = new THREE.DirectionalLight(0xfff0d8, 2.35);
+key.position.set(-38, 52, 26);
+key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048);
+key.shadow.camera.near = 1; key.shadow.camera.far = 190;
+key.shadow.camera.left = -62; key.shadow.camera.right = 62;
+key.shadow.camera.top = 62;  key.shadow.camera.bottom = -46;
+key.shadow.bias = -0.0009;
+key.shadow.normalBias = 0.04;
+scene.add(key);
+const fill = new THREE.DirectionalLight(0xa9c6ee, 0.62);
+fill.position.set(46, 24, 30);
+scene.add(fill);
+const rim = new THREE.DirectionalLight(0xffd9a6, 0.85);
+rim.position.set(6, 26, -60);
+scene.add(rim);
+
+/* ---------------- 地形 ---------------- */
+const texLoader = new THREE.TextureLoader();
+function tile(url, rx, ry){
+  const t = texLoader.load(url);
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.repeat.set(rx, ry);
+  t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = renderer.capabilities.getMaxAnisotropy();
+  return t;
+}
+const ground = new THREE.Mesh(
+  new THREE.PlaneGeometry(160, 160),
+  new THREE.MeshStandardMaterial({ map: tile('assets/地形/草地.png', 20, 20), roughness:1, metalness:0 })
+);
+ground.rotation.x = -Math.PI/2;
+ground.receiveShadow = true;
+scene.add(ground);
+
+// 建筑区夯土空地
+const clearing = new THREE.Mesh(
+  new THREE.CircleGeometry(1, 72),
+  new THREE.MeshStandardMaterial({ map: tile('assets/地形/泥土.png', 7, 5), roughness:1, metalness:0 })
+);
+clearing.rotation.x = -Math.PI/2;
+clearing.scale.set(44, 30, 1);
+clearing.position.set(0, 0.012, -30);
+clearing.receiveShadow = true;
+scene.add(clearing);
+
+// 傀儡脚下的裂纹泥地
+const cracked = new THREE.Mesh(
+  new THREE.CircleGeometry(6.5, 40),
+  new THREE.MeshStandardMaterial({ map: tile('assets/地形/裂纹泥地.png', 1.6, 1.6), roughness:1, metalness:0 })
+);
+cracked.rotation.x = -Math.PI/2;
+cracked.position.set(4.6, 0.024, 2.6);
+cracked.receiveShadow = true;
+scene.add(cracked);
+
+/* ---------------- 载入 ---------------- */
+const loader = new GLTFLoader();
+const mixers = [];
+const mats = new Map();      // uuid -> { m, metal, rough, color, name }
+const unitRoots = [], buildRoots = [];
+let loaded = 0, failed = 0;
+const TOTAL = BUILDINGS.length + UNITS.length;
+
+function collect(root){
+  root.traverse(o=>{
+    if (!o.isMesh) return;
+    o.castShadow = true;
+    o.receiveShadow = true;
+    o.frustumCulled = false;
+    const list = Array.isArray(o.material) ? o.material : [o.material];
+    for (const m of list){
+      if (!m || mats.has(m.uuid)) continue;
+      mats.set(m.uuid, {
+        m,
+        name: (m.name||'').toLowerCase(),
+        metal: m.metalness ?? 0,
+        rough: m.roughness ?? 1,
+        color: m.color ? m.color.clone() : null,
+        emissive: m.emissive ? m.emissive.clone() : null
+      });
+    }
+  });
+}
+
+async function place(item, kind){
+  try {
+    const g = await loader.loadAsync(item.url);
+    const root = g.scene;
+    root.position.set(item.x, 0, item.z);
+    root.rotation.y = item.ry;
+    collect(root);
+    scene.add(root);
+    (kind === 'unit' ? unitRoots : buildRoots).push(root);
+
+    if (g.animations && g.animations.length){
+      const clip = g.animations.find(c=>/idle/i.test(c.name)) || g.animations[0];
+      const mixer = new THREE.AnimationMixer(root);
+      const act = mixer.clipAction(clip);
+      act.time = Math.random() * clip.duration;
+      act.play();
+      mixers.push(mixer);
+    }
+    loaded++;
+  } catch (e) {
+    failed++;
+    console.warn('load fail', item.url, e);
+  }
+}
+
+/* ---------------- 状态 ---------------- */
+const state = { unify:false, team:false, units:true, build:true, anim:true };
+
+function applyLook(){
+  // r169 默认开启色彩管理，Color('#hex') 已自动转入线性工作空间，不要再手动转换
+  const TEAM_SRGB = new THREE.Color('#071D74');
+  const TRIM_SRGB = new THREE.Color('#E09C31');
+
+  for (const { m, name, metal, rough, color } of mats.values()){
+    if (state.unify){
+      m.metalness = 0;
+      m.roughness = Math.max(rough, 0.75);
+      m.envMapIntensity = 0.45;
+    } else {
+      m.metalness = metal;
+      m.roughness = rough;
+      m.envMapIntensity = 1;
+    }
+    if (state.team && color){
+      if (name === 'team')       m.color.copy(TEAM_SRGB);
+      else if (name === 'team_trim') m.color.copy(TRIM_SRGB);
+    } else if (color){
+      m.color.copy(color);
+    }
+  }
+}
+
+function applyIso(){
+  for (const r of unitRoots)  r.visible = state.units;
+  for (const r of buildRoots) r.visible = state.build;
+}
+
+/* ---------------- 机位 ---------------- */
+const VIEWS = {
+  overview:{ pos:new THREE.Vector3( 34, 27,  74), tgt:new THREE.Vector3(  0,  6, -26), fov:40 },
+  rts:     { pos:new THREE.Vector3(  9, 40,  34), tgt:new THREE.Vector3(  1,  0,  -8), fov:30 },
+  close:   { pos:new THREE.Vector3(  2.2, 2.1, 17.5), tgt:new THREE.Vector3( 1.0, 1.5,  3.0), fov:38 },
+  hall:    { pos:new THREE.Vector3( 11, 9, 14), tgt:new THREE.Vector3(  0,  9, -34), fov:44 }
+};
+let tween = null;
+function goto(name){
+  const v = VIEWS[name]; if (!v) return;
+  tween = {
+    t0: performance.now(), dur: 780,
+    p0: camera.position.clone(), p1: v.pos.clone(),
+    q0: controls.target.clone(), q1: v.tgt.clone(),
+    f0: camera.fov, f1: v.fov
+  };
+}
+function stepTween(now){
+  if (!tween) return;
+  let k = (now - tween.t0) / tween.dur;
+  if (k >= 1) k = 1;
+  const e = 1 - Math.pow(1 - k, 3);
+  camera.position.lerpVectors(tween.p0, tween.p1, e);
+  controls.target.lerpVectors(tween.q0, tween.q1, e);
+  camera.fov = tween.f0 + (tween.f1 - tween.f0) * e;
+  camera.updateProjectionMatrix();
+  if (k === 1) tween = null;
+}
+
+/* ---------------- UI ---------------- */
+document.getElementById('views').addEventListener('click', e=>{
+  const b = e.target.closest('button'); if (!b) return;
+  [...e.currentTarget.children].forEach(x=>x.classList.toggle('on', x===b));
+  goto(b.dataset.v);
+});
+document.getElementById('fixes').addEventListener('click', e=>{
+  const b = e.target.closest('button'); if (!b) return;
+  const k = b.dataset.f;
+  state[k] = !state[k];
+  b.classList.toggle('on', state[k]);
+  applyLook();
+});
+document.getElementById('iso').addEventListener('click', e=>{
+  const b = e.target.closest('button'); if (!b) return;
+  const k = b.dataset.i;
+  state[k] = !state[k];
+  b.classList.toggle('on', state[k]);
+  if (k === 'anim'){ mixers.forEach(m=>m.timeScale = state.anim ? 1 : 0); }
+  else applyIso();
+});
+
+const STATS = [
+  ['破法者 23.0k tri · 金属面 18%', 'hot'],
+  ['魔金傀儡 25.4k tri · 金属面 99%', 'hot'],
+  ['方块人 3.4–9.0k tri · 金属面 0%', 'cool'],
+  ['建筑 26–83k tri · 金属面 0.5–3%', 'cool'],
+  ['队色 精模 #061861 / 建筑 #071D74', 'hot'],
+];
+document.getElementById('stats').innerHTML = STATS
+  .map(([t, c])=>`<div class="stat ${c}"><span>${t}</span></div>`).join('');
+
+/* ---------------- HUD ---------------- */
+const hud = document.getElementById('hud');
+let fpsT = performance.now(), fpsN = 0, fps = 0;
+
+/* ---------------- 主循环 ---------------- */
+const clock = new THREE.Clock();
+function loop(){
+  requestAnimationFrame(loop);
+  const now = performance.now();
+  const dt = Math.min(clock.getDelta(), 0.05);
+  if (state.anim) mixers.forEach(m=>m.update(dt));
+  stepTween(now);
+  controls.update();
+  renderer.render(scene, camera);
+
+  fpsN++;
+  if (now - fpsT > 500){ fps = Math.round(fpsN * 1000 / (now - fpsT)); fpsN = 0; fpsT = now; }
+  hud.textContent =
+    `载入 ${loaded}/${TOTAL}${failed ? ` · 失败 ${failed}` : ''}   ${fps} fps\n` +
+    `材质 ${mats.size} 个 · 动作 ${mixers.length} 条\n` +
+    `1 格 = 8 m · 步兵 1.75 m · 傀儡 4.30 m · 大厅 25.2 m`;
+}
+
+/* ---------------- 启动 ---------------- */
+const Q = new URLSearchParams(location.search);
+
+(async ()=>{
+  // ?v=rts|close|hall|overview  ?fix=unify,team
+  const v0 = VIEWS[Q.get('v')] ? Q.get('v') : 'overview';
+  const fix = (Q.get('fix') || '').split(',').filter(Boolean);
+  if (fix.includes('unify')) state.unify = true;
+  if (fix.includes('team'))  state.team  = true;
+  if (fix.length){
+    [...document.getElementById('fixes').children].forEach(b=>{
+      b.classList.toggle('on', !!state[b.dataset.f]);
+    });
+  }
+  [...document.getElementById('views').children].forEach(b=>{
+    b.classList.toggle('on', b.dataset.v === v0);
+  });
+
+  camera.position.copy(VIEWS[v0].pos);
+  camera.fov = VIEWS[v0].fov;
+  camera.updateProjectionMatrix();
+  controls.target.copy(VIEWS[v0].tgt);
+
+  await Promise.all([
+    ...BUILDINGS.map(b=>place(b,'build')),
+    ...UNITS.map(u=>place(u,'unit')),
+  ]);
+  applyLook();
+  applyIso();
+  document.getElementById('loading').classList.add('hide');
+  loop();
+})();
+
+addEventListener('resize', ()=>{
+  camera.aspect = innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+</script>
+</body>
+</html>

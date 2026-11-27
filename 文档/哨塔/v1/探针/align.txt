@@ -1,0 +1,224 @@
+ITEMS 503
+=== CLIP_CROSS 0 ===
+=== CLIP_INNER 1138 (前 24) ===
+   6  yard_soil                <-> yard_curb
+   6  yard_soil                <-> yard_curb.001
+   6  yard_soil                <-> yard_curb_b
+   8  yard_soil                <-> plinth_lo
+   4  yard_soil                <-> step_0
+   4  yard_soil                <-> step_1
+   4  yard_soil                <-> fence_fL_plank
+   4  yard_soil                <-> fence_fL_plank.001
+   4  yard_soil                <-> fence_fL_plank.002
+   4  yard_soil                <-> fence_sL_plank
+   4  yard_soil                <-> fence_sL_plank.001
+   8  yard_soil                <-> fence_corner
+   4  yard_soil                <-> fence_fR_plank
+   4  yard_soil                <-> fence_fR_plank.001
+   4  yard_soil                <-> fence_fR_plank.002
+   4  yard_soil                <-> fence_sR_plank
+   4  yard_soil                <-> fence_sR_plank.001
+   8  yard_soil                <-> fence_corner.001
+   8  yard_soil                <-> barrel_a
+   8  yard_soil                <-> barrel_b
+   4  yard_soil                <-> pebble_
+   4  yard_soil                <-> pebble_.001
+   4  yard_soil                <-> pebble_.002
+   4  yard_soil                <-> pebble_.003
+=== CONTAIN 33 ===
+   step_0                    in  yard_soil
+   slot_.004                 in  sb_core
+   slot_.005                 in  sb_core
+   gate_band                 in  sb_dado
+   ldr_post.001              in  ldr_rail
+   ldr_post.002              in  ldr_rail
+   ldr_post.003              in  ldr_rail
+   ldr_post.004              in  ldr_rail
+   p1_f_post                 in  p1_gatepost.001
+   cp_col_cap                in  cp_roof_l
+   cp_col_cap.001            in  cp_roof_l
+   cp_col_cap.002            in  cp_roof_r
+   cp_col_cap.003            in  cp_roof_r
+   cp_seam.001               in  cp_roof_r
+   cp_seam.003               in  cp_roof_r
+   cp_seam                   in  cp_roof_l
+   cp_seam.002               in  cp_roof_l
+   gab_mull                  in  gab_tri
+   gab_mull.001              in  gab_tri
+   gab_mull.002              in  gab_tri
+   gab_mull                  in  gab_brace
+   gab_mull.002              in  gab_brace.001
+   gab_mull.003              in  gab_tri.001
+   gab_mull.004              in  gab_tri.001
+   gab_mull.005              in  gab_tri.001
+   gab_mull.003              in  gab_brace.002
+   gab_mull.005              in  gab_brace.003
+   flag_trim                 in  flag_pole
+   fence_fL_plank.002        in  fence_corner
+   fence_fL_post.001         in  fence_corner
+   fence_fR_plank.002        in  fence_corner.001
+   fence_fR_post.001         in  fence_corner.001
+   pile_end.001              in  pile_.001
+=== COPLANAR_UP 0 ===
+=== COPLANAR 216 ===
+   yard_soil                <-> plinth_lo                 @(2, -1) d=+0.000
+   yard_soil                <-> step_0                    @(2, -1) d=+0.000
+   yard_soil                <-> fence_corner              @(2, -1) d=+0.000
+   yard_soil                <-> fence_corner.001          @(2, -1) d=+0.000
+   step_0                   <-> step_1                    @(0, 1) d=+1.450
+   sb_core                  <-> sb_dado                   @(2, -1) d=+0.420
+   sb_front_L               <-> sb_dado                   @(2, -1) d=+0.420
+   sb_front_R               <-> sb_dado                   @(2, -1) d=+0.420
+   w1_wall                  <-> w1_skirt                  @(2, -1) d=+4.260
+   w1_wall                  <-> col1_                     @(2, -1) d=+4.260
+   w1_wall                  <-> col1_.001                 @(2, -1) d=+4.260
+   w1_wall                  <-> col1_.002                 @(2, -1) d=+4.260
+   w1_wall                  <-> col1_.003                 @(2, -1) d=+4.260
+   w1_skirt                 <-> col1_                     @(2, -1) d=+4.260
+   w1_skirt                 <-> col1_.001                 @(2, -1) d=+4.260
+   w1_skirt                 <-> col1_.002                 @(2, -1) d=+4.260
+   w1_skirt                 <-> col1_.003                 @(2, -1) d=+4.260
+   col1_                    <-> rail1_a.002               @(1, -1) d=-1.820
+   col1_                    <-> rail1_b.002               @(1, -1) d=-1.820
+   col1_.001                <-> rail1_a.002               @(1, 1) d=+1.820
+   col1_.001                <-> rail1_b.002               @(1, 1) d=+1.820
+   col1_.002                <-> rail1_a.003               @(1, -1) d=-1.820
+   col1_.002                <-> rail1_b.003               @(1, -1) d=-1.820
+   col1_.003                <-> rail1_a.003               @(1, 1) d=+1.820
+   col1_.003                <-> rail1_b.003               @(1, 1) d=+1.820
+   rail1_a.001              <-> rail1_a.002               @(0, -1) d=-1.940
+   rail1_a.001              <-> rail1_a.003               @(0, 1) d=+1.940
+   rail1_b.001              <-> rail1_b.002               @(0, -1) d=-1.940
+   rail1_b.001              <-> rail1_b.003               @(0, 1) d=+1.940
+   win1_f_jamb              <-> win1_f_head               @(1, -1) d=+1.785
+   win1_f_jamb              <-> win1_f_sill               @(1, -1) d=+1.785
+   win1_f_jamb.001          <-> win1_f_head               @(1, -1) d=+1.785
+   win1_f_jamb.001          <-> win1_f_sill               @(1, -1) d=+1.785
+   win1_s_jamb              <-> win1_s_head               @(1, -1) d=-1.140
+   win1_s_jamb              <-> win1_s_sill               @(0, 1) d=-1.785
+   win1_s_jamb.001          <-> win1_s_head               @(0, 1) d=-1.785
+   win1_s_jamb.001          <-> win1_s_sill               @(0, 1) d=-1.785
+   win1_s_jamb.002          <-> win1_s_head.001           @(1, -1) d=+0.360
+   win1_s_jamb.002          <-> win1_s_sill.001           @(0, 1) d=-1.785
+   win1_s_jamb.003          <-> win1_s_head.001           @(0, 1) d=-1.785
+   win1_s_jamb.003          <-> win1_s_sill.001           @(0, 1) d=-1.785
+   win1_s_jamb.004          <-> win1_s_head.002           @(1, -1) d=-1.140
+   win1_s_jamb.004          <-> win1_s_sill.002           @(0, -1) d=+1.785
+   win1_s_jamb.005          <-> win1_s_head.002           @(0, 1) d=+1.895
+   win1_s_jamb.005          <-> win1_s_sill.002           @(0, -1) d=+1.785
+   win1_s_jamb.006          <-> win1_s_head.003           @(1, -1) d=+0.360
+   win1_s_jamb.006          <-> win1_s_sill.003           @(0, -1) d=+1.785
+   win1_s_jamb.007          <-> win1_s_head.003           @(0, 1) d=+1.895
+   win1_s_jamb.007          <-> win1_s_sill.003           @(0, -1) d=+1.785
+   win1_b_jamb              <-> win1_b_head               @(1, -1) d=-1.895
+   win1_b_jamb              <-> win1_b_sill               @(1, 1) d=-1.785
+   win1_b_jamb.001          <-> win1_b_head               @(1, -1) d=-1.895
+   win1_b_jamb.001          <-> win1_b_sill               @(1, 1) d=-1.785
+   ldr_rail                 <-> ldr_post                  @(1, 1) d=+2.957
+   ldr_rail                 <-> ldr_post.001              @(1, 1) d=+2.957
+   ldr_rail                 <-> ldr_post.002              @(1, 1) d=+2.957
+   ldr_rail                 <-> ldr_post.003              @(1, 1) d=+2.957
+   ldr_rail                 <-> ldr_post.004              @(1, 1) d=+2.957
+   d1_joist                 <-> d1_deck                   @(2, -1) d=+7.860
+   d1_joist.001             <-> d1_deck                   @(2, -1) d=+7.860
+   p1_corner                <-> p1_f_post.003             @(2, -1) d=+8.160
+   p1_corner                <-> p1_r_post.004             @(2, -1) d=+8.160
+   p1_corner.001            <-> p1_gatepost               @(2, -1) d=+8.160
+   p1_corner.002            <-> p1_b_post                 @(2, -1) d=+8.160
+   p1_corner.002            <-> p1_l_post                 @(2, -1) d=+8.160
+   p1_corner.003            <-> p1_b_post.004             @(2, -1) d=+8.160
+   p1_corner.003            <-> p1_r_post                 @(2, -1) d=+8.160
+   p1_gatepost.001          <-> p1_f_kick                 @(2, -1) d=+8.160
+   p1_gatepost.001          <-> p1_f_post                 @(2, -1) d=+8.160
+   p1_f_kick                <-> p1_f_post                 @(2, -1) d=+8.160
+   p1_f_kick                <-> p1_f_post.001             @(2, -1) d=+8.160
+   p1_f_kick                <-> p1_f_post.002             @(2, -1) d=+8.160
+   p1_f_kick                <-> p1_f_post.003             @(2, -1) d=+8.160
+   p1_f_post.003            <-> p1_r_post.004             @(2, -1) d=+8.160
+   p1_b_post                <-> p1_l_post                 @(2, -1) d=+8.160
+   p1_b_post.004            <-> p1_r_post                 @(2, -1) d=+8.160
+   w2_wall                  <-> w2_skirt                  @(2, -1) d=+8.160
+   w2_wall                  <-> col2_                     @(2, -1) d=+8.160
+   w2_wall                  <-> col2_.001                 @(2, -1) d=+8.160
+   w2_wall                  <-> col2_.002                 @(2, -1) d=+8.160
+   w2_wall                  <-> col2_.003                 @(2, -1) d=+8.160
+   w2_skirt                 <-> col2_                     @(2, -1) d=+8.160
+   w2_skirt                 <-> col2_.001                 @(2, -1) d=+8.160
+   w2_skirt                 <-> col2_.002                 @(2, -1) d=+8.160
+   w2_skirt                 <-> col2_.003                 @(2, -1) d=+8.160
+   col2_                    <-> br2_                      @(1, 1) d=-1.350
+   col2_                    <-> br2_.001                  @(0, 1) d=-1.350
+   col2_.001                <-> br2_.002                  @(1, -1) d=+1.350
+   col2_.001                <-> br2_.003                  @(0, 1) d=-1.350
+   col2_.002                <-> br2_.004                  @(1, 1) d=-1.350
+   col2_.002                <-> br2_.005                  @(0, -1) d=+1.350
+   col2_.003                <-> br2_.006                  @(1, -1) d=+1.350
+   col2_.003                <-> br2_.007                  @(0, -1) d=+1.350
+   win2_f_jamb              <-> win2_f_head               @(1, -1) d=+1.535
+   win2_f_jamb              <-> win2_f_sill               @(1, -1) d=+1.535
+   win2_f_jamb.001          <-> win2_f_head               @(1, -1) d=+1.535
+   win2_f_jamb.001          <-> win2_f_sill               @(1, -1) d=+1.535
+   win2_s_jamb              <-> win2_s_head               @(1, -1) d=-0.150
+   win2_s_jamb              <-> win2_s_sill               @(0, 1) d=-1.535
+   win2_s_jamb.001          <-> win2_s_head               @(0, 1) d=-1.535
+   win2_s_jamb.001          <-> win2_s_sill               @(0, 1) d=-1.535
+   win2_s_jamb.002          <-> win2_s_head.001           @(1, -1) d=-0.150
+   win2_s_jamb.002          <-> win2_s_sill.001           @(0, -1) d=+1.535
+   win2_s_jamb.003          <-> win2_s_head.001           @(0, 1) d=+1.645
+   win2_s_jamb.003          <-> win2_s_sill.001           @(0, -1) d=+1.535
+   d2_joist                 <-> d2_deck                   @(2, -1) d=+11.160
+   d2_joist.001             <-> d2_deck                   @(2, -1) d=+11.160
+   p2_f_kick                <-> p2_f_post                 @(2, -1) d=+11.460
+   p2_f_kick                <-> p2_f_post.001             @(2, -1) d=+11.460
+   p2_f_kick                <-> p2_f_post.002             @(2, -1) d=+11.460
+   p2_f_kick                <-> p2_f_post.003             @(2, -1) d=+11.460
+   p2_f_kick                <-> p2_f_post.004             @(2, -1) d=+11.460
+   p2_f_kick                <-> braz_base                 @(2, -1) d=+11.460
+   p2_f_post                <-> p2_l_post.004             @(2, -1) d=+11.460
+   p2_f_post                <-> p2_corner.001             @(2, -1) d=+11.460
+   p2_f_post.004            <-> p2_r_post.004             @(2, -1) d=+11.460
+   p2_f_post.004            <-> p2_corner                 @(2, -1) d=+11.460
+   p2_f_post.004            <-> braz_base                 @(2, -1) d=+11.460
+   p2_b_post                <-> p2_l_post                 @(2, -1) d=+11.460
+   p2_b_post                <-> p2_corner.002             @(2, -1) d=+11.460
+   p2_b_post.004            <-> p2_r_post                 @(2, -1) d=+11.460
+   p2_b_post.004            <-> p2_corner.003             @(2, -1) d=+11.460
+   p2_r_post                <-> p2_corner.003             @(2, -1) d=+11.460
+   p2_r_post.001            <-> barrel_t                  @(2, -1) d=+11.460
+   p2_r_post.004            <-> p2_corner                 @(2, -1) d=+11.460
+   p2_r_post.004            <-> braz_base                 @(2, -1) d=+11.460
+   p2_l_post                <-> p2_corner.002             @(2, -1) d=+11.460
+   p2_l_post.004            <-> p2_corner.001             @(2, -1) d=+11.460
+   p2_corner                <-> braz_base                 @(2, -1) d=+11.460
+   cp_col.001               <-> cp_col_base.001           @(2, -1) d=+11.460
+   cp_col.002               <-> cp_col_base.002           @(2, -1) d=+11.460
+   cp_col.003               <-> cp_col_base.003           @(2, -1) d=+11.460
+   cp_roof_r                <-> cp_roof_l                 @(1, -1) d=-1.830
+   gab_tri                  <-> gab_mull                  @(2, -1) d=+13.950
+   gab_tri                  <-> gab_mull.001              @(2, -1) d=+13.950
+   gab_tri                  <-> gab_mull.002              @(2, -1) d=+13.950
+   gab_tri.001              <-> gab_mull.003              @(2, -1) d=+13.950
+   gab_tri.001              <-> gab_mull.004              @(2, -1) d=+13.950
+   gab_tri.001              <-> gab_mull.005              @(2, -1) d=+13.950
+   crest_gable_rim          <-> crest_gable_field         @(1, -1) d=+1.929
+   crest_flag_edge          <-> crest_flag_rim            @(1, -1) d=+0.017
+   fence_fL_plank           <-> fence_fL_post             @(2, -1) d=+0.160
+   fence_fL_plank.002       <-> fence_fL_post.001         @(2, -1) d=+0.160
+   fence_fL_rail            <-> fence_sL_rail             @(1, 1) d=+3.650
+   fence_fL_rail.001        <-> fence_sL_rail.001         @(1, 1) d=+3.650
+   fence_sL_plank.001       <-> fence_sL_post             @(2, -1) d=+0.160
+   fence_fR_plank           <-> fence_fR_post             @(2, -1) d=+0.160
+   fence_fR_plank.002       <-> fence_fR_post.001         @(2, -1) d=+0.160
+   fence_fR_rail            <-> fence_sR_rail             @(0, 1) d=+3.450
+   fence_fR_rail.001        <-> fence_sR_rail.001         @(0, 1) d=+3.450
+   fence_sR_plank.001       <-> fence_sR_post             @(2, -1) d=+0.160
+   pile_.001                <-> pile_end.001              @(1, -1) d=-2.870
+   tuft_.001                <-> tuft_.002                 @(2, -1) d=+0.153
+   tuft_.003                <-> tuft_.004                 @(2, -1) d=+0.154
+   tuft_.003                <-> tuft_.005                 @(2, -1) d=+0.154
+   tuft_.004                <-> tuft_.005                 @(2, -1) d=+0.153
+   tuft_.006                <-> tuft_.007                 @(2, -1) d=+0.154
+   tuft_.006                <-> tuft_.008                 @(2, -1) d=+0.154
+   tuft_.007                <-> tuft_.008                 @(2, -1) d=+0.153
+=== FLOAT 0 ===
+DONE

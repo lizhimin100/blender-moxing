@@ -1,0 +1,378 @@
+ITEMS 680
+=== CLIP_CROSS 408 ===
+  32  mass_back               (wall) <-> oculus_b_ring           (other)
+  24  clk_corn                (other) <-> tw_para                 (tower)
+  20  break_roll              (other) <-> hip_up.003              (roof)
+  20  break_roll              (other) <-> hip_up.002              (roof)
+  20  break_roll              (other) <-> hip_up.001              (roof)
+  20  break_roll              (other) <-> hip_up                  (roof)
+  16  tw_spire                (tower) <-> sp_finial               (other)
+  16  mass_back               (wall) <-> oculus_b_disc           (other)
+  12  tw_spire                (tower) <-> sp_gold                 (other)
+  12  corn_tw                 (wall) <-> tw_core                 (tower)
+  12  corn_tw                 (wall) <-> pil_tw.001              (other)
+  12  corn_tw                 (wall) <-> pil_tw                  (other)
+  12  break_roll              (other) <-> hip_lo.003              (roof)
+  12  break_roll              (other) <-> hip_lo.002              (roof)
+  12  break_roll              (other) <-> hip_lo.001              (roof)
+  12  break_roll              (other) <-> hip_lo                  (roof)
+  11  tw_face_T               (tower) <-> louv_f_glass            (other)
+  10  tw_clock                (tower) <-> clk_corn                (other)
+  10  roof_up_hR              (roof) <-> break_roll              (other)
+  10  roof_up_hL              (roof) <-> break_roll              (other)
+  10  roof_up_fR              (roof) <-> break_roll              (other)
+  10  roof_up_fL              (roof) <-> break_roll              (other)
+  10  roof_up_b               (roof) <-> break_roll              (other)
+  10  corn_tw                 (wall) <-> tw_face_R               (tower)
+  10  corn_tw                 (wall) <-> tw_face_L               (tower)
+  10  corn_b                  (wall) <-> eave_rim                (roof)
+  10  clk_corn                (other) <-> tw_pier.003             (tower)
+  10  clk_corn                (other) <-> tw_pier.002             (tower)
+  10  clk_corn                (other) <-> tw_pier.001             (tower)
+  10  clk_corn                (other) <-> tw_pier                 (tower)
+   8  tw_face_T               (tower) <-> break_roll              (other)
+   8  tw_face_R               (tower) <-> break_roll              (other)
+   8  tw_face_L               (tower) <-> break_roll              (other)
+   8  tw_core                 (tower) <-> break_roll              (other)
+   8  tw_clock                (tower) <-> clk_band                (other)
+   8  terrace_bed             (other) <-> step_cheek.001          (base)
+   8  terrace_bed             (other) <-> step_cheek              (base)
+   8  string_b                (wall) <-> annex_mass              (other)
+   8  step_out2               (base) <-> newel.001               (other)
+   8  step_out2               (base) <-> newel                   (other)
+   8  sp_base                 (other) <-> tw_spire                (tower)
+   8  quoin.023               (wall) <-> win_b2_side.003         (window)
+   8  quoin.022               (wall) <-> win_b2_side.003         (window)
+   8  quoin.018               (wall) <-> win_b_jamb.003          (window)
+   8  quoin.017               (wall) <-> win_b_jamb.003          (window)
+   8  quoin.007               (wall) <-> win_b2_side             (window)
+   8  quoin.006               (wall) <-> win_b2_side             (window)
+   8  quoin.002               (wall) <-> win_b_jamb              (window)
+   8  quoin.001               (wall) <-> win_b_jamb              (window)
+   8  plinth_low              (base) <-> terrace_bed             (other)
+   8  pil_tw.001              (other) <-> tw_ustring              (tower)
+   8  pil_tw.001              (other) <-> roof_lo_fR              (roof)
+   8  pil_tw                  (other) <-> tw_ustring              (tower)
+   8  pil_tw                  (other) <-> roof_lo_fL              (roof)
+   8  mass_back               (wall) <-> annex_eave              (other)
+   8  land_out                (base) <-> newel.001               (other)
+   8  land_out                (base) <-> newel                   (other)
+   8  dado_s.001              (wall) <-> win_sa_sill.003         (window)
+   8  dado_s.001              (wall) <-> win_sa_sill.002         (window)
+   8  dado_s                  (wall) <-> win_sa_sill.001         (window)
+   8  dado_s                  (wall) <-> win_sa_sill             (window)
+   8  dado_f.001              (wall) <-> win_f_sill.001          (window)
+   8  dado_f                  (wall) <-> win_f_sill              (window)
+   8  dado_cap_s.001          (wall) <-> win_sa_sill.003         (window)
+   8  dado_cap_s.001          (wall) <-> win_sa_sill.002         (window)
+   8  dado_cap_s              (wall) <-> win_sa_sill.001         (window)
+   8  dado_cap_s              (wall) <-> win_sa_sill             (window)
+   8  dado_cap_f.001          (wall) <-> win_f_sill.001          (window)
+   8  dado_cap_f.001          (wall) <-> win_f_jamb.003          (window)
+   8  dado_cap_f.001          (wall) <-> win_f_jamb.002          (window)
+   8  dado_cap_f.001          (wall) <-> pil_tw.001              (other)
+   8  dado_cap_f              (wall) <-> win_f_sill              (window)
+   8  dado_cap_f              (wall) <-> win_f_jamb.001          (window)
+   8  dado_cap_f              (wall) <-> win_f_jamb              (window)
+   8  dado_cap_f              (wall) <-> pil_tw                  (other)
+   8  dado_cap_b              (wall) <-> annex_mass              (other)
+   8  dado_cap_b              (wall) <-> annex_dado              (other)
+   8  dado_cap_b              (wall) <-> annex_cap               (other)
+   8  dado_b                  (wall) <-> annex_mass              (other)
+   8  dado_b                  (wall) <-> annex_dado              (other)
+   8  dado_b                  (wall) <-> annex_cap               (other)
+   8  corn_tw                 (wall) <-> tw_face_T               (tower)
+   8  corn_lip                (wall) <-> tw_face_T               (tower)
+   8  corn_lip                (wall) <-> tw_face_R               (tower)
+   8  corn_lip                (wall) <-> tw_face_L               (tower)
+   8  corn_lip                (wall) <-> pil_tw.001              (other)
+   8  corn_lip                (wall) <-> pil_tw                  (other)
+   8  corn_f.001              (wall) <-> pil_tw.001              (other)
+   8  corn_f.001              (wall) <-> eave_rim                (roof)
+   8  corn_f                  (wall) <-> pil_tw                  (other)
+   8  corn_f                  (wall) <-> eave_rim                (roof)
+   8  bf_corn                 (other) <-> tw_spire                (tower)
+   8  band_t                  (herald) <-> pil_tw.001              (other)
+   8  band_t                  (herald) <-> pil_tw                  (other)
+   8  band_m                  (herald) <-> pil_tw.001              (other)
+   8  band_m                  (herald) <-> pil_tw                  (other)
+   7  tw_spire                (tower) <-> sp_hip.003              (other)
+   7  tw_spire                (tower) <-> sp_hip.002              (other)
+   7  tw_spire                (tower) <-> sp_hip.001              (other)
+   7  tw_spire                (tower) <-> sp_hip                  (other)
+=== CLIP_INNER 1093 (前 24) ===
+   4  plinth_low               <-> plinth_mid
+   4  plinth_mid               <-> plinth_cap
+   6  plinth_mid               <-> step_in0
+   8  plinth_cap               <-> step_in0
+   4  plinth_cap               <-> gate_jamb
+   4  plinth_cap               <-> gate_jamb.001
+   4  plinth_cap               <-> gate_leaf
+   4  plinth_cap               <-> gate_leaf.001
+   4  terrace_bed              <-> terrace_body
+   6  pave_run                 <-> step_in0
+   8  pave_run                 <-> step_in1
+   8  pave_run                 <-> step_in2
+   8  pave_run                 <-> step_in_nose2
+   6  pave_side                <-> step_in0
+   6  pave_side                <-> step_in1
+   6  pave_side                <-> step_in2
+   6  pave_side                <-> step_in_nose2
+   4  pave_side                <-> braz_ped
+   6  pave_side.001            <-> step_in0
+   6  pave_side.001            <-> step_in1
+   6  pave_side.001            <-> step_in2
+   6  pave_side.001            <-> step_in_nose2
+   4  pave_side.001            <-> braz_ped.001
+  10  pave_edge.001            <-> barrel_a
+=== CONTAIN 21 ===
+   step_in_nose0             in  step_in0
+   step_in_nose1             in  step_in1
+   step_in_nose2             in  step_in2
+   gate_glow                 in  tw_face_T
+   gate_bar                  in  tw_face_T
+   gate_bar.001              in  tw_face_T
+   gate_bar.002              in  tw_face_T
+   gate_bar2                 in  tw_face_T
+   clock_f_disc              in  clock_f_ring
+   clock_s_disc              in  clock_s_ring
+   clock_s_disc.001          in  clock_s_ring.001
+   bf_floor                  in  tw_para
+   bf_clapper                in  bf_bell
+   sp_gold                   in  tw_spire
+   oculus_a_disc             in  oculus_a_ring
+   oculus_b_disc             in  oculus_b_ring
+   braz_core                 in  braz_flame
+   braz_core.001             in  braz_flame.001
+   board_note                in  board_face
+   board_note.001            in  board_face
+   board_note.002            in  board_face
+=== COPLANAR_UP 41 ===
+   plinth_cap               <-> step_in0                  @(2, 1) d=+0.720
+   terrace_par_cap          <-> terrace_par_fc            @(2, 1) d=+0.890
+   terrace_par.001          <-> terrace_par_f.001         @(2, 1) d=+0.820
+   terrace_par_cap.001      <-> terrace_par_fc.001        @(2, 1) d=+0.890
+   step_in0                 <-> step_in_nose0             @(2, 1) d=+0.720
+   step_in1                 <-> step_in_nose1             @(2, 1) d=+0.620
+   step_in2                 <-> step_in_nose2             @(2, 1) d=+0.520
+   dado_b                   <-> annex_dado                @(2, 1) d=+1.480
+   dado_b                   <-> annex_dado                @(2, 1) d=+1.480
+   dado_b                   <-> annex_dado                @(2, 1) d=+1.480
+   dado_cap_f               <-> win_f_glass               @(2, 1) d=+1.520
+   dado_cap_f.001           <-> win_f_glass.001           @(2, 1) d=+1.520
+   dado_cap_b               <-> annex_cap                 @(2, 1) d=+1.520
+   dado_cap_b               <-> annex_cap                 @(2, 1) d=+1.520
+   dado_cap_b               <-> annex_cap                 @(2, 1) d=+1.520
+   corn_f                   <-> corn_tw                   @(2, 1) d=+7.800
+   corn_f                   <-> corn_tw                   @(2, 1) d=+7.800
+   corn_f.001               <-> corn_tw                   @(2, 1) d=+7.800
+   corn_f.001               <-> corn_tw                   @(2, 1) d=+7.800
+   gate_glow                <-> gate_leaf                 @(2, 1) d=+3.500
+   gate_glow                <-> gate_leaf.001             @(2, 1) d=+3.500
+   bf_jamb.001              <-> bf_jamb.005               @(2, 1) d=+13.800
+   bf_top                   <-> bf_corn                   @(2, 1) d=+15.100
+   bf_top                   <-> bf_corn                   @(2, 1) d=+15.100
+   bf_top                   <-> bf_corn                   @(2, 1) d=+15.100
+   bf_top_s                 <-> bf_back                   @(2, 1) d=+15.100
+   bf_top_s                 <-> bf_corn                   @(2, 1) d=+15.100
+   bf_top_s                 <-> bf_corn                   @(2, 1) d=+15.100
+   bf_top_s                 <-> bf_corn                   @(2, 1) d=+15.100
+   bf_top_s.001             <-> bf_back                   @(2, 1) d=+15.100
+   bf_top_s.001             <-> bf_corn                   @(2, 1) d=+15.100
+   bf_top_s.001             <-> bf_corn                   @(2, 1) d=+15.100
+   bf_top_s.001             <-> bf_corn                   @(2, 1) d=+15.100
+   bf_back                  <-> bf_corn                   @(2, 1) d=+15.100
+   bf_back                  <-> bf_corn                   @(2, 1) d=+15.100
+   bf_back                  <-> bf_corn                   @(2, 1) d=+15.100
+   annex_mass               <-> annex_corn                @(2, 1) d=+4.600
+   win_sb_glass             <-> win_sb_mull               @(2, 1) d=+7.250
+   win_sb_glass.001         <-> win_sb_mull.001           @(2, 1) d=+7.250
+   win_sb_glass.002         <-> win_sb_mull.002           @(2, 1) d=+7.250
+   win_sb_glass.003         <-> win_sb_mull.003           @(2, 1) d=+7.250
+=== COPLANAR 332 ===
+   plinth_low               <-> terrace_bed               @(2, -1) d=+0.000
+   plinth_cap               <-> step_in0                  @(2, 1) d=+0.720
+   terrace_par_cap          <-> terrace_par_fc            @(2, -1) d=+0.790
+   terrace_par.001          <-> terrace_par_f.001         @(2, -1) d=+0.420
+   terrace_par_cap.001      <-> terrace_par_fc.001        @(2, -1) d=+0.790
+   step_out2                <-> newel                     @(2, -1) d=+0.000
+   step_out2                <-> newel.001                 @(2, -1) d=+0.000
+   land_out                 <-> newel                     @(2, -1) d=+0.000
+   land_out                 <-> newel.001                 @(2, -1) d=+0.000
+   step_cheek               <-> newel                     @(2, -1) d=+0.000
+   step_cheek.001           <-> newel.001                 @(2, -1) d=+0.000
+   step_in0                 <-> step_in_nose0             @(2, 1) d=+0.720
+   step_in1                 <-> step_in_nose1             @(2, 1) d=+0.620
+   step_in2                 <-> step_in_nose2             @(2, 1) d=+0.520
+   threshold                <-> tw_face_L                 @(2, -1) d=+0.720
+   threshold                <-> tw_face_R                 @(2, -1) d=+0.720
+   threshold                <-> gate_jamb                 @(2, -1) d=+0.720
+   threshold                <-> gate_jamb.001             @(2, -1) d=+0.720
+   dado_f                   <-> dado_cap_f                @(1, -1) d=+3.600
+   dado_f                   <-> pil_tw                    @(2, -1) d=+0.720
+   dado_f                   <-> pil_tw_base               @(1, -1) d=+3.600
+   dado_s                   <-> dado_cap_s                @(1, -1) d=-3.600
+   dado_f.001               <-> dado_cap_f.001            @(1, -1) d=+3.600
+   dado_f.001               <-> pil_tw.001                @(2, -1) d=+0.720
+   dado_f.001               <-> pil_tw_base.001           @(1, -1) d=+3.600
+   dado_s.001               <-> dado_cap_s.001            @(1, -1) d=-3.600
+   dado_b                   <-> dado_cap_b                @(1, 1) d=-3.600
+   dado_b                   <-> annex_mass                @(2, -1) d=+0.720
+   dado_b                   <-> annex_dado                @(2, -1) d=+0.720
+   dado_cap_f               <-> pil_tw                    @(1, -1) d=+3.600
+   dado_cap_f               <-> win_f_glass               @(2, 1) d=+1.520
+   dado_cap_f.001           <-> pil_tw.001                @(1, -1) d=+3.600
+   dado_cap_f.001           <-> win_f_glass.001           @(2, 1) d=+1.520
+   dado_cap_b               <-> annex_cap                 @(2, -1) d=+1.430
+   string_f                 <-> pil_tw                    @(1, -1) d=+3.600
+   string_f.001             <-> pil_tw.001                @(1, -1) d=+3.600
+   corn_f                   <-> corn_tw                   @(2, -1) d=+7.560
+   corn_f                   <-> pil_tw                    @(1, -1) d=+3.600
+   corn_f                   <-> roof_lo_fL                @(0, 1) d=-1.800
+   corn_f.001               <-> corn_tw                   @(2, -1) d=+7.560
+   corn_f.001               <-> pil_tw.001                @(1, -1) d=+3.600
+   corn_f.001               <-> roof_lo_fR                @(0, -1) d=+1.800
+   corn_tw                  <-> pil_tw                    @(1, 1) d=+3.700
+   corn_tw                  <-> pil_tw.001                @(1, 1) d=+3.700
+   dentil.013               <-> win_sb_key                @(0, 1) d=-4.800
+   dentil.041               <-> win_sb_key.002            @(0, -1) d=+4.800
+   dentil.058               <-> win_b2_key                @(1, 1) d=-3.600
+   dentil.081               <-> win_b2_key.001            @(1, 1) d=-3.600
+   pil_tw                   <-> lantern_base              @(0, 1) d=-1.650
+   pil_tw                   <-> clk_corbel                @(1, -1) d=+3.600
+   pil_tw.001               <-> pil_tw_base.001           @(1, -1) d=+3.600
+   pil_tw.001               <-> pil_tw_cap.001            @(1, -1) d=+3.600
+   pil_tw.001               <-> lantern_base.001          @(0, -1) d=+1.650
+   pil_tw.001               <-> clk_corbel                @(1, -1) d=+3.600
+   gate_arch                <-> gate_key                  @(1, -1) d=+3.600
+   gate_glow                <-> gate_leaf                 @(2, 1) d=+3.500
+   gate_glow                <-> gate_leaf.001             @(2, 1) d=+3.500
+   gate_bar.001             <-> gate_bar2                 @(1, -1) d=+3.105
+   gate_bar.002             <-> gate_bar2                 @(1, -1) d=+3.105
+   gate_stile               <-> gate_rail                 @(1, -1) d=+3.130
+   gate_stile               <-> gate_rail.001             @(1, -1) d=+3.130
+   gate_stile.001           <-> gate_rail.002             @(1, -1) d=+3.130
+   gate_stile.001           <-> gate_rail.003             @(1, -1) d=+3.130
+   lantern_arm              <-> lantern_frame             @(2, -1) d=+4.145
+   lantern_arm.001          <-> lantern_frame.001         @(2, -1) d=+4.145
+   crest_t_edge             <-> crest_t_rim               @(1, -1) d=+3.604
+   crest_t_rim              <-> crest_t_field             @(1, -1) d=+3.608
+   louv_f_glass             <-> louv_f_jamb               @(0, 1) d=-0.850
+   louv_f_glass             <-> louv_f_jamb.001           @(0, -1) d=+0.850
+   louv_f_mull              <-> louv_f_slat               @(1, -1) d=+3.645
+   louv_f_mull              <-> louv_f_slat.001           @(1, -1) d=+3.645
+   louv_f_mull              <-> louv_f_slat.002           @(1, -1) d=+3.645
+   tw_clock                 <-> clk_band                  @(2, -1) d=+11.100
+   clk_band                 <-> clock_s_ring              @(0, 1) d=-1.920
+   clk_band                 <-> clock_s_ring.001          @(0, -1) d=+1.920
+   clock_f_hand             <-> clock_f_pin               @(1, -1) d=+3.890
+   clock_f_hand.001         <-> clock_f_pin               @(1, -1) d=+3.890
+   clock_s_hand             <-> clock_s_pin               @(0, 1) d=-2.090
+   clock_s_hand.001         <-> clock_s_pin               @(0, 1) d=-2.090
+   clock_s_hand.002         <-> clock_s_hand.003          @(0, 1) d=+2.120
+   clock_s_hand.002         <-> clock_s_pin.001           @(0, -1) d=+2.090
+   clock_s_hand.003         <-> clock_s_pin.001           @(0, -1) d=+2.090
+   tw_para                  <-> tw_pier                   @(2, -1) d=+12.950
+   tw_para                  <-> tw_pier.001               @(2, -1) d=+12.950
+   tw_para                  <-> tw_pier.002               @(2, -1) d=+12.950
+   tw_para                  <-> tw_pier.003               @(2, -1) d=+12.950
+   bf_jamb.001              <-> bf_jamb.005               @(2, -1) d=+13.650
+   bf_top                   <-> bf_corn                   @(2, 1) d=+15.100
+   bf_sill.001              <-> bf_back                   @(2, -1) d=+13.350
+   bf_jamb.002              <-> bf_back                   @(1, -1) d=+0.350
+   bf_top_s                 <-> bf_back                   @(0, -1) d=-1.650
+   bf_top_s                 <-> bf_corn                   @(2, 1) d=+15.100
+   bf_sill.002              <-> bf_back                   @(2, -1) d=+13.350
+   bf_jamb.004              <-> bf_back                   @(1, -1) d=+0.350
+   bf_top_s.001             <-> bf_back                   @(0, 1) d=+1.650
+   bf_top_s.001             <-> bf_corn                   @(2, 1) d=+15.100
+   bf_back                  <-> bf_corn                   @(2, 1) d=+15.100
+   flag_crest_edge          <-> flag_crest_rim            @(1, -1) d=+1.903
+   annex_mass               <-> annex_dado                @(2, -1) d=+0.720
+   annex_mass               <-> annex_cap                 @(1, 1) d=-3.620
+   annex_mass               <-> annex_corn                @(2, 1) d=+4.600
+   annex_dado               <-> annex_cap                 @(1, 1) d=-3.620
+   a_win_x_glass            <-> a_win_x_jamb              @(1, 1) d=-5.825
+   a_win_x_glass            <-> a_win_x_jamb.001          @(1, -1) d=-4.875
+   a_win_x_glass.001        <-> a_win_x_jamb.002          @(1, 1) d=-5.825
+   a_win_x_glass.001        <-> a_win_x_jamb.003          @(1, -1) d=-4.875
+   oculus_a_ring            <-> oculus_a_disc             @(1, 1) d=-7.190
+   win_f_glass              <-> win_f_jamb                @(0, 1) d=-3.975
+   win_f_glass              <-> win_f_jamb.001            @(0, -1) d=-2.725
+   win_f2_side              <-> win_f2_top                @(1, -1) d=+3.600
+   win_f2_side              <-> win_f2_sill               @(1, -1) d=+3.600
+   win_f2_side.001          <-> win_f2_top                @(1, -1) d=+3.600
+   win_f2_side.001          <-> win_f2_sill               @(1, -1) d=+3.600
+   win_f2_top               <-> win_f2_key                @(1, -1) d=+3.600
+   win_f2_mull              <-> win_f2_trans              @(1, -1) d=+3.645
+   win_f_glass.001          <-> win_f_jamb.002            @(0, 1) d=+2.725
+   win_f_glass.001          <-> win_f_jamb.003            @(0, -1) d=+3.975
+   win_f2_side.002          <-> win_f2_top.001            @(1, -1) d=+3.600
+   win_f2_side.002          <-> win_f2_sill.001           @(1, -1) d=+3.600
+   win_f2_side.003          <-> win_f2_top.001            @(1, -1) d=+3.600
+   win_f2_side.003          <-> win_f2_sill.001           @(1, -1) d=+3.600
+   win_f2_top.001           <-> win_f2_key.001            @(1, -1) d=+3.600
+   win_f2_mull.001          <-> win_f2_trans.001          @(1, -1) d=+3.645
+   win_sb_glass             <-> win_sb_mull               @(2, -1) d=+5.550
+   win_sb_side              <-> win_sb_top                @(1, -1) d=-2.450
+   win_sb_side              <-> win_sb_sill               @(0, 1) d=-4.800
+   win_sb_side.001          <-> win_sb_top                @(0, 1) d=-4.800
+   win_sb_side.001          <-> win_sb_sill               @(0, 1) d=-4.800
+   win_sb_top               <-> win_sb_key                @(0, 1) d=-4.800
+   win_sb_mull              <-> win_sb_trans              @(0, 1) d=-4.845
+   win_sb_glass.001         <-> win_sb_mull.001           @(2, -1) d=+5.550
+   win_sb_side.002          <-> win_sb_top.001            @(1, -1) d=+0.850
+   win_sb_side.002          <-> win_sb_sill.001           @(0, 1) d=-4.800
+   win_sb_side.003          <-> win_sb_top.001            @(0, 1) d=-4.800
+   win_sb_side.003          <-> win_sb_sill.001           @(0, 1) d=-4.800
+   win_sb_top.001           <-> win_sb_key.001            @(0, 1) d=-4.800
+   win_sb_mull.001          <-> win_sb_trans.001          @(0, 1) d=-4.845
+   win_sb_glass.002         <-> win_sb_mull.002           @(2, -1) d=+5.550
+   win_sb_side.004          <-> win_sb_top.002            @(1, -1) d=-2.450
+   win_sb_side.004          <-> win_sb_sill.002           @(0, -1) d=+4.800
+   win_sb_side.005          <-> win_sb_top.002            @(1, 1) d=-0.850
+   win_sb_side.005          <-> win_sb_sill.002           @(0, -1) d=+4.800
+   win_sb_top.002           <-> win_sb_key.002            @(0, -1) d=+4.800
+   win_sb_mull.002          <-> win_sb_trans.002          @(0, 1) d=+4.905
+   win_sb_glass.003         <-> win_sb_mull.003           @(2, -1) d=+5.550
+   win_sb_side.006          <-> win_sb_top.003            @(1, -1) d=+0.850
+   win_sb_side.006          <-> win_sb_sill.003           @(0, -1) d=+4.800
+   win_sb_side.007          <-> win_sb_top.003            @(1, 1) d=+2.450
+   win_sb_side.007          <-> win_sb_sill.003           @(0, -1) d=+4.800
+   win_sb_top.003           <-> win_sb_key.003            @(0, -1) d=+4.800
+   win_sb_mull.003          <-> win_sb_trans.003          @(0, 1) d=+4.905
+   wbanner_sL_rod           <-> wbanner_sL_brk            @(2, -1) d=+6.820
+   wbanner_sL_rod           <-> wbanner_sL_brk.001        @(2, -1) d=+6.820
+   wbanner_sL_rim           <-> wbanner_sL_field          @(0, 1) d=-5.117
+   wbanner_sR_rod           <-> wbanner_sR_brk            @(2, -1) d=+6.820
+   wbanner_sR_rod           <-> wbanner_sR_brk.001        @(2, -1) d=+6.820
+   wbanner_sR_rim           <-> wbanner_sR_field          @(0, -1) d=+5.117
+   win_b_glass              <-> win_b_jamb                @(0, 1) d=-4.425
+   win_b_glass              <-> win_b_jamb.001            @(0, -1) d=-3.475
+   win_b2_side              <-> win_b2_top                @(1, 1) d=-3.600
+   win_b2_side              <-> win_b2_sill               @(1, 1) d=-3.600
+   win_b2_side.001          <-> win_b2_top                @(0, 1) d=-3.325
+   win_b2_side.001          <-> win_b2_sill               @(1, 1) d=-3.600
+   win_b2_top               <-> win_b2_key                @(1, 1) d=-3.600
+   win_b2_mull              <-> win_b2_trans              @(1, -1) d=-3.705
+   win_b_glass.001          <-> win_b_jamb.002            @(0, 1) d=+3.475
+   win_b_glass.001          <-> win_b_jamb.003            @(0, -1) d=+4.425
+   win_b2_side.002          <-> win_b2_top.001            @(1, 1) d=-3.600
+   win_b2_side.002          <-> win_b2_sill.001           @(1, 1) d=-3.600
+   win_b2_side.003          <-> win_b2_top.001            @(0, 1) d=+4.575
+   win_b2_side.003          <-> win_b2_sill.001           @(1, 1) d=-3.600
+   win_b2_top.001           <-> win_b2_key.001            @(1, 1) d=-3.600
+   win_b2_mull.001          <-> win_b2_trans.001          @(1, -1) d=-3.705
+   oculus_b_ring            <-> oculus_b_disc             @(1, 1) d=-3.590
+   roof_lo_fL               <-> roof_up_fL                @(0, 1) d=-1.800
+   roof_lo_fR               <-> roof_up_fR                @(0, -1) d=+1.800
+   board_post               <-> board_face                @(0, -1) d=-4.930
+   board_post               <-> board_foot                @(2, -1) d=+0.490
+   board_post.001           <-> board_face                @(0, 1) d=-3.170
+   board_post.001           <-> board_foot                @(2, -1) d=+0.490
+   banner_cloth             <-> banner_ring               @(1, -1) d=+7.755
+   banner_cloth             <-> banner_ring.001           @(1, -1) d=+7.755
+   banner_cloth.001         <-> banner_ring.002           @(1, -1) d=+7.755
+   banner_cloth.001         <-> banner_ring.003           @(1, -1) d=+7.755
+=== FLOAT 0 ===
+DONE

@@ -1,0 +1,840 @@
+"""unit_魔金傀儡.py —— 秘法·魔金傀儡（Arcane Gold Golem，精模：低模 cage + 曲面细分）
+
+设计口径（与破法者同一套库、同一套笔触）：
+  * 1 unit = 1 m，+Y 正面，脚底 z = 0，原点在双足中间；总高 4.35 m（= 2.5 个联盟步兵）。
+  * "一个穿铠甲的大号人"：宽肩 1.30 / 窄腰 0.86 / 粗腿 / 两只巨大握紧的拳头，没有武器。
+  * 体积件走 8/12 点椭圆截面 + Catmull-Clark（soft / soft2）；
+    甲片走 arc 弧形壳 + 倒角（plate）。**任何零件都不出现 4 点方截面。**
+  * 一块 = 一根骨、权重 1.0；关节留 2~4 cm 缝，缝里是 铁 色内胆（不做平滑权重）。
+
+三条读感（俯角 96 px 仍要指认）：
+  ① 头小（0.56 宽）+ 光滑圆顶盔 + 一条水平发光眼缝 —— 不戴冠、不长角；
+  ② 肩极宽（护肩外沿 ±0.96）+ 胸甲 1.30 的桶形 —— 剪影是倒梯形；
+  ③ 两只 0.60×0.56×0.62 的大拳头垂在胯侧 —— 这是全身最重的两块体积。
+
+配色秩序（只靠明度分三档，不换色相）：
+  铁 #2B3039（缝/内胆） < 金暗 #8A6C38（次级甲/过渡） < 金 #C9A24E（主甲）
+  + team 蓝只落在胸口核心环、腰侧窄带；辉 青只落在眼缝/核心/纹路。
+
+组件化（MODULES）：四层，各自成物体
+  body      腿/胯/腹/胸/臂/拳
+  head      盔 + 面甲 + 眼缝 + 盔脊
+  pauldron  护肩两层 ×2
+  runes     胸口核心 + 胸/肩/前臂/腿的发光线（独立小件，供动画缩放脉冲）
+"""
+import math
+import os
+import sys
+
+import bpy
+from mathutils import Vector
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = HERE
+while not os.path.isdir(os.path.join(ROOT, "库")):
+    _up = os.path.dirname(ROOT)
+    if _up == ROOT:
+        break
+    ROOT = _up
+LIB = os.path.join(ROOT, "库")
+for _p in (LIB, HERE):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
+import unitkit2 as K  # noqa: E402
+import unitkit as KU  # noqa: E402  （只借 _obj 建自定义网格）
+
+NAME = "魔金傀儡"
+PREFIX = "mg"
+
+# ── 尺寸表（m）──────────────────────────────────────────────────────────────
+Z_ANKLE = 0.30
+Z_KNEE = 1.16
+Z_HIP = 2.05
+Z_WAIST = 2.30
+Z_CHEST = 2.85
+Z_SHLD = 3.42
+Z_NECK = 3.60
+Z_TOP = 4.34
+
+HIP_X = 0.295          # 胯关节（比脚窄，腿微微外八）
+LEG_X = 0.365          # 踝 / 脚中心
+SH_X = 0.60           # 肩关节
+
+L_THIGH, L_SHIN = 0.92, 0.88
+L_UPPER, L_FORE = 0.70, 0.66
+
+SH_R = Vector((SH_X, 0.0, Z_SHLD))
+SH_L = Vector((-SH_X, 0.0, Z_SHLD))
+
+FIST_R = Vector((0.955, 0.360, 1.940))          # 拳心
+FIST_L = Vector((-0.955, 0.360, 1.940))
+FIST_W, FIST_D, FIST_H = 0.72, 0.66, 0.66     # 宽 / 厚 / 高
+WRIST_OFF = 0.285
+
+HIP_R = Vector((HIP_X, 0.0, Z_HIP))
+HIP_L = Vector((-HIP_X, 0.0, Z_HIP))
+ANK_R = Vector((LEG_X, 0.015, Z_ANKLE))
+ANK_L = Vector((-LEG_X, 0.015, Z_ANKLE))
+BALL_R = Vector((LEG_X, 0.150, 0.105))
+BALL_L = Vector((-LEG_X, 0.150, 0.105))
+TOE_R = Vector((LEG_X, 0.275, 0.070))
+TOE_L = Vector((-LEG_X, 0.275, 0.070))
+
+
+def ik2(root, target, l1, l2, pole):
+    root, target = Vector(root), Vector(target)
+    d = target - root
+    dist = min(d.length, (l1 + l2) * 0.999)
+    dn = d.normalized()
+    a = (l1 * l1 - l2 * l2 + dist * dist) / (2 * dist)
+    h = math.sqrt(max(l1 * l1 - a * a, 0.0))
+    p = Vector(pole) - dn * Vector(pole).dot(dn)
+    if p.length < 1e-6:
+        p = Vector((0, 0, 1)) - dn * dn.z
+    p.normalize()
+    return root + dn * a + p * h
+
+
+def wrist_of(fist, shoulder, off=WRIST_OFF):
+    return Vector(fist) - (Vector(fist) - Vector(shoulder)).normalized() * off
+
+
+WRI_R = wrist_of(FIST_R, SH_R)
+WRI_L = wrist_of(FIST_L, SH_L)
+ELB_R = ik2(SH_R, WRI_R, L_UPPER, L_FORE, (0.55, -1.00, 0.0))
+ELB_L = ik2(SH_L, WRI_L, L_UPPER, L_FORE, (-0.55, -1.00, 0.0))
+KNE_R = ik2(HIP_R, ANK_R, L_THIGH, L_SHIN, (0.0, 1.0, 0.0))
+KNE_L = ik2(HIP_L, ANK_L, L_THIGH, L_SHIN, (0.0, 1.0, 0.0))
+
+HDIR_R = (FIST_R - WRI_R).normalized()
+HDIR_L = (FIST_L - WRI_L).normalized()
+
+# 胸口核心（贴胸甲正面）
+CORE_C = Vector((0.0, 0.335, 2.965))
+PAUL_C = Vector((0.605, -0.004, 3.395))       # 护肩球心
+
+# ── 骨架（26 根：6 躯干 + 8 臂 + 8 腿 + 4 纹路）─────────────────────────────
+def _bones():
+    b = [
+        ("root",  (0, 0, 0), (0, 0, 0.34), None),
+        ("hips",  (0, 0, Z_HIP), (0, 0, Z_WAIST), "root"),
+        ("spine", (0, 0, Z_WAIST), (0, 0, 2.72), "hips"),
+        ("chest", (0, 0, 2.72), (0, 0, Z_SHLD), "spine"),
+        ("neck",  (0, 0, Z_SHLD), (0, 0, 3.66), "chest"),
+        ("head",  (0, 0, 3.66), (0, 0, 4.28), "neck"),
+    ]
+    for s, side in ((1, "R"), (-1, "L")):
+        sh = SH_R if s > 0 else SH_L
+        el = ELB_R if s > 0 else ELB_L
+        wr = WRI_R if s > 0 else WRI_L
+        hd = HDIR_R if s > 0 else HDIR_L
+        b += [
+            ("shoulder_" + side, (s * 0.10, 0, 3.36), tuple(sh), "chest"),
+            ("upperarm_" + side, tuple(sh), tuple(el), "shoulder_" + side),
+            ("forearm_" + side, tuple(el), tuple(wr), "upperarm_" + side),
+            ("hand_" + side, tuple(wr), tuple(wr + hd * 0.24), "forearm_" + side),
+        ]
+        hip = HIP_R if s > 0 else HIP_L
+        kne = KNE_R if s > 0 else KNE_L
+        ank = ANK_R if s > 0 else ANK_L
+        ball = BALL_R if s > 0 else BALL_L
+        toe = TOE_R if s > 0 else TOE_L
+        b += [
+            ("thigh_" + side, tuple(hip), tuple(kne), "hips"),
+            ("shin_" + side, tuple(kne), tuple(ank), "thigh_" + side),
+            ("foot_" + side, tuple(ank), tuple(ball), "shin_" + side),
+            ("toe_" + side, tuple(ball), tuple(toe), "foot_" + side),
+        ]
+    b += [
+        ("rune_chest", (0, 0.335, 3.02), (0, 0.360, 3.22), "chest"),
+        ("rune_R", (0.86, 0.00, 3.46), (0.94, 0.16, 3.46), "shoulder_R"),
+        ("rune_L", (-0.86, 0.00, 3.46), (-0.94, 0.16, 3.46), "shoulder_L"),
+        ("core", tuple(CORE_C), (CORE_C.x, CORE_C.y + 0.10, CORE_C.z), "chest"),
+    ]
+    return b
+
+
+BONES = _bones()
+BONE_NAMES = [b[0] for b in BONES]
+
+MODULES = ("body", "head", "pauldron", "runes")
+
+MATS = {
+    "金":        dict(hexcol="#C9A24E", metal=0.95, rough=0.16),
+    "金暗":      dict(hexcol="#8A6C38", metal=0.90, rough=0.30),
+    "铁":        dict(hexcol="#2B3039", metal=0.55, rough=0.48),
+    "team":      dict(hexcol="#2B57A6", metal=0.30, rough=0.45),
+    "team_trim": dict(hexcol="#E0C070", metal=0.85, rough=0.22),
+    "辉":        dict(hexcol="#4FD8FF", metal=0.0, rough=0.20,
+                      emit="#4FD8FF", estr=3.0),
+}
+
+
+# ══ 通用小件 ════════════════════════════════════════════════════════════════
+def dome_patch(name, center, rx, ry, rz, a0, a1, p0, p1, nu, nv, thick, tilt=0.0):
+    """球面片：theta 从 +X 起绕 Z，phi 从 +Z 往下（度）；tilt 绕 Y 轴外倾。"""
+    ca, sa = math.cos(math.radians(tilt)), math.sin(math.radians(tilt))
+    grid = []
+    for j in range(nv + 1):
+        phi = math.radians(p0 + (p1 - p0) * j / nv)
+        row = []
+        for i in range(nu + 1):
+            th = math.radians(a0 + (a1 - a0) * i / nu)
+            lx = rx * math.sin(phi) * math.cos(th)
+            ly = ry * math.sin(phi) * math.sin(th)
+            lz = rz * math.cos(phi)
+            row.append((center[0] + lx * ca + lz * sa,
+                        center[1] + ly,
+                        center[2] - lx * sa + lz * ca))
+        grid.append(row)
+    return K.grid_shell(name, grid, thick, inside=center)
+
+
+def limb_band(name, p0, p1, r0, r1, a0, a1, nv, nu, thick, out_dir):
+    """绕骨轴的弧形甲片。角度 0 = out_dir 方向。"""
+    p0, p1 = Vector(p0), Vector(p1)
+    ez = (p1 - p0).normalized()
+    out = Vector(out_dir)
+    out = (out - ez * out.dot(ez)).normalized()
+    perp = ez.cross(out).normalized()
+    L = (p1 - p0).length
+    grid = []
+    for j in range(nv + 1):
+        t = j / nv
+        r = r0 + (r1 - r0) * t
+        c = p0 + ez * (L * t)
+        row = []
+        for i in range(nu + 1):
+            a = math.radians(a0 + (a1 - a0) * i / nu)
+            row.append(tuple(c + out * (r * math.cos(a)) + perp * (r * math.sin(a))))
+        grid.append(row)
+    return K.grid_shell(name, grid, thick, inside=tuple((p0 + p1) * 0.5))
+
+
+def disc(name, center, normal, r, thick, n=20):
+    c = Vector(center)
+    ez = Vector(normal).normalized()
+    up = Vector((0, 0, 1))
+    if abs(ez.dot(up)) > 0.95:
+        up = Vector((0, 1, 0))
+    ex = up.cross(ez).normalized()
+    ey = ez.cross(ex).normalized()
+    rows = []
+    for (o, rr) in ((-thick * 0.5, r * 0.84), (-thick * 0.5 + 0.008, r),
+                    (thick * 0.5 - 0.008, r), (thick * 0.5, r * 0.84)):
+        rows.append([tuple(c + ez * o + ex * (rr * math.cos(math.tau * k / n))
+                           + ey * (rr * math.sin(math.tau * k / n))) for k in range(n)])
+    return K.loft(name, rows, True)
+
+
+def ering(cx, cy, z, w, d, n=12):
+    """椭圆截面环；角度 0 = +Y 正前，与 arc_panel 完全同口径。"""
+    return [(cx + w * 0.5 * math.sin(math.tau * k / n),
+             cy + d * 0.5 * math.cos(math.tau * k / n), z) for k in range(n)]
+
+
+def etube(name, stations, n=12):
+    """stations = [(z, cx, cy, w, d)]；整根椭圆放样。"""
+    return K.loft(name, [ering(cx, cy, z, w, d, n) for (z, cx, cy, w, d) in stations], True)
+
+
+def flat_plate(name, pts_xz, thick, y_of, out=0.0):
+    """在"正面近似平面"上的一小块凸起（x,z 多边形，沿 Y 挤出，y 随 z 变）。"""
+    front = [(x, y_of(z) + out + thick, z) for (x, z) in pts_xz]
+    back = [(x, y_of(z) + out, z) for (x, z) in pts_xz]
+    n = len(pts_xz)
+    verts = front + back
+    faces = [(i, (i + 1) % n, n + (i + 1) % n, n + i) for i in range(n)]
+    faces.append(tuple(range(n - 1, -1, -1)))
+    faces.append(tuple(range(n, 2 * n)))
+    return KU._obj(name, verts, faces)
+
+
+def seg_pt(p0, p1, z):
+    """沿 p0→p1 的骨轴取 z 高度处的 (x, y)。"""
+    p0, p1 = Vector(p0), Vector(p1)
+    t = (z - p0.z) / (p1.z - p0.z)
+    t = max(0.0, min(1.0, t))
+    p = p0 + (p1 - p0) * t
+    return p.x, p.y
+
+
+# ══ 躯干轮廓（椭圆，供 arc 完全贴合） ══════════════════════════════════════
+# (z, 宽, 厚, cy)
+CHEST = [(2.800, 1.140, 0.640, -0.006),
+         (2.920, 1.240, 0.702, -0.014),
+         (3.040, 1.300, 0.734, -0.018),
+         (3.200, 1.286, 0.720, -0.016),
+         (3.340, 1.220, 0.664, -0.012),
+         (3.440, 1.130, 0.606, -0.008),
+         (3.520, 0.968, 0.542, -0.006)]
+
+
+def chest_wd(z):
+    if z <= CHEST[0][0]:
+        return CHEST[0][1], CHEST[0][2], CHEST[0][3]
+    if z >= CHEST[-1][0]:
+        return CHEST[-1][1], CHEST[-1][2], CHEST[-1][3]
+    for i in range(len(CHEST) - 1):
+        z0, w0, d0, c0 = CHEST[i]
+        z1, w1, d1, c1 = CHEST[i + 1]
+        if z0 <= z <= z1:
+            t = (z - z0) / (z1 - z0)
+            return (w0 + (w1 - w0) * t, d0 + (d1 - d0) * t, c0 + (c1 - c0) * t)
+    return CHEST[-1][1], CHEST[-1][2], CHEST[-1][3]
+
+
+def chest_front(z):
+    w, d, cy = chest_wd(z)
+    return cy + d * 0.5
+
+
+# ══ 1. 腿 ═══════════════════════════════════════════════════════════════════
+# (z, 宽, 厚) —— 铁内胆轮廓，甲片沿它偏移
+LEG_FLESH = [(2.060, 0.484, 0.520), (1.880, 0.500, 0.537), (1.660, 0.479, 0.516),
+             (1.420, 0.449, 0.486), (1.200, 0.425, 0.460), (1.180, 0.417, 0.450),
+             (1.000, 0.407, 0.438), (0.800, 0.393, 0.423), (0.580, 0.374, 0.404),
+             (0.360, 0.355, 0.383)]
+
+ARMOR_OFF = 0.020
+
+
+def leg_wd(z):
+    if z >= LEG_FLESH[0][0]:
+        return LEG_FLESH[0][1], LEG_FLESH[0][2]
+    if z <= LEG_FLESH[-1][0]:
+        return LEG_FLESH[-1][1], LEG_FLESH[-1][2]
+    for i in range(len(LEG_FLESH) - 1):
+        z0, w0, d0 = LEG_FLESH[i]
+        z1, w1, d1 = LEG_FLESH[i + 1]
+        if z1 <= z <= z0:
+            t = (z - z0) / (z1 - z0)
+            return w0 + (w1 - w0) * t, d0 + (d1 - d0) * t
+    return LEG_FLESH[-1][1], LEG_FLESH[-1][2]
+
+
+def leg_axis(side, z):
+    hip, kne, ank = (HIP_R, KNE_R, ANK_R) if side == "R" else (HIP_L, KNE_L, ANK_L)
+    if z >= kne.z:
+        return seg_pt(hip, kne, z)
+    return seg_pt(kne, ank, z)
+
+
+def legs(u):
+    for s, side in ((1, "R"), (-1, "L")):
+        th, sh, ft, to = ("thigh_" + side, "shin_" + side, "foot_" + side, "toe_" + side)
+        hip, kne, ank = (HIP_R, KNE_R, ANK_R) if s > 0 else (HIP_L, KNE_L, ANK_L)
+        x = s * LEG_X
+
+        # ── 铁内胆（大腿 / 小腿各一段，膝上重叠）──
+        st_t = []
+        for z in (2.06, 1.86, 1.52, 1.20):
+            cx, cy = leg_axis(side, z)
+            w, d = leg_wd(z)
+            st_t.append((z, cx, cy, w, d))
+        u.add(etube("lg_flesh_t_" + side, st_t, 6), th, "铁", "soft", "body", "flesh")
+
+        st_s = []
+        for z in (1.18, 0.98, 0.60, 0.36):
+            cx, cy = leg_axis(side, z)
+            w, d = leg_wd(z)
+            st_s.append((z, cx, cy, w, d))
+        u.add(etube("lg_flesh_s_" + side, st_s, 6), sh, "铁", "soft", "body", "flesh")
+
+        # ── 大腿甲（前 216° 主片 + 后 128° 副片，侧面留铁色暗缝）──
+        ax0, ay0 = leg_axis(side, 1.68)
+        inside_t = (ax0, ay0, 1.68)
+        front, back = [], []
+        for z in (2.020, 1.880, 1.560, 1.320):
+            w, d = leg_wd(z)
+            ax, ay = leg_axis(side, z)
+            front.append((z, -108, 108, w * 0.5 + ARMOR_OFF, d * 0.5 + ARMOR_OFF, ay))
+            back.append((z, 116, 244, w * 0.5 + ARMOR_OFF - 0.006,
+                         d * 0.5 + ARMOR_OFF - 0.006, ay))
+        u.arc("lg_cuisse_" + side, front, 0.024, th, "金", "plate", "body", "thigh",
+              nu=6, inside=inside_t, center=(ax0, 0.0))
+        u.arc("lg_cuisse_b_" + side, back, 0.020, th, "金暗", "plate", "body", "thigh",
+              nu=4, inside=inside_t, center=(ax0, 0.0))
+        rib = []
+        for z in (2.000, 1.700, 1.360):
+            w, d = leg_wd(z)
+            ax, ay = leg_axis(side, z)
+            rib.append((z, -7, 7, w * 0.5 + ARMOR_OFF + 0.012,
+                        d * 0.5 + ARMOR_OFF + 0.012, ay))
+        u.arc("lg_cuisse_rib_" + side, rib, 0.014, th, "金暗", "plate", "body", "thigh",
+              nu=2, inside=inside_t, center=(ax0, 0.0))
+
+        # ── 膝（前包式护膝板：比大腿/胫甲都宽 4 cm，把关节缝盖在下面）──
+        kz = kne.z
+        kst = []
+        for (z, ex, ey) in ((kz + 0.170, 0.008, 0.020), (kz + 0.080, 0.020, 0.046),
+                            (kz - 0.020, 0.024, 0.052), (kz - 0.100, 0.014, 0.030)):
+            w, d = leg_wd(z)
+            ax, ay = leg_axis(side, z)
+            kst.append((z, -110, 110, w * 0.5 + ARMOR_OFF + ex,
+                        d * 0.5 + ARMOR_OFF + ey, ay))
+        kx, ky = leg_axis(side, kz)
+        u.arc("lg_poleyn_" + side, kst, 0.030, sh, "金", "plate", "body", "knee",
+              nu=6, inside=(kx, ky, kz), center=(kx, 0.0))
+        krim = []
+        for (z, ex, ey) in ((kz + 0.186, 0.006, 0.016), (kz + 0.150, 0.010, 0.024)):
+            w, d = leg_wd(z)
+            ax, ay = leg_axis(side, z)
+            krim.append((z, -108, 108, w * 0.5 + ARMOR_OFF + ex,
+                         d * 0.5 + ARMOR_OFF + ey, ay))
+        u.arc("lg_poleyn_rim_" + side, krim, 0.014, sh, "金暗", "hard", "body", "knee",
+              nu=6, inside=(kx, ky, kz), center=(kx, 0.0))
+
+        # ── 小腿甲（前 212° + 后 132°）──
+        sx, sy = leg_axis(side, 0.74)
+        inside_s = (sx, sy, 0.74)
+        gf, gb = [], []
+        for z in (1.060, 0.920, 0.640, 0.470):
+            w, d = leg_wd(z)
+            ax, ay = leg_axis(side, z)
+            gf.append((z, -106, 106, w * 0.5 + ARMOR_OFF, d * 0.5 + ARMOR_OFF, ay))
+            gb.append((z, 114, 246, w * 0.5 + ARMOR_OFF - 0.006,
+                       d * 0.5 + ARMOR_OFF - 0.006, ay))
+        u.arc("lg_greave_" + side, gf, 0.022, sh, "金", "plate", "body", "shin",
+              nu=6, inside=inside_s, center=(sx, 0.0))
+        u.arc("lg_greave_b_" + side, gb, 0.019, sh, "金暗", "plate", "body", "shin",
+              nu=4, inside=inside_s, center=(sx, 0.0))
+        rib2 = []
+        for z in (1.030, 0.760, 0.500):
+            w, d = leg_wd(z)
+            ax, ay = leg_axis(side, z)
+            rib2.append((z, -8, 8, w * 0.5 + ARMOR_OFF + 0.012,
+                         d * 0.5 + ARMOR_OFF + 0.012, ay))
+        u.arc("lg_greave_rib_" + side, rib2, 0.013, sh, "金暗", "plate", "body", "shin",
+              nu=2, inside=inside_s, center=(sx, 0.0))
+
+        # ── 踝套筒（铁色，填小腿/靴之间的缝）──
+        u.add(limb_band("lg_ankle_" + side, (x, 0.030, 0.470), (x, 0.030, 0.330),
+                        0.158, 0.166, -180, 180, 1, 8, 0.012, (0, 1, 0)),
+              sh, "铁", "hard", "body", "joint")
+
+        # ── 靴（大、厚、圆头；鞋底内缩，不做滑板）──
+        u.add(K.loft("lg_boot_" + side,
+                     [ering(x, 0.020, 0.450, 0.396, 0.400, 10),
+                      ering(x, 0.046, 0.290, 0.449, 0.470, 10),
+                      ering(x, 0.082, 0.085, 0.466, 0.560, 10),
+                      ering(x, 0.090, 0.026, 0.429, 0.522, 10)]),
+              ft, "金", "soft", "body", "boot")
+        u.add(etube("lg_sole_" + side, [(0.000, x, 0.090, 0.409, 0.508),
+                                        (0.040, x, 0.090, 0.431, 0.528)], 10),
+              ft, "铁", "hard", "body", "boot")
+        u.add(dome_patch("lg_toecap_" + side, (x, 0.176, 0.098), 0.168, 0.180, 0.120,
+                         -80, 80, 24, 86, 7, 3, 0.016),
+              to, "金暗", "plate", "body", "boot")
+        u.add(limb_band("lg_cuff_" + side, (x, 0.022, 0.474), (x, 0.026, 0.418),
+                        0.160, 0.164, -180, 180, 1, 8, 0.014, (0, 1, 0)),
+              ft, "金暗", "hard", "body", "boot")
+
+
+# ══ 2. 胯 / 腰 ══════════════════════════════════════════════════════════════
+def pelvis(u):
+    u.add(etube("bd_hip", [(1.860, 0, 0.000, 0.880, 0.600),
+                           (1.960, 0, -0.002, 0.990, 0.652),
+                           (2.070, 0, -0.004, 1.010, 0.650),
+                           (2.170, 0, -0.004, 0.900, 0.580)], 10),
+          "hips", "金", "soft", "body", "pelvis")
+    u.arc("bd_cod", [(1.880, -32, 32, 0.440, 0.330), (1.960, -32, 32, 0.482, 0.348),
+                     (2.050, -30, 30, 0.504, 0.344), (2.120, -30, 30, 0.482, 0.320)],
+          0.022, "hips", "金暗", "plate", "body", "pelvis", nu=6, inside=(0, 0, 2.0))
+    # 腰带（铁色缝 + 金暗带）
+    u.add(etube("bd_belt", [(2.168, 0, -0.004, 0.900, 0.580),
+                            (2.200, 0, -0.004, 0.884, 0.566),
+                            (2.240, 0, -0.004, 0.878, 0.562),
+                            (2.272, 0, -0.004, 0.890, 0.570)], 12),
+          "hips", "铁", "plate", "body", "belt")
+    u.add(etube("bd_belt_band", [(2.196, 0, -0.004, 0.892, 0.570),
+                                 (2.242, 0, -0.004, 0.886, 0.566)], 12),
+          "hips", "金暗", "plate", "body", "belt")
+    for s in (1, -1):
+        u.arc("bd_team_%d" % s,
+              [(2.206, s * 62, s * 118, 0.452, 0.288),
+               (2.234, s * 62, s * 118, 0.449, 0.286)],
+              0.010, "hips", "team", "hard", "body", "belt", nu=5, inside=(0, 0, 2.22))
+
+
+# ══ 3. 躯干 ═════════════════════════════════════════════════════════════════
+def torso(u):
+    # 铁色躯干内胆（连续，填所有段缝）
+    u.add(etube("bd_core", [(2.060, 0, 0.000, 0.840, 0.560),
+                            (2.300, 0, -0.002, 0.820, 0.542),
+                            (2.560, 0, -0.008, 0.930, 0.596),
+                            (2.820, 0, -0.014, 1.130, 0.662),
+                            (3.080, 0, -0.018, 1.220, 0.700),
+                            (3.460, 0, -0.010, 1.030, 0.570)], 8),
+          "chest", "铁", "soft", "body", "core")
+
+    # 腰：腹部三段横甲（金暗 → 金 → 金），段间 3.5 cm 铁缝
+    bands = [((2.272, 2.408), (0.886, 0.566), (0.938, 0.594), "金暗"),
+             ((2.444, 2.596), (0.950, 0.600), (1.020, 0.634), "金"),
+             ((2.632, 2.788), (1.040, 0.644), (1.136, 0.686), "金")]
+    for i, ((z0, z1), (w0, d0), (w1, d1), mat) in enumerate(bands):
+        u.arc("bd_ab%d" % i,
+              [(z0, -180, 180, w0 * 0.5, d0 * 0.5), (z1, -180, 180, w1 * 0.5, d1 * 0.5)],
+              0.028, "spine", mat, "plate", "body", "abdomen", nu=6,
+              inside=(0, 0, (z0 + z1) * 0.5))
+
+    # 胸甲
+    u.add(etube("bd_chest", [(z, 0, cy, w, d) for (z, w, d, cy) in CHEST], 12),
+          "chest", "金", "soft", "body", "chest")
+    # 胸甲下沿一道暗金唇边（把胸/腹的段缝收成"叠压"）
+    br = []
+    for z in (2.796, 2.836):
+        w, d, cy = chest_wd(z)
+        br.append((z, -180, 180, w * 0.5 + 0.014, d * 0.5 + 0.014, cy))
+    u.arc("bd_chest_lip", br, 0.016, "chest", "金暗", "hard", "body", "chest",
+          nu=10, inside=(0, 0, 2.82))
+
+    # 上胸甲片（压出领口一条硬边）
+    up = []
+    for z in (3.040, 3.180, 3.300, 3.400):
+        w, d, cy = chest_wd(z)
+        up.append((z, -48, 48, w * 0.5 + 0.016, d * 0.5 + 0.016, cy))
+    u.arc("bd_pec", up, 0.024, "chest", "金", "plate", "body", "chest", nu=9,
+          inside=(0, 0, 3.24))
+    # 胸口中脊
+    u.arc("bd_sternum", [(2.800, -8, 8, 0.582, 0.330), (2.930, -8, 8, 0.632, 0.364),
+                         (3.060, -7, 7, 0.662, 0.378), (3.170, -7, 7, 0.654, 0.372)],
+          0.016, "chest", "金暗", "plate", "body", "chest", nu=2, inside=(0, 0, 2.98))
+    # 背脊
+    u.arc("bd_spine_ridge", [(2.860, 173, 187, 0.580, 0.336), (3.020, 173, 187, 0.640, 0.376),
+                             (3.180, 173, 187, 0.646, 0.372)],
+          0.018, "chest", "金暗", "plate", "body", "chest", nu=2, inside=(0, 0, 3.02))
+    # 护喉（把"脖子插在棍上"堵掉）
+    u.add(etube("bd_gorget", [(3.478, 0, -0.006, 1.030, 0.576),
+                              (3.545, 0, -0.006, 0.880, 0.508),
+                              (3.596, 0, -0.006, 0.680, 0.424),
+                              (3.630, 0, -0.006, 0.526, 0.370)], 10),
+          "chest", "金暗", "plate", "body", "gorget")
+    u.add(etube("bd_gorget_rim", [(3.624, 0, -0.006, 0.532, 0.374),
+                                  (3.646, 0, -0.006, 0.500, 0.360)], 12),
+          "chest", "team_trim", "hard", "body", "gorget")
+
+
+# ══ 4. 臂 / 拳 ══════════════════════════════════════════════════════════════
+def arms(u):
+    for s, side in ((1, "R"), (-1, "L")):
+        sh = SH_R if s > 0 else SH_L
+        el = ELB_R if s > 0 else ELB_L
+        wr = WRI_R if s > 0 else WRI_L
+        ua, fa = "upperarm_" + side, "forearm_" + side
+        out = (s * 0.92, -0.39, 0.0)
+
+        # 肩窝（铁色球窝，藏在护肩下面）
+        u.capsule("jt_shoulder_" + side, sh + Vector((0, 0, 0.04)),
+                  sh + Vector((s * 0.03, -0.01, -0.10)), 0.190, 0.180,
+                  ua, "铁", "soft", "body", "joint", nc=1)
+        # 上臂内胆（暗金，肩根加粗：把护肩下面的空腔填掉）
+        u.capsule("ar_upper_" + side, sh + Vector((0, 0, 0.01)),
+                  el + (sh - el).normalized() * 0.03, 0.242, 0.180,
+                  ua, "金暗", "soft", "body", "upper", nc=1)
+        # 上臂甲（外 264°，从肩根一直包到肘上）
+        u.add(limb_band("ar_rere_" + side, sh + (el - sh).normalized() * 0.005,
+                        el + (sh - el).normalized() * 0.055,
+                        0.252, 0.214, -132, 132, 2, 5, 0.028, out),
+              ua, "金", "plate", "body", "upper")
+        u.add(limb_band("ar_rere_rib_" + side, sh + (el - sh).normalized() * 0.02,
+                        el + (sh - el).normalized() * 0.075,
+                        0.259, 0.221, -9, 9, 2, 2, 0.016, out),
+              ua, "金暗", "plate", "body", "upper")
+
+        # 肘
+        u.capsule("jt_elbow_" + side, el + (sh - el).normalized() * 0.04,
+                  el + (wr - el).normalized() * 0.04, 0.142, 0.142,
+                  fa, "铁", "soft", "body", "joint", nc=1)
+        thc = -40 if s > 0 else 220
+        u.add(dome_patch("ar_couter_" + side, (el.x, el.y - 0.010, el.z),
+                         0.188, 0.184, 0.168, thc - 60, thc + 60, 26, 104, 7, 2, 0.024),
+              fa, "金", "plate", "body", "elbow")
+
+        # 前臂内胆
+        u.capsule("ar_fore_" + side, el + (wr - el).normalized() * 0.025,
+                  wr + (el - wr).normalized() * 0.015, 0.172, 0.156,
+                  fa, "金暗", "soft", "body", "fore", nc=1)
+        # 前臂甲（外 260°，向腕部外张）
+        u.add(limb_band("ar_vamb_" + side, el + (wr - el).normalized() * 0.025,
+                        wr + (el - wr).normalized() * 0.015,
+                        0.206, 0.216, -130, 130, 2, 5, 0.026, out),
+              fa, "金", "plate", "body", "fore")
+        u.add(limb_band("ar_vamb_rib_" + side, el + (wr - el).normalized() * 0.05,
+                        wr + (el - wr).normalized() * 0.03,
+                        0.205, 0.222, -8, 8, 2, 2, 0.015, out),
+              fa, "金暗", "plate", "body", "fore")
+        # 腕箍
+        u.add(limb_band("ar_cuff_" + side, wr + (el - wr).normalized() * 0.035,
+                        wr + (el - wr).normalized() * 0.005,
+                        0.222, 0.226, -180, 180, 1, 8, 0.018, (0, 1, 0)),
+              fa, "金暗", "hard", "body", "cuff")
+
+    fist(u, "R", FIST_R)
+    fist(u, "L", FIST_L)
+
+
+def fist(u, side, c):
+    bone = "hand_" + side
+    s = 1 if side == "R" else -1
+    hw, hd, hh = FIST_W * 0.5, FIST_D * 0.5, FIST_H * 0.5
+    # 拳体：上宽下略收，正面 +Y 是平的
+    rows = []
+    for (dz, k) in ((hh, 0.72), (hh * 0.80, 0.94), (hh * 0.30, 1.00),
+                    (-hh * 0.30, 0.99), (-hh * 0.76, 0.90), (-hh, 0.66)):
+        w = FIST_W * k
+        d = FIST_D * min(1.0, k + 0.05)
+        r = 0.075 + 0.070 * k
+        rows.append([(c.x + p[0], c.y + p[1], c.z + dz)
+                     for p in K.rrect(w, d, r, 1)])
+    u.add(K.loft("ar_fist_" + side, rows), bone, "金", "soft", "body", "hand")
+
+    # 四个指节：只在上半段，横向排列（读成"握拳"而不是"木桶"）
+    for i in range(4):
+        kx = c.x + (i - 1.5) * 0.140
+        u.add(K.loft("ar_knuckle%d_%s" % (i, side),
+                     [ering(kx, c.y + hd - 0.020, c.z + 0.222, 0.118, 0.096, 6),
+                      ering(kx, c.y + hd + 0.002, c.z + 0.180, 0.136, 0.114, 6),
+                      ering(kx, c.y + hd + 0.002, c.z + 0.060, 0.136, 0.114, 6),
+                      ering(kx, c.y + hd - 0.020, c.z + 0.018, 0.118, 0.096, 6)]),
+              bone, "金暗", "soft", "body", "hand")
+    # 拳面横沟（铁色）
+    u.box("ar_fist_gap_" + side, (c.x, c.y + hd - 0.004, c.z - 0.030),
+          (FIST_W * 0.80, 0.044, 0.026), bone, "铁", style="hard",
+          module="body", tag="hand")
+    # 拇指：内侧，从腕侧包到拳面
+    u.capsule("ar_thumb_" + side,
+              (c.x - s * (hw - 0.055), c.y - 0.105, c.z + 0.215),
+              (c.x - s * (hw + 0.030), c.y + 0.170, c.z - 0.075),
+              0.100, 0.088, bone, "金", "soft", "body", "hand", nc=1)
+    # 腕套（铁色，填拳与前臂的缝）
+    u.add(limb_band("ar_wrist_" + side, (c.x, c.y - 0.020, c.z + 0.395),
+                    (c.x, c.y - 0.010, c.z + 0.300),
+                    0.150, 0.160, -180, 180, 1, 8, 0.014, (0, 1, 0)),
+          bone, "铁", "hard", "body", "joint")
+
+
+# ══ 5. 护肩 ═════════════════════════════════════════════════════════════════
+def pauldrons(u):
+    for s, side in ((1, "R"), (-1, "L")):
+        c = (PAUL_C.x * s, PAUL_C.y, PAUL_C.z)
+        a0, a1 = (-152, 152) if s > 0 else (28, 332)
+        # 主片：从肩顶一直垂到臂根（phi 到 116°）
+        u.add(dome_patch("pd_main_" + side, c, 0.358, 0.352, 0.300,
+                         a0, a1, 2, 124, 10, 3, 0.034, tilt=-s * 16),
+              "shoulder_" + side, "金", "plate", "pauldron", "pauldron")
+        # 主片下沿亮金唇边（同色提亮，不做暗环）
+        u.add(dome_patch("pd_rim_" + side, c, 0.366, 0.360, 0.306,
+                         a0 + 2, a1 - 2, 116, 124, 10, 1, 0.024, tilt=-s * 16),
+              "shoulder_" + side, "金", "hard", "pauldron", "rim")
+        # 副片：第二层，压在臂根（半径略小、压暗，藏进主片下面）
+        u.add(dome_patch("pd_lame_" + side, c, 0.336, 0.332, 0.286,
+                         a0 + 14, a1 - 14, 104, 134, 7, 2, 0.030, tilt=-s * 16),
+              "shoulder_" + side, "金暗", "plate", "pauldron", "lame")
+        # 顶级钉线
+        u.add(dome_patch("pd_trim_" + side, c, 0.362, 0.356, 0.304,
+                         a0 + 40, a1 - 40, 20, 27, 7, 1, 0.016, tilt=-s * 16),
+              "shoulder_" + side, "team_trim", "hard", "pauldron", "trim")
+        # 内垫：在护肩壳里面再套一层，消掉俯视/侧视能看到的黑洞
+        u.add(dome_patch("pd_pad_" + side, c, 0.302, 0.298, 0.258,
+                         a0 + 8, a1 - 8, 20, 126, 6, 3, 0.026, tilt=-s * 16),
+              "shoulder_" + side, "金暗", "plate", "pauldron", "pad")
+
+
+# ══ 6. 头 ═══════════════════════════════════════════════════════════════════
+HELM = [(3.652, 0.440, 0.470), (3.702, 0.520, 0.545), (3.782, 0.556, 0.580),
+        (3.884, 0.560, 0.584), (3.984, 0.542, 0.566), (4.088, 0.494, 0.520),
+        (4.194, 0.392, 0.416), (4.288, 0.238, 0.256)]
+HELM_Y = 0.012
+
+
+def helm_wd(z):
+    if z <= HELM[0][0]:
+        return HELM[0][1], HELM[0][2]
+    if z >= HELM[-1][0]:
+        return HELM[-1][1], HELM[-1][2]
+    for i in range(len(HELM) - 1):
+        z0, w0, d0 = HELM[i]
+        z1, w1, d1 = HELM[i + 1]
+        if z0 <= z <= z1:
+            t = (z - z0) / (z1 - z0)
+            return w0 + (w1 - w0) * t, d0 + (d1 - d0) * t
+    return HELM[-1][1], HELM[-1][2]
+
+
+def helm_patch(name, zs, a0, a1, nu, off, thick):
+    grid = []
+    for z in zs:
+        w, d = helm_wd(z)
+        row = []
+        for i in range(nu + 1):
+            a = math.radians(a0 + (a1 - a0) * i / nu)
+            row.append(((w * 0.5 + off) * math.sin(a),
+                        HELM_Y + (d * 0.5 + off) * math.cos(a), z))
+        grid.append(row)
+    return K.grid_shell(name, grid, thick, inside=(0, HELM_Y, sum(zs) / len(zs)))
+
+
+def head(u):
+    # 颈（粗，藏在护喉里）
+    u.add(etube("jt_neck", [(3.420, 0, 0.008, 0.440, 0.440),
+                            (3.520, 0, 0.008, 0.408, 0.412),
+                            (3.640, 0, 0.008, 0.376, 0.386),
+                            (3.700, 0, 0.008, 0.360, 0.370)], 10),
+          "neck", "铁", "soft", "head", "neck")
+
+    # 盔体：光滑圆顶（14 边椭圆 + CC）
+    u.add(etube("hd_helm", [(z, 0, HELM_Y, w, d) for (z, w, d) in HELM], 11),
+          "head", "金", "soft", "head", "helm")
+
+    # 面甲（眼缝以下）
+    u.add(helm_patch("hd_mask", [3.690, 3.820, 3.944], -58, 58, 7, 0.012, 0.018),
+          "head", "金暗", "plate", "head", "mask")
+    # 颌线金带
+    u.add(helm_patch("hd_jaw", [3.654, 3.712], -106, 106, 10, 0.010, 0.014),
+          "head", "金", "plate", "head", "jaw")
+    # 眼缝：暗槽 + 发光条
+    u.add(helm_patch("hd_slit", [3.926, 3.972], -52, 52, 8, 0.003, 0.014),
+          "head", "铁", "plate", "head", "slit")
+    for s2 in (1, -1):
+        u.add(helm_patch("hd_eye_%d" % s2, [3.934, 3.966],
+                         s2 * 10, s2 * 40, 4, 0.010, 0.010),
+              "head", "辉", "hard", "head", "eye")
+    # 眉脊
+    u.add(helm_patch("hd_brow", [3.974, 4.014], -56, 56, 8, 0.012, 0.016),
+          "head", "金", "plate", "head", "brow")
+    # 盔顶低脊（沿 Y）
+    u.add(K.loft("hd_ridge",
+                 [[(-0.030, 0.180, 4.150), (0.030, 0.180, 4.150),
+                   (0.030, 0.180, 4.196), (0.0, 0.180, 4.212),
+                   (-0.030, 0.180, 4.196)],
+                  [(-0.032, 0.030, 4.284), (0.032, 0.030, 4.284),
+                   (0.032, 0.030, 4.330), (0.0, 0.030, 4.348),
+                   (-0.032, 0.030, 4.330)],
+                  [(-0.028, -0.120, 4.226), (0.028, -0.120, 4.226),
+                   (0.028, -0.120, 4.268), (0.0, -0.120, 4.284),
+                   (-0.028, -0.120, 4.268)],
+                  [(-0.020, -0.212, 4.100), (0.020, -0.212, 4.100),
+                   (0.020, -0.212, 4.134), (0.0, -0.212, 4.146),
+                   (-0.020, -0.212, 4.134)]]),
+          "head", "金", "plate", "head", "ridge")
+    # 后颈护甲
+    u.add(dome_patch("hd_nape", (0, 0.004, 3.836), 0.292, 0.302, 0.242,
+                     106, 254, 48, 108, 6, 2, 0.020),
+          "head", "金暗", "plate", "head", "nape")
+    # 盔底沿
+    u.add(helm_patch("hd_helm_rim", [3.654, 3.676], -180, 180, 12, 0.010, 0.012),
+          "head", "team_trim", "hard", "head", "rim")
+
+
+# ══ 7. 发光纹路 ═════════════════════════════════════════════════════════════
+def runes(u):
+    cc = CORE_C
+    # 胸口核心：外圈金 → team 环 → 金 → 发光芯
+    u.add(disc("mg_core_bezel", cc, (0, 1, 0), 0.210, 0.080, 12),
+          "core", "金", "plate", "runes", "core")
+    u.add(disc("mg_core_ring", cc + Vector((0, 0.030, 0)), (0, 1, 0), 0.156, 0.056, 12),
+          "core", "team", "plate", "runes", "core")
+    u.add(disc("mg_core_inner", cc + Vector((0, 0.050, 0)), (0, 1, 0), 0.114, 0.046, 12),
+          "core", "金", "hard", "runes", "core")
+    u.add(disc("mg_core_glow", cc + Vector((0, 0.066, 0)), (0, 1, 0), 0.084, 0.042, 12),
+          "core", "辉", "hard", "runes", "core")
+
+    # 胸口四道斜向光条（绕核心呈放射状）
+    for i, ang in enumerate((40, 140, 220, 320)):
+        a = math.radians(ang)
+        p0 = (0.238 * math.sin(a), cc.z + 0.238 * math.cos(a))
+        p1 = (0.352 * math.sin(a), cc.z + 0.352 * math.cos(a))
+        p0 = (p0[0], max(2.86, min(3.30, p0[1])))
+        p1 = (p1[0], max(2.86, min(3.30, p1[1])))
+        dx, dz = p1[0] - p0[0], p1[1] - p0[1]
+        L = math.hypot(dx, dz)
+        nx, nz = -dz / L, dx / L
+        w0, w1 = 0.019, 0.013
+        poly = [(p0[0] + nx * w0, p0[1] + nz * w0), (p1[0] + nx * w1, p1[1] + nz * w1),
+                (p1[0] - nx * w1, p1[1] - nz * w1), (p0[0] - nx * w0, p0[1] - nz * w0)]
+        u.add(flat_plate("mg_rune_chest%d" % i, poly, 0.014, chest_front),
+              "rune_chest", "辉", "sharp", "runes", "rune")
+
+    # 护肩光条：贴主片外表面两条（phi 34..96）
+    for s, side in ((1, "R"), (-1, "L")):
+        c = (PAUL_C.x * s, PAUL_C.y, PAUL_C.z)
+        for k, th in enumerate((-30, 28)):
+            u.add(dome_patch("mg_rune_sh_%s%d" % (side, k), c,
+                             0.368, 0.362, 0.310, th - 6, th + 6, 34, 96, 2, 4, 0.012,
+                             tilt=-s * 16),
+                  "rune_" + side, "辉", "hard", "runes", "rune")
+
+    # 前臂光条（沿护腕外侧两条）
+    for s, side in ((1, "R"), (-1, "L")):
+        el = ELB_R if s > 0 else ELB_L
+        wr = WRI_R if s > 0 else WRI_L
+        out = (s * 0.92, -0.39, 0.0)
+        for k, a in enumerate((-24, 22)):
+            u.add(limb_band("mg_rune_fa_%s%d" % (side, k),
+                            el + (wr - el).normalized() * 0.10,
+                            wr + (el - wr).normalized() * 0.05,
+                            0.182, 0.198, a - 6, a + 6, 3, 2, 0.010, out),
+                  "forearm_" + side, "辉", "hard", "runes", "rune")
+
+    # 腿光条（大腿外侧 / 小腿外侧各一条）
+    for s, side in ((1, "R"), (-1, "L")):
+        ang = s * 90.0
+        st = []
+        for z in (1.940, 1.800, 1.640, 1.460):
+            w, d = leg_wd(z)
+            ax, ay = leg_axis(side, z)
+            st.append((z, ang - 7, ang + 7, w * 0.5 + ARMOR_OFF + 0.013,
+                       d * 0.5 + ARMOR_OFF + 0.013, ay))
+        ax, ay = leg_axis(side, 1.70)
+        u.arc("mg_rune_th_" + side, st, 0.010, "thigh_" + side, "辉", "hard",
+              "runes", "rune", nu=2, inside=(ax, ay, 1.70), center=(ax, 0.0))
+        st2 = []
+        for z in (1.000, 0.870, 0.720, 0.580):
+            w, d = leg_wd(z)
+            ax, ay = leg_axis(side, z)
+            st2.append((z, ang - 6, ang + 6, w * 0.5 + ARMOR_OFF + 0.013,
+                        d * 0.5 + ARMOR_OFF + 0.013, ay))
+        ax, ay = leg_axis(side, 0.80)
+        u.arc("mg_rune_sh_" + side, st2, 0.010, "shin_" + side, "辉", "hard",
+              "runes", "rune", nu=2, inside=(ax, ay, 0.80), center=(ax, 0.0))
+
+
+# ══ 组装 ════════════════════════════════════════════════════════════════════
+def build(low=False, modules=None):
+    want = set(MODULES if modules is None else modules)
+    u = K.Unit2(PREFIX, MATS, low=low)
+    if "body" in want:
+        legs(u)
+        pelvis(u)
+        torso(u)
+        arms(u)
+    if "head" in want:
+        head(u)
+    if "pauldron" in want:
+        pauldrons(u)
+    if "runes" in want:
+        runes(u)
+    return u
+
+
+def build_rig(name="RIG_魔金傀儡"):
+    return K.build_rig(BONES, name)
+
+
+def report():
+    return "\n".join([
+        "[joints] hip=%.3f knee=(%.3f,%.3f) ankle=%.3f top=%.3f"
+        % (Z_HIP, KNE_R.y, KNE_R.z, Z_ANKLE, Z_TOP),
+        "[armR] elbow=(%.3f,%.3f,%.3f) wrist=(%.3f,%.3f,%.3f) reach=%.3f/%.3f"
+        % (ELB_R.x, ELB_R.y, ELB_R.z, WRI_R.x, WRI_R.y, WRI_R.z,
+           (WRI_R - SH_R).length, L_UPPER + L_FORE),
+        "[armL] elbow=(%.3f,%.3f,%.3f) wrist=(%.3f,%.3f,%.3f) reach=%.3f/%.3f"
+        % (ELB_L.x, ELB_L.y, ELB_L.z, WRI_L.x, WRI_L.y, WRI_L.z,
+           (WRI_L - SH_L).length, L_UPPER + L_FORE),
+        "[fist] c=(%.3f,%.3f,%.3f) size=%.2fx%.2fx%.2f span_x=%.3f"
+        % (FIST_R.x, FIST_R.y, FIST_R.z, FIST_W, FIST_D, FIST_H,
+           (FIST_R.x + FIST_W * 0.5) * 2),
+        "[bones] %d" % len(BONES),
+    ])

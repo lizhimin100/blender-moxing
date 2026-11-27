@@ -1,0 +1,233 @@
+ITEMS 521
+=== CLIP_CROSS 403 ===
+  32  yard_band0              (base) <-> quench                  (prop)
+  24  yard                    (base) <-> quench                  (prop)
+  22  yard_band1              (base) <-> coal_b                  (prop)
+  22  yard                    (base) <-> pot_b                   (prop)
+  20  yard                    (base) <-> coal_b                  (prop)
+  20  yard                    (base) <-> coal_a                  (prop)
+  18  yard_joint2             (base) <-> anvil_stump             (prop)
+  18  yard_band1              (base) <-> anvil_stump             (prop)
+  15  yard_band1              (base) <-> coal_a                  (prop)
+  14  yard_joint1             (base) <-> coal_a                  (prop)
+  12  yard                    (base) <-> anvil_stump             (prop)
+  12  porch_course.003        (porch) <-> sign_arm                (detail)
+  12  door_arch               (wing) <-> axe_haft                (prop)
+  12  coal_post.001           (forge) <-> log3                    (prop)
+  12  coal_post               (forge) <-> log3                    (prop)
+  10  roof_1                  (roof) <-> cup_pedestal            (other)
+  10  roof_-1                 (roof) <-> cup_pedestal            (other)
+  10  porch_brace             (porch) <-> sign_a                  (detail)
+  10  plinth_b                (base) <-> log0_rope               (prop)
+  10  plinth_b                (base) <-> log0                    (prop)
+  10  mass                    (wall) <-> king_post_up            (roof)
+  10  mass                    (wall) <-> collar                  (roof)
+  10  grate.002               (other) <-> flametip_3              (forge)
+  10  grate.001               (other) <-> flame_0                 (forge)
+  10  course.011              (roof) <-> cup_pedestal            (other)
+  10  course                  (roof) <-> cup_pedestal            (other)
+  10  coal_lump.005           (other) <-> flame_1                 (forge)
+  10  buttress.002            (wall) <-> log3                    (prop)
+  10  bay_pier_cap            (forge) <-> wing_course.009         (wing)
+  10  bay_pier_cap            (forge) <-> canopy_strut            (canopy)
+  10  bay_pier_cap            (forge) <-> canopy_rafter           (canopy)
+  10  bay_arch                (forge) <-> keystone                (other)
+   9  roof_-1                 (roof) <-> wing_gutter             (wing)
+   9  barge                   (roof) <-> wing_gutter             (wing)
+   8  yard_joint4             (base) <-> rack_R_back             (other)
+   8  yard_joint4             (base) <-> gs_wheel                (prop)
+   8  yard_joint0             (base) <-> rack_L_post.001         (other)
+   8  yard_joint0             (base) <-> door_leaf               (wing)
+   8  yard_joint0             (base) <-> door_gap                (wing)
+   8  yard_band0              (base) <-> porch_post.001          (porch)
+   8  yard_band0              (base) <-> porch_post              (porch)
+   8  yard_band0              (base) <-> gs_leg.001              (prop)
+   8  yard                    (base) <-> wing_mass               (wing)
+   8  yard                    (base) <-> porch_post.001          (porch)
+   8  yard                    (base) <-> porch_post              (porch)
+   8  yard                    (base) <-> gs_leg.001              (prop)
+   8  yard                    (base) <-> gs_leg                  (prop)
+   8  yard                    (base) <-> door_opening            (wing)
+   8  yard                    (base) <-> door_jamb.001           (wing)
+   8  yard                    (base) <-> door_jamb               (wing)
+   8  yard                    (base) <-> bay_wall                (forge)
+   8  yard                    (base) <-> bay_pier                (forge)
+   8  threshold               (base) <-> door_seam.003           (wing)
+   8  threshold               (base) <-> door_seam.002           (wing)
+   8  threshold               (base) <-> door_seam.001           (wing)
+   8  threshold               (base) <-> door_seam               (wing)
+   8  threshold               (base) <-> door_opening            (wing)
+   8  threshold               (base) <-> door_leaf.001           (wing)
+   8  threshold               (base) <-> door_leaf               (wing)
+   8  string.001              (wall) <-> wing_mass               (wing)
+   8  string.001              (wall) <-> winR_frame              (window)
+   8  string.001              (wall) <-> winR2_frame             (window)
+   8  string.001              (wall) <-> winL_frame              (window)
+   8  string.001              (wall) <-> wbanner_L_cloth         (herald)
+   8  string.001              (wall) <-> bay_wall                (forge)
+   8  string.001              (wall) <-> bay_cheek.001           (forge)
+   8  string.001              (wall) <-> bay_cheek               (forge)
+   8  string.001              (wall) <-> bay_back                (forge)
+   8  string                  (wall) <-> fire_wash               (other)
+   8  string                  (wall) <-> bay_wall                (forge)
+   8  string                  (wall) <-> bay_cheek.001           (forge)
+   8  string                  (wall) <-> bay_cheek               (forge)
+   8  string                  (wall) <-> bay_back                (forge)
+   8  ridge_iron              (roof) <-> cup_louver.001          (other)
+   8  ridge_iron              (roof) <-> cup_louver              (other)
+   8  ridge_iron              (roof) <-> cup_body                (other)
+   8  ridge_iron              (roof) <-> crest_post              (other)
+   8  ridge_beam              (roof) <-> cup_louver.001          (other)
+   8  ridge_beam              (roof) <-> cup_louver              (other)
+   8  ridge_beam              (roof) <-> cup_body                (other)
+=== CLIP_INNER 658 (前 20) ===
+   8  plinth_a                 <-> plinth_b
+   6  yard                     <-> threshold
+   8  yard_band0               <-> yard_joint0
+   8  yard_band0               <-> yard_joint1
+   8  yard_band0               <-> yard_joint2
+   8  yard_band0               <-> yard_joint3
+   8  yard_band0               <-> yard_joint4
+   8  yard_band1               <-> yard_joint0
+   8  yard_band1               <-> yard_joint1
+   8  yard_band1               <-> yard_joint2
+   8  yard_band1               <-> yard_joint3
+   8  yard_band1               <-> yard_joint4
+   6  yard_joint0              <-> threshold
+   6  mass                     <-> quoin
+   6  mass                     <-> quoin.001
+   6  mass                     <-> quoin.002
+   6  mass                     <-> quoin.003
+   6  mass                     <-> quoin.004
+   6  mass                     <-> quoin.005
+   6  mass                     <-> quoin.006
+=== CONTAIN 79 ===
+   yard                      in  porch_foot
+   yard                      in  porch_foot.001
+   buttress.002              in  winR2_bar
+   bay_wall                  in  bellows_arm
+   bay_wall                  in  bellows_grip
+   bay_cornice               in  canopy
+   bay_floor                 in  coal_bed
+   bay_back                  in  fire_wash
+   canopy                    in  hood_throat
+   canopy                    in  flue_collar
+   canopy                    in  vent_curb
+   canopy                    in  vent_well
+   canopy                    in  vent_rivet
+   canopy                    in  vent_rivet.001
+   canopy                    in  vent_rivet.002
+   canopy                    in  vent_rivet.003
+   canopy                    in  flue_band
+   flue_collar               in  vent_curb
+   vent_curb                 in  vent_well
+   hearth                    in  coal_bed
+   roof_-1                   in  course
+   roof_-1                   in  course.001
+   roof_-1                   in  course.002
+   roof_-1                   in  course.003
+   roof_-1                   in  course.004
+   roof_-1                   in  course.005
+   roof_-1                   in  course.006
+   roof_-1                   in  course.007
+   roof_-1                   in  course.008
+   roof_-1                   in  course.009
+   roof_-1                   in  course.010
+   roof_-1                   in  eave_tint
+   roof_-1                   in  vent_post
+   roof_-1                   in  stud
+   roof_-1                   in  brace
+   roof_1                    in  course.011
+   roof_1                    in  course.012
+   roof_1                    in  course.013
+   roof_1                    in  course.014
+   roof_1                    in  course.015
+=== COPLANAR 231 ===
+   plinth_a                 <-> plinth_b                  @(2, -1) d=+0.000
+   plinth_a                 <-> mass                      @(2, -1) d=+0.000
+   plinth_a                 <-> bay_wall                  @(2, -1) d=+0.000
+   plinth_a                 <-> bay_floor                 @(2, -1) d=+0.000
+   plinth_a                 <-> wing_mass                 @(2, -1) d=+0.000
+   plinth_b                 <-> mass                      @(2, -1) d=+0.000
+   plinth_b                 <-> bay_wall                  @(2, -1) d=+0.000
+   plinth_b                 <-> bay_floor                 @(2, -1) d=+0.000
+   plinth_b                 <-> ch_breast                 @(2, -1) d=+0.000
+   plinth_b                 <-> ch_plinth                 @(2, -1) d=+0.000
+   plinth_b                 <-> wing_mass                 @(2, -1) d=+0.000
+   yard                     <-> bay_wall                  @(2, -1) d=+0.000
+   yard                     <-> bay_pier                  @(2, -1) d=+0.000
+   yard                     <-> bay_floor                 @(2, -1) d=+0.000
+   yard                     <-> wing_mass                 @(2, -1) d=+0.000
+   yard                     <-> door_jamb.001             @(2, -1) d=+0.000
+   yard                     <-> porch_post.001            @(2, -1) d=+0.000
+   yard                     <-> porch_foot.001            @(2, -1) d=+0.000
+   yard                     <-> coal_a                    @(2, 1) d=+0.260
+   yard_joint0              <-> rack_L_post.001           @(2, -1) d=+0.257
+   yard_joint2              <-> anvil_stump               @(2, -1) d=+0.257
+   yard_joint4              <-> rack_R_back               @(2, -1) d=+0.257
+   mass                     <-> bay_wall                  @(2, -1) d=+0.000
+   mass                     <-> bay_floor                 @(2, -1) d=+0.000
+   bay_wall                 <-> bay_back                  @(0, 1) d=+2.600
+   bay_wall                 <-> ch_breast                 @(2, -1) d=+0.000
+   bay_wall                 <-> ch_plinth                 @(2, -1) d=+0.000
+   bay_face                 <-> bay_cheek                 @(1, 1) d=+5.300
+   bay_face                 <-> bay_cheek.001             @(1, 1) d=+5.300
+   bay_frieze               <-> bay_cornice               @(1, -1) d=+5.270
+   bay_pier                 <-> wing_mass                 @(2, -1) d=+0.000
+   bay_pier                 <-> door_jamb.001             @(2, -1) d=+0.000
+   bay_floor                <-> bay_back                  @(1, -1) d=+2.980
+   bay_floor                <-> hearth                    @(2, -1) d=+0.000
+   bay_floor                <-> coal_bed                  @(2, -1) d=+0.000
+   bay_back                 <-> bay_cheek                 @(1, -1) d=+2.980
+   bay_back                 <-> bay_cheek.001             @(1, -1) d=+2.980
+   flue_pipe                <-> flue_cap                  @(2, 1) d=+6.980
+   hearth                   <-> coal_bed                  @(2, -1) d=+0.000
+   flame_0                  <-> flame_1                   @(2, -1) d=+0.860
+   flame_0                  <-> flame_2                   @(2, -1) d=+0.860
+   flame_0                  <-> flametip_0                @(2, -1) d=+0.860
+   flame_0                  <-> flametip_1                @(2, -1) d=+0.860
+   flame_0                  <-> flametip_2                @(2, -1) d=+0.860
+   flame_1                  <-> flametip_1                @(2, -1) d=+0.860
+   flame_2                  <-> flametip_2                @(2, -1) d=+0.860
+   flametip_0               <-> flametip_3                @(2, -1) d=+0.860
+   ch_breast                <-> ch_plinth                 @(2, -1) d=+0.000
+   ch_breast                <-> ch_cornice                @(2, 1) d=+5.720
+   ridge_beam               <-> crest_post                @(0, 1) d=+0.075
+   cup_cap                  <-> cup_roof                  @(2, 1) d=+9.900
+   wing_mass                <-> door_opening              @(2, -1) d=+0.000
+   wing_mass                <-> door_jamb                 @(2, -1) d=+0.000
+   wing_mass                <-> door_jamb.001             @(2, -1) d=+0.000
+   door_arch                <-> door_seam                 @(1, -1) d=+5.460
+   door_arch                <-> door_seam.001             @(1, -1) d=+5.460
+   door_arch                <-> door_seam.002             @(1, -1) d=+5.460
+   door_arch                <-> door_seam.003             @(1, -1) d=+5.460
+   porch_roof               <-> porch_course              @(0, 1) d=-1.780
+   porch_roof               <-> porch_course.001          @(0, 1) d=-1.780
+   porch_roof               <-> porch_course.002          @(0, 1) d=-1.780
+   porch_roof               <-> porch_course.003          @(0, 1) d=-1.780
+   porch_post               <-> porch_foot                @(2, -1) d=+0.000
+   porch_post.001           <-> porch_foot.001            @(2, -1) d=+0.000
+   sign_a                   <-> sign_b                    @(1, -1) d=+6.040
+   coal_rail                <-> coal_post                 @(0, 1) d=+4.350
+   coal_rail                <-> coal_post.001             @(0, 1) d=+4.350
+   bellows_body             <-> bellows_pleat             @(1, 1) d=+4.310
+   bellows_body.001         <-> bellows_pleat.001         @(1, 1) d=+4.310
+   rack_L_peg021            <-> rack_L_hh0                @(2, 1) d=+2.105
+   rack_L_tg-1              <-> rack_L_bar                @(1, -1) d=+6.862
+   rack_L_tg1               <-> rack_L_bar                @(1, -1) d=+6.862
+   rack_R_peg021            <-> rack_R_hh0                @(2, 1) d=+2.105
+   rack_R_tg-1              <-> rack_R_bar                @(1, -1) d=+6.543
+   rack_R_tg1               <-> rack_R_bar                @(1, -1) d=+6.543
+   ingots_floor             <-> ingots_slat2              @(1, -1) d=+6.970
+   ingots_slat2             <-> ingots_side               @(2, -1) d=+0.320
+   ingots_slat2             <-> ingots_side.001           @(2, -1) d=+0.320
+   ingots_ingot0            <-> ingots_ingot2             @(1, -1) d=+7.176
+   ingots_ingot1            <-> ingots_ingot3             @(1, -1) d=+7.175
+   gs_leg                   <-> gs_trough                 @(2, -1) d=+0.000
+   gs_leg.001               <-> gs_trough                 @(2, -1) d=+0.000
+   log0                     <-> log1                      @(1, -1) d=-3.450
+   log0_rope                <-> log1_rope                 @(1, -1) d=-2.900
+   log1                     <-> log4                      @(1, -1) d=-3.450
+   log1_rope                <-> log4_rope                 @(1, -1) d=-2.900
+=== FLOAT 0 ===
+DONE

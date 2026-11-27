@@ -1,0 +1,42 @@
+{
+  "file": "城镇大厅_训练.glb",
+  "bytes": 1207120,
+  "meshes": 4,
+  "tris": 17532,
+  "materials": [
+    "team",
+    "team_trim",
+    "主体",
+    "自发光"
+  ],
+  "mat_count": 4,
+  "bbox_min": [
+    -9.05,
+    -3.92,
+    -0.027
+  ],
+  "bbox_max": [
+    9.05,
+    5.07,
+    25.15
+  ],
+  "size": [
+    18.1,
+    8.99,
+    25.177
+  ],
+  "grounded": true,
+  "zmin": -0.027,
+  "front_ok": true,
+  "mats_ok": true,
+  "tris_ok": true,
+  "skins": 0,
+  "animations": [],
+  "static_ok": true,
+  "ok": true,
+  "asset_name": "城镇大厅_训练",
+  "kind": "训练态",
+  "note": "门开 112°、门口光束；队色与旗由引擎侧切换",
+  "parts": 739,
+  "fx_parts": 16
+}

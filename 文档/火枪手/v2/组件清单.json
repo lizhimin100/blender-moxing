@@ -1,0 +1,1695 @@
+{
+ "asset": "方块人_矮人火枪手",
+ "modules": [
+  "body",
+  "head",
+  "shoulder",
+  "gear",
+  "weapon"
+ ],
+ "bones": [
+  "root",
+  "hips",
+  "spine",
+  "chest",
+  "neck",
+  "head",
+  "shoulder_R",
+  "upperarm_R",
+  "forearm_R",
+  "hand_R",
+  "thigh_R",
+  "shin_R",
+  "foot_R",
+  "toe_R",
+  "shoulder_L",
+  "upperarm_L",
+  "forearm_L",
+  "hand_L",
+  "thigh_L",
+  "shin_L",
+  "foot_L",
+  "toe_L",
+  "weapon_R",
+  "prop_ramrod",
+  "weapon_L"
+ ],
+ "parts": [
+  {
+   "part": "lg_sole_R",
+   "module": "body",
+   "bone": "foot_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.132,
+    0.052,
+    0.019
+   ]
+  },
+  {
+   "part": "lg_boot_R",
+   "module": "body",
+   "bone": "foot_R",
+   "material": "主体",
+   "tris": 44,
+   "center": [
+    0.132,
+    0.016,
+    0.112
+   ]
+  },
+  {
+   "part": "lg_toe_R",
+   "module": "body",
+   "bone": "foot_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.132,
+    0.196,
+    0.056
+   ]
+  },
+  {
+   "part": "lg_cuff_R",
+   "module": "body",
+   "bone": "foot_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.132,
+    0.01,
+    0.18
+   ]
+  },
+  {
+   "part": "lg_strap_R",
+   "module": "body",
+   "bone": "foot_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.132,
+    0.02,
+    0.132
+   ]
+  },
+  {
+   "part": "lg_buckle_R",
+   "module": "body",
+   "bone": "foot_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.104,
+    0.02,
+    0.132
+   ]
+  },
+  {
+   "part": "jt_ankle_R",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.132,
+    0.014,
+    0.192
+   ]
+  },
+  {
+   "part": "lg_shin_R",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "主体",
+   "tris": 44,
+   "center": [
+    0.132,
+    0.008,
+    0.273
+   ]
+  },
+  {
+   "part": "lg_greave_R",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.132,
+    0.072,
+    0.288
+   ]
+  },
+  {
+   "part": "lg_greave_rib_R",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.132,
+    0.104,
+    0.288
+   ]
+  },
+  {
+   "part": "lg_poleyn_R",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.132,
+    0.056,
+    0.366
+   ]
+  },
+  {
+   "part": "jt_knee_R",
+   "module": "body",
+   "bone": "thigh_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.132,
+    -0.004,
+    0.36
+   ]
+  },
+  {
+   "part": "lg_thigh_R",
+   "module": "body",
+   "bone": "thigh_R",
+   "material": "主体",
+   "tris": 44,
+   "center": [
+    0.12,
+    0.003,
+    0.445
+   ]
+  },
+  {
+   "part": "lg_cuisse_R",
+   "module": "body",
+   "bone": "thigh_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.132,
+    0.078,
+    0.456
+   ]
+  },
+  {
+   "part": "lg_sole_L",
+   "module": "body",
+   "bone": "foot_L",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.132,
+    0.052,
+    0.019
+   ]
+  },
+  {
+   "part": "lg_boot_L",
+   "module": "body",
+   "bone": "foot_L",
+   "material": "主体",
+   "tris": 44,
+   "center": [
+    -0.132,
+    0.016,
+    0.112
+   ]
+  },
+  {
+   "part": "lg_toe_L",
+   "module": "body",
+   "bone": "foot_L",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.132,
+    0.196,
+    0.056
+   ]
+  },
+  {
+   "part": "lg_cuff_L",
+   "module": "body",
+   "bone": "foot_L",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.132,
+    0.01,
+    0.18
+   ]
+  },
+  {
+   "part": "lg_strap_L",
+   "module": "body",
+   "bone": "foot_L",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.132,
+    0.02,
+    0.132
+   ]
+  },
+  {
+   "part": "lg_buckle_L",
+   "module": "body",
+   "bone": "foot_L",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.104,
+    0.02,
+    0.132
+   ]
+  },
+  {
+   "part": "jt_ankle_L",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.132,
+    0.014,
+    0.192
+   ]
+  },
+  {
+   "part": "lg_shin_L",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "主体",
+   "tris": 44,
+   "center": [
+    -0.132,
+    0.008,
+    0.273
+   ]
+  },
+  {
+   "part": "lg_greave_L",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.132,
+    0.072,
+    0.288
+   ]
+  },
+  {
+   "part": "lg_greave_rib_L",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.132,
+    0.104,
+    0.288
+   ]
+  },
+  {
+   "part": "lg_poleyn_L",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.132,
+    0.056,
+    0.366
+   ]
+  },
+  {
+   "part": "jt_knee_L",
+   "module": "body",
+   "bone": "thigh_L",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.132,
+    -0.004,
+    0.36
+   ]
+  },
+  {
+   "part": "lg_thigh_L",
+   "module": "body",
+   "bone": "thigh_L",
+   "material": "主体",
+   "tris": 44,
+   "center": [
+    -0.12,
+    0.003,
+    0.445
+   ]
+  },
+  {
+   "part": "lg_cuisse_L",
+   "module": "body",
+   "bone": "thigh_L",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.132,
+    0.078,
+    0.456
+   ]
+  },
+  {
+   "part": "bd_pelvis",
+   "module": "body",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 44,
+   "center": [
+    0.0,
+    0.0,
+    0.561
+   ]
+  },
+  {
+   "part": "bd_belt",
+   "module": "body",
+   "bone": "hips",
+   "material": "team",
+   "tris": 28,
+   "center": [
+    0.0,
+    0.0,
+    0.622
+   ]
+  },
+  {
+   "part": "bd_buckle",
+   "module": "body",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.0,
+    0.176,
+    0.622
+   ]
+  },
+  {
+   "part": "bd_buckle_in",
+   "module": "body",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.0,
+    0.194,
+    0.622
+   ]
+  },
+  {
+   "part": "bd_belt_stud_1",
+   "module": "body",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.156,
+    0.114,
+    0.624
+   ]
+  },
+  {
+   "part": "bd_belt_stud_-1",
+   "module": "body",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.156,
+    0.114,
+    0.624
+   ]
+  },
+  {
+   "part": "bd_fauld0",
+   "module": "body",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.148,
+    0.048,
+    0.556
+   ]
+  },
+  {
+   "part": "bd_fauld1",
+   "module": "body",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.092,
+    0.126,
+    0.556
+   ]
+  },
+  {
+   "part": "bd_fauld2",
+   "module": "body",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.0,
+    0.156,
+    0.556
+   ]
+  },
+  {
+   "part": "bd_fauld3",
+   "module": "body",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.092,
+    0.126,
+    0.556
+   ]
+  },
+  {
+   "part": "bd_fauld4",
+   "module": "body",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.148,
+    0.048,
+    0.556
+   ]
+  },
+  {
+   "part": "bd_coat",
+   "module": "body",
+   "bone": "spine",
+   "material": "主体",
+   "tris": 44,
+   "center": [
+    0.0,
+    0.0,
+    0.704
+   ]
+  },
+  {
+   "part": "bd_chest",
+   "module": "body",
+   "bone": "chest",
+   "material": "主体",
+   "tris": 60,
+   "center": [
+    0.0,
+    0.0,
+    0.878
+   ]
+  },
+  {
+   "part": "bd_plackart",
+   "module": "body",
+   "bone": "chest",
+   "material": "主体",
+   "tris": 16,
+   "center": [
+    0.0,
+    0.168,
+    0.757
+   ]
+  },
+  {
+   "part": "bd_gorget",
+   "module": "body",
+   "bone": "chest",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    -0.0,
+    0.005,
+    0.971
+   ]
+  },
+  {
+   "part": "jt_neck",
+   "module": "body",
+   "bone": "neck",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.0,
+    0.01,
+    0.998
+   ]
+  },
+  {
+   "part": "bd_harness_1",
+   "module": "body",
+   "bone": "chest",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.18,
+    0.172,
+    0.874
+   ]
+  },
+  {
+   "part": "bd_harn_buckle_1",
+   "module": "body",
+   "bone": "chest",
+   "material": "team_trim",
+   "tris": 12,
+   "center": [
+    0.18,
+    0.19,
+    0.8
+   ]
+  },
+  {
+   "part": "bd_harness_-1",
+   "module": "body",
+   "bone": "chest",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.18,
+    0.172,
+    0.874
+   ]
+  },
+  {
+   "part": "bd_harn_buckle_-1",
+   "module": "body",
+   "bone": "chest",
+   "material": "team_trim",
+   "tris": 12,
+   "center": [
+    -0.18,
+    0.19,
+    0.8
+   ]
+  },
+  {
+   "part": "bd_rivet_1_82",
+   "module": "body",
+   "bone": "chest",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.23,
+    0.02,
+    0.826
+   ]
+  },
+  {
+   "part": "bd_rivet_1_91",
+   "module": "body",
+   "bone": "chest",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.236,
+    0.02,
+    0.91
+   ]
+  },
+  {
+   "part": "bd_rivet_-1_82",
+   "module": "body",
+   "bone": "chest",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.23,
+    0.02,
+    0.826
+   ]
+  },
+  {
+   "part": "bd_rivet_-1_91",
+   "module": "body",
+   "bone": "chest",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.236,
+    0.02,
+    0.91
+   ]
+  },
+  {
+   "part": "jt_shoulder_R",
+   "module": "body",
+   "bone": "shoulder_R",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    0.254,
+    -0.0,
+    0.903
+   ]
+  },
+  {
+   "part": "ar_upper_R",
+   "module": "body",
+   "bone": "upperarm_R",
+   "material": "主体",
+   "tris": 44,
+   "center": [
+    0.314,
+    0.003,
+    0.808
+   ]
+  },
+  {
+   "part": "ar_rerebrace_R",
+   "module": "body",
+   "bone": "upperarm_R",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    0.318,
+    0.003,
+    0.802
+   ]
+  },
+  {
+   "part": "jt_elbow_R",
+   "module": "body",
+   "bone": "forearm_R",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    0.38,
+    0.006,
+    0.703
+   ]
+  },
+  {
+   "part": "ar_fore_R",
+   "module": "body",
+   "bone": "forearm_R",
+   "material": "主体",
+   "tris": 44,
+   "center": [
+    0.355,
+    0.114,
+    0.702
+   ]
+  },
+  {
+   "part": "ar_bracer_R",
+   "module": "body",
+   "bone": "forearm_R",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    0.354,
+    0.119,
+    0.702
+   ]
+  },
+  {
+   "part": "ar_cuff_R",
+   "module": "body",
+   "bone": "forearm_R",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    0.334,
+    0.207,
+    0.701
+   ]
+  },
+  {
+   "part": "jt_shoulder_L",
+   "module": "body",
+   "bone": "shoulder_L",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    -0.255,
+    0.001,
+    0.904
+   ]
+  },
+  {
+   "part": "ar_upper_L",
+   "module": "body",
+   "bone": "upperarm_L",
+   "material": "主体",
+   "tris": 44,
+   "center": [
+    -0.282,
+    -0.029,
+    0.798
+   ]
+  },
+  {
+   "part": "ar_rerebrace_L",
+   "module": "body",
+   "bone": "upperarm_L",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    -0.284,
+    -0.031,
+    0.792
+   ]
+  },
+  {
+   "part": "jt_elbow_L",
+   "module": "body",
+   "bone": "forearm_L",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    -0.312,
+    -0.062,
+    0.683
+   ]
+  },
+  {
+   "part": "ar_fore_L",
+   "module": "body",
+   "bone": "forearm_L",
+   "material": "主体",
+   "tris": 44,
+   "center": [
+    -0.268,
+    0.039,
+    0.67
+   ]
+  },
+  {
+   "part": "ar_bracer_L",
+   "module": "body",
+   "bone": "forearm_L",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    -0.266,
+    0.044,
+    0.67
+   ]
+  },
+  {
+   "part": "ar_cuff_L",
+   "module": "body",
+   "bone": "forearm_L",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    -0.23,
+    0.127,
+    0.659
+   ]
+  },
+  {
+   "part": "ar_fist_R",
+   "module": "body",
+   "bone": "hand_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.314,
+    0.292,
+    0.7
+   ]
+  },
+  {
+   "part": "ar_fist_L",
+   "module": "body",
+   "bone": "hand_L",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.196,
+    0.206,
+    0.65
+   ]
+  },
+  {
+   "part": "pd_lame_R0",
+   "module": "shoulder",
+   "bone": "upperarm_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.252,
+    -0.004,
+    0.954
+   ]
+  },
+  {
+   "part": "pd_lame_R1",
+   "module": "shoulder",
+   "bone": "upperarm_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.282,
+    -0.004,
+    0.914
+   ]
+  },
+  {
+   "part": "pd_lame_R2",
+   "module": "shoulder",
+   "bone": "upperarm_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.308,
+    -0.004,
+    0.874
+   ]
+  },
+  {
+   "part": "pd_lame_L0",
+   "module": "shoulder",
+   "bone": "upperarm_L",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.252,
+    -0.004,
+    0.954
+   ]
+  },
+  {
+   "part": "pd_lame_L1",
+   "module": "shoulder",
+   "bone": "upperarm_L",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.282,
+    -0.004,
+    0.914
+   ]
+  },
+  {
+   "part": "pd_lame_L2",
+   "module": "shoulder",
+   "bone": "upperarm_L",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.308,
+    -0.004,
+    0.874
+   ]
+  },
+  {
+   "part": "hd_skull",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.0,
+    0.006,
+    1.138
+   ]
+  },
+  {
+   "part": "hd_face",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.0,
+    0.132,
+    1.124
+   ]
+  },
+  {
+   "part": "hd_eye_1",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.058,
+    0.148,
+    1.152
+   ]
+  },
+  {
+   "part": "hd_brow_1",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.06,
+    0.15,
+    1.196
+   ]
+  },
+  {
+   "part": "hd_eye_-1",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.058,
+    0.148,
+    1.152
+   ]
+  },
+  {
+   "part": "hd_brow_-1",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.06,
+    0.15,
+    1.196
+   ]
+  },
+  {
+   "part": "hd_nose",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.0,
+    0.156,
+    1.136
+   ]
+  },
+  {
+   "part": "hd_helm",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 20,
+   "center": [
+    0.0,
+    0.011,
+    1.275
+   ]
+  },
+  {
+   "part": "hd_helm_cap",
+   "module": "head",
+   "bone": "head",
+   "material": "team",
+   "tris": 20,
+   "center": [
+    0.0,
+    0.012,
+    1.349
+   ]
+  },
+  {
+   "part": "hd_helm_knob",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.0,
+    0.012,
+    1.386
+   ]
+  },
+  {
+   "part": "hd_nasal",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.0,
+    0.15,
+    1.202
+   ]
+  },
+  {
+   "part": "hd_cheek_1",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.144,
+    0.048,
+    1.152
+   ]
+  },
+  {
+   "part": "hd_cheek_-1",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.144,
+    0.048,
+    1.152
+   ]
+  },
+  {
+   "part": "hd_neckguard",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.0,
+    -0.146,
+    1.168
+   ]
+  },
+  {
+   "part": "hd_cloth_tail",
+   "module": "head",
+   "bone": "head",
+   "material": "team",
+   "tris": 16,
+   "center": [
+    0.0,
+    -0.169,
+    1.111
+   ]
+  },
+  {
+   "part": "bm_upper",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 44,
+   "center": [
+    0.0,
+    0.155,
+    1.027
+   ]
+  },
+  {
+   "part": "bm_moustache",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.0,
+    0.206,
+    1.05
+   ]
+  },
+  {
+   "part": "bm_lobe_1",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 76,
+   "center": [
+    0.085,
+    0.159,
+    0.896
+   ]
+  },
+  {
+   "part": "bm_lobe_-1",
+   "module": "head",
+   "bone": "head",
+   "material": "主体",
+   "tris": 76,
+   "center": [
+    -0.085,
+    0.159,
+    0.896
+   ]
+  },
+  {
+   "part": "gr_tabard_edge",
+   "module": "gear",
+   "bone": "spine",
+   "material": "team_trim",
+   "tris": 20,
+   "center": [
+    0.0,
+    0.183,
+    0.808
+   ]
+  },
+  {
+   "part": "gr_tabard",
+   "module": "gear",
+   "bone": "spine",
+   "material": "team",
+   "tris": 20,
+   "center": [
+    0.0,
+    0.19,
+    0.809
+   ]
+  },
+  {
+   "part": "gr_crown_band",
+   "module": "gear",
+   "bone": "spine",
+   "material": "team_trim",
+   "tris": 12,
+   "center": [
+    0.0,
+    0.208,
+    0.713
+   ]
+  },
+  {
+   "part": "gr_crown_sp0",
+   "module": "gear",
+   "bone": "spine",
+   "material": "team_trim",
+   "tris": 8,
+   "center": [
+    -0.024,
+    0.209,
+    0.736
+   ]
+  },
+  {
+   "part": "gr_crown_sp1",
+   "module": "gear",
+   "bone": "spine",
+   "material": "team_trim",
+   "tris": 8,
+   "center": [
+    0.0,
+    0.209,
+    0.743
+   ]
+  },
+  {
+   "part": "gr_crown_sp2",
+   "module": "gear",
+   "bone": "spine",
+   "material": "team_trim",
+   "tris": 8,
+   "center": [
+    0.024,
+    0.209,
+    0.736
+   ]
+  },
+  {
+   "part": "gr_crown_gem0",
+   "module": "gear",
+   "bone": "spine",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.021,
+    0.212,
+    0.711
+   ]
+  },
+  {
+   "part": "gr_crown_gem1",
+   "module": "gear",
+   "bone": "spine",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.0,
+    0.212,
+    0.711
+   ]
+  },
+  {
+   "part": "gr_crown_gem2",
+   "module": "gear",
+   "bone": "spine",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.021,
+    0.212,
+    0.711
+   ]
+  },
+  {
+   "part": "gr_tabard_b_edge",
+   "module": "gear",
+   "bone": "spine",
+   "material": "team_trim",
+   "tris": 20,
+   "center": [
+    0.0,
+    -0.179,
+    0.807
+   ]
+  },
+  {
+   "part": "gr_tabard_b",
+   "module": "gear",
+   "bone": "spine",
+   "material": "team",
+   "tris": 20,
+   "center": [
+    0.0,
+    -0.19,
+    0.807
+   ]
+  },
+  {
+   "part": "grB_crown_band",
+   "module": "body",
+   "bone": "spine",
+   "material": "team_trim",
+   "tris": 12,
+   "center": [
+    0.0,
+    -0.207,
+    0.716
+   ]
+  },
+  {
+   "part": "grB_crown_sp0",
+   "module": "body",
+   "bone": "spine",
+   "material": "team_trim",
+   "tris": 8,
+   "center": [
+    -0.022,
+    -0.205,
+    0.739
+   ]
+  },
+  {
+   "part": "grB_crown_sp1",
+   "module": "body",
+   "bone": "spine",
+   "material": "team_trim",
+   "tris": 8,
+   "center": [
+    0.0,
+    -0.205,
+    0.745
+   ]
+  },
+  {
+   "part": "grB_crown_sp2",
+   "module": "body",
+   "bone": "spine",
+   "material": "team_trim",
+   "tris": 8,
+   "center": [
+    0.022,
+    -0.205,
+    0.739
+   ]
+  },
+  {
+   "part": "grB_crown_gem0",
+   "module": "body",
+   "bone": "spine",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.02,
+    -0.203,
+    0.715
+   ]
+  },
+  {
+   "part": "grB_crown_gem1",
+   "module": "body",
+   "bone": "spine",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.0,
+    -0.203,
+    0.715
+   ]
+  },
+  {
+   "part": "grB_crown_gem2",
+   "module": "body",
+   "bone": "spine",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.02,
+    -0.203,
+    0.715
+   ]
+  },
+  {
+   "part": "gr_horn",
+   "module": "gear",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 60,
+   "center": [
+    -0.255,
+    0.088,
+    0.524
+   ]
+  },
+  {
+   "part": "gr_horn_mouth",
+   "module": "gear",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    -0.255,
+    0.13,
+    0.424
+   ]
+  },
+  {
+   "part": "gr_horn_ring0",
+   "module": "gear",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.256,
+    0.072,
+    0.54
+   ]
+  },
+  {
+   "part": "gr_horn_strap",
+   "module": "gear",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    -0.222,
+    0.03,
+    0.618
+   ]
+  },
+  {
+   "part": "gr_pouch",
+   "module": "gear",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.21,
+    0.078,
+    0.588
+   ]
+  },
+  {
+   "part": "gr_pouch_flap",
+   "module": "gear",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.21,
+    0.084,
+    0.634
+   ]
+  },
+  {
+   "part": "gr_pouch_stud",
+   "module": "gear",
+   "bone": "hips",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.21,
+    0.126,
+    0.604
+   ]
+  },
+  {
+   "part": "wp_stock",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 140,
+   "center": [
+    0.319,
+    0.254,
+    0.762
+   ]
+  },
+  {
+   "part": "wp_butt",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    0.302,
+    0.384,
+    0.41
+   ]
+  },
+  {
+   "part": "wp_barrel",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 76,
+   "center": [
+    0.329,
+    0.182,
+    1.052
+   ]
+  },
+  {
+   "part": "wp_muzzle",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    0.346,
+    0.049,
+    1.38
+   ]
+  },
+  {
+   "part": "wp_bore",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.348,
+    0.039,
+    1.404
+   ]
+  },
+  {
+   "part": "wp_sight",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.34,
+    0.096,
+    1.375
+   ]
+  },
+  {
+   "part": "wp_band0",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    0.323,
+    0.225,
+    0.849
+   ]
+  },
+  {
+   "part": "wp_band1",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    0.339,
+    0.104,
+    1.144
+   ]
+  },
+  {
+   "part": "wp_teamband",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "team",
+   "tris": 28,
+   "center": [
+    0.327,
+    0.193,
+    0.926
+   ]
+  },
+  {
+   "part": "wp_lock",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.358,
+    0.268,
+    0.714
+   ]
+  },
+  {
+   "part": "wp_sideplate",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.28,
+    0.258,
+    0.714
+   ]
+  },
+  {
+   "part": "wp_hammer",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.355,
+    0.287,
+    0.778
+   ]
+  },
+  {
+   "part": "wp_hammer_jaw",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.353,
+    0.302,
+    0.806
+   ]
+  },
+  {
+   "part": "wp_pan",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.352,
+    0.277,
+    0.75
+   ]
+  },
+  {
+   "part": "wp_trigger",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.319,
+    0.256,
+    0.635
+   ]
+  },
+  {
+   "part": "wp_guard",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.322,
+    0.235,
+    0.618
+   ]
+  },
+  {
+   "part": "wp_guard_f",
+   "module": "weapon",
+   "bone": "weapon_R",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.317,
+    0.267,
+    0.588
+   ]
+  },
+  {
+   "part": "wp_ramrod",
+   "module": "weapon",
+   "bone": "prop_ramrod",
+   "material": "主体",
+   "tris": 28,
+   "center": [
+    0.332,
+    0.16,
+    0.946
+   ]
+  },
+  {
+   "part": "wp_rod_tip",
+   "module": "weapon",
+   "bone": "prop_ramrod",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.345,
+    0.059,
+    1.196
+   ]
+  },
+  {
+   "part": "wp_rod_head",
+   "module": "weapon",
+   "bone": "prop_ramrod",
+   "material": "主体",
+   "tris": 12,
+   "center": [
+    0.318,
+    0.263,
+    0.692
+   ]
+  }
+ ]
+}

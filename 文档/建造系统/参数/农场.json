@@ -1,0 +1,92 @@
+{
+  "id": "农场",
+  "src": "农场_手游_近.glb",
+  "footprint": [
+    15.35,
+    12.75
+  ],
+  "height": 10.11,
+  "yaw": 0,
+  "attach": {
+    "hoist": [
+      -8.05,
+      -4.35,
+      2.629
+    ],
+    "banner": [
+      -7.8,
+      9.0,
+      0.0
+    ]
+  },
+  "body": [
+    -7.5,
+    7.85,
+    -4.05,
+    8.7
+  ],
+  "bbox_lo": [
+    -7.5,
+    -4.05,
+    0.0
+  ],
+  "bbox_hi": [
+    7.85,
+    8.7,
+    10.11
+  ],
+  "z0": 1.0,
+  "z_rev1": 10.11,
+  "rev": 2.808,
+  "t_rev0": 0.46,
+  "t_rev1": 3.268,
+  "t_dis0": 3.528,
+  "t_dis1": 4.028,
+  "t_clean": 4.088,
+  "t_end": 5.038,
+  "lifts": [
+    0.63,
+    1.308,
+    1.986,
+    2.664
+  ],
+  "n_lifts": 4,
+  "reveal": {
+    "axis": "z",
+    "z0": 1.0,
+    "z1": 10.11,
+    "t0": 0.46,
+    "t1": 3.268
+  },
+  "body_size": [
+    15.35,
+    12.75,
+    10.11
+  ],
+  "n_bands": 0,
+  "file": "农场_建造.glb",
+  "bytes": 1207480,
+  "detail": "low",
+  "src_tris": 10321,
+  "src_verts": 20190,
+  "check": {
+    "BODY_RIG": 0,
+    "body_parent": null,
+    "body_mod": [],
+    "body_anim": false,
+    "body_tris": 10321,
+    "body_verts": 20190,
+    "src_tris": 10321,
+    "src_verts": 20190,
+    "BODY_TRIS": 0,
+    "BVH_CROSS": 0,
+    "BOX_TALL": 0,
+    "scaf_top": 9.35,
+    "SCAF_OVER": 0.0,
+    "reveal_z0": 1.0,
+    "reveal_z1": 10.11,
+    "tri_body": 10321,
+    "tri_site": 4492,
+    "ok": true
+  }
+}

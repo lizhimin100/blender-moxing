@@ -1,0 +1,94 @@
+{
+  "id": "神秘圣地",
+  "src": "神秘圣地_手游_近.glb",
+  "footprint": [
+    13.7,
+    14.17
+  ],
+  "height": 16.18,
+  "yaw": 0,
+  "attach": {
+    "hoist": [
+      -7.4,
+      -6.97,
+      3.4
+    ],
+    "banner": [
+      -7.15,
+      7.8,
+      0.0
+    ]
+  },
+  "body": [
+    -6.85,
+    6.85,
+    -6.67,
+    7.5
+  ],
+  "bbox_lo": [
+    -6.85,
+    -6.67,
+    0.0
+  ],
+  "bbox_hi": [
+    6.85,
+    7.5,
+    16.18
+  ],
+  "z0": 1.0,
+  "z_rev1": 16.18,
+  "rev": 3.263,
+  "t_rev0": 0.46,
+  "t_rev1": 3.723,
+  "t_dis0": 3.983,
+  "t_dis1": 4.663,
+  "t_clean": 4.723,
+  "t_end": 5.673,
+  "lifts": [
+    0.518,
+    0.991,
+    1.464,
+    1.937,
+    2.41,
+    2.882
+  ],
+  "n_lifts": 6,
+  "reveal": {
+    "axis": "z",
+    "z0": 1.0,
+    "z1": 16.18,
+    "t0": 0.46,
+    "t1": 3.723
+  },
+  "body_size": [
+    13.7,
+    14.17,
+    16.18
+  ],
+  "n_bands": 0,
+  "file": "神秘圣地_建造.glb",
+  "bytes": 1520028,
+  "detail": "low",
+  "src_tris": 13018,
+  "src_verts": 25321,
+  "check": {
+    "BODY_RIG": 0,
+    "body_parent": null,
+    "body_mod": [],
+    "body_anim": false,
+    "body_tris": 13018,
+    "body_verts": 25321,
+    "src_tris": 13018,
+    "src_verts": 25321,
+    "BODY_TRIS": 0,
+    "BVH_CROSS": 0,
+    "BOX_TALL": 0,
+    "scaf_top": 13.75,
+    "SCAF_OVER": 0.0,
+    "reveal_z0": 1.0,
+    "reveal_z1": 16.18,
+    "tri_body": 13018,
+    "tri_site": 5596,
+    "ok": true
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "id": "城镇大厅",
+  "src": "城镇大厅_手游_近.glb",
+  "footprint": [
+    18.1,
+    8.99
+  ],
+  "height": 25.15,
+  "yaw": 0,
+  "attach": {
+    "hoist": [
+      -9.6,
+      -4.22,
+      3.4
+    ],
+    "banner": [
+      -9.35,
+      5.37,
+      0.0
+    ]
+  },
+  "body": [
+    -9.05,
+    9.05,
+    -3.92,
+    5.07
+  ],
+  "bbox_lo": [
+    -9.05,
+    -3.92,
+    -0.027
+  ],
+  "bbox_hi": [
+    9.05,
+    5.07,
+    25.15
+  ],
+  "z0": 1.0,
+  "z_rev1": 25.15,
+  "rev": 3.55,
+  "t_rev0": 0.46,
+  "t_rev1": 4.01,
+  "t_dis0": 4.27,
+  "t_dis1": 4.95,
+  "t_clean": 5.01,
+  "t_end": 5.96,
+  "lifts": [
+    0.436,
+    0.76,
+    1.083,
+    1.407,
+    1.73,
+    2.053
+  ],
+  "n_lifts": 6,
+  "reveal": {
+    "axis": "z",
+    "z0": 1.0,
+    "z1": 25.15,
+    "t0": 0.46,
+    "t1": 4.01
+  },
+  "body_size": [
+    18.1,
+    8.99,
+    25.177
+  ],
+  "n_bands": 0,
+  "file": "城镇大厅_建造.glb",
+  "bytes": 1833152,
+  "detail": "low",
+  "src_tris": 17340,
+  "src_verts": 33420,
+  "check": {
+    "BODY_RIG": 0,
+    "body_parent": null,
+    "body_mod": [],
+    "body_anim": false,
+    "body_tris": 17340,
+    "body_verts": 33420,
+    "src_tris": 17340,
+    "src_verts": 33420,
+    "BODY_TRIS": 0,
+    "BVH_CROSS": 0,
+    "BOX_TALL": 0,
+    "scaf_top": 13.75,
+    "SCAF_OVER": 0.0,
+    "reveal_z0": 1.0,
+    "reveal_z1": 25.15,
+    "tri_body": 17340,
+    "tri_site": 5596,
+    "ok": true
+  }
+}

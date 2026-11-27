@@ -1,0 +1,7 @@
+ITEMS 301
+BBOX [-6.5, -6.1, 0.0] .. [6.48, 4.52, 4.57]  SIZE [12.99, 10.62, 4.57]
+GROUNDED True  FRONT_OK True
+=== CLIP_CROSS 0 ===
+=== COPLANAR_UP 0 ===
+=== FLOAT 0 ===
+=== BELOW_GROUND ===

@@ -1,0 +1,63 @@
+{
+  "file": "伐木场_科研.glb",
+  "bytes": 1213672,
+  "meshes": 4,
+  "tris": 11420,
+  "materials": [
+    "team",
+    "team_trim",
+    "主体",
+    "自发光"
+  ],
+  "mat_count": 4,
+  "bbox_min": [
+    -8.15,
+    -4.35,
+    -0.0
+  ],
+  "bbox_max": [
+    8.661,
+    6.571,
+    7.725
+  ],
+  "size": [
+    16.811,
+    10.921,
+    7.725
+  ],
+  "grounded": true,
+  "zmin": -0.0,
+  "front_ok": true,
+  "mats_ok": true,
+  "tris_ok": true,
+  "skins": 1,
+  "animations": [
+    "research"
+  ],
+  "clips": [
+    {
+      "name": "research",
+      "channels": 21,
+      "duration": 2.0,
+      "loop_err": 0.0,
+      "loop_ok": true,
+      "bad": []
+    }
+  ],
+  "clip_ok": true,
+  "ok": true,
+  "asset_name": "伐木场_科研",
+  "kind": "科研态",
+  "note": "锯轮匀速转 / 锯条上下往复 / 原木往复进给 / 锯末掉落",
+  "bones": [
+    "saw_wheel",
+    "saw_blade",
+    "beam",
+    "dust0",
+    "dust1",
+    "dust2",
+    "dust3"
+  ],
+  "frames": 60,
+  "fps": 30
+}

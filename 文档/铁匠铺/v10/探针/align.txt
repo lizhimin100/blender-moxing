@@ -1,0 +1,200 @@
+ITEMS 566
+=== CLIP_CROSS 0 ===
+=== CLIP_INNER 1155 (前 20) ===
+   8  plinth_a                 <-> plinth_b
+   8  plinth_a                 <-> mass
+   4  plinth_a                 <-> dado
+   8  plinth_a                 <-> buttress
+   8  plinth_a                 <-> buttress.001
+   8  plinth_a                 <-> buttress.002
+   8  plinth_a                 <-> buttress.003
+   8  plinth_a                 <-> bay_wall
+   6  plinth_a                 <-> bay_floor
+   4  plinth_a                 <-> bay_back
+   6  plinth_a                 <-> bay_cheek
+   6  plinth_a                 <-> bay_cheek.001
+   8  plinth_a                 <-> wing_mass
+   8  plinth_b                 <-> mass
+   8  plinth_b                 <-> buttress
+   8  plinth_b                 <-> buttress.001
+   8  plinth_b                 <-> buttress.002
+   8  plinth_b                 <-> buttress.003
+   8  plinth_b                 <-> bay_wall
+   8  plinth_b                 <-> bay_floor
+=== CONTAIN 30 ===
+   coal_bed                  in  hearth
+   wing_course               in  wing_roof
+   wing_course.001           in  wing_roof
+   wing_course.002           in  wing_roof
+   wing_course.003           in  wing_roof
+   wing_course.004           in  wing_roof
+   wing_win_jamb             in  wing_roof
+   wing_knee                 in  wing_roof
+   door_iron.001             in  door_arch
+   door_ring                 in  door_leaf
+   porch_course              in  porch_roof
+   porch_course.001          in  porch_roof
+   porch_course.002          in  porch_roof
+   porch_course.003          in  porch_roof
+   sign_arm                  in  porch_roof
+   winL_glass                in  winL_frame
+   winR_glass                in  winR_frame
+   wbanner_B_edge            in  wbanner_B_cloth
+   wbanner_B_rim             in  wbanner_B_cloth
+   wbanner_B_field           in  wbanner_B_cloth
+   wbanner_B_band            in  wbanner_B_cloth
+   wbanner_B_spike0          in  wbanner_B_cloth
+   wbanner_B_spike1          in  wbanner_B_cloth
+   wbanner_B_spike2          in  wbanner_B_cloth
+   wbanner_B_gem0            in  wbanner_B_cloth
+   wbanner_B_gem1            in  wbanner_B_cloth
+   wbanner_B_gem2            in  wbanner_B_cloth
+   bellows_pleat             in  bellows_body
+   bellows_pleat.001         in  bellows_body.001
+   coal_b_coal0              in  coal_b_coal2
+=== COPLANAR_UP 0 ===
+=== COPLANAR 270 ===
+   plinth_a                 <-> plinth_b                  @(2, -1) d=+0.000
+   plinth_a                 <-> mass                      @(2, -1) d=+0.000
+   plinth_a                 <-> buttress                  @(2, -1) d=+0.000
+   plinth_a                 <-> buttress.001              @(2, -1) d=+0.000
+   plinth_a                 <-> buttress.002              @(2, -1) d=+0.000
+   plinth_a                 <-> buttress.003              @(2, -1) d=+0.000
+   plinth_a                 <-> bay_wall                  @(2, -1) d=+0.000
+   plinth_a                 <-> bay_floor                 @(2, -1) d=+0.000
+   plinth_a                 <-> wing_mass                 @(2, -1) d=+0.000
+   plinth_b                 <-> mass                      @(2, -1) d=+0.000
+   plinth_b                 <-> buttress                  @(2, -1) d=+0.000
+   plinth_b                 <-> buttress.001              @(2, -1) d=+0.000
+   plinth_b                 <-> buttress.002              @(2, -1) d=+0.000
+   plinth_b                 <-> buttress.003              @(2, -1) d=+0.000
+   plinth_b                 <-> bay_wall                  @(2, -1) d=+0.000
+   plinth_b                 <-> bay_floor                 @(2, -1) d=+0.000
+   plinth_b                 <-> ch_breast                 @(2, -1) d=+0.000
+   plinth_b                 <-> ch_plinth                 @(2, -1) d=+0.000
+   plinth_b                 <-> wing_mass                 @(2, -1) d=+0.000
+   yard                     <-> bay_pier                  @(2, -1) d=+0.000
+   yard                     <-> bay_floor                 @(2, -1) d=+0.000
+   yard                     <-> wing_mass                 @(2, -1) d=+0.000
+   yard                     <-> door_opening              @(2, -1) d=+0.000
+   yard                     <-> door_jamb                 @(2, -1) d=+0.000
+   yard                     <-> door_jamb.001             @(2, -1) d=+0.000
+   yard                     <-> porch_post                @(2, -1) d=+0.000
+   yard                     <-> porch_post.001            @(2, -1) d=+0.000
+   pave                     <-> tuft.002                  @(2, -1) d=+0.200
+   pave.003                 <-> tuft.003                  @(2, -1) d=+0.200
+   pave.003                 <-> tuft.009                  @(2, -1) d=+0.200
+   pave.003                 <-> tuft.010                  @(2, -1) d=+0.200
+   pave.003                 <-> tuft.011                  @(2, -1) d=+0.200
+   coal_bin_floor           <-> coal_bin_side             @(1, -1) d=+6.780
+   coal_bin_floor           <-> coal_bin_end              @(1, -1) d=+6.780
+   coal_bin_floor           <-> coal_bin_side.001         @(1, -1) d=+6.780
+   coal_bin_floor           <-> coal_bin_end.001          @(1, 1) d=+7.540
+   tuft.001                 <-> tuft.002                  @(2, -1) d=+0.198
+   tuft.003                 <-> tuft.004                  @(2, -1) d=+0.198
+   tuft.003                 <-> tuft.005                  @(2, -1) d=+0.198
+   tuft.004                 <-> tuft.005                  @(2, -1) d=+0.198
+   tuft.006                 <-> tuft.007                  @(2, -1) d=+0.198
+   tuft.006                 <-> tuft.008                  @(2, -1) d=+0.198
+   tuft.007                 <-> tuft.008                  @(2, -1) d=+0.198
+   tuft.009                 <-> tuft.010                  @(2, -1) d=+0.198
+   tuft.009                 <-> tuft.011                  @(2, -1) d=+0.198
+   tuft.010                 <-> tuft.011                  @(2, -1) d=+0.198
+   quoin.004                <-> string.001                @(2, -1) d=+3.670
+   quoin.009                <-> string.001                @(2, -1) d=+3.670
+   quoin.014                <-> string.001                @(2, -1) d=+3.670
+   bay_wall                 <-> bay_back                  @(0, 1) d=+2.600
+   bay_wall                 <-> ch_breast                 @(2, -1) d=+0.000
+   bay_wall                 <-> ch_plinth                 @(2, -1) d=+0.000
+   bay_face                 <-> bay_cheek                 @(1, 1) d=+5.300
+   bay_face                 <-> bay_cheek.001             @(1, 1) d=+5.300
+   bay_frieze               <-> bay_cornice               @(1, -1) d=+5.270
+   bay_pier                 <-> wing_mass                 @(2, -1) d=+0.000
+   bay_pier                 <-> door_jamb.001             @(2, -1) d=+0.000
+   bay_floor                <-> bay_back                  @(1, -1) d=+2.980
+   bay_floor                <-> bay_cheek                 @(1, -1) d=+2.980
+   bay_floor                <-> bay_cheek.001             @(1, -1) d=+2.980
+   bay_floor                <-> hearth                    @(2, -1) d=+0.000
+   bay_floor                <-> coal_bed                  @(2, -1) d=+0.000
+   bay_back                 <-> bay_cheek                 @(1, -1) d=+2.980
+   bay_back                 <-> bay_cheek.001             @(1, -1) d=+2.980
+   vent_plate               <-> vent_rivet                @(1, -1) d=+4.120
+   vent_plate               <-> vent_rivet.001            @(1, 1) d=+4.800
+   vent_plate               <-> vent_rivet.002            @(1, -1) d=+4.120
+   vent_plate               <-> vent_rivet.003            @(1, 1) d=+4.800
+   hearth                   <-> coal_bed                  @(2, -1) d=+0.000
+   grate                    <-> flame_1                   @(1, -1) d=+4.085
+   flame_0                  <-> flame_1                   @(2, -1) d=+0.860
+   flame_0                  <-> flame_2                   @(2, -1) d=+0.860
+   flame_0                  <-> flametip_0                @(2, -1) d=+0.860
+   flame_0                  <-> flametip_1                @(2, -1) d=+0.860
+   flame_0                  <-> flametip_2                @(2, -1) d=+0.860
+   flame_1                  <-> flametip_0                @(2, -1) d=+0.860
+   flame_1                  <-> flametip_1                @(2, -1) d=+0.860
+   flame_2                  <-> flametip_0                @(2, -1) d=+0.860
+   flame_2                  <-> flametip_2                @(2, -1) d=+0.860
+   flametip_0               <-> flametip_3                @(2, -1) d=+0.860
+   ch_breast                <-> ch_plinth                 @(2, -1) d=+0.000
+   vane_rod                 <-> vane_trim                 @(1, 1) d=+4.034
+   roof_-1                  <-> roof_1                    @(1, -1) d=-3.740
+   std_crest_edge           <-> std_crest_rim             @(1, -1) d=+3.048
+   std_crest_rim            <-> std_crest_field           @(1, -1) d=+3.052
+   barge.002                <-> barge.003                 @(1, 1) d=-3.590
+   wing_mass                <-> door_opening              @(2, -1) d=+0.000
+   wing_mass                <-> door_jamb                 @(2, -1) d=+0.000
+   wing_mass                <-> door_jamb.001             @(2, -1) d=+0.000
+   wing_roof                <-> wing_ridge                @(1, -1) d=+3.400
+   wing_roof.001            <-> wing_ridge                @(1, -1) d=+3.400
+   porch_roof               <-> porch_course              @(0, 1) d=-1.780
+   porch_roof               <-> porch_course.001          @(0, 1) d=-1.780
+   porch_roof               <-> porch_course.002          @(0, 1) d=-1.780
+   porch_roof               <-> porch_course.003          @(0, 1) d=-1.780
+   wbanner_L_rod            <-> wbanner_L_brk             @(2, -1) d=+4.045
+   wbanner_L_rod            <-> wbanner_L_brk.001         @(2, -1) d=+4.045
+   wbanner_L_edge           <-> wbanner_L_rim             @(0, 1) d=+4.261
+   shield_R_field           <-> shield_R_band             @(0, -1) d=-4.135
+   shield_R_field           <-> shield_R_spike0           @(0, -1) d=-4.135
+   shield_R_field           <-> shield_R_spike1           @(0, -1) d=-4.135
+   shield_R_field           <-> shield_R_spike2           @(0, -1) d=-4.135
+   wbanner_B_cloth          <-> wbanner_B_edge            @(1, -1) d=-3.650
+   wbanner_B_cloth          <-> wbanner_B_rim             @(1, -1) d=-3.650
+   wbanner_B_rod            <-> wbanner_B_brk             @(2, -1) d=+3.550
+   wbanner_B_rod            <-> wbanner_B_brk.001         @(2, -1) d=+3.550
+   wbanner_B_edge           <-> wbanner_B_rim             @(1, 1) d=-3.625
+   wbanner_B_rim            <-> wbanner_B_field           @(1, -1) d=-3.649
+   banner_L_arm             <-> banner_L_hook             @(0, 1) d=-1.571
+   banner_L_arm.001         <-> banner_L_hook.001         @(0, 1) d=-0.899
+   banner_L_edge            <-> banner_L_rim              @(1, 1) d=+6.339
+   banner_L_rim             <-> banner_L_field            @(1, -1) d=+6.315
+   banner_R_arm             <-> banner_R_hook             @(0, 1) d=+1.689
+   banner_R_edge            <-> banner_R_rim              @(1, 1) d=+6.339
+   banner_R_rim             <-> banner_R_field            @(1, -1) d=+6.315
+   bellows_body             <-> bellows_pleat             @(1, 1) d=+4.310
+   bellows_body.001         <-> bellows_pleat.001         @(1, 1) d=+4.310
+   rack_L_back              <-> rack_L_post               @(2, -1) d=+0.254
+   rack_L_back              <-> rack_L_post.001           @(2, -1) d=+0.254
+   rack_L_tg-1              <-> rack_L_tgtop              @(1, -1) d=+6.862
+   rack_L_tg1               <-> rack_L_tgtop              @(1, -1) d=+6.862
+   rack_R_back              <-> rack_R_post               @(2, -1) d=+0.254
+   rack_R_back              <-> rack_R_post.001           @(2, -1) d=+0.254
+   rack_R_tg-1              <-> rack_R_tgtop              @(1, -1) d=+6.543
+   rack_R_tg1               <-> rack_R_tgtop              @(1, -1) d=+6.543
+   ingots_floor             <-> ingots_slat0              @(1, -1) d=+6.970
+   ingots_floor             <-> ingots_slat1              @(1, -1) d=+6.970
+   ingots_floor             <-> ingots_slat2              @(1, -1) d=+6.970
+   ingots_floor             <-> ingots_slat3              @(1, -1) d=+6.970
+   ingots_floor             <-> ingots_slat4              @(1, -1) d=+6.970
+   ingots_slat0             <-> ingots_side               @(2, -1) d=+0.314
+   ingots_slat0             <-> ingots_side.001           @(2, -1) d=+0.314
+   ingots_slat1             <-> ingots_side               @(2, -1) d=+0.314
+   ingots_slat1             <-> ingots_side.001           @(2, -1) d=+0.314
+   ingots_slat2             <-> ingots_side               @(2, -1) d=+0.314
+   ingots_slat2             <-> ingots_side.001           @(2, -1) d=+0.314
+   ingots_slat3             <-> ingots_side               @(2, -1) d=+0.314
+   ingots_slat3             <-> ingots_side.001           @(2, -1) d=+0.314
+   ingots_slat4             <-> ingots_side               @(2, -1) d=+0.314
+   ingots_slat4             <-> ingots_side.001           @(2, -1) d=+0.314
+   gs_leg                   <-> gs_trough                 @(2, -1) d=+0.254
+   gs_leg.001               <-> gs_trough                 @(2, -1) d=+0.254
+=== FLOAT 0 ===
+DONE

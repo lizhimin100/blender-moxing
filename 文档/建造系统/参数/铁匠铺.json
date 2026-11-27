@@ -1,0 +1,92 @@
+{
+  "id": "铁匠铺",
+  "src": "铁匠铺_手游_近.glb",
+  "footprint": [
+    9.931,
+    11.81
+  ],
+  "height": 11.83,
+  "yaw": 0,
+  "attach": {
+    "hoist": [
+      -5.27,
+      -4.22,
+      3.076
+    ],
+    "banner": [
+      -5.02,
+      8.19,
+      0.0
+    ]
+  },
+  "body": [
+    -4.72,
+    5.211,
+    -3.92,
+    7.89
+  ],
+  "bbox_lo": [
+    -4.72,
+    -3.92,
+    0.0
+  ],
+  "bbox_hi": [
+    5.211,
+    7.89,
+    11.83
+  ],
+  "z0": 1.0,
+  "z_rev1": 11.83,
+  "rev": 2.937,
+  "t_rev0": 0.46,
+  "t_rev1": 3.397,
+  "t_dis0": 3.657,
+  "t_dis1": 4.157,
+  "t_clean": 4.217,
+  "t_end": 5.167,
+  "lifts": [
+    0.585,
+    1.182,
+    1.779,
+    2.375
+  ],
+  "n_lifts": 4,
+  "reveal": {
+    "axis": "z",
+    "z0": 1.0,
+    "z1": 11.83,
+    "t0": 0.46,
+    "t1": 3.397
+  },
+  "body_size": [
+    9.931,
+    11.81,
+    11.83
+  ],
+  "n_bands": 0,
+  "file": "铁匠铺_建造.glb",
+  "bytes": 1522552,
+  "detail": "low",
+  "src_tris": 14614,
+  "src_verts": 29230,
+  "check": {
+    "BODY_RIG": 0,
+    "body_parent": null,
+    "body_mod": [],
+    "body_anim": false,
+    "body_tris": 14614,
+    "body_verts": 29230,
+    "src_tris": 14614,
+    "src_verts": 29230,
+    "BODY_TRIS": 0,
+    "BVH_CROSS": 0,
+    "BOX_TALL": 0,
+    "scaf_top": 9.35,
+    "SCAF_OVER": 0.0,
+    "reveal_z0": 1.0,
+    "reveal_z1": 11.83,
+    "tri_body": 14614,
+    "tri_site": 4324,
+    "ok": true
+  }
+}

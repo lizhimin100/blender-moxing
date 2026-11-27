@@ -1,0 +1,7 @@
+ITEMS 51
+BBOX [-1.29, -1.31, -0.04] .. [1.88, 1.41, 1.92]  SIZE [3.17, 2.72, 1.96]
+GROUNDED True  FRONT_OK True
+=== CLIP_CROSS 0 ===
+=== COPLANAR_UP 1 ===
+   bf_ember_coal.001          <-> bf_ember_coal.003          @(2, 1) d=+0.122
+=== FLOAT 0 ===

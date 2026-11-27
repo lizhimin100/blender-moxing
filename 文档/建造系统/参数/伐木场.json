@@ -1,0 +1,91 @@
+{
+  "id": "伐木场",
+  "src": "伐木场_手游_近.glb",
+  "footprint": [
+    16.811,
+    10.921
+  ],
+  "height": 7.725,
+  "yaw": 0,
+  "attach": {
+    "hoist": [
+      -8.7,
+      -4.65,
+      2.008
+    ],
+    "banner": [
+      -8.45,
+      6.871,
+      0.0
+    ]
+  },
+  "body": [
+    -8.15,
+    8.661,
+    -4.35,
+    6.571
+  ],
+  "bbox_lo": [
+    -8.15,
+    -4.35,
+    0.0
+  ],
+  "bbox_hi": [
+    8.661,
+    6.571,
+    7.725
+  ],
+  "z0": 0.772,
+  "z_rev1": 7.725,
+  "rev": 2.629,
+  "t_rev0": 0.46,
+  "t_rev1": 3.089,
+  "t_dis0": 3.349,
+  "t_dis1": 3.759,
+  "t_clean": 3.819,
+  "t_end": 4.769,
+  "lifts": [
+    0.8,
+    1.632,
+    2.464
+  ],
+  "n_lifts": 3,
+  "reveal": {
+    "axis": "z",
+    "z0": 0.772,
+    "z1": 7.725,
+    "t0": 0.46,
+    "t1": 3.089
+  },
+  "body_size": [
+    16.811,
+    10.921,
+    7.725
+  ],
+  "n_bands": 0,
+  "file": "伐木场_建造.glb",
+  "bytes": 1183688,
+  "detail": "low",
+  "src_tris": 11324,
+  "src_verts": 21088,
+  "check": {
+    "BODY_RIG": 0,
+    "body_parent": null,
+    "body_mod": [],
+    "body_anim": false,
+    "body_tris": 11324,
+    "body_verts": 21088,
+    "src_tris": 11324,
+    "src_verts": 21088,
+    "BODY_TRIS": 0,
+    "BVH_CROSS": 0,
+    "BOX_TALL": 0,
+    "scaf_top": 7.15,
+    "SCAF_OVER": 0.0,
+    "reveal_z0": 0.772,
+    "reveal_z1": 7.725,
+    "tri_body": 11324,
+    "tri_site": 3940,
+    "ok": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "酒馆内部",
+  "src": "酒馆内部_手游_近.glb",
+  "footprint": [
+    10.83,
+    9.08
+  ],
+  "height": 3.49,
+  "yaw": 0,
+  "attach": {
+    "hoist": [
+      -6.03,
+      -4.7,
+      0.907
+    ],
+    "banner": [
+      -5.78,
+      4.98,
+      0.0
+    ]
+  },
+  "body": [
+    -5.48,
+    5.35,
+    -4.4,
+    4.68
+  ],
+  "bbox_lo": [
+    -5.48,
+    -4.4,
+    0.0
+  ],
+  "bbox_hi": [
+    5.35,
+    4.68,
+    3.49
+  ],
+  "z0": 0.45,
+  "z_rev1": 3.49,
+  "rev": 2.312,
+  "t_rev0": 0.46,
+  "t_rev1": 2.772,
+  "t_dis0": 3.032,
+  "t_dis1": 3.262,
+  "t_clean": 3.322,
+  "t_end": 4.272,
+  "lifts": [
+    1.591
+  ],
+  "n_lifts": 1,
+  "reveal": {
+    "axis": "z",
+    "z0": 0.45,
+    "z1": 3.49,
+    "t0": 0.46,
+    "t1": 2.772
+  },
+  "body_size": [
+    10.83,
+    9.08,
+    3.49
+  ],
+  "n_bands": 0,
+  "file": "酒馆内部_建造.glb",
+  "bytes": 987164,
+  "detail": "low",
+  "src_tris": 9754,
+  "src_verts": 18814,
+  "check": {
+    "BODY_RIG": 0,
+    "body_parent": null,
+    "body_mod": [],
+    "body_anim": false,
+    "body_tris": 9754,
+    "body_verts": 18814,
+    "src_tris": 9754,
+    "src_verts": 18814,
+    "BODY_TRIS": 0,
+    "BVH_CROSS": 0,
+    "BOX_TALL": 0,
+    "scaf_top": 2.75,
+    "SCAF_OVER": 0.0,
+    "reveal_z0": 0.45,
+    "reveal_z1": 3.49,
+    "tri_body": 9754,
+    "tri_site": 2812,
+    "ok": true
+  }
+}

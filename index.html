@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ironbound Legion · 体素建筑资产包</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: #0f1114;
+    color: #e7e2d6;
+    font: 14px/1.7 "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    display: grid;
+    place-items: center;
+    padding: 32px;
+  }
+  .card {
+    width: min(760px, 100%);
+    background: #16191e;
+    border: 1px solid #262b33;
+    border-radius: 14px;
+    padding: 30px 32px 26px;
+  }
+  h1 { margin: 0 0 4px; font-size: 21px; letter-spacing: .04em; font-weight: 600; }
+  .sub { margin: 0 0 24px; color: #8b929c; font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; }
+  .go {
+    display: inline-block;
+    background: #c8442f;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: .04em;
+  }
+  .go:hover { background: #de5138; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; margin-top: 22px; }
+  .grid a {
+    display: block;
+    padding: 9px 12px;
+    background: #1c2026;
+    border: 1px solid #2a3038;
+    border-radius: 8px;
+    color: #d6d0c2;
+    text-decoration: none;
+    font-size: 13px;
+  }
+  .grid a:hover { border-color: #c8442f; color: #fff; }
+  .note { margin-top: 24px; padding-top: 18px; border-top: 1px solid #242932; color: #7d848e; font-size: 12px; }
+  code { color: #b9c0cb; background: #1c2026; padding: 1px 5px; border-radius: 4px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Ironbound Legion</h1>
+    <p class="sub">体素建筑资产包 · PBR 预览台</p>
+
+    <a class="go" id="main" href="preview/index.html?b=townhall">进入预览台 →</a>
+    <a class="go" id="build" href="建造系统.html"
+       style="margin-top:10px;background:#211d12;border-color:#4a3c14;color:#f0d98a">建造系统 v2 · 世界 Z 显影 →</a>
+
+    <div class="grid">
+      <a href="preview/index.html?b=townhall">城镇大厅</a>
+      <a href="preview/index.html?b=barracks">兵营</a>
+      <a href="preview/index.html?b=blacksmith">铁匠铺</a>
+      <a href="preview/index.html?b=farm">农场</a>
+      <a href="preview/index.html?b=watchtower">哨塔</a>
+      <a href="preview/index.html?b=lumbermill">伐木场</a>
+    </div>
+
+    <p class="note">
+      必须通过 HTTP 打开（<code>http://</code>），直接双击文件走 <code>file://</code> 会被浏览器 CORS 拦掉 GLB 加载。<br>
+      链接参数：<code>b</code> 建筑 · <code>anim</code> 动作 · <code>t</code> 秒 · <code>yaw</code> 角度 · <code>zoom</code> 倍率
+    </p>
+  </div>
+
+  <script>
+    // 保留 URL 上的 query，方便直接拼参数打开
+    if (location.search) {
+      document.getElementById('main').href =
+        'preview/index.html' + location.search;
+    }
+  </script>
+</body>
+</html>

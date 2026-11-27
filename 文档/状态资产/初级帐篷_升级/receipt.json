@@ -1,0 +1,61 @@
+{
+  "file": "初级帐篷_升级.glb",
+  "bytes": 255480,
+  "meshes": 4,
+  "tris": 3376,
+  "materials": [
+    "team",
+    "team_trim",
+    "主体",
+    "自发光"
+  ],
+  "mat_count": 4,
+  "bbox_min": [
+    -3.083,
+    -2.197,
+    -0.03
+  ],
+  "bbox_max": [
+    3.05,
+    2.336,
+    2.864
+  ],
+  "size": [
+    6.133,
+    4.533,
+    2.894
+  ],
+  "grounded": true,
+  "zmin": -0.03,
+  "front_ok": true,
+  "mats_ok": true,
+  "tris_ok": true,
+  "skins": 0,
+  "animations": [],
+  "static_ok": true,
+  "ok": true,
+  "asset_name": "初级帐篷_升级",
+  "kind": "升级态",
+  "cut_z": 1.55,
+  "note": "初级 → 中等：脊杆已立、脊梁斜搭；作业面 2.15 压在断口之上",
+  "lifts": 1,
+  "body": [
+    -0.552,
+    0.531,
+    -0.477,
+    0.563
+  ],
+  "plot": [
+    -1.783,
+    1.783,
+    -1.563,
+    1.73
+  ],
+  "kept": 53,
+  "removed": 2,
+  "caps": 15,
+  "chunks": 9,
+  "hints": 7,
+  "front_landmark_y": 0.708,
+  "front_landmark_ok": true
+}

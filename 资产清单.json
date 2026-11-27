@@ -9,220 +9,6 @@
  },
  "生成": "python build/mk_manifest.py",
  "资产": {
-  "单位/失落/豺狼人战士": {
-   "asset": "豺狼人战士",
-   "cat": "单位",
-   "files": {
-    "hero": {
-     "animations": 6,
-     "bytes": 2173716,
-     "joints": 26,
-     "material_names": [
-      "皮肤",
-      "皮肤暗",
-      "皮肤亮",
-      "皮革",
-      "皮革暗",
-      "骨",
-      "team_trim",
-      "team",
-      "锈铁",
-      "刃"
-     ],
-     "materials": 10,
-     "meshes": 5,
-     "nodes": 33,
-     "path": "单位/失落/豺狼人战士/豺狼人战士.glb",
-     "size_xyz": [
-      1.44,
-      2.11,
-      1.39
-     ],
-     "tri": 17352
-    },
-    "低模": {
-     "animations": 6,
-     "bytes": 1248372,
-     "joints": 26,
-     "material_names": [
-      "皮肤",
-      "皮肤暗",
-      "皮肤亮",
-      "皮革",
-      "皮革暗",
-      "骨",
-      "team_trim",
-      "team",
-      "锈铁",
-      "刃"
-     ],
-     "materials": 10,
-     "meshes": 5,
-     "nodes": 33,
-     "path": "单位/失落/豺狼人战士/豺狼人战士_低模.glb",
-     "size_xyz": [
-      1.47,
-      2.12,
-      1.42
-     ],
-     "tri": 7786
-    }
-   },
-   "team": "野怪"
-  },
-  "单位/失落/豺狼人斥候": {
-   "asset": "豺狼人斥候",
-   "cat": "单位",
-   "files": {
-    "hero": {
-     "animations": 5,
-     "bytes": 2086940,
-     "joints": 27,
-     "material_names": [
-      "皮肤",
-      "皮肤暗",
-      "皮肤亮",
-      "皮革",
-      "皮革暗",
-      "骨",
-      "team_trim",
-      "布",
-      "team",
-      "布暗",
-      "锈铁",
-      "刃"
-     ],
-     "materials": 12,
-     "meshes": 5,
-     "nodes": 34,
-     "path": "单位/失落/豺狼人斥候/豺狼人斥候.glb",
-     "size_xyz": [
-      1.14,
-      1.83,
-      1.24
-     ],
-     "tri": 17872
-    },
-    "低模": {
-     "animations": 5,
-     "bytes": 1229652,
-     "joints": 27,
-     "material_names": [
-      "皮肤",
-      "皮肤暗",
-      "皮肤亮",
-      "皮革",
-      "皮革暗",
-      "骨",
-      "team_trim",
-      "布",
-      "team",
-      "布暗",
-      "锈铁",
-      "刃"
-     ],
-     "materials": 12,
-     "meshes": 5,
-     "nodes": 34,
-     "path": "单位/失落/豺狼人斥候/豺狼人斥候_低模.glb",
-     "size_xyz": [
-      1.15,
-      1.83,
-      1.27
-     ],
-     "tri": 9008
-    }
-   },
-   "team": "野怪"
-  },
-  "单位/失落/豺狼人萨满": {
-   "asset": "豺狼人萨满",
-   "cat": "单位",
-   "files": {
-    "hero": {
-     "animations": 6,
-     "bytes": 2150272,
-     "joints": 28,
-     "material_names": [
-      "皮肤",
-      "皮肤暗",
-      "皮肤亮",
-      "皮革",
-      "皮革暗",
-      "骨",
-      "team",
-      "team_trim",
-      "辉"
-     ],
-     "materials": 9,
-     "meshes": 4,
-     "nodes": 34,
-     "path": "单位/失落/豺狼人萨满/豺狼人萨满.glb",
-     "size_xyz": [
-      1.02,
-      2.01,
-      1.29
-     ],
-     "tri": 16954
-    },
-    "低模": {
-     "animations": 6,
-     "bytes": 1187088,
-     "joints": 28,
-     "material_names": [
-      "皮肤",
-      "皮肤暗",
-      "皮肤亮",
-      "皮革",
-      "皮革暗",
-      "骨",
-      "team",
-      "team_trim",
-      "辉"
-     ],
-     "materials": 9,
-     "meshes": 4,
-     "nodes": 34,
-     "path": "单位/失落/豺狼人萨满/豺狼人萨满_低模.glb",
-     "size_xyz": [
-      1.04,
-      2.02,
-      1.31
-     ],
-     "tri": 6862
-    }
-   },
-   "team": "野怪"
-  },
-  "单位/失落/豺狼人萨满_巫杖": {
-   "asset": "豺狼人萨满_巫杖",
-   "cat": "单位",
-   "files": {
-    "hero": {
-     "animations": 0,
-     "bytes": 240840,
-     "joints": 3,
-     "material_names": [
-      "皮革暗",
-      "骨",
-      "皮革",
-      "team",
-      "辉"
-     ],
-     "materials": 5,
-     "meshes": 1,
-     "nodes": 5,
-     "path": "单位/失落/豺狼人萨满/豺狼人萨满_巫杖.glb",
-     "size_xyz": [
-      0.16,
-      1.89,
-      0.14
-     ],
-     "tri": 2536
-    }
-   },
-   "team": "野怪"
-  },
   "单位/联盟/农民_金袋": {
    "asset": "农民_金袋",
    "cat": "单位",
@@ -727,7 +513,221 @@
    },
    "team": "联盟"
   },
-  "地形纹理/地块/裂纹泥地": {
+  "单位/野怪/豺狼人战士": {
+   "asset": "豺狼人战士",
+   "cat": "单位",
+   "files": {
+    "hero": {
+     "animations": 6,
+     "bytes": 2173716,
+     "joints": 26,
+     "material_names": [
+      "皮肤",
+      "皮肤暗",
+      "皮肤亮",
+      "皮革",
+      "皮革暗",
+      "骨",
+      "team_trim",
+      "team",
+      "锈铁",
+      "刃"
+     ],
+     "materials": 10,
+     "meshes": 5,
+     "nodes": 33,
+     "path": "单位/野怪/豺狼人/豺狼人战士/豺狼人战士.glb",
+     "size_xyz": [
+      1.44,
+      2.11,
+      1.39
+     ],
+     "tri": 17352
+    },
+    "低模": {
+     "animations": 6,
+     "bytes": 1248372,
+     "joints": 26,
+     "material_names": [
+      "皮肤",
+      "皮肤暗",
+      "皮肤亮",
+      "皮革",
+      "皮革暗",
+      "骨",
+      "team_trim",
+      "team",
+      "锈铁",
+      "刃"
+     ],
+     "materials": 10,
+     "meshes": 5,
+     "nodes": 33,
+     "path": "单位/野怪/豺狼人/豺狼人战士/豺狼人战士_低模.glb",
+     "size_xyz": [
+      1.47,
+      2.12,
+      1.42
+     ],
+     "tri": 7786
+    }
+   },
+   "team": "野怪"
+  },
+  "单位/野怪/豺狼人斥候": {
+   "asset": "豺狼人斥候",
+   "cat": "单位",
+   "files": {
+    "hero": {
+     "animations": 5,
+     "bytes": 2086940,
+     "joints": 27,
+     "material_names": [
+      "皮肤",
+      "皮肤暗",
+      "皮肤亮",
+      "皮革",
+      "皮革暗",
+      "骨",
+      "team_trim",
+      "布",
+      "team",
+      "布暗",
+      "锈铁",
+      "刃"
+     ],
+     "materials": 12,
+     "meshes": 5,
+     "nodes": 34,
+     "path": "单位/野怪/豺狼人/豺狼人斥候/豺狼人斥候.glb",
+     "size_xyz": [
+      1.14,
+      1.83,
+      1.24
+     ],
+     "tri": 17872
+    },
+    "低模": {
+     "animations": 5,
+     "bytes": 1229652,
+     "joints": 27,
+     "material_names": [
+      "皮肤",
+      "皮肤暗",
+      "皮肤亮",
+      "皮革",
+      "皮革暗",
+      "骨",
+      "team_trim",
+      "布",
+      "team",
+      "布暗",
+      "锈铁",
+      "刃"
+     ],
+     "materials": 12,
+     "meshes": 5,
+     "nodes": 34,
+     "path": "单位/野怪/豺狼人/豺狼人斥候/豺狼人斥候_低模.glb",
+     "size_xyz": [
+      1.15,
+      1.83,
+      1.27
+     ],
+     "tri": 9008
+    }
+   },
+   "team": "野怪"
+  },
+  "单位/野怪/豺狼人萨满": {
+   "asset": "豺狼人萨满",
+   "cat": "单位",
+   "files": {
+    "hero": {
+     "animations": 6,
+     "bytes": 2150272,
+     "joints": 28,
+     "material_names": [
+      "皮肤",
+      "皮肤暗",
+      "皮肤亮",
+      "皮革",
+      "皮革暗",
+      "骨",
+      "team",
+      "team_trim",
+      "辉"
+     ],
+     "materials": 9,
+     "meshes": 4,
+     "nodes": 34,
+     "path": "单位/野怪/豺狼人/豺狼人萨满/豺狼人萨满.glb",
+     "size_xyz": [
+      1.02,
+      2.01,
+      1.29
+     ],
+     "tri": 16954
+    },
+    "低模": {
+     "animations": 6,
+     "bytes": 1187088,
+     "joints": 28,
+     "material_names": [
+      "皮肤",
+      "皮肤暗",
+      "皮肤亮",
+      "皮革",
+      "皮革暗",
+      "骨",
+      "team",
+      "team_trim",
+      "辉"
+     ],
+     "materials": 9,
+     "meshes": 4,
+     "nodes": 34,
+     "path": "单位/野怪/豺狼人/豺狼人萨满/豺狼人萨满_低模.glb",
+     "size_xyz": [
+      1.04,
+      2.02,
+      1.31
+     ],
+     "tri": 6862
+    }
+   },
+   "team": "野怪"
+  },
+  "单位/野怪/豺狼人萨满_巫杖": {
+   "asset": "豺狼人萨满_巫杖",
+   "cat": "单位",
+   "files": {
+    "hero": {
+     "animations": 0,
+     "bytes": 240840,
+     "joints": 3,
+     "material_names": [
+      "皮革暗",
+      "骨",
+      "皮革",
+      "team",
+      "辉"
+     ],
+     "materials": 5,
+     "meshes": 1,
+     "nodes": 5,
+     "path": "单位/野怪/豺狼人/豺狼人萨满/豺狼人萨满_巫杖.glb",
+     "size_xyz": [
+      0.16,
+      1.89,
+      0.14
+     ],
+     "tri": 2536
+    }
+   },
+   "team": "野怪"
+  },
+  "地形/地块/裂纹泥地": {
    "asset": "裂纹泥地",
    "cat": "地形",
    "files": {
@@ -747,7 +747,7 @@
      "materials": 7,
      "meshes": 7,
      "nodes": 7,
-     "path": "地形纹理/地块/裂纹泥地.glb",
+     "path": "地形/地块/裂纹泥地.glb",
      "size_xyz": [
       8.03,
       0.54,
@@ -771,7 +771,7 @@
      "materials": 7,
      "meshes": 7,
      "nodes": 7,
-     "path": "地形纹理/地块/裂纹泥地_低模.glb",
+     "path": "地形/地块/裂纹泥地_低模.glb",
      "size_xyz": [
       8.04,
       0.54,

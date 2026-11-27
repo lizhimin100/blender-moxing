@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>铁誓军团 · 建筑预览（自包含）</title>
+<style>
+  :root { --bg:#0f1115; --panel:#15181f; --line:#262b36; --txt:#e8eaef; --dim:#8b93a3; --accent:#c9a227; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; height:100%; background:var(--bg); color:var(--txt); overflow:hidden;
+    font:13px/1.6 "Inter","PingFang SC","Microsoft YaHei",system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  #view { position:fixed; inset:0; }
+  #bar { position:fixed; left:16px; top:16px; z-index:5; background:rgba(21,24,31,.94);
+    border:1px solid var(--line); border-radius:10px; padding:12px 14px; backdrop-filter:blur(8px); }
+  #bar h1 { margin:0 0 10px; font-size:11px; letter-spacing:.18em; color:var(--accent);
+    font-weight:600; text-transform:uppercase; }
+  .row { display:flex; gap:6px; margin-bottom:6px; }
+  .row:last-child { margin-bottom:0; }
+  button { background:#1b1f28; color:var(--txt); border:1px solid var(--line); border-radius:6px;
+    padding:7px 12px; font:inherit; font-size:12px; cursor:pointer; transition:.12s; }
+  button:hover { border-color:#3b4457; background:#1f2431; }
+  button.on { border-color:var(--accent); background:#221f14; color:#f0d98a; }
+  #hud { position:fixed; left:16px; bottom:16px; z-index:5; color:var(--dim); font-size:11px;
+    font-family:ui-monospace,Consolas,monospace; background:rgba(21,24,31,.9);
+    border:1px solid var(--line); border-radius:8px; padding:8px 11px; white-space:pre; line-height:1.7; }
+  #tip { position:fixed; right:16px; bottom:16px; z-index:5; color:var(--dim); font-size:11px; text-align:right; }
+  #tip b { color:#b9c2d4; font-weight:500; }
+</style>
+</head>
+<body>
+<div id="view"></div>
+
+<div id="bar">
+  <h1>铁誓军团 · 建筑预览</h1>
+  <div class="row" id="picker"></div>
+  <div class="row">
+    <button id="wire">线框</button>
+    <button id="spin" class="on">自动旋转</button>
+    <button id="reset">复位</button>
+  </div>
+</div>
+
+<div id="hud">载入中…</div>
+<div id="tip">左键旋转 · <b>右键平移</b> · 滚轮缩放<br>自包含单文件，双击即可打开</div>
+
+<script>(function(){
+/*__THREE__*/
+})();</script>
+<script>(function(){
+/*__BGU__*/
+})();</script>
+<script>(function(){
+/*__GLTF__*/
+})();</script>
+<script>(function(){
+/*__ORBIT__*/
+})();</script>
+<script>(function(){
+/*__META__*/
+
+const GLB = {
+  bs: "/*__GLB_bs__*/",
+  br: "/*__GLB_br__*/",
+  th: "/*__GLB_th__*/",
+};
+
+const hudEl = document.getElementById('hud');
+function fatal(msg) { hudEl.textContent = '⚠ ' + msg; hudEl.style.color = '#ff9c8a'; }
+addEventListener('error', (e) => fatal(e.message || '脚本错误'));
+addEventListener('unhandledrejection', (e) => fatal((e.reason && e.reason.message) || 'Promise 拒绝'));
+
+let current = MODELS[0].key;
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+document.getElementById('view').appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#10131a');
+scene.fog = new THREE.Fog('#10131a', 60, 150);
+
+const camera = new THREE.PerspectiveCamera(38, innerWidth / innerHeight, 0.1, 400);
+camera.position.set(14, 12, 18);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.06;
+controls.maxPolarAngle = Math.PI * 0.495;
+controls.minDistance = 3;
+controls.maxDistance = 90;
+
+scene.add(new THREE.HemisphereLight('#a9c0e0', '#4a4033', 1.0));
+const key = new THREE.DirectionalLight('#fff2dc', 2.6);
+key.position.set(-16, 24, -16);
+key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048);
+const sc = 22;
+Object.assign(key.shadow.camera, { left: -sc, right: sc, top: sc, bottom: -sc, near: 1, far: 120 });
+key.shadow.camera.updateProjectionMatrix();
+key.shadow.bias = -0.0006;
+scene.add(key);
+const fill = new THREE.DirectionalLight('#9fb8ff', 0.75);
+fill.position.set(18, 10, 14);
+scene.add(fill);
+const rim = new THREE.DirectionalLight('#ffd9a8', 0.5);
+rim.position.set(4, 7, 20);
+scene.add(rim);
+
+const ground = new THREE.Mesh(
+  new THREE.CircleGeometry(80, 64),
+  new THREE.MeshStandardMaterial({ color: '#3b4034', roughness: 1, metalness: 0 })
+);
+ground.rotation.x = -Math.PI / 2;
+ground.receiveShadow = true;
+scene.add(ground);
+const grid = new THREE.GridHelper(80, 80, '#3a4352', '#2a3040');
+grid.position.y = 0.002;
+grid.material.transparent = true;
+grid.material.opacity = 0.3;
+scene.add(grid);
+
+// ---------- GLB（base64 内嵌）----------
+function b64ToBuf(b64) {
+  const bin = atob(b64);
+  const n = bin.length;
+  const u8 = new Uint8Array(n);
+  for (let i = 0; i < n; i++) u8[i] = bin.charCodeAt(i);
+  return u8.buffer;
+}
+
+const loader = new GLTFLoader();
+let root = null;
+let wireOn = false;
+let spin = true;
+
+function frame(obj) {
+  const box = new THREE.Box3().setFromObject(obj);
+  const size = box.getSize(new THREE.Vector3());
+  const ctr = box.getCenter(new THREE.Vector3());
+  const r = Math.max(size.x, size.y, size.z) * 0.5;
+  const dist = r / Math.tan((camera.fov * Math.PI) / 360) * 1.55;
+  controls.target.copy(ctr);
+  camera.position.set(ctr.x - dist * 0.62, ctr.y + dist * 0.55, ctr.z - dist * 0.72);
+  camera.near = Math.max(0.1, dist / 120);
+  camera.far = dist * 12;
+  camera.updateProjectionMatrix();
+  controls.update();
+}
+
+function countTris(obj) {
+  let t = 0;
+  obj.traverse((o) => {
+    if (o.isMesh && o.geometry) {
+      const g = o.geometry;
+      t += g.index ? g.index.count / 3 : g.attributes.position.count / 3;
+    }
+  });
+  return Math.round(t);
+}
+
+function disposeTree(obj) {
+  obj.traverse((o) => {
+    if (o.isMesh) {
+      o.geometry?.dispose?.();
+      const mats = Array.isArray(o.material) ? o.material : [o.material];
+      mats.forEach((mm) => mm?.dispose?.());
+    }
+  });
+}
+
+function load(key) {
+  const m = MODELS.find((x) => x.key === key) || MODELS[0];
+  current = m.key;
+  document.querySelectorAll('#picker button').forEach((b) => b.classList.toggle('on', b.dataset.k === m.key));
+  hudEl.style.color = '';
+  hudEl.textContent = `载入 ${m.name} …`;
+  if (root) { scene.remove(root); disposeTree(root); root = null; }
+  try {
+    loader.parse(b64ToBuf(GLB[m.key]), '', (gltf) => {
+      root = gltf.scene;
+      root.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; } });
+      if (wireOn) root.traverse((o) => { if (o.isMesh && o.material) o.material.wireframe = true; });
+      scene.add(root);
+      frame(root);
+      const tris = countTris(root);
+      const size = new THREE.Box3().setFromObject(root).getSize(new THREE.Vector3());
+      hudEl.textContent =
+        `${m.name} · ${m.kind}\n` +
+        `${tris.toLocaleString()} 三角面\n` +
+        `${size.x.toFixed(2)} × ${size.z.toFixed(2)} × ${size.y.toFixed(2)} m`;
+    }, (err) => fatal('解析失败：' + (err?.message || err)));
+  } catch (e) {
+    fatal('载入失败：' + (e?.message || e));
+    console.error(e);
+  }
+}
+
+// ---------- UI ----------
+const picker = document.getElementById('picker');
+MODELS.forEach((m) => {
+  const b = document.createElement('button');
+  b.textContent = m.name;
+  b.dataset.k = m.key;
+  b.onclick = () => load(m.key);
+  picker.appendChild(b);
+});
+
+document.getElementById('wire').onclick = (e) => {
+  wireOn = !wireOn;
+  e.currentTarget.classList.toggle('on', wireOn);
+  root?.traverse((o) => { if (o.isMesh && o.material) o.material.wireframe = wireOn; });
+};
+document.getElementById('spin').onclick = (e) => {
+  spin = !spin;
+  e.currentTarget.classList.toggle('on', spin);
+};
+document.getElementById('reset').onclick = () => root && frame(root);
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+renderer.setAnimationLoop(() => {
+  if (spin && root) root.rotation.y += 0.004;
+  controls.update();
+  renderer.render(scene, camera);
+});
+
+load(current);
+})();
+</script>
+</body>
+</html>

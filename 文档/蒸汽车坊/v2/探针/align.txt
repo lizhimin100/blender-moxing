@@ -1,0 +1,165 @@
+ITEMS 364
+=== CLIP_CROSS 0 ===
+=== CLIP_INNER 658 (前 24) ===
+   1  yard_soil                  <-> yard_rim_f
+   1  yard_soil                  <-> yard_rim_b
+   8  yard_soil                  <-> yard_rim_l
+   4  yard_soil                  <-> yard_pave0
+   4  yard_soil                  <-> yard_pave1
+   4  yard_soil                  <-> yard_pave2
+   4  yard_soil                  <-> yard_pave3
+   4  yard_soil                  <-> yard_pave4
+   4  yard_soil                  <-> step0
+   4  yard_soil                  <-> step1
+   8  yard_soil                  <-> hall_plinth
+   8  yard_soil                  <-> ann_plinth
+   8  yard_soil                  <-> chim_base
+  16  yard_soil                  <-> prop_coal
+   4  yard_soil                  <-> prop_coal_lump
+   4  yard_soil                  <-> prop_coal_lump.001
+   4  yard_soil                  <-> prop_coal_lump.002
+   8  yard_soil                  <-> prop_sack
+   8  yard_soil                  <-> prop_sack.001
+  10  yard_soil                  <-> prop_barrel
+  10  yard_soil                  <-> prop_barrel.001
+   4  yard_soil                  <-> prop_bunker
+   4  yard_soil                  <-> prop_shovel_blade
+   4  yard_soil                  <-> prop_crate
+=== CONTAIN 80 ===
+   hall_gable_f                in  roof_main
+   hall_gable_b                in  roof_main
+   hall_bress_f                in  roof_main
+   hall_bress_b                in  roof_main
+   hall_team_board             in  roof_main
+   win_l2_fL.001               in  hall_buttl
+   hall_blouv_frame            in  roof_main
+   hall_blouv_back             in  roof_main
+   hall_blouv                  in  roof_main
+   hall_blouv.001              in  roof_main
+   hall_blouv.002              in  roof_main
+   door_tymp                   in  hall_arch_head
+   door_tymp_plank             in  hall_arch_head
+   door_tymp_plank.001         in  hall_arch_head
+   door_tymp_plank.002         in  hall_arch_head
+   door_tymp_strap             in  hall_arch_head
+   roof_skyr0_g                in  roof_main
+   roof_skyr0_h                in  roof_main
+   roof_skyr0_g.001            in  roof_main
+   roof_skyr0_h.001            in  roof_main
+   roof_skyr0_glass            in  roof_main
+   roof_skyr1_g                in  roof_main
+   roof_skyr1_h                in  roof_main
+   roof_skyr1_g.001            in  roof_main
+   roof_skyr1_h.001            in  roof_main
+   roof_skyr1_glass            in  roof_main
+   roof_skyr2_g                in  roof_main
+   roof_skyr2_h                in  roof_main
+   roof_skyr2_g.001            in  roof_main
+   roof_skyr2_h.001            in  roof_main
+   roof_skyr2_glass            in  roof_main
+   roof_skyl0_g                in  roof_main
+   roof_skyl0_h                in  roof_main
+   roof_skyl0_g.001            in  roof_main
+   roof_skyl0_h.001            in  roof_main
+   roof_skyl0_glass            in  roof_main
+   roof_skyl1_g                in  roof_main
+   roof_skyl1_h                in  roof_main
+   roof_skyl1_g.001            in  roof_main
+   roof_skyl1_h.001            in  roof_main
+=== COPLANAR_UP 0 ===
+=== COPLANAR 171 ===
+   yard_soil                  <-> yard_rim_f                  @(2, -1) d=+0.000
+   yard_soil                  <-> yard_rim_b                  @(2, -1) d=+0.000
+   yard_soil                  <-> hall_plinth                 @(2, -1) d=+0.000
+   yard_soil                  <-> ann_plinth                  @(2, -1) d=+0.000
+   yard_soil                  <-> chim_base                   @(2, -1) d=+0.000
+   hall_plinth                <-> ann_plinth                  @(2, -1) d=+0.000
+   hall_wall_b                <-> hall_gable_b                @(1, -1) d=-6.600
+   hall_wall_f                <-> hall_gable_f                @(1, -1) d=+5.140
+   hall_wall_f                <-> door_vest_s                 @(2, -1) d=+1.200
+   hall_wall_f.001            <-> hall_gable_f                @(1, -1) d=+5.140
+   hall_wall_f.001            <-> door_vest_s.001             @(2, -1) d=+1.200
+   hall_gable_f               <-> hall_arch_head              @(1, -1) d=+5.140
+   hall_team_board            <-> hall_post                   @(1, -1) d=+5.390
+   hall_team_board            <-> hall_post.001               @(1, -1) d=+5.390
+   hall_post                  <-> roof_rake_f0                @(1, 1) d=+5.630
+   hall_post.001              <-> roof_rake_f1                @(1, 1) d=+5.630
+   hall_buttl                 <-> win_l2                      @(0, 1) d=-3.600
+   hall_buttl                 <-> win_l2_fT                   @(0, 1) d=-3.600
+   hall_buttl                 <-> win_l2_fL.001               @(0, 1) d=-3.600
+   hall_buttl                 <-> win_l2_fT.001               @(0, 1) d=-3.600
+   hall_buttl                 <-> win_l2_sill                 @(0, -1) d=-3.820
+   hall_buttl.001             <-> win_l1                      @(0, 1) d=-3.600
+   hall_buttl.001             <-> win_l1_fL                   @(0, 1) d=-3.600
+   hall_buttl.001             <-> win_l1_fT                   @(0, 1) d=-3.600
+   hall_buttl.001             <-> win_l1_fT.001               @(0, 1) d=-3.600
+   hall_buttl.001             <-> win_l1_sill                 @(0, -1) d=-3.820
+   win_r1_fL                  <-> win_r1_fT                   @(1, -1) d=+3.610
+   win_r1_fL                  <-> win_r1_fT.001               @(1, -1) d=+3.610
+   win_r1_fT                  <-> win_r1_fL.001               @(0, 1) d=+3.740
+   win_r1_fT                  <-> win_r1_sill                 @(2, -1) d=+2.435
+   win_r1_fL.001              <-> win_r1_fT.001               @(0, 1) d=+3.740
+   win_r2_fL                  <-> win_r2_fT                   @(1, -1) d=+1.610
+   win_r2_fL                  <-> win_r2_fT.001               @(1, -1) d=+1.610
+   win_r2_fT                  <-> win_r2_fL.001               @(0, 1) d=+3.740
+   win_r2_fT                  <-> win_r2_sill                 @(2, -1) d=+2.435
+   win_r2_fL.001              <-> win_r2_fT.001               @(0, 1) d=+3.740
+   hall_vent0                 <-> ann_roof                    @(0, -1) d=+3.600
+   hall_vent0_slat.001        <-> hall_vent0_slat.002         @(0, 1) d=+3.670
+   hall_vent1                 <-> ann_roof                    @(0, -1) d=+3.600
+   hall_vent1_slat.001        <-> hall_vent1_slat.002         @(0, 1) d=+3.670
+   hall_vent2                 <-> ann_roof                    @(0, -1) d=+3.600
+   hall_vent2_slat.001        <-> hall_vent2_slat.002         @(0, 1) d=+3.670
+   win_l1_fL                  <-> win_l1_fT                   @(1, -1) d=-2.640
+   win_l1_fL                  <-> win_l1_fT.001               @(1, -1) d=-2.640
+   win_l1_fT                  <-> win_l1_fL.001               @(0, 1) d=-3.600
+   win_l1_fT                  <-> win_l1_sill                 @(2, -1) d=+2.435
+   win_l1_fL.001              <-> win_l1_fT.001               @(0, 1) d=-3.600
+   win_l2_fL                  <-> win_l2_fT                   @(1, -1) d=+2.010
+   win_l2_fL                  <-> win_l2_fT.001               @(1, -1) d=+2.010
+   win_l2_fT                  <-> win_l2_fL.001               @(0, 1) d=-3.600
+   win_l2_fT                  <-> win_l2_sill                 @(2, -1) d=+2.435
+   win_l2_fL.001              <-> win_l2_fT.001               @(0, 1) d=-3.600
+   win_b1_fL                  <-> win_b1_fT                   @(1, -1) d=-6.740
+   win_b1_fL                  <-> win_b1_fT.001               @(1, -1) d=-6.740
+   win_b1_fT                  <-> win_b1_fL.001               @(1, -1) d=-6.740
+   win_b1_fT                  <-> win_b1_sill                 @(2, -1) d=+2.645
+   win_b1_fL.001              <-> win_b1_fT.001               @(1, -1) d=-6.740
+   door_jamb                  <-> door_vest_s                 @(2, -1) d=+1.200
+   door_jamb.001              <-> door_vest_s.001             @(2, -1) d=+1.200
+   door_vest_b                <-> door_vest_s                 @(2, -1) d=+1.200
+   door_vest_b                <-> door_vest_s.001             @(2, -1) d=+1.200
+   roof_main                  <-> roof_ridge                  @(1, -1) d=-6.820
+   roof_rake_f0               <-> roof_rake_f1                @(1, 1) d=+5.630
+   roof_rake_b0               <-> roof_rake_b1                @(1, 1) d=-6.730
+   roof_rake_team0            <-> roof_rake_team1             @(1, 1) d=+5.644
+   roof_vane_arrow            <-> roof_vane_fin               @(0, 1) d=+0.023
+   ann_plinth                 <-> chim_base                   @(2, -1) d=+0.000
+   ann_wall_x                 <-> ann_wall_f                  @(2, -1) d=+0.560
+   ann_wall_x                 <-> ann_wall_b                  @(2, -1) d=+0.560
+   ann_roof                   <-> ann_flash                   @(1, -1) d=-6.200
+   ann_roof_edge              <-> ann_roof_team               @(1, -1) d=-6.200
+   ann_port_rim               <-> ann_port_bar.001            @(0, 1) d=+5.930
+   ann_fire_door              <-> ann_ash_door                @(0, 1) d=+6.230
+   ann_fire_door              <-> ann_fire_lip                @(1, -1) d=-3.100
+   ann_fire_glow_core         <-> ann_fire_grate.001          @(0, -1) d=+6.228
+   ann_fire_glow_core         <-> ann_fire_grate.002          @(0, -1) d=+6.228
+   ann_fire_bezel.001         <-> ann_fire_bezel.002          @(0, 1) d=+6.258
+   ann_fire_bezel.001         <-> ann_fire_bezel.003          @(0, 1) d=+6.258
+   crane_hook_b               <-> crane_hook_c                @(0, 1) d=+1.985
+   gab_stud.001               <-> gab_collar                  @(1, -1) d=+5.400
+   gab_stud.002               <-> gab_collar                  @(1, -1) d=+5.400
+   gab_collar                 <-> gab_king                    @(1, -1) d=+5.400
+   her_banner_rod             <-> her_banner_brk              @(2, -1) d=+4.445
+   her_banner_rod             <-> her_banner_brk.001          @(2, -1) d=+4.445
+   her_banner_edge            <-> her_banner_rim              @(1, -1) d=+5.453
+   her_banner_rim             <-> her_banner_field            @(1, 1) d=+5.485
+   tuft.001                   <-> tuft.002                    @(2, -1) d=+0.198
+   tuft.003                   <-> tuft.004                    @(2, -1) d=+0.198
+   tuft.003                   <-> tuft.005                    @(2, -1) d=+0.198
+   tuft.004                   <-> tuft.005                    @(2, -1) d=+0.198
+   tuft.006                   <-> tuft.007                    @(2, -1) d=+0.198
+   tuft.006                   <-> tuft.008                    @(2, -1) d=+0.198
+   tuft.007                   <-> tuft.008                    @(2, -1) d=+0.198
+=== FLOAT 0 ===
+DONE

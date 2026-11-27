@@ -1,0 +1,217 @@
+{
+ "asset": "剑士",
+ "ok": true,
+ "variants": {
+  "剑士_手游_近.glb": {
+   "meshes": 3,
+   "armatures": 1,
+   "bones": 23,
+   "vgroups": 23,
+   "materials": [
+    "team",
+    "team_trim",
+    "主体"
+   ],
+   "surfaces": 3,
+   "tris": 10290,
+   "bbox_min": [
+    -0.69,
+    -0.224,
+    -0.0
+   ],
+   "bbox_max": [
+    0.541,
+    0.33,
+    2.571
+   ],
+   "size": [
+    1.231,
+    0.554,
+    2.571
+   ],
+   "grounded": true,
+   "front_ok": true,
+   "has_texture": true,
+   "file": "剑士_手游_近.glb",
+   "bytes": 934200,
+   "build_parts": 89,
+   "budget_tris": 14000,
+   "over_budget": false,
+   "materials_ok": true
+  },
+  "剑士_手游_中.glb": {
+   "meshes": 3,
+   "armatures": 1,
+   "bones": 23,
+   "vgroups": 23,
+   "materials": [
+    "team",
+    "team_trim",
+    "主体"
+   ],
+   "surfaces": 3,
+   "tris": 3578,
+   "bbox_min": [
+    -0.691,
+    -0.225,
+    -0.0
+   ],
+   "bbox_max": [
+    0.542,
+    0.331,
+    2.572
+   ],
+   "size": [
+    1.234,
+    0.556,
+    2.572
+   ],
+   "grounded": true,
+   "front_ok": true,
+   "has_texture": true,
+   "file": "剑士_手游_中.glb",
+   "bytes": 321280,
+   "build_parts": 72,
+   "budget_tris": 7000,
+   "over_budget": false,
+   "materials_ok": true
+  },
+  "剑士_手游_远.glb": {
+   "meshes": 3,
+   "armatures": 1,
+   "bones": 23,
+   "vgroups": 23,
+   "materials": [
+    "team",
+    "team_trim",
+    "主体"
+   ],
+   "surfaces": 3,
+   "tris": 2562,
+   "bbox_min": [
+    -0.691,
+    -0.225,
+    -0.0
+   ],
+   "bbox_max": [
+    0.542,
+    0.331,
+    2.572
+   ],
+   "size": [
+    1.234,
+    0.556,
+    2.572
+   ],
+   "grounded": true,
+   "front_ok": true,
+   "has_texture": true,
+   "file": "剑士_手游_远.glb",
+   "bytes": 229904,
+   "build_parts": 38,
+   "budget_tris": 3000,
+   "over_budget": false,
+   "materials_ok": true
+  }
+ },
+ "standard": {
+  "剑士.glb": {
+   "meshes": 14,
+   "armatures": 1,
+   "bones": 23,
+   "vgroups": 23,
+   "materials": [
+    "cloth",
+    "cloth_dark",
+    "dark",
+    "earth",
+    "earth_dark",
+    "gold",
+    "iron",
+    "skin",
+    "steel",
+    "steel_dark",
+    "team",
+    "team_trim",
+    "wood_dark",
+    "wood_warm"
+   ],
+   "surfaces": 14,
+   "tris": 26714,
+   "bbox_min": [
+    -0.69,
+    -0.224,
+    -0.0
+   ],
+   "bbox_max": [
+    0.541,
+    0.33,
+    2.571
+   ],
+   "size": [
+    1.231,
+    0.555,
+    2.571
+   ],
+   "grounded": true,
+   "front_ok": true,
+   "has_texture": false,
+   "file": "剑士.glb",
+   "bytes": 1876176,
+   "build_tris": 26714
+  },
+  "剑士_低模.glb": {
+   "meshes": 14,
+   "armatures": 1,
+   "bones": 23,
+   "vgroups": 23,
+   "materials": [
+    "cloth",
+    "cloth_dark",
+    "dark",
+    "earth",
+    "earth_dark",
+    "gold",
+    "iron",
+    "skin",
+    "steel",
+    "steel_dark",
+    "team",
+    "team_trim",
+    "wood_dark",
+    "wood_warm"
+   ],
+   "surfaces": 14,
+   "tris": 10290,
+   "bbox_min": [
+    -0.69,
+    -0.224,
+    -0.0
+   ],
+   "bbox_max": [
+    0.541,
+    0.33,
+    2.571
+   ],
+   "size": [
+    1.231,
+    0.554,
+    2.571
+   ],
+   "grounded": true,
+   "front_ok": true,
+   "has_texture": false,
+   "file": "剑士_低模.glb",
+   "bytes": 1001132,
+   "build_tris": 10290
+  }
+ },
+ "atlas": {
+  "主体": "主体.png",
+  "ORM": "ORM.png"
+ },
+ "blend": {
+  "file": "剑士.blend",
+  "bytes": 259901
+ }
+}

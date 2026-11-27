@@ -1,0 +1,2639 @@
+{
+ "asset": "魔金傀儡",
+ "modules": [
+  "body",
+  "head",
+  "pauldron",
+  "runes"
+ ],
+ "bones": [
+  "root",
+  "hips",
+  "spine",
+  "chest",
+  "neck",
+  "head",
+  "shoulder_R",
+  "upperarm_R",
+  "forearm_R",
+  "hand_R",
+  "thigh_R",
+  "shin_R",
+  "foot_R",
+  "toe_R",
+  "shoulder_L",
+  "upperarm_L",
+  "forearm_L",
+  "hand_L",
+  "thigh_L",
+  "shin_L",
+  "foot_L",
+  "toe_L",
+  "rune_chest",
+  "rune_R",
+  "rune_L",
+  "core"
+ ],
+ "parts": [
+  {
+   "tag": "flesh",
+   "obj": "lg_flesh_R_205",
+   "module": "body",
+   "bone": "thigh_R",
+   "material": "铁",
+   "tris": 44,
+   "center": [
+    0.3125,
+    0.1053,
+    1.6125
+   ]
+  },
+  {
+   "tag": "flesh",
+   "obj": "lg_flesh_R_114",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "铁",
+   "tris": 44,
+   "center": [
+    0.346,
+    0.1261,
+    0.775
+   ]
+  },
+  {
+   "tag": "thigh",
+   "obj": "lg_cuisse_Ra",
+   "module": "body",
+   "bone": "thigh_R",
+   "material": "金暗",
+   "tris": 272,
+   "center": [
+    0.3186,
+    0.0459,
+    1.8713
+   ]
+  },
+  {
+   "tag": "thigh",
+   "obj": "lg_cuisse_Ra_o",
+   "module": "body",
+   "bone": "thigh_R",
+   "material": "金",
+   "tris": 180,
+   "center": [
+    0.4548,
+    0.0382,
+    1.8807
+   ]
+  },
+  {
+   "tag": "thigh",
+   "obj": "lg_cuisse_Ra_lip",
+   "module": "body",
+   "bone": "thigh_R",
+   "material": "team_trim",
+   "tris": 124,
+   "center": [
+    0.3702,
+    0.094,
+    1.731
+   ]
+  },
+  {
+   "tag": "thigh",
+   "obj": "lg_cuisse_Rb",
+   "module": "body",
+   "bone": "thigh_R",
+   "material": "金暗",
+   "tris": 272,
+   "center": [
+    0.3339,
+    0.1409,
+    1.4762
+   ]
+  },
+  {
+   "tag": "thigh",
+   "obj": "lg_cuisse_Rb_o",
+   "module": "body",
+   "bone": "thigh_R",
+   "material": "金",
+   "tris": 180,
+   "center": [
+    0.4637,
+    0.1335,
+    1.4854
+   ]
+  },
+  {
+   "tag": "thigh",
+   "obj": "lg_cuisse_Rb_lip",
+   "module": "body",
+   "bone": "thigh_R",
+   "material": "team_trim",
+   "tris": 124,
+   "center": [
+    0.3819,
+    0.1919,
+    1.321
+   ]
+  },
+  {
+   "tag": "knee",
+   "obj": "lg_knee_R",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "金",
+   "tris": 124,
+   "center": [
+    0.3447,
+    -0.0107,
+    1.1613
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "lg_knee_pin_R",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "铁",
+   "tris": 156,
+   "center": [
+    0.3308,
+    0.2352,
+    1.1562
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "lg_knee_pin_R_c1",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    0.6,
+    0.2352,
+    1.1562
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "lg_knee_pin_R_c2",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    0.0616,
+    0.2352,
+    1.1562
+   ]
+  },
+  {
+   "tag": "knee",
+   "obj": "lg_knee_spike_R",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "金",
+   "tris": 156,
+   "center": [
+    0.3308,
+    0.3955,
+    1.2953
+   ]
+  },
+  {
+   "tag": "knee",
+   "obj": "lg_knee_top_R",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "team_trim",
+   "tris": 108,
+   "center": [
+    0.3308,
+    0.2841,
+    1.3262
+   ]
+  },
+  {
+   "tag": "shin",
+   "obj": "lg_greave_Ra",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "金暗",
+   "tris": 272,
+   "center": [
+    0.3545,
+    0.1634,
+    0.9251
+   ]
+  },
+  {
+   "tag": "shin",
+   "obj": "lg_greave_Ra_o",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "金",
+   "tris": 180,
+   "center": [
+    0.472,
+    0.1567,
+    0.9363
+   ]
+  },
+  {
+   "tag": "shin",
+   "obj": "lg_greave_Ra_rib",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "金",
+   "tris": 44,
+   "center": [
+    0.3425,
+    0.4291,
+    0.8624
+   ]
+  },
+  {
+   "tag": "shin",
+   "obj": "lg_greave_Rb",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "金暗",
+   "tris": 272,
+   "center": [
+    0.3682,
+    0.0803,
+    0.5701
+   ]
+  },
+  {
+   "tag": "shin",
+   "obj": "lg_greave_Rb_o",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "金",
+   "tris": 180,
+   "center": [
+    0.4793,
+    0.0739,
+    0.581
+   ]
+  },
+  {
+   "tag": "shin",
+   "obj": "lg_greave_Rb_rib",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "金",
+   "tris": 44,
+   "center": [
+    0.3566,
+    0.3323,
+    0.5107
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "lg_ankle_pin_R",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "铁",
+   "tris": 76,
+   "center": [
+    0.365,
+    0.03,
+    0.38
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "lg_ankle_pin_R_c1",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    0.561,
+    0.03,
+    0.38
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "lg_ankle_pin_R_c2",
+   "module": "body",
+   "bone": "shin_R",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    0.169,
+    0.03,
+    0.38
+   ]
+  },
+  {
+   "tag": "boot",
+   "obj": "lg_boot_R",
+   "module": "body",
+   "bone": "foot_R",
+   "material": "金",
+   "tris": 124,
+   "center": [
+    0.365,
+    0.0573,
+    0.2364
+   ]
+  },
+  {
+   "tag": "boot",
+   "obj": "lg_sole_R",
+   "module": "body",
+   "bone": "foot_R",
+   "material": "铁",
+   "tris": 92,
+   "center": [
+    0.365,
+    0.1,
+    0.026
+   ]
+  },
+  {
+   "tag": "boot",
+   "obj": "lg_toe_plate_R",
+   "module": "body",
+   "bone": "toe_R",
+   "material": "金暗",
+   "tris": 108,
+   "center": [
+    0.365,
+    0.2127,
+    0.1055
+   ]
+  },
+  {
+   "tag": "boot",
+   "obj": "lg_toe_rim_R",
+   "module": "body",
+   "bone": "toe_R",
+   "material": "team_trim",
+   "tris": 44,
+   "center": [
+    0.365,
+    0.262,
+    0.07
+   ]
+  },
+  {
+   "tag": "flesh",
+   "obj": "lg_flesh_L_205",
+   "module": "body",
+   "bone": "thigh_L",
+   "material": "铁",
+   "tris": 44,
+   "center": [
+    -0.3125,
+    0.1053,
+    1.6125
+   ]
+  },
+  {
+   "tag": "flesh",
+   "obj": "lg_flesh_L_114",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "铁",
+   "tris": 44,
+   "center": [
+    -0.346,
+    0.1261,
+    0.775
+   ]
+  },
+  {
+   "tag": "thigh",
+   "obj": "lg_cuisse_La",
+   "module": "body",
+   "bone": "thigh_L",
+   "material": "金暗",
+   "tris": 272,
+   "center": [
+    -0.3186,
+    0.0459,
+    1.8713
+   ]
+  },
+  {
+   "tag": "thigh",
+   "obj": "lg_cuisse_La_o",
+   "module": "body",
+   "bone": "thigh_L",
+   "material": "金",
+   "tris": 180,
+   "center": [
+    -0.4548,
+    0.0382,
+    1.8807
+   ]
+  },
+  {
+   "tag": "thigh",
+   "obj": "lg_cuisse_La_lip",
+   "module": "body",
+   "bone": "thigh_L",
+   "material": "team_trim",
+   "tris": 124,
+   "center": [
+    -0.3702,
+    0.094,
+    1.731
+   ]
+  },
+  {
+   "tag": "thigh",
+   "obj": "lg_cuisse_Lb",
+   "module": "body",
+   "bone": "thigh_L",
+   "material": "金暗",
+   "tris": 272,
+   "center": [
+    -0.3339,
+    0.1409,
+    1.4762
+   ]
+  },
+  {
+   "tag": "thigh",
+   "obj": "lg_cuisse_Lb_o",
+   "module": "body",
+   "bone": "thigh_L",
+   "material": "金",
+   "tris": 180,
+   "center": [
+    -0.4637,
+    0.1335,
+    1.4854
+   ]
+  },
+  {
+   "tag": "thigh",
+   "obj": "lg_cuisse_Lb_lip",
+   "module": "body",
+   "bone": "thigh_L",
+   "material": "team_trim",
+   "tris": 124,
+   "center": [
+    -0.3819,
+    0.1919,
+    1.321
+   ]
+  },
+  {
+   "tag": "knee",
+   "obj": "lg_knee_L",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "金",
+   "tris": 124,
+   "center": [
+    -0.3447,
+    -0.0107,
+    1.1613
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "lg_knee_pin_L",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "铁",
+   "tris": 156,
+   "center": [
+    -0.3308,
+    0.2352,
+    1.1562
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "lg_knee_pin_L_c1",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    -0.0616,
+    0.2352,
+    1.1562
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "lg_knee_pin_L_c2",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    -0.6,
+    0.2352,
+    1.1562
+   ]
+  },
+  {
+   "tag": "knee",
+   "obj": "lg_knee_spike_L",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "金",
+   "tris": 156,
+   "center": [
+    -0.3308,
+    0.3955,
+    1.2953
+   ]
+  },
+  {
+   "tag": "knee",
+   "obj": "lg_knee_top_L",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "team_trim",
+   "tris": 108,
+   "center": [
+    -0.3308,
+    0.2841,
+    1.3262
+   ]
+  },
+  {
+   "tag": "shin",
+   "obj": "lg_greave_La",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "金暗",
+   "tris": 272,
+   "center": [
+    -0.3545,
+    0.1634,
+    0.9251
+   ]
+  },
+  {
+   "tag": "shin",
+   "obj": "lg_greave_La_o",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "金",
+   "tris": 180,
+   "center": [
+    -0.472,
+    0.1567,
+    0.9363
+   ]
+  },
+  {
+   "tag": "shin",
+   "obj": "lg_greave_La_rib",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "金",
+   "tris": 44,
+   "center": [
+    -0.3425,
+    0.4291,
+    0.8624
+   ]
+  },
+  {
+   "tag": "shin",
+   "obj": "lg_greave_Lb",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "金暗",
+   "tris": 272,
+   "center": [
+    -0.3682,
+    0.0803,
+    0.5701
+   ]
+  },
+  {
+   "tag": "shin",
+   "obj": "lg_greave_Lb_o",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "金",
+   "tris": 180,
+   "center": [
+    -0.4793,
+    0.0739,
+    0.581
+   ]
+  },
+  {
+   "tag": "shin",
+   "obj": "lg_greave_Lb_rib",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "金",
+   "tris": 44,
+   "center": [
+    -0.3566,
+    0.3323,
+    0.5107
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "lg_ankle_pin_L",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "铁",
+   "tris": 76,
+   "center": [
+    -0.365,
+    0.03,
+    0.38
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "lg_ankle_pin_L_c1",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    -0.169,
+    0.03,
+    0.38
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "lg_ankle_pin_L_c2",
+   "module": "body",
+   "bone": "shin_L",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    -0.561,
+    0.03,
+    0.38
+   ]
+  },
+  {
+   "tag": "boot",
+   "obj": "lg_boot_L",
+   "module": "body",
+   "bone": "foot_L",
+   "material": "金",
+   "tris": 124,
+   "center": [
+    -0.365,
+    0.0573,
+    0.2364
+   ]
+  },
+  {
+   "tag": "boot",
+   "obj": "lg_sole_L",
+   "module": "body",
+   "bone": "foot_L",
+   "material": "铁",
+   "tris": 92,
+   "center": [
+    -0.365,
+    0.1,
+    0.026
+   ]
+  },
+  {
+   "tag": "boot",
+   "obj": "lg_toe_plate_L",
+   "module": "body",
+   "bone": "toe_L",
+   "material": "金暗",
+   "tris": 108,
+   "center": [
+    -0.365,
+    0.2127,
+    0.1055
+   ]
+  },
+  {
+   "tag": "boot",
+   "obj": "lg_toe_rim_L",
+   "module": "body",
+   "bone": "toe_L",
+   "material": "team_trim",
+   "tris": 44,
+   "center": [
+    -0.365,
+    0.262,
+    0.07
+   ]
+  },
+  {
+   "tag": "pelvis",
+   "obj": "bd_hip",
+   "module": "body",
+   "bone": "hips",
+   "material": "金",
+   "tris": 124,
+   "center": [
+    0.0,
+    -0.0023,
+    2.0076
+   ]
+  },
+  {
+   "tag": "pelvis",
+   "obj": "bd_cod",
+   "module": "body",
+   "bone": "hips",
+   "material": "金暗",
+   "tris": 216,
+   "center": [
+    -0.0,
+    0.3082,
+    1.9599
+   ]
+  },
+  {
+   "tag": "belt",
+   "obj": "bd_belt",
+   "module": "body",
+   "bone": "hips",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    -0.0,
+    -0.004,
+    2.2295
+   ]
+  },
+  {
+   "tag": "belt",
+   "obj": "bd_belt_band",
+   "module": "body",
+   "bone": "hips",
+   "material": "金暗",
+   "tris": 60,
+   "center": [
+    0.0,
+    -0.004,
+    2.233
+   ]
+  },
+  {
+   "tag": "belt",
+   "obj": "bd_team_1",
+   "module": "body",
+   "bone": "hips",
+   "material": "team",
+   "tris": 76,
+   "center": [
+    0.4212,
+    -0.0,
+    2.233
+   ]
+  },
+  {
+   "tag": "belt",
+   "obj": "bd_team_-1",
+   "module": "body",
+   "bone": "hips",
+   "material": "team",
+   "tris": 76,
+   "center": [
+    -0.4212,
+    -0.0,
+    2.233
+   ]
+  },
+  {
+   "tag": "core",
+   "obj": "bd_core",
+   "module": "body",
+   "bone": "chest",
+   "material": "铁",
+   "tris": 92,
+   "center": [
+    0.0,
+    -0.0087,
+    2.7283
+   ]
+  },
+  {
+   "tag": "abdomen",
+   "obj": "bd_ab0",
+   "module": "body",
+   "bone": "spine",
+   "material": "金暗",
+   "tris": 408,
+   "center": [
+    -0.0,
+    -0.0742,
+    2.3603
+   ]
+  },
+  {
+   "tag": "abdomen",
+   "obj": "bd_ab0_lip",
+   "module": "body",
+   "bone": "spine",
+   "material": "金暗",
+   "tris": 172,
+   "center": [
+    -0.0,
+    -0.0552,
+    2.384
+   ]
+  },
+  {
+   "tag": "abdomen",
+   "obj": "bd_ab1",
+   "module": "body",
+   "bone": "spine",
+   "material": "金",
+   "tris": 408,
+   "center": [
+    0.0,
+    -0.0796,
+    2.5336
+   ]
+  },
+  {
+   "tag": "abdomen",
+   "obj": "bd_ab1_lip",
+   "module": "body",
+   "bone": "spine",
+   "material": "金暗",
+   "tris": 172,
+   "center": [
+    0.0,
+    -0.0592,
+    2.564
+   ]
+  },
+  {
+   "tag": "abdomen",
+   "obj": "bd_ab2",
+   "module": "body",
+   "bone": "spine",
+   "material": "金",
+   "tris": 408,
+   "center": [
+    -0.0,
+    -0.0858,
+    2.7159
+   ]
+  },
+  {
+   "tag": "abdomen",
+   "obj": "bd_ab2_lip",
+   "module": "body",
+   "bone": "spine",
+   "material": "金暗",
+   "tris": 172,
+   "center": [
+    -0.0,
+    -0.0637,
+    2.748
+   ]
+  },
+  {
+   "tag": "chest",
+   "obj": "bd_chest",
+   "module": "body",
+   "bone": "chest",
+   "material": "金",
+   "tris": 172,
+   "center": [
+    0.0,
+    -0.0128,
+    3.1176
+   ]
+  },
+  {
+   "tag": "chest",
+   "obj": "bd_pec",
+   "module": "body",
+   "bone": "chest",
+   "material": "金",
+   "tris": 404,
+   "center": [
+    0.0,
+    0.2516,
+    3.1208
+   ]
+  },
+  {
+   "tag": "chest",
+   "obj": "bd_pec_lip",
+   "module": "body",
+   "bone": "chest",
+   "material": "team_trim",
+   "tris": 228,
+   "center": [
+    0.0,
+    0.2639,
+    3.363
+   ]
+  },
+  {
+   "tag": "chest",
+   "obj": "bd_sternum",
+   "module": "body",
+   "bone": "chest",
+   "material": "金暗",
+   "tris": 216,
+   "center": [
+    -0.0,
+    0.344,
+    3.1076
+   ]
+  },
+  {
+   "tag": "chest",
+   "obj": "bd_back0",
+   "module": "body",
+   "bone": "chest",
+   "material": "金",
+   "tris": 132,
+   "center": [
+    -0.0,
+    -0.3512,
+    2.86
+   ]
+  },
+  {
+   "tag": "chest",
+   "obj": "bd_back1",
+   "module": "body",
+   "bone": "chest",
+   "material": "金暗",
+   "tris": 132,
+   "center": [
+    -0.0,
+    -0.3838,
+    3.0
+   ]
+  },
+  {
+   "tag": "chest",
+   "obj": "bd_back2",
+   "module": "body",
+   "bone": "chest",
+   "material": "金",
+   "tris": 132,
+   "center": [
+    -0.0,
+    -0.3824,
+    3.14
+   ]
+  },
+  {
+   "tag": "chest",
+   "obj": "bd_back3",
+   "module": "body",
+   "bone": "chest",
+   "material": "金暗",
+   "tris": 132,
+   "center": [
+    0.0,
+    -0.3632,
+    3.276
+   ]
+  },
+  {
+   "tag": "chest",
+   "obj": "bd_back4",
+   "module": "body",
+   "bone": "chest",
+   "material": "金",
+   "tris": 132,
+   "center": [
+    -0.0,
+    -0.332,
+    3.4
+   ]
+  },
+  {
+   "tag": "gorget",
+   "obj": "bd_gorget",
+   "module": "body",
+   "bone": "chest",
+   "material": "金暗",
+   "tris": 92,
+   "center": [
+    -0.0,
+    -0.006,
+    3.5226
+   ]
+  },
+  {
+   "tag": "gorget",
+   "obj": "bd_gorget_rim",
+   "module": "body",
+   "bone": "chest",
+   "material": "team_trim",
+   "tris": 76,
+   "center": [
+    0.0,
+    -0.006,
+    3.6159
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "jt_shoulder_R",
+   "module": "body",
+   "bone": "upperarm_R",
+   "material": "铁",
+   "tris": 28,
+   "center": [
+    0.6141,
+    -0.0015,
+    3.408
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "jt_shoulder_pin_R",
+   "module": "body",
+   "bone": "upperarm_R",
+   "material": "铁",
+   "tris": 156,
+   "center": [
+    0.6,
+    -0.0,
+    3.42
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "jt_shoulder_pin_R_c1",
+   "module": "body",
+   "bone": "upperarm_R",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    0.8152,
+    -0.0,
+    3.42
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "jt_shoulder_pin_R_c2",
+   "module": "body",
+   "bone": "upperarm_R",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    0.3848,
+    0.0,
+    3.42
+   ]
+  },
+  {
+   "tag": "upper",
+   "obj": "ar_upper_R",
+   "module": "body",
+   "bone": "upperarm_R",
+   "material": "铁",
+   "tris": 44,
+   "center": [
+    0.7432,
+    -0.0156,
+    3.095
+   ]
+  },
+  {
+   "tag": "upper",
+   "obj": "ar_rere_R",
+   "module": "body",
+   "bone": "upperarm_R",
+   "material": "金暗",
+   "tris": 244,
+   "center": [
+    0.7044,
+    -0.0212,
+    3.2538
+   ]
+  },
+  {
+   "tag": "upper",
+   "obj": "ar_rere_b_R",
+   "module": "body",
+   "bone": "upperarm_R",
+   "material": "金暗",
+   "tris": 180,
+   "center": [
+    0.7942,
+    -0.0248,
+    3.0058
+   ]
+  },
+  {
+   "tag": "upper",
+   "obj": "ar_rere_rib_R",
+   "module": "body",
+   "bone": "upperarm_R",
+   "material": "team_trim",
+   "tris": 60,
+   "center": [
+    0.8666,
+    -0.0828,
+    3.2024
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "ar_elbow_pin_R",
+   "module": "body",
+   "bone": "forearm_R",
+   "material": "铁",
+   "tris": 156,
+   "center": [
+    0.8821,
+    -0.0307,
+    2.7801
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "ar_elbow_pin_R_c1",
+   "module": "body",
+   "bone": "forearm_R",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    1.0705,
+    -0.0307,
+    2.7801
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "ar_elbow_pin_R_c2",
+   "module": "body",
+   "bone": "forearm_R",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    0.6937,
+    -0.0307,
+    2.7801
+   ]
+  },
+  {
+   "tag": "elbow",
+   "obj": "ar_cop_R",
+   "module": "body",
+   "bone": "forearm_R",
+   "material": "金",
+   "tris": 220,
+   "center": [
+    0.9352,
+    -0.0354,
+    2.7644
+   ]
+  },
+  {
+   "tag": "fore",
+   "obj": "ar_fore_R",
+   "module": "body",
+   "bone": "forearm_R",
+   "material": "铁",
+   "tris": 44,
+   "center": [
+    0.8999,
+    0.1642,
+    2.4783
+   ]
+  },
+  {
+   "tag": "fore",
+   "obj": "ar_vamb_R",
+   "module": "body",
+   "bone": "forearm_R",
+   "material": "金",
+   "tris": 204,
+   "center": [
+    0.8943,
+    0.1606,
+    2.4872
+   ]
+  },
+  {
+   "tag": "fore",
+   "obj": "ar_vamb_rib_R",
+   "module": "body",
+   "bone": "forearm_R",
+   "material": "team_trim",
+   "tris": 44,
+   "center": [
+    1.071,
+    0.1035,
+    2.4607
+   ]
+  },
+  {
+   "tag": "cuff",
+   "obj": "ar_cuff_R",
+   "module": "body",
+   "bone": "forearm_R",
+   "material": "铁",
+   "tris": 388,
+   "center": [
+    0.887,
+    0.3178,
+    2.2576
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "jt_shoulder_L",
+   "module": "body",
+   "bone": "upperarm_L",
+   "material": "铁",
+   "tris": 28,
+   "center": [
+    -0.6141,
+    -0.0015,
+    3.408
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "jt_shoulder_pin_L",
+   "module": "body",
+   "bone": "upperarm_L",
+   "material": "铁",
+   "tris": 156,
+   "center": [
+    -0.6,
+    0.0,
+    3.42
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "jt_shoulder_pin_L_c1",
+   "module": "body",
+   "bone": "upperarm_L",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    -0.8152,
+    0.0,
+    3.42
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "jt_shoulder_pin_L_c2",
+   "module": "body",
+   "bone": "upperarm_L",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    -0.3848,
+    -0.0,
+    3.42
+   ]
+  },
+  {
+   "tag": "upper",
+   "obj": "ar_upper_L",
+   "module": "body",
+   "bone": "upperarm_L",
+   "material": "铁",
+   "tris": 44,
+   "center": [
+    -0.7432,
+    -0.0156,
+    3.095
+   ]
+  },
+  {
+   "tag": "upper",
+   "obj": "ar_rere_L",
+   "module": "body",
+   "bone": "upperarm_L",
+   "material": "金暗",
+   "tris": 244,
+   "center": [
+    -0.7044,
+    -0.0212,
+    3.2538
+   ]
+  },
+  {
+   "tag": "upper",
+   "obj": "ar_rere_b_L",
+   "module": "body",
+   "bone": "upperarm_L",
+   "material": "金暗",
+   "tris": 180,
+   "center": [
+    -0.7942,
+    -0.0248,
+    3.0058
+   ]
+  },
+  {
+   "tag": "upper",
+   "obj": "ar_rere_rib_L",
+   "module": "body",
+   "bone": "upperarm_L",
+   "material": "team_trim",
+   "tris": 60,
+   "center": [
+    -0.8666,
+    -0.0828,
+    3.2024
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "ar_elbow_pin_L",
+   "module": "body",
+   "bone": "forearm_L",
+   "material": "铁",
+   "tris": 156,
+   "center": [
+    -0.8821,
+    -0.0307,
+    2.7801
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "ar_elbow_pin_L_c1",
+   "module": "body",
+   "bone": "forearm_L",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    -1.0705,
+    -0.0307,
+    2.7801
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "ar_elbow_pin_L_c2",
+   "module": "body",
+   "bone": "forearm_L",
+   "material": "铁",
+   "tris": 124,
+   "center": [
+    -0.6937,
+    -0.0307,
+    2.7801
+   ]
+  },
+  {
+   "tag": "elbow",
+   "obj": "ar_cop_L",
+   "module": "body",
+   "bone": "forearm_L",
+   "material": "金",
+   "tris": 220,
+   "center": [
+    -0.9352,
+    -0.0354,
+    2.7644
+   ]
+  },
+  {
+   "tag": "fore",
+   "obj": "ar_fore_L",
+   "module": "body",
+   "bone": "forearm_L",
+   "material": "铁",
+   "tris": 44,
+   "center": [
+    -0.8999,
+    0.1642,
+    2.4783
+   ]
+  },
+  {
+   "tag": "fore",
+   "obj": "ar_vamb_L",
+   "module": "body",
+   "bone": "forearm_L",
+   "material": "金",
+   "tris": 204,
+   "center": [
+    -0.8943,
+    0.1606,
+    2.4872
+   ]
+  },
+  {
+   "tag": "fore",
+   "obj": "ar_vamb_rib_L",
+   "module": "body",
+   "bone": "forearm_L",
+   "material": "team_trim",
+   "tris": 44,
+   "center": [
+    -1.071,
+    0.1035,
+    2.4607
+   ]
+  },
+  {
+   "tag": "cuff",
+   "obj": "ar_cuff_L",
+   "module": "body",
+   "bone": "forearm_L",
+   "material": "铁",
+   "tris": 388,
+   "center": [
+    -0.887,
+    0.3178,
+    2.2576
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fist_R",
+   "module": "body",
+   "bone": "hand_R",
+   "material": "金",
+   "tris": 124,
+   "center": [
+    0.985,
+    0.3534,
+    1.9883
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing0_R_prox",
+   "module": "body",
+   "bone": "hand_R",
+   "material": "金",
+   "tris": 116,
+   "center": [
+    0.745,
+    0.6959,
+    2.0184
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing0_R_dist",
+   "module": "body",
+   "bone": "hand_R",
+   "material": "金暗",
+   "tris": 108,
+   "center": [
+    0.745,
+    0.6751,
+    1.8322
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing1_R_prox",
+   "module": "body",
+   "bone": "hand_R",
+   "material": "金",
+   "tris": 116,
+   "center": [
+    0.905,
+    0.6959,
+    2.0184
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing1_R_dist",
+   "module": "body",
+   "bone": "hand_R",
+   "material": "金暗",
+   "tris": 108,
+   "center": [
+    0.905,
+    0.6751,
+    1.8322
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing2_R_prox",
+   "module": "body",
+   "bone": "hand_R",
+   "material": "金",
+   "tris": 116,
+   "center": [
+    1.065,
+    0.6959,
+    2.0184
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing2_R_dist",
+   "module": "body",
+   "bone": "hand_R",
+   "material": "金暗",
+   "tris": 108,
+   "center": [
+    1.065,
+    0.6751,
+    1.8322
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing3_R_prox",
+   "module": "body",
+   "bone": "hand_R",
+   "material": "金",
+   "tris": 116,
+   "center": [
+    1.225,
+    0.6959,
+    2.0184
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing3_R_dist",
+   "module": "body",
+   "bone": "hand_R",
+   "material": "金暗",
+   "tris": 108,
+   "center": [
+    1.225,
+    0.6751,
+    1.8322
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_knuckle_R",
+   "module": "body",
+   "bone": "hand_R",
+   "material": "team_trim",
+   "tris": 108,
+   "center": [
+    0.985,
+    0.7323,
+    2.166
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fist_gap_R",
+   "module": "body",
+   "bone": "hand_R",
+   "material": "铁",
+   "tris": 44,
+   "center": [
+    0.985,
+    0.6883,
+    1.94
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_thumb_R_a",
+   "module": "body",
+   "bone": "hand_R",
+   "material": "金",
+   "tris": 84,
+   "center": [
+    0.7128,
+    0.5627,
+    2.1069
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_thumb_R_b",
+   "module": "body",
+   "bone": "hand_R",
+   "material": "金暗",
+   "tris": 108,
+   "center": [
+    0.6675,
+    0.6415,
+    1.9435
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "ar_wrist_R",
+   "module": "body",
+   "bone": "hand_R",
+   "material": "铁",
+   "tris": 92,
+   "center": [
+    0.985,
+    0.375,
+    2.294
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fist_L",
+   "module": "body",
+   "bone": "hand_L",
+   "material": "金",
+   "tris": 124,
+   "center": [
+    -0.985,
+    0.3534,
+    1.9883
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing0_L_prox",
+   "module": "body",
+   "bone": "hand_L",
+   "material": "金",
+   "tris": 116,
+   "center": [
+    -1.225,
+    0.6959,
+    2.0184
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing0_L_dist",
+   "module": "body",
+   "bone": "hand_L",
+   "material": "金暗",
+   "tris": 108,
+   "center": [
+    -1.225,
+    0.6751,
+    1.8322
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing1_L_prox",
+   "module": "body",
+   "bone": "hand_L",
+   "material": "金",
+   "tris": 116,
+   "center": [
+    -1.065,
+    0.6959,
+    2.0184
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing1_L_dist",
+   "module": "body",
+   "bone": "hand_L",
+   "material": "金暗",
+   "tris": 108,
+   "center": [
+    -1.065,
+    0.6751,
+    1.8322
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing2_L_prox",
+   "module": "body",
+   "bone": "hand_L",
+   "material": "金",
+   "tris": 116,
+   "center": [
+    -0.905,
+    0.6959,
+    2.0184
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing2_L_dist",
+   "module": "body",
+   "bone": "hand_L",
+   "material": "金暗",
+   "tris": 108,
+   "center": [
+    -0.905,
+    0.6751,
+    1.8322
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing3_L_prox",
+   "module": "body",
+   "bone": "hand_L",
+   "material": "金",
+   "tris": 116,
+   "center": [
+    -0.745,
+    0.6959,
+    2.0184
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fing3_L_dist",
+   "module": "body",
+   "bone": "hand_L",
+   "material": "金暗",
+   "tris": 108,
+   "center": [
+    -0.745,
+    0.6751,
+    1.8322
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_knuckle_L",
+   "module": "body",
+   "bone": "hand_L",
+   "material": "team_trim",
+   "tris": 108,
+   "center": [
+    -0.985,
+    0.7323,
+    2.166
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_fist_gap_L",
+   "module": "body",
+   "bone": "hand_L",
+   "material": "铁",
+   "tris": 44,
+   "center": [
+    -0.985,
+    0.6883,
+    1.94
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_thumb_L_a",
+   "module": "body",
+   "bone": "hand_L",
+   "material": "金",
+   "tris": 84,
+   "center": [
+    -0.7128,
+    0.5627,
+    2.1069
+   ]
+  },
+  {
+   "tag": "hand",
+   "obj": "ar_thumb_L_b",
+   "module": "body",
+   "bone": "hand_L",
+   "material": "金暗",
+   "tris": 108,
+   "center": [
+    -0.6675,
+    0.6415,
+    1.9435
+   ]
+  },
+  {
+   "tag": "joint",
+   "obj": "ar_wrist_L",
+   "module": "body",
+   "bone": "hand_L",
+   "material": "铁",
+   "tris": 92,
+   "center": [
+    -0.985,
+    0.375,
+    2.294
+   ]
+  },
+  {
+   "tag": "neck",
+   "obj": "jt_neck",
+   "module": "head",
+   "bone": "neck",
+   "material": "铁",
+   "tris": 44,
+   "center": [
+    0.0,
+    0.008,
+    3.504
+   ]
+  },
+  {
+   "tag": "helm",
+   "obj": "hd_mask_body",
+   "module": "head",
+   "bone": "head",
+   "material": "金",
+   "tris": 124,
+   "center": [
+    -0.0,
+    0.012,
+    3.9418
+   ]
+  },
+  {
+   "tag": "helm",
+   "obj": "hd_top",
+   "module": "head",
+   "bone": "head",
+   "material": "金暗",
+   "tris": 60,
+   "center": [
+    -0.0,
+    0.012,
+    4.2564
+   ]
+  },
+  {
+   "tag": "crown",
+   "obj": "hd_crown0",
+   "module": "head",
+   "bone": "head",
+   "material": "team_trim",
+   "tris": 56,
+   "center": [
+    -0.0,
+    -0.092,
+    4.2945
+   ]
+  },
+  {
+   "tag": "crown",
+   "obj": "hd_crown1",
+   "module": "head",
+   "bone": "head",
+   "material": "team_trim",
+   "tris": 56,
+   "center": [
+    0.0,
+    0.012,
+    4.2945
+   ]
+  },
+  {
+   "tag": "crown",
+   "obj": "hd_crown2",
+   "module": "head",
+   "bone": "head",
+   "material": "team_trim",
+   "tris": 56,
+   "center": [
+    0.0,
+    0.116,
+    4.2945
+   ]
+  },
+  {
+   "tag": "slit",
+   "obj": "hd_slit",
+   "module": "head",
+   "bone": "head",
+   "material": "铁",
+   "tris": 180,
+   "center": [
+    0.0,
+    0.2643,
+    3.902
+   ]
+  },
+  {
+   "tag": "eye",
+   "obj": "hd_eye",
+   "module": "head",
+   "bone": "head",
+   "material": "辉",
+   "tris": 92,
+   "center": [
+    -0.0,
+    0.2881,
+    3.903
+   ]
+  },
+  {
+   "tag": "nose",
+   "obj": "hd_nose",
+   "module": "head",
+   "bone": "head",
+   "material": "金",
+   "tris": 160,
+   "center": [
+    -0.0,
+    0.3131,
+    3.89
+   ]
+  },
+  {
+   "tag": "brow",
+   "obj": "hd_brow",
+   "module": "head",
+   "bone": "head",
+   "material": "金暗",
+   "tris": 180,
+   "center": [
+    0.0,
+    0.2879,
+    3.957
+   ]
+  },
+  {
+   "tag": "jaw",
+   "obj": "hd_jaw",
+   "module": "head",
+   "bone": "head",
+   "material": "金暗",
+   "tris": 216,
+   "center": [
+    0.0,
+    0.2766,
+    3.7228
+   ]
+  },
+  {
+   "tag": "stud",
+   "obj": "hd_stud_10",
+   "module": "head",
+   "bone": "head",
+   "material": "金",
+   "tris": 44,
+   "center": [
+    0.2564,
+    0.0687,
+    3.7
+   ]
+  },
+  {
+   "tag": "stud",
+   "obj": "hd_stud_11",
+   "module": "head",
+   "bone": "head",
+   "material": "金",
+   "tris": 44,
+   "center": [
+    0.2684,
+    0.071,
+    3.8
+   ]
+  },
+  {
+   "tag": "stud",
+   "obj": "hd_stud_12",
+   "module": "head",
+   "bone": "head",
+   "material": "金",
+   "tris": 44,
+   "center": [
+    0.2707,
+    0.0713,
+    3.862
+   ]
+  },
+  {
+   "tag": "stud",
+   "obj": "hd_stud_-10",
+   "module": "head",
+   "bone": "head",
+   "material": "金",
+   "tris": 44,
+   "center": [
+    -0.2564,
+    0.0687,
+    3.7
+   ]
+  },
+  {
+   "tag": "stud",
+   "obj": "hd_stud_-11",
+   "module": "head",
+   "bone": "head",
+   "material": "金",
+   "tris": 44,
+   "center": [
+    -0.2684,
+    0.071,
+    3.8
+   ]
+  },
+  {
+   "tag": "stud",
+   "obj": "hd_stud_-12",
+   "module": "head",
+   "bone": "head",
+   "material": "金",
+   "tris": 44,
+   "center": [
+    -0.2707,
+    0.0713,
+    3.862
+   ]
+  },
+  {
+   "tag": "rim",
+   "obj": "hd_rim",
+   "module": "head",
+   "bone": "head",
+   "material": "铁",
+   "tris": 220,
+   "center": [
+    -0.0,
+    -0.0191,
+    3.595
+   ]
+  },
+  {
+   "tag": "nape",
+   "obj": "hd_nape",
+   "module": "head",
+   "bone": "head",
+   "material": "金暗",
+   "tris": 272,
+   "center": [
+    0.0,
+    -0.1379,
+    3.78
+   ]
+  },
+  {
+   "tag": "cap",
+   "obj": "pd_cap_R",
+   "module": "pauldron",
+   "bone": "shoulder_R",
+   "material": "金",
+   "tris": 124,
+   "center": [
+    0.6,
+    -0.0,
+    3.43
+   ]
+  },
+  {
+   "tag": "rim",
+   "obj": "pd_cap_rim_R",
+   "module": "pauldron",
+   "bone": "shoulder_R",
+   "material": "team_trim",
+   "tris": 192,
+   "center": [
+    0.596,
+    0.0004,
+    3.4391
+   ]
+  },
+  {
+   "tag": "pauldron",
+   "obj": "pd_l1_R",
+   "module": "pauldron",
+   "bone": "shoulder_R",
+   "material": "金",
+   "tris": 180,
+   "center": [
+    0.6825,
+    -0.0165,
+    3.3031
+   ]
+  },
+  {
+   "tag": "rim",
+   "obj": "pd_l1_edge_R",
+   "module": "pauldron",
+   "bone": "shoulder_R",
+   "material": "team_trim",
+   "tris": 180,
+   "center": [
+    0.743,
+    -0.0265,
+    3.1935
+   ]
+  },
+  {
+   "tag": "lame",
+   "obj": "pd_l2_R",
+   "module": "pauldron",
+   "bone": "shoulder_R",
+   "material": "金暗",
+   "tris": 180,
+   "center": [
+    0.7894,
+    -0.0339,
+    3.1071
+   ]
+  },
+  {
+   "tag": "rim",
+   "obj": "pd_l2_edge_R",
+   "module": "pauldron",
+   "bone": "shoulder_R",
+   "material": "team_trim",
+   "tris": 180,
+   "center": [
+    0.8318,
+    -0.0424,
+    3.042
+   ]
+  },
+  {
+   "tag": "lame",
+   "obj": "pd_l3_R",
+   "module": "pauldron",
+   "bone": "shoulder_R",
+   "material": "金",
+   "tris": 180,
+   "center": [
+    0.8795,
+    -0.0524,
+    2.9727
+   ]
+  },
+  {
+   "tag": "stud",
+   "obj": "pd_stud_R0",
+   "module": "pauldron",
+   "bone": "shoulder_R",
+   "material": "team_trim",
+   "tris": 56,
+   "center": [
+    0.7123,
+    0.0028,
+    3.4876
+   ]
+  },
+  {
+   "tag": "stud",
+   "obj": "pd_stud_R1",
+   "module": "pauldron",
+   "bone": "shoulder_R",
+   "material": "team_trim",
+   "tris": 56,
+   "center": [
+    0.6537,
+    0.1134,
+    3.4565
+   ]
+  },
+  {
+   "tag": "stud",
+   "obj": "pd_stud_R2",
+   "module": "pauldron",
+   "bone": "shoulder_R",
+   "material": "team_trim",
+   "tris": 56,
+   "center": [
+    0.6537,
+    -0.1103,
+    3.4672
+   ]
+  },
+  {
+   "tag": "cap",
+   "obj": "pd_cap_L",
+   "module": "pauldron",
+   "bone": "shoulder_L",
+   "material": "金",
+   "tris": 124,
+   "center": [
+    -0.6,
+    -0.0,
+    3.43
+   ]
+  },
+  {
+   "tag": "rim",
+   "obj": "pd_cap_rim_L",
+   "module": "pauldron",
+   "bone": "shoulder_L",
+   "material": "team_trim",
+   "tris": 192,
+   "center": [
+    -0.596,
+    0.0004,
+    3.4391
+   ]
+  },
+  {
+   "tag": "pauldron",
+   "obj": "pd_l1_L",
+   "module": "pauldron",
+   "bone": "shoulder_L",
+   "material": "金",
+   "tris": 180,
+   "center": [
+    -0.6825,
+    -0.0165,
+    3.3031
+   ]
+  },
+  {
+   "tag": "rim",
+   "obj": "pd_l1_edge_L",
+   "module": "pauldron",
+   "bone": "shoulder_L",
+   "material": "team_trim",
+   "tris": 180,
+   "center": [
+    -0.743,
+    -0.0265,
+    3.1935
+   ]
+  },
+  {
+   "tag": "lame",
+   "obj": "pd_l2_L",
+   "module": "pauldron",
+   "bone": "shoulder_L",
+   "material": "金暗",
+   "tris": 180,
+   "center": [
+    -0.7894,
+    -0.0339,
+    3.1071
+   ]
+  },
+  {
+   "tag": "rim",
+   "obj": "pd_l2_edge_L",
+   "module": "pauldron",
+   "bone": "shoulder_L",
+   "material": "team_trim",
+   "tris": 180,
+   "center": [
+    -0.8318,
+    -0.0424,
+    3.042
+   ]
+  },
+  {
+   "tag": "lame",
+   "obj": "pd_l3_L",
+   "module": "pauldron",
+   "bone": "shoulder_L",
+   "material": "金",
+   "tris": 180,
+   "center": [
+    -0.8795,
+    -0.0524,
+    2.9727
+   ]
+  },
+  {
+   "tag": "stud",
+   "obj": "pd_stud_L0",
+   "module": "pauldron",
+   "bone": "shoulder_L",
+   "material": "team_trim",
+   "tris": 56,
+   "center": [
+    -0.4816,
+    -0.0021,
+    3.3862
+   ]
+  },
+  {
+   "tag": "stud",
+   "obj": "pd_stud_L1",
+   "module": "pauldron",
+   "bone": "shoulder_L",
+   "material": "team_trim",
+   "tris": 56,
+   "center": [
+    -0.5402,
+    0.111,
+    3.4066
+   ]
+  },
+  {
+   "tag": "stud",
+   "obj": "pd_stud_L2",
+   "module": "pauldron",
+   "bone": "shoulder_L",
+   "material": "team_trim",
+   "tris": 56,
+   "center": [
+    -0.5402,
+    -0.1127,
+    3.4173
+   ]
+  },
+  {
+   "tag": "core",
+   "obj": "mg_core_bezel",
+   "module": "runes",
+   "bone": "core",
+   "material": "金",
+   "tris": 192,
+   "center": [
+    -0.0,
+    0.392,
+    2.988
+   ]
+  },
+  {
+   "tag": "core",
+   "obj": "mg_core_floor",
+   "module": "runes",
+   "bone": "core",
+   "material": "铁",
+   "tris": 92,
+   "center": [
+    -0.0,
+    0.362,
+    2.988
+   ]
+  },
+  {
+   "tag": "core",
+   "obj": "mg_core_glow",
+   "module": "runes",
+   "bone": "core",
+   "material": "辉",
+   "tris": 92,
+   "center": [
+    0.0,
+    0.378,
+    2.988
+   ]
+  },
+  {
+   "tag": "core",
+   "obj": "mg_core_bar0",
+   "module": "runes",
+   "bone": "core",
+   "material": "铁",
+   "tris": 108,
+   "center": [
+    -0.074,
+    0.394,
+    2.988
+   ]
+  },
+  {
+   "tag": "core",
+   "obj": "mg_core_bar1",
+   "module": "runes",
+   "bone": "core",
+   "material": "铁",
+   "tris": 108,
+   "center": [
+    -0.0,
+    0.394,
+    2.988
+   ]
+  },
+  {
+   "tag": "core",
+   "obj": "mg_core_bar2",
+   "module": "runes",
+   "bone": "core",
+   "material": "铁",
+   "tris": 108,
+   "center": [
+    0.074,
+    0.394,
+    2.988
+   ]
+  },
+  {
+   "tag": "core",
+   "obj": "mg_core_barh",
+   "module": "runes",
+   "bone": "core",
+   "material": "金暗",
+   "tris": 44,
+   "center": [
+    -0.0,
+    0.394,
+    3.016
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_chest0",
+   "module": "runes",
+   "bone": "rune_chest",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    0.279,
+    0.3557,
+    3.116
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_chest1",
+   "module": "runes",
+   "bone": "rune_chest",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    0.279,
+    0.3357,
+    2.9
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_chest2",
+   "module": "runes",
+   "bone": "rune_chest",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    -0.279,
+    0.3557,
+    3.116
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_chest3",
+   "module": "runes",
+   "bone": "rune_chest",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    -0.279,
+    0.3357,
+    2.9
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_sh_R0",
+   "module": "runes",
+   "bone": "rune_R",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    0.9487,
+    0.0406,
+    3.26
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_sh_R1",
+   "module": "runes",
+   "bone": "rune_R",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    0.8434,
+    -0.2284,
+    3.2265
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_sh_L0",
+   "module": "runes",
+   "bone": "rune_L",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    -0.8434,
+    -0.2284,
+    3.2265
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_sh_L1",
+   "module": "runes",
+   "bone": "rune_L",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    -0.9487,
+    0.0406,
+    3.26
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_fa_R0",
+   "module": "runes",
+   "bone": "forearm_R",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    1.0856,
+    0.1801,
+    2.4932
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_fa_R1",
+   "module": "runes",
+   "bone": "forearm_R",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    1.0358,
+    0.0555,
+    2.4098
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_fa_L0",
+   "module": "runes",
+   "bone": "forearm_L",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    -1.0312,
+    0.0517,
+    2.4071
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_fa_L1",
+   "module": "runes",
+   "bone": "forearm_L",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    -1.0863,
+    0.1747,
+    2.4897
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_th_R",
+   "module": "runes",
+   "bone": "thigh_R",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    0.6011,
+    0.0867,
+    1.7017
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_sh_R",
+   "module": "runes",
+   "bone": "shin_R",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    0.5957,
+    0.1202,
+    0.7599
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_th_L",
+   "module": "runes",
+   "bone": "thigh_L",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    -0.6011,
+    0.0867,
+    1.7017
+   ]
+  },
+  {
+   "tag": "rune",
+   "obj": "mg_rune_sh_L",
+   "module": "runes",
+   "bone": "shin_L",
+   "material": "辉",
+   "tris": 44,
+   "center": [
+    -0.5957,
+    0.1202,
+    0.7599
+   ]
+  }
+ ]
+}

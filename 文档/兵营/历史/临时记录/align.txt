@@ -1,0 +1,222 @@
+ITEMS 670
+=== CLIP_CROSS 0 ===
+=== CLIP_INNER 1251 (前 20) ===
+   8  plinth_a                 <-> plinth_b
+   8  plinth_a                 <-> threshold
+   8  plinth_a                 <-> mass_front_L
+   8  plinth_a                 <-> mass_front_R
+   8  plinth_a                 <-> mass_back
+   8  plinth_a                 <-> dado
+   4  plinth_a                 <-> dado_front
+   4  plinth_a                 <-> dado_front.001
+   6  plinth_a                 <-> buttress
+   6  plinth_a                 <-> buttress.001
+   6  plinth_a                 <-> buttress.002
+   6  plinth_a                 <-> buttress.003
+   6  plinth_a                 <-> buttress.004
+   6  plinth_a                 <-> buttress.005
+   8  plinth_a                 <-> tw_body
+   8  plinth_a                 <-> tw_dado
+   4  plinth_a                 <-> gate_jamb
+   4  plinth_a                 <-> gate_jamb.001
+   4  plinth_a                 <-> gate_pilaster
+   4  plinth_a                 <-> gate_pilaster.001
+=== CONTAIN 34 ===
+   shields_wall_r0           in  pave.003
+   quoin                     in  dado
+   quoin.003                 in  dado
+   quoin.006                 in  dado
+   quoin.009                 in  dado
+   tw_team_t                 in  tw_floor
+   gh_slit_f                 in  gh_body
+   gate_seam                 in  gate_leaf
+   gate_seam.001             in  gate_leaf
+   gate_iron                 in  gate_leaf
+   gate_iron.001             in  gate_leaf
+   gate_seam.002             in  gate_leaf.001
+   gate_seam.003             in  gate_leaf.001
+   gate_iron.002             in  gate_leaf.001
+   gate_iron.003             in  gate_leaf.001
+   wbanner_b_edge            in  wbanner_b_cloth
+   wbanner_b_rim             in  wbanner_b_cloth
+   wbanner_b_field           in  wbanner_b_cloth
+   wbanner_b_band            in  wbanner_b_cloth
+   wbanner_b_spike0          in  wbanner_b_cloth
+   wbanner_b_spike1          in  wbanner_b_cloth
+   wbanner_b_spike2          in  wbanner_b_cloth
+   wbanner_b_gem0            in  wbanner_b_cloth
+   wbanner_b_gem1            in  wbanner_b_cloth
+   wbanner_b_gem2            in  wbanner_b_cloth
+   fence_l_plank             in  fence_l_post
+   fence_l_plank.009         in  fence_l_post.002
+   fence_r_plank             in  fence_r_post
+   fence_r_plank.009         in  fence_r_post.002
+   fence_f_plank.004         in  fence_f_post.001
+   fence_f_plank.004         in  gate_post
+   fence_f_plank.009         in  fence_f_post.003
+   fence_f_plank.009         in  gate_post.001
+   armor_visor               in  armor_helm
+=== COPLANAR_UP 0 ===
+=== COPLANAR 236 ===
+   plinth_a                 <-> plinth_b                  @(2, -1) d=+0.000
+   plinth_a                 <-> threshold                 @(2, -1) d=+0.000
+   plinth_a                 <-> mass_front_L              @(2, -1) d=+0.000
+   plinth_a                 <-> mass_front_R              @(2, -1) d=+0.000
+   plinth_a                 <-> mass_back                 @(2, -1) d=+0.000
+   plinth_a                 <-> dado                      @(2, -1) d=+0.000
+   plinth_a                 <-> buttress                  @(0, -1) d=-5.300
+   plinth_a                 <-> buttress.001              @(0, -1) d=-5.300
+   plinth_a                 <-> buttress.002              @(0, -1) d=-5.300
+   plinth_a                 <-> buttress.003              @(0, 1) d=+5.300
+   plinth_a                 <-> buttress.004              @(0, 1) d=+5.300
+   plinth_a                 <-> buttress.005              @(0, 1) d=+5.300
+   plinth_a                 <-> tw_body                   @(2, -1) d=+0.000
+   plinth_a                 <-> tw_dado                   @(2, -1) d=+0.000
+   plinth_b                 <-> threshold                 @(2, -1) d=+0.000
+   plinth_b                 <-> yard                      @(2, -1) d=+0.000
+   plinth_b                 <-> mass_front_L              @(2, -1) d=+0.000
+   plinth_b                 <-> mass_front_R              @(2, -1) d=+0.000
+   plinth_b                 <-> mass_back                 @(2, -1) d=+0.000
+   plinth_b                 <-> dado                      @(2, -1) d=+0.000
+   plinth_b                 <-> tw_body                   @(2, -1) d=+0.000
+   plinth_b                 <-> tw_dado                   @(2, -1) d=+0.000
+   threshold                <-> yard                      @(2, -1) d=+0.000
+   threshold                <-> dado                      @(2, -1) d=+0.000
+   yard                     <-> gate_step                 @(2, -1) d=+0.000
+   yard                     <-> tw_body                   @(2, -1) d=+0.000
+   yard                     <-> tw_dado                   @(2, -1) d=+0.000
+   yard_land                <-> yard_step0                @(2, -1) d=+0.000
+   tuft                     <-> dummy_a_pad               @(2, -1) d=+0.398
+   tuft.001                 <-> tuft.002                  @(2, -1) d=+0.398
+   tuft.001                 <-> dummy_a_pad               @(2, -1) d=+0.398
+   tuft.002                 <-> dummy_a_pad               @(2, -1) d=+0.398
+   tuft.003                 <-> tuft.004                  @(2, -1) d=+0.398
+   tuft.003                 <-> tuft.005                  @(2, -1) d=+0.398
+   tuft.004                 <-> tuft.005                  @(2, -1) d=+0.398
+   tuft.006                 <-> tuft.007                  @(2, -1) d=+0.398
+   tuft.006                 <-> tuft.008                  @(2, -1) d=+0.398
+   tuft.007                 <-> tuft.008                  @(2, -1) d=+0.398
+   tuft.009                 <-> tuft.010                  @(2, -1) d=+0.398
+   tuft.009                 <-> tuft.011                  @(2, -1) d=+0.398
+   tuft.010                 <-> tuft.011                  @(2, -1) d=+0.398
+   tuft.012                 <-> tuft.013                  @(2, -1) d=+0.398
+   tuft.012                 <-> tuft.014                  @(2, -1) d=+0.398
+   tuft.012                 <-> plank_loose               @(2, -1) d=+0.398
+   tuft.013                 <-> tuft.014                  @(2, -1) d=+0.398
+   tuft.013                 <-> plank_loose               @(2, -1) d=+0.398
+   tuft.014                 <-> plank_loose               @(2, -1) d=+0.398
+   tuft.015                 <-> tuft.016                  @(2, -1) d=+0.398
+   tuft.015                 <-> tuft.017                  @(2, -1) d=+0.398
+   tuft.016                 <-> tuft.017                  @(2, -1) d=+0.398
+   tuft.018                 <-> tuft.019                  @(2, -1) d=+0.398
+   tuft.018                 <-> tuft.020                  @(2, -1) d=+0.398
+   tuft.019                 <-> tuft.020                  @(2, -1) d=+0.398
+   tuft.021                 <-> tuft.022                  @(2, -1) d=+0.398
+   tuft.021                 <-> tuft.023                  @(2, -1) d=+0.398
+   tuft.022                 <-> tuft.023                  @(2, -1) d=+0.398
+   tuft.024                 <-> tuft.025                  @(2, -1) d=+0.398
+   tuft.024                 <-> tuft.026                  @(2, -1) d=+0.398
+   tuft.025                 <-> tuft.026                  @(2, -1) d=+0.398
+   tuft.027                 <-> tuft.028                  @(2, -1) d=+0.398
+   tuft.027                 <-> tuft.029                  @(2, -1) d=+0.398
+   tuft.028                 <-> tuft.029                  @(2, -1) d=+0.398
+   mass_front_L             <-> dado                      @(2, -1) d=+0.000
+   mass_front_L             <-> string_f                  @(0, 1) d=-0.975
+   mass_front_L             <-> gate_jamb                 @(0, 1) d=-0.975
+   mass_front_R             <-> dado                      @(2, -1) d=+0.000
+   mass_front_R             <-> string_f.001              @(0, -1) d=+0.975
+   mass_front_R             <-> tw_dado                   @(2, -1) d=+0.000
+   mass_front_R             <-> gate_jamb.001             @(0, -1) d=+0.975
+   mass_front_T             <-> gate_arch                 @(2, -1) d=+3.301
+   mass_back                <-> dado                      @(2, -1) d=+0.000
+   dado                     <-> tw_body                   @(2, -1) d=+0.000
+   plinth_band              <-> tw_band                   @(0, 1) d=+5.090
+   dado_front               <-> gate_jamb                 @(0, 1) d=-0.975
+   dado_front.001           <-> tw_dado                   @(0, 1) d=+5.050
+   dado_front.001           <-> gate_jamb.001             @(0, -1) d=+0.975
+   tw_body                  <-> tw_dado                   @(2, -1) d=+0.000
+   tw_win_fL                <-> tw_win_fT                 @(1, -1) d=+5.810
+   tw_win_fL                <-> tw_win_fT.001             @(1, -1) d=+5.810
+   tw_win_fT                <-> tw_win_fL.001             @(1, -1) d=+5.810
+   tw_win_fL.001            <-> tw_win_fT.001             @(1, -1) d=+5.810
+   tw_crest_rim             <-> tw_crest_field            @(1, -1) d=+4.827
+   gh_body                  <-> gh_slit_f                 @(1, 1) d=+4.220
+   brace.002                <-> brace.003                 @(1, -1) d=+3.800
+   brace.004                <-> brace.005                 @(1, -1) d=+3.800
+   brace.006                <-> brace.007                 @(1, -1) d=+3.800
+   win_f.001                <-> win_f_jamb.002            @(0, 1) d=-3.060
+   win_f.001                <-> win_f_jamb.003            @(0, -1) d=-2.540
+   win_f.001                <-> win_f_bar.001             @(1, -1) d=+3.880
+   win_b.002                <-> win_b_jamb.004            @(0, 1) d=+2.040
+   win_b.002                <-> win_b_jamb.005            @(0, -1) d=+2.560
+   win_b.002                <-> win_b_bar.002             @(1, 1) d=-3.880
+   win2_fL                  <-> win2_fT                   @(1, -1) d=+3.970
+   win2_fL                  <-> win2_fT.001               @(1, -1) d=+3.970
+   win2_fT                  <-> win2_fL.001               @(1, -1) d=+3.970
+   win2_fL.001              <-> win2_fT.001               @(1, -1) d=+3.970
+   win2_fL.002              <-> win2_fT.002               @(1, -1) d=+3.970
+   win2_fL.002              <-> win2_fT.003               @(1, -1) d=+3.970
+   win2_fT.002              <-> win2_fL.003               @(1, -1) d=+3.970
+   win2_fL.003              <-> win2_fT.003               @(1, -1) d=+3.970
+   win2_bar.001             <-> win2_bar2.001             @(1, -1) d=+4.105
+   win2s_fL                 <-> win2s_fT                  @(1, -1) d=-2.830
+   win2s_fL                 <-> win2s_fT.001              @(1, -1) d=-2.830
+   win2s_fT                 <-> win2s_fL.001              @(0, 1) d=-5.100
+   win2s_fL.001             <-> win2s_fT.001              @(0, 1) d=-5.100
+   win2s_fL.002             <-> win2s_fT.002              @(1, -1) d=+1.170
+   win2s_fL.002             <-> win2s_fT.003              @(1, -1) d=+1.170
+   win2s_fT.002             <-> win2s_fL.003              @(0, 1) d=-5.100
+   win2s_fL.003             <-> win2s_fT.003              @(0, 1) d=-5.100
+   win2s_fL.004             <-> win2s_fT.004              @(1, -1) d=-2.830
+   win2s_fL.004             <-> win2s_fT.005              @(1, -1) d=-2.830
+   win2s_fT.004             <-> win2s_fL.005              @(0, 1) d=+5.240
+   win2s_fL.005             <-> win2s_fT.005              @(0, 1) d=+5.240
+   win2s_fL.006             <-> win2s_fT.006              @(1, -1) d=+1.170
+   win2s_fL.006             <-> win2s_fT.007              @(1, -1) d=+1.170
+   win2s_fT.006             <-> win2s_fL.007              @(0, 1) d=+5.240
+   win2s_fL.007             <-> win2s_fT.007              @(0, 1) d=+5.240
+   band_s.001               <-> band_s_t.001              @(1, -1) d=-3.700
+   wbanner_f_rod            <-> wbanner_f_brk             @(2, -1) d=+6.475
+   wbanner_f_rod            <-> wbanner_f_brk.001         @(2, -1) d=+6.475
+   wbanner_f_rim            <-> wbanner_f_field           @(1, -1) d=+4.097
+   wbanner_sL_rod           <-> wbanner_sL_brk            @(2, -1) d=+6.495
+   wbanner_sL_rod           <-> wbanner_sL_brk.001        @(2, -1) d=+6.495
+   wbanner_sL_edge          <-> wbanner_sL_rim            @(0, -1) d=-5.341
+   wbanner_sR_rod           <-> wbanner_sR_brk            @(2, -1) d=+6.495
+   wbanner_sR_rod           <-> wbanner_sR_brk.001        @(2, -1) d=+6.495
+   wbanner_sR_edge          <-> wbanner_sR_rim            @(0, -1) d=+5.313
+   wbanner_b_cloth          <-> wbanner_b_edge            @(1, -1) d=-4.130
+   wbanner_b_cloth          <-> wbanner_b_rim             @(1, -1) d=-4.130
+   wbanner_b_rod            <-> wbanner_b_brk             @(2, -1) d=+6.465
+   wbanner_b_rod            <-> wbanner_b_brk.001         @(2, -1) d=+6.465
+   wbanner_b_edge           <-> wbanner_b_rim             @(1, -1) d=-4.133
+   wbanner_b_rim            <-> wbanner_b_field           @(1, 1) d=-4.101
+   shield_sL_field          <-> shield_sL_band            @(0, -1) d=-5.175
+   shield_sL_field          <-> shield_sL_spike0          @(0, -1) d=-5.175
+   shield_sL_field          <-> shield_sL_spike1          @(0, -1) d=-5.175
+   shield_sL_field          <-> shield_sL_spike2          @(0, -1) d=-5.175
+   shield_sR_field          <-> shield_sR_band            @(0, 1) d=+5.175
+   shield_sR_field          <-> shield_sR_spike0          @(0, 1) d=+5.175
+   shield_sR_field          <-> shield_sR_spike1          @(0, 1) d=+5.175
+   shield_sR_field          <-> shield_sR_spike2          @(0, 1) d=+5.175
+   pole_crest_rim           <-> pole_crest_field          @(1, -1) d=-1.053
+   ph_house                 <-> ph_door                   @(2, -1) d=+7.420
+   ph_house                 <-> deck_crate                @(2, -1) d=+7.420
+   ph_house_base            <-> ph_door                   @(2, -1) d=+7.420
+   ph_house_base            <-> deck_crate                @(2, -1) d=+7.420
+   ph_door                  <-> deck_crate                @(2, -1) d=+7.420
+   fence_l_plank            <-> fence_l_post              @(2, -1) d=+0.400
+   fence_l_plank.009        <-> fence_l_post.002          @(2, -1) d=+0.400
+   fence_r_plank            <-> fence_r_post              @(2, -1) d=+0.400
+   fence_r_plank.009        <-> fence_r_post.002          @(2, -1) d=+0.400
+   fence_f_plank.004        <-> fence_f_post.001          @(2, -1) d=+0.400
+   fence_f_plank.004        <-> gate_post                 @(2, -1) d=+0.400
+   fence_f_post.001         <-> gate_post                 @(2, -1) d=+0.400
+   fence_f_plank.009        <-> fence_f_post.003          @(2, -1) d=+0.400
+   fence_f_plank.009        <-> gate_post.001             @(2, -1) d=+0.400
+   fence_f_post.003         <-> gate_post.001             @(2, -1) d=+0.400
+   armor_base               <-> barrel_a                  @(2, -1) d=+0.400
+   wrack_a_post             <-> wrack_a_foot              @(2, -1) d=+0.400
+   wrack_a_post.001         <-> wrack_a_foot.001          @(2, -1) d=+0.400
+=== FLOAT 0 ===
+DONE

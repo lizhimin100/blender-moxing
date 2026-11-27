@@ -1,0 +1,8 @@
+low     items=709 objs=14 tris=16844 verts=9712 faces=8569
+        bbox min=(-9.050, -3.920, -0.027) max=(9.050, 5.070, 24.130)
+        size=(18.100, 8.990, 24.157)  mats=14
+        front_ratio=1.29  grounded=True
+smooth  items=709 objs=14 tris=42492 verts=22489 faces=23562
+        bbox min=(-9.050, -3.920, -0.024) max=(9.050, 5.070, 24.162)
+        size=(18.100, 8.990, 24.186)  mats=14
+        front_ratio=1.29  grounded=True

@@ -1,0 +1,61 @@
+{
+  "file": "城镇大厅_升级1.glb",
+  "bytes": 890452,
+  "meshes": 4,
+  "tris": 12630,
+  "materials": [
+    "team",
+    "team_trim",
+    "主体",
+    "自发光"
+  ],
+  "mat_count": 4,
+  "bbox_min": [
+    -10.495,
+    -5.42,
+    -0.027
+  ],
+  "bbox_max": [
+    10.462,
+    5.15,
+    10.4
+  ],
+  "size": [
+    20.957,
+    10.57,
+    10.427
+  ],
+  "grounded": true,
+  "zmin": -0.027,
+  "front_ok": true,
+  "mats_ok": true,
+  "tris_ok": true,
+  "skins": 0,
+  "animations": [],
+  "static_ok": true,
+  "ok": true,
+  "asset_name": "城镇大厅_升级1",
+  "kind": "升级态",
+  "cut_z": 7.3,
+  "note": "一本 v3 → 二本 Keep",
+  "lifts": 4,
+  "body": [
+    -8.645,
+    8.645,
+    -3.425,
+    3.48
+  ],
+  "plot": [
+    -9.05,
+    9.05,
+    -3.85,
+    5.07
+  ],
+  "kept": 284,
+  "removed": 455,
+  "caps": 41,
+  "chunks": 33,
+  "hints": 14,
+  "front_landmark_y": 3.047,
+  "front_landmark_ok": true
+}

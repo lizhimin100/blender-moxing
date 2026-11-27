@@ -1,0 +1,89 @@
+{
+  "id": "折壳入口",
+  "src": "折壳入口_手游_近.glb",
+  "footprint": [
+    12.977,
+    10.621
+  ],
+  "height": 4.559,
+  "yaw": 0,
+  "attach": {
+    "hoist": [
+      -7.028,
+      -6.401,
+      1.185
+    ],
+    "banner": [
+      -6.778,
+      4.82,
+      0.0
+    ]
+  },
+  "body": [
+    -6.478,
+    6.499,
+    -6.101,
+    4.52
+  ],
+  "bbox_lo": [
+    -6.478,
+    -6.101,
+    0.0
+  ],
+  "bbox_hi": [
+    6.499,
+    4.52,
+    4.559
+  ],
+  "z0": 0.456,
+  "z_rev1": 4.559,
+  "rev": 2.392,
+  "t_rev0": 0.46,
+  "t_rev1": 2.852,
+  "t_dis0": 3.112,
+  "t_dis1": 3.342,
+  "t_clean": 3.402,
+  "t_end": 4.352,
+  "lifts": [
+    1.277
+  ],
+  "n_lifts": 1,
+  "reveal": {
+    "axis": "z",
+    "z0": 0.456,
+    "z1": 4.559,
+    "t0": 0.46,
+    "t1": 2.852
+  },
+  "body_size": [
+    12.977,
+    10.621,
+    4.559
+  ],
+  "n_bands": 0,
+  "file": "折壳入口_建造.glb",
+  "bytes": 852356,
+  "detail": "low",
+  "src_tris": 7112,
+  "src_verts": 14597,
+  "check": {
+    "BODY_RIG": 0,
+    "body_parent": null,
+    "body_mod": [],
+    "body_anim": false,
+    "body_tris": 7112,
+    "body_verts": 14597,
+    "src_tris": 7112,
+    "src_verts": 14597,
+    "BODY_TRIS": 0,
+    "BVH_CROSS": 0,
+    "BOX_TALL": 0,
+    "scaf_top": 2.75,
+    "SCAF_OVER": 0.0,
+    "reveal_z0": 0.456,
+    "reveal_z1": 4.559,
+    "tri_body": 7112,
+    "tri_site": 2836,
+    "ok": true
+  }
+}

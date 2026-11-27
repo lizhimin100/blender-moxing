@@ -1,0 +1,91 @@
+{
+  "id": "地下城入口",
+  "src": "地下城入口_手游_近.glb",
+  "footprint": [
+    14.6,
+    12.171
+  ],
+  "height": 9.18,
+  "yaw": 0,
+  "attach": {
+    "hoist": [
+      -7.85,
+      -5.85,
+      2.387
+    ],
+    "banner": [
+      -7.6,
+      6.921,
+      0.0
+    ]
+  },
+  "body": [
+    -7.3,
+    7.3,
+    -5.55,
+    6.621
+  ],
+  "bbox_lo": [
+    -7.3,
+    -5.55,
+    0.0
+  ],
+  "bbox_hi": [
+    7.3,
+    6.621,
+    9.18
+  ],
+  "z0": 0.918,
+  "z_rev1": 9.18,
+  "rev": 2.738,
+  "t_rev0": 0.46,
+  "t_rev1": 3.198,
+  "t_dis0": 3.458,
+  "t_dis1": 3.869,
+  "t_clean": 3.929,
+  "t_end": 4.878,
+  "lifts": [
+    0.685,
+    1.414,
+    2.143
+  ],
+  "n_lifts": 3,
+  "reveal": {
+    "axis": "z",
+    "z0": 0.918,
+    "z1": 9.18,
+    "t0": 0.46,
+    "t1": 3.198
+  },
+  "body_size": [
+    14.6,
+    12.171,
+    9.18
+  ],
+  "n_bands": 0,
+  "file": "地下城入口_建造.glb",
+  "bytes": 1088496,
+  "detail": "low",
+  "src_tris": 8696,
+  "src_verts": 17896,
+  "check": {
+    "BODY_RIG": 0,
+    "body_parent": null,
+    "body_mod": [],
+    "body_anim": false,
+    "body_tris": 8696,
+    "body_verts": 17896,
+    "src_tris": 8696,
+    "src_verts": 17896,
+    "BODY_TRIS": 0,
+    "BVH_CROSS": 0,
+    "BOX_TALL": 0,
+    "scaf_top": 7.15,
+    "SCAF_OVER": 0.0,
+    "reveal_z0": 0.918,
+    "reveal_z1": 9.18,
+    "tri_body": 8696,
+    "tri_site": 3940,
+    "ok": true
+  }
+}

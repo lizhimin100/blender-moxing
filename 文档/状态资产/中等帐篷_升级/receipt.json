@@ -1,0 +1,61 @@
+{
+  "file": "中等帐篷_升级.glb",
+  "bytes": 289524,
+  "meshes": 4,
+  "tris": 3844,
+  "materials": [
+    "team",
+    "team_trim",
+    "主体",
+    "自发光"
+  ],
+  "mat_count": 4,
+  "bbox_min": [
+    -3.799,
+    -2.967,
+    -0.03
+  ],
+  "bbox_max": [
+    3.766,
+    3.874,
+    2.78
+  ],
+  "size": [
+    7.565,
+    6.841,
+    2.81
+  ],
+  "grounded": true,
+  "zmin": -0.03,
+  "front_ok": true,
+  "mats_ok": true,
+  "tris_ok": true,
+  "skins": 0,
+  "animations": [],
+  "static_ok": true,
+  "ok": true,
+  "asset_name": "中等帐篷_升级",
+  "kind": "升级态",
+  "cut_z": 1.95,
+  "note": "中等 → 豪华：四根角柱已立在旧帐四周；作业面 2.10",
+  "lifts": 1,
+  "body": [
+    -1.949,
+    1.949,
+    -1.78,
+    2.634
+  ],
+  "plot": [
+    -2.383,
+    2.383,
+    -1.804,
+    2.634
+  ],
+  "kept": 70,
+  "removed": 6,
+  "caps": 23,
+  "chunks": 9,
+  "hints": 9,
+  "front_landmark_y": 1.556,
+  "front_landmark_ok": true
+}

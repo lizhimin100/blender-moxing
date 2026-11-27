@@ -1,0 +1,42 @@
+{
+  "file": "神秘圣地_训练.glb",
+  "bytes": 930400,
+  "meshes": 4,
+  "tris": 13338,
+  "materials": [
+    "team",
+    "team_trim",
+    "主体",
+    "自发光"
+  ],
+  "mat_count": 4,
+  "bbox_min": [
+    -6.85,
+    -6.67,
+    0.0
+  ],
+  "bbox_max": [
+    6.85,
+    7.5,
+    16.18
+  ],
+  "size": [
+    13.7,
+    14.17,
+    16.18
+  ],
+  "grounded": true,
+  "zmin": 0.0,
+  "front_ok": true,
+  "mats_ok": true,
+  "tris_ok": true,
+  "skins": 0,
+  "animations": [],
+  "static_ok": true,
+  "ok": true,
+  "asset_name": "神秘圣地_训练",
+  "kind": "训练态",
+  "note": "符文环 + 门内辉光（圣地没有门扇，不转门板）",
+  "parts": 601,
+  "fx_parts": 19
+}

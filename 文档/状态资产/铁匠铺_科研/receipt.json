@@ -1,0 +1,61 @@
+{
+  "file": "铁匠铺_科研.glb",
+  "bytes": 1650628,
+  "meshes": 4,
+  "tris": 14686,
+  "materials": [
+    "team",
+    "team_trim",
+    "主体",
+    "自发光"
+  ],
+  "mat_count": 4,
+  "bbox_min": [
+    -4.72,
+    -3.92,
+    -0.0
+  ],
+  "bbox_max": [
+    5.211,
+    7.89,
+    11.83
+  ],
+  "size": [
+    9.931,
+    11.81,
+    11.83
+  ],
+  "grounded": true,
+  "zmin": -0.0,
+  "front_ok": true,
+  "mats_ok": true,
+  "tris_ok": true,
+  "skins": 1,
+  "animations": [
+    "research"
+  ],
+  "clips": [
+    {
+      "name": "research",
+      "channels": 15,
+      "duration": 2.0,
+      "loop_err": 0.0,
+      "loop_ok": true,
+      "bad": []
+    }
+  ],
+  "clip_ok": true,
+  "ok": true,
+  "asset_name": "铁匠铺_科研",
+  "kind": "科研态",
+  "note": "炉火呼吸 / 三团烟上升 / 锤子敲砧",
+  "bones": [
+    "flame",
+    "smoke0",
+    "smoke1",
+    "smoke2",
+    "hammer"
+  ],
+  "frames": 60,
+  "fps": 30
+}

@@ -1,0 +1,47 @@
+{
+  "草地": {
+    "lum_min": 0.4415,
+    "lum_mean": 0.5276,
+    "lum_max": 0.5444,
+    "unique_colors": 256,
+    "adjacent_diff_x": 0.00198,
+    "adjacent_diff_y": 0.00187,
+    "seam_diff_x": 0.00189,
+    "seam_diff_y": 0.00527,
+    "seam_vs_inner_x": 0.9,
+    "seam_vs_inner_y": 1.57,
+    "local_spread_p995": 0.0667,
+    "file": "D:/测试一/assets/地形\\草地.png",
+    "tile_m": 8.0
+  },
+  "泥土": {
+    "lum_min": 0.3747,
+    "lum_mean": 0.3967,
+    "lum_max": 0.4104,
+    "unique_colors": 94,
+    "adjacent_diff_x": 0.002,
+    "adjacent_diff_y": 0.002,
+    "seam_diff_x": 0.00207,
+    "seam_diff_y": 0.00249,
+    "seam_vs_inner_x": 1.0,
+    "seam_vs_inner_y": 1.03,
+    "local_spread_p995": 0.0222,
+    "file": "D:/测试一/assets/地形\\泥土.png",
+    "tile_m": 8.0
+  },
+  "裂纹泥地": {
+    "lum_min": 0.3205,
+    "lum_mean": 0.3458,
+    "lum_max": 0.3594,
+    "unique_colors": 107,
+    "adjacent_diff_x": 0.00233,
+    "adjacent_diff_y": 0.00234,
+    "seam_diff_x": 0.00356,
+    "seam_diff_y": 0.0038,
+    "seam_vs_inner_x": 1.05,
+    "seam_vs_inner_y": 1.09,
+    "local_spread_p995": 0.0233,
+    "file": "D:/测试一/assets/地形\\裂纹泥地.png",
+    "tile_m": 8.0
+  }
+}

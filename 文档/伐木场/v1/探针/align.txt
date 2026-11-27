@@ -1,0 +1,286 @@
+ITEMS 474
+=== CLIP_CROSS 0 ===
+=== CLIP_INNER 976 (前 24) ===
+   4  yard_soil                <-> yard_floor
+   8  yard_soil                <-> wall_plinth
+   8  yard_soil                <-> hut_plinth
+   6  yard_soil                <-> yard_curb
+   6  yard_soil                <-> yard_curb_f
+   6  yard_soil                <-> yard_curb_f.001
+   4  yard_soil                <-> yard_curb_s
+   4  yard_soil                <-> rail_tie
+   4  yard_soil                <-> rail_tie.001
+   4  yard_soil                <-> rail_tie.002
+   4  yard_soil                <-> rail_tie.003
+   4  yard_soil                <-> rail_tie.004
+   4  yard_soil                <-> rail_tie.005
+   4  yard_soil                <-> rail_tie.006
+   4  yard_soil                <-> rail_tie.007
+   4  yard_soil                <-> rail_tie.008
+   4  yard_soil                <-> rail_tie.009
+   4  yard_soil                <-> rail_tie.010
+   4  yard_soil                <-> rail_tie.011
+   4  yard_soil                <-> rail_tie.012
+   4  yard_soil                <-> rail_tie.013
+   4  yard_soil                <-> post_foot
+   4  yard_soil                <-> post_foot.001
+   4  yard_soil                <-> post_foot.002
+=== CONTAIN 115 ===
+   plank_loose.001           in  yard_floor
+   wall_rail.002             in  roof_main_b
+   roof_patch                in  roof_main
+   roof_patch.002            in  roof_main
+   roof_light                in  roof_main
+   roof_light_f              in  roof_main
+   roof_light_f.001          in  roof_main
+   roof_light.001            in  roof_main
+   roof_light_f.002          in  roof_main
+   roof_light_f.003          in  roof_main
+   win_hut_s_f.003           in  roof_main
+   hut_eave                  in  roof_main
+   win_hut_glass             in  hut_front
+   hut_door                  in  hut_front_l
+   hut_door_plank            in  hut_front_l
+   hut_door_plank.001        in  hut_front_l
+   hut_door_plank.002        in  hut_front_l
+   hut_door_panel            in  hut_front_l
+   hut_door_band             in  hut_front_l
+   hut_door_band.001         in  hut_front_l
+   saw_tooth.001             in  saw_tie
+   timber_ring               in  timber_face
+   timber_ring.001           in  timber_face
+   timber_ring.002           in  timber_face
+   timber_ring.002           in  timber_ring.001
+   timber_ring.003           in  timber_face.001
+   timber_ring.004           in  timber_face.001
+   timber_ring.005           in  timber_face.001
+   timber_ring.004           in  timber_ring.003
+   timber_ring.005           in  timber_ring.003
+   timber_ring.005           in  timber_ring.004
+   timber_ring.006           in  timber_face.002
+   timber_ring.007           in  timber_face.002
+   timber_ring.008           in  timber_face.002
+   timber_ring.007           in  timber_ring.006
+   timber_ring.008           in  timber_ring.006
+   timber_ring.008           in  timber_ring.007
+   timber_ring.009           in  timber_face.003
+   timber_ring.010           in  timber_face.003
+   timber_ring.011           in  timber_face.003
+=== COPLANAR_UP 0 ===
+=== COPLANAR 583 ===
+   yard_soil                <-> wall_plinth               @(2, -1) d=+0.000
+   yard_soil                <-> hut_plinth                @(2, -1) d=+0.000
+   yard_soil                <-> yard_curb                 @(0, 1) d=+8.150
+   yard_soil                <-> yard_curb_f               @(0, -1) d=-8.150
+   yard_soil                <-> yard_curb_f.001           @(0, 1) d=+8.150
+   yard_floor               <-> post_foot                 @(2, -1) d=+0.180
+   yard_floor               <-> post_foot.001             @(2, -1) d=+0.180
+   yard_floor               <-> post_foot.002             @(2, -1) d=+0.180
+   yard_floor               <-> post_foot.003             @(2, -1) d=+0.180
+   yard_floor               <-> post_corner               @(2, -1) d=+0.180
+   yard_floor               <-> timber_sleeper            @(2, -1) d=+0.180
+   yard_floor               <-> timber_sleeper.001        @(2, -1) d=+0.180
+   yard_floor               <-> plank_loose.001           @(2, -1) d=+0.180
+   yard_floor               <-> tool_wedge.003            @(2, -1) d=+0.180
+   yard_floor               <-> tool_wedge.004            @(2, -1) d=+0.180
+   yard_floor               <-> tool_wedge.005            @(2, -1) d=+0.180
+   wall_plinth              <-> hut_plinth                @(2, -1) d=+0.000
+   hut_plinth               <-> hut_jamb                  @(1, 1) d=+3.250
+   hut_plinth               <-> hut_jamb.001              @(1, 1) d=+3.250
+   rail_l                   <-> cart_wheel                @(0, 1) d=+0.800
+   rail_l                   <-> cart_wheel.001            @(0, 1) d=+0.800
+   rail_l.001               <-> cart_wheel.002            @(0, 1) d=+1.920
+   rail_l.001               <-> cart_wheel.003            @(0, 1) d=+1.920
+   post_cap_t               <-> beam_eave_band            @(1, 1) d=+3.472
+   post_cap_t.001           <-> beam_eave_band            @(1, 1) d=+3.472
+   post_cap_t.002           <-> beam_eave_band            @(1, 1) d=+3.472
+   post_cap_t.003           <-> beam_eave_band            @(1, 1) d=+3.472
+   beam_eave_band           <-> roof_barge                @(0, -1) d=-6.250
+   beam_eave_band           <-> roof_barge.001            @(0, 1) d=+6.250
+   wall_back                <-> wall_rail                 @(0, 1) d=+5.800
+   wall_back                <-> wall_rail.001             @(0, 1) d=+5.800
+   wall_back                <-> wall_rail.002             @(0, 1) d=+5.800
+   wall_back                <-> hut_side                  @(1, -1) d=-2.620
+   wall_back                <-> hut_side.001              @(1, -1) d=-2.620
+   wall_stone               <-> wall_end                  @(2, -1) d=+0.700
+   wall_stone               <-> wall_end.001              @(2, -1) d=+0.700
+   wall_stone               <-> hut_side                  @(1, -1) d=-2.620
+   wall_stone               <-> hut_side.001              @(1, -1) d=-2.620
+   wall_course              <-> hut_side.001              @(0, 1) d=+5.800
+   wall_course.001          <-> hut_side.001              @(0, 1) d=+5.800
+   wall_rail                <-> wall_stud                 @(1, -1) d=-2.650
+   wall_rail                <-> wall_stud.001             @(1, -1) d=-2.650
+   wall_rail                <-> wall_stud.002             @(1, -1) d=-2.650
+   wall_rail                <-> wall_stud.003             @(1, -1) d=-2.650
+   wall_rail                <-> wall_stud.004             @(1, -1) d=-2.650
+   wall_rail                <-> wall_stud.005             @(1, -1) d=-2.650
+   wall_rail                <-> wall_stud.006             @(1, -1) d=-2.650
+   wall_rail                <-> hut_side.001              @(0, 1) d=+5.800
+   wall_rail.001            <-> wall_stud                 @(1, -1) d=-2.650
+   wall_rail.001            <-> wall_stud.001             @(1, -1) d=-2.650
+   wall_rail.001            <-> wall_stud.002             @(1, -1) d=-2.650
+   wall_rail.001            <-> wall_stud.003             @(1, -1) d=-2.650
+   wall_rail.001            <-> wall_stud.004             @(1, -1) d=-2.650
+   wall_rail.001            <-> wall_stud.005             @(1, -1) d=-2.650
+   wall_rail.001            <-> wall_stud.006             @(1, -1) d=-2.650
+   wall_rail.001            <-> hut_side.001              @(0, 1) d=+5.800
+   wall_rail.002            <-> wall_stud                 @(1, -1) d=-2.650
+   wall_rail.002            <-> wall_stud.001             @(1, -1) d=-2.650
+   wall_rail.002            <-> wall_stud.002             @(1, -1) d=-2.650
+   wall_rail.002            <-> wall_stud.003             @(1, -1) d=-2.650
+   wall_rail.002            <-> wall_stud.004             @(1, -1) d=-2.650
+   wall_rail.002            <-> wall_stud.005             @(1, -1) d=-2.650
+   wall_rail.002            <-> wall_stud.006             @(1, -1) d=-2.650
+   wall_rail.002            <-> hut_side.001              @(0, 1) d=+5.800
+   roof_main                <-> roof_seam                 @(0, 1) d=+6.200
+   roof_main_b              <-> roof_seam                 @(0, 1) d=+6.200
+   hut_front                <-> hut_side.001              @(2, -1) d=+0.620
+   hut_front                <-> hut_dado                  @(2, -1) d=+0.620
+   hut_front                <-> hut_band_s                @(1, 1) d=+3.100
+   hut_front_l              <-> hut_front_T               @(1, -1) d=+2.880
+   hut_front_l              <-> hut_door                  @(2, -1) d=+0.620
+   hut_front_l              <-> hut_side                  @(2, -1) d=+0.620
+   hut_front_l              <-> hut_dado                  @(2, -1) d=+0.620
+   hut_front_T              <-> hut_side                  @(1, 1) d=+3.100
+   hut_front_T              <-> hut_side.001              @(0, 1) d=+5.800
+   hut_jamb                 <-> hut_head                  @(1, -1) d=+2.950
+   hut_jamb.001             <-> hut_head                  @(1, -1) d=+2.950
+   hut_door                 <-> hut_dado                  @(2, -1) d=+0.620
+   win_hut_f.001            <-> win_hut_f.002             @(1, -1) d=+3.020
+   win_hut_f.001            <-> win_hut_f.003             @(1, -1) d=+3.020
+   hut_side                 <-> hut_dado                  @(2, -1) d=+0.620
+   hut_stud                 <-> hut_stone                 @(2, -1) d=+0.690
+   hut_stud.001             <-> hut_stone                 @(2, -1) d=+0.690
+   hut_stud.002             <-> hut_stone                 @(2, -1) d=+0.690
+   hut_stud.003             <-> hut_stone                 @(2, -1) d=+0.690
+   hut_side.001             <-> hut_dado                  @(2, -1) d=+0.620
+   hut_stud.004             <-> hut_stone.001             @(2, -1) d=+0.690
+   hut_stud.005             <-> hut_stone.001             @(2, -1) d=+0.690
+   hut_stud.006             <-> hut_stone.001             @(2, -1) d=+0.690
+   hut_stud.007             <-> hut_stone.001             @(2, -1) d=+0.690
+   win_hut_s_f.001          <-> win_hut_s_f.002           @(0, 1) d=+5.875
+   win_hut_s_f.001          <-> win_hut_s_f.003           @(0, 1) d=+5.875
+   win_hut_s_f.002          <-> win_hut_s_sill            @(0, -1) d=+5.785
+   saw_brace.002            <-> saw_brace.003             @(1, 1) d=+5.680
+   timber_face              <-> timber_ring               @(1, 1) d=+3.025
+   timber_face              <-> timber_ring.001           @(1, 1) d=+3.025
+   timber_face              <-> timber_ring.002           @(1, 1) d=+3.025
+   timber_ring.001          <-> timber_ring.002           @(1, -1) d=+3.011
+   timber_bark.001          <-> timber_bark.005           @(1, -1) d=+0.260
+   timber_face.001          <-> timber_ring.003           @(1, 1) d=+3.025
+   timber_face.001          <-> timber_ring.004           @(1, 1) d=+3.025
+   timber_face.001          <-> timber_ring.005           @(1, 1) d=+3.025
+   timber_ring.003          <-> timber_ring.004           @(1, -1) d=+3.011
+   timber_ring.004          <-> timber_ring.005           @(1, -1) d=+3.011
+   timber_bark.002          <-> timber_bark.006           @(1, -1) d=+0.260
+   timber_face.002          <-> timber_ring.006           @(1, 1) d=+3.025
+   timber_face.002          <-> timber_ring.007           @(1, 1) d=+3.025
+   timber_face.002          <-> timber_ring.008           @(1, 1) d=+3.025
+   timber_ring.006          <-> timber_ring.007           @(1, -1) d=+3.011
+   timber_ring.007          <-> timber_ring.008           @(1, -1) d=+3.011
+   timber_bark.003          <-> timber_bark.007           @(1, -1) d=+0.260
+   timber_face.003          <-> timber_ring.009           @(1, 1) d=+3.025
+   timber_face.003          <-> timber_ring.010           @(1, 1) d=+3.025
+   timber_face.003          <-> timber_ring.011           @(1, 1) d=+3.025
+   timber_ring.009          <-> timber_ring.010           @(1, -1) d=+3.011
+   timber_ring.010          <-> timber_ring.011           @(1, -1) d=+3.011
+   timber_bark.004          <-> timber_bark.008           @(1, -1) d=+0.260
+   timber_face.004          <-> timber_ring.012           @(1, 1) d=+3.025
+   timber_face.004          <-> timber_ring.013           @(1, 1) d=+3.025
+   timber_face.004          <-> timber_ring.014           @(1, 1) d=+3.025
+   timber_ring.012          <-> timber_ring.013           @(1, -1) d=+3.011
+   timber_ring.013          <-> timber_ring.014           @(1, -1) d=+3.011
+   timber_bark.005          <-> timber_bark.008           @(1, -1) d=+0.260
+   timber_bark.005          <-> timber_bark.009           @(1, -1) d=+0.260
+   timber_face.005          <-> timber_ring.015           @(1, 1) d=+3.025
+   timber_face.005          <-> timber_ring.016           @(1, 1) d=+3.025
+   timber_face.005          <-> timber_ring.017           @(1, 1) d=+3.025
+   timber_ring.015          <-> timber_ring.016           @(1, -1) d=+3.011
+   timber_ring.016          <-> timber_ring.017           @(1, -1) d=+3.011
+   timber_bark.006          <-> timber_bark.009           @(1, -1) d=+0.260
+   timber_bark.006          <-> timber_bark.010           @(1, -1) d=+0.260
+   timber_face.006          <-> timber_ring.018           @(1, 1) d=+3.025
+   timber_face.006          <-> timber_ring.019           @(1, 1) d=+3.025
+   timber_face.006          <-> timber_ring.020           @(1, 1) d=+3.025
+   timber_ring.018          <-> timber_ring.019           @(1, -1) d=+3.011
+   timber_ring.019          <-> timber_ring.020           @(1, -1) d=+3.011
+   timber_bark.007          <-> timber_bark.010           @(1, -1) d=+0.260
+   timber_face.007          <-> timber_ring.021           @(1, 1) d=+3.025
+   timber_face.007          <-> timber_ring.022           @(1, 1) d=+3.025
+   timber_face.007          <-> timber_ring.023           @(1, 1) d=+3.025
+   timber_ring.021          <-> timber_ring.022           @(1, -1) d=+3.011
+   timber_ring.022          <-> timber_ring.023           @(1, -1) d=+3.011
+   timber_bark.008          <-> timber_bark.011           @(1, -1) d=+0.260
+   timber_face.008          <-> timber_ring.024           @(1, 1) d=+3.025
+   timber_face.008          <-> timber_ring.025           @(1, 1) d=+3.025
+   timber_face.008          <-> timber_ring.026           @(1, 1) d=+3.025
+   timber_ring.024          <-> timber_ring.025           @(1, -1) d=+3.011
+   timber_ring.025          <-> timber_ring.026           @(1, -1) d=+3.011
+   timber_bark.009          <-> timber_bark.011           @(1, -1) d=+0.260
+   timber_bark.009          <-> timber_bark.012           @(1, -1) d=+0.260
+   timber_face.009          <-> timber_ring.027           @(1, 1) d=+3.025
+   timber_face.009          <-> timber_ring.028           @(1, 1) d=+3.025
+   timber_face.009          <-> timber_ring.029           @(1, 1) d=+3.025
+   timber_ring.027          <-> timber_ring.028           @(1, -1) d=+3.011
+   timber_ring.028          <-> timber_ring.029           @(1, -1) d=+3.011
+   timber_bark.010          <-> timber_bark.012           @(1, -1) d=+0.260
+   timber_face.010          <-> timber_ring.030           @(1, 1) d=+3.025
+   timber_face.010          <-> timber_ring.031           @(1, 1) d=+3.025
+   timber_face.010          <-> timber_ring.032           @(1, 1) d=+3.025
+   timber_ring.030          <-> timber_ring.031           @(1, -1) d=+3.011
+   timber_ring.031          <-> timber_ring.032           @(1, -1) d=+3.011
+   timber_bark.011          <-> timber_bark.013           @(1, -1) d=+0.260
+   timber_face.011          <-> timber_ring.033           @(1, 1) d=+3.025
+   timber_face.011          <-> timber_ring.034           @(1, 1) d=+3.025
+   timber_face.011          <-> timber_ring.035           @(1, 1) d=+3.025
+   timber_ring.033          <-> timber_ring.034           @(1, -1) d=+3.011
+   timber_ring.034          <-> timber_ring.035           @(1, -1) d=+3.011
+   timber_bark.012          <-> timber_bark.013           @(1, -1) d=+0.260
+   timber_face.012          <-> timber_ring.036           @(1, 1) d=+3.025
+   timber_face.012          <-> timber_ring.037           @(1, 1) d=+3.025
+   timber_face.012          <-> timber_ring.038           @(1, 1) d=+3.025
+   timber_ring.036          <-> timber_ring.037           @(1, -1) d=+3.011
+   timber_ring.037          <-> timber_ring.038           @(1, -1) d=+3.011
+   timber_face.013          <-> timber_ring.039           @(1, 1) d=+3.025
+   timber_face.013          <-> timber_ring.040           @(1, 1) d=+3.025
+   timber_face.013          <-> timber_ring.041           @(1, 1) d=+3.025
+   timber_ring.039          <-> timber_ring.040           @(1, -1) d=+3.011
+   timber_ring.040          <-> timber_ring.041           @(1, -1) d=+3.011
+   wheel_spoke.001          <-> wheel_spoke.002           @(1, -1) d=+3.875
+   wheel_spoke.001          <-> wheel_spoke.003           @(1, -1) d=+3.875
+   wheel_spoke.001          <-> wheel_spoke.004           @(1, -1) d=+3.875
+   wheel_spoke.001          <-> wheel_spoke.005           @(1, -1) d=+3.875
+   wheel_spoke.002          <-> wheel_spoke.003           @(1, 1) d=+3.965
+   wheel_spoke.002          <-> wheel_spoke.004           @(1, 1) d=+3.965
+   wheel_spoke.002          <-> wheel_spoke.005           @(1, 1) d=+3.965
+   wheel_spoke.003          <-> wheel_spoke.004           @(1, 1) d=+3.965
+   wheel_spoke.003          <-> wheel_spoke.005           @(1, 1) d=+3.965
+   wheel_spoke.004          <-> wheel_spoke.005           @(1, 1) d=+3.965
+   tuft.001                 <-> tuft.002                  @(2, -1) d=+0.178
+   tuft.003                 <-> tuft.004                  @(2, -1) d=+0.178
+   tuft.003                 <-> tuft.005                  @(2, -1) d=+0.178
+   tuft.004                 <-> tuft.005                  @(2, -1) d=+0.178
+   tuft.006                 <-> tuft.007                  @(2, -1) d=+0.178
+   tuft.006                 <-> tuft.008                  @(2, -1) d=+0.178
+   tuft.007                 <-> tuft.008                  @(2, -1) d=+0.178
+   tuft.009                 <-> tuft.010                  @(2, -1) d=+0.178
+   tuft.009                 <-> tuft.011                  @(2, -1) d=+0.178
+   tuft.010                 <-> tuft.011                  @(2, -1) d=+0.178
+   tuft.012                 <-> tuft.013                  @(2, -1) d=+0.178
+   tuft.012                 <-> tuft.014                  @(2, -1) d=+0.178
+   tuft.013                 <-> tuft.014                  @(2, -1) d=+0.178
+   tuft.015                 <-> tuft.016                  @(2, -1) d=+0.178
+   tuft.015                 <-> tuft.017                  @(2, -1) d=+0.178
+   tuft.016                 <-> tuft.017                  @(2, -1) d=+0.178
+   flag_l_arm               <-> flag_l_brk                @(2, -1) d=+6.318
+   flag_l_crest_edge        <-> flag_l_crest_rim          @(1, -1) d=+6.025
+   flag_l_crest_rim         <-> flag_l_crest_field        @(1, 1) d=+6.057
+   flag_r_arm               <-> flag_r_brk                @(2, -1) d=+6.318
+   flag_r_crest_edge        <-> flag_r_crest_rim          @(1, -1) d=+6.025
+   flag_r_crest_rim         <-> flag_r_crest_field        @(1, 1) d=+6.057
+   banner_cloth             <-> banner_trim               @(1, -1) d=-2.320
+   banner_crest_edge        <-> banner_crest_rim          @(0, -1) d=+5.925
+   hut_crest_edge           <-> hut_crest_rim             @(1, 1) d=+3.138
+   hut_crest_rim            <-> hut_crest_field           @(1, -1) d=+3.114
+=== FLOAT 0 ===
+DONE

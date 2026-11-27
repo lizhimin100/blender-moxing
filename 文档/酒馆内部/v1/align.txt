@@ -1,0 +1,7 @@
+ITEMS 391
+BBOX [-5.35, -4.4, 0.0] .. [5.48, 4.68, 3.49]  SIZE [10.83, 9.08, 3.49]
+GROUNDED True  FRONT_OK True
+=== CLIP_CROSS 0 ===
+=== COPLANAR_UP 1 ===
+   chn_ring                   <-> chn_spoke.005              @(2, 1) d=+2.610
+=== FLOAT 0 ===

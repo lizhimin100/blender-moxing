@@ -1,0 +1,94 @@
+{
+  "id": "哨塔",
+  "src": "哨塔_手游_近.glb",
+  "footprint": [
+    7.16,
+    7.12
+  ],
+  "height": 17.34,
+  "yaw": 0,
+  "attach": {
+    "hoist": [
+      -4.13,
+      -3.64,
+      3.4
+    ],
+    "banner": [
+      -3.88,
+      4.08,
+      0.0
+    ]
+  },
+  "body": [
+    -3.58,
+    3.58,
+    -3.34,
+    3.78
+  ],
+  "bbox_lo": [
+    -3.58,
+    -3.34,
+    0.0
+  ],
+  "bbox_hi": [
+    3.58,
+    3.78,
+    17.34
+  ],
+  "z0": 1.0,
+  "z_rev1": 17.34,
+  "rev": 3.35,
+  "t_rev0": 0.46,
+  "t_rev1": 3.81,
+  "t_dis0": 4.071,
+  "t_dis1": 4.75,
+  "t_clean": 4.81,
+  "t_end": 5.76,
+  "lifts": [
+    0.506,
+    0.957,
+    1.408,
+    1.859,
+    2.31,
+    2.761
+  ],
+  "n_lifts": 6,
+  "reveal": {
+    "axis": "z",
+    "z0": 1.0,
+    "z1": 17.34,
+    "t0": 0.46,
+    "t1": 3.81
+  },
+  "body_size": [
+    7.16,
+    7.12,
+    17.34
+  ],
+  "n_bands": 0,
+  "file": "哨塔_建造.glb",
+  "bytes": 1251984,
+  "detail": "low",
+  "src_tris": 9624,
+  "src_verts": 19436,
+  "check": {
+    "BODY_RIG": 0,
+    "body_parent": null,
+    "body_mod": [],
+    "body_anim": false,
+    "body_tris": 9624,
+    "body_verts": 19436,
+    "src_tris": 9624,
+    "src_verts": 19436,
+    "BODY_TRIS": 0,
+    "BVH_CROSS": 0,
+    "BOX_TALL": 0,
+    "scaf_top": 13.75,
+    "SCAF_OVER": 0.0,
+    "reveal_z0": 1.0,
+    "reveal_z1": 17.34,
+    "tri_body": 9624,
+    "tri_site": 5068,
+    "ok": true
+  }
+}

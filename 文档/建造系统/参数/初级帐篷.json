@@ -1,0 +1,89 @@
+{
+  "id": "初级帐篷",
+  "src": "初级帐篷_手游_近.glb",
+  "footprint": [
+    3.566,
+    3.293
+  ],
+  "height": 2.3,
+  "yaw": 0,
+  "attach": {
+    "hoist": [
+      -2.333,
+      -1.863,
+      0.598
+    ],
+    "banner": [
+      -2.083,
+      2.03,
+      0.0
+    ]
+  },
+  "body": [
+    -1.783,
+    1.783,
+    -1.563,
+    1.73
+  ],
+  "bbox_lo": [
+    -1.783,
+    -1.563,
+    -0.03
+  ],
+  "bbox_hi": [
+    1.783,
+    1.73,
+    2.3
+  ],
+  "z0": 0.45,
+  "z_rev1": 2.3,
+  "rev": 2.222,
+  "t_rev0": 0.46,
+  "t_rev1": 2.682,
+  "t_dis0": 2.942,
+  "t_dis1": 3.172,
+  "t_clean": 3.232,
+  "t_end": 4.183,
+  "lifts": [
+    2.362
+  ],
+  "n_lifts": 1,
+  "reveal": {
+    "axis": "z",
+    "z0": 0.45,
+    "z1": 2.3,
+    "t0": 0.46,
+    "t1": 2.682
+  },
+  "body_size": [
+    3.566,
+    3.293,
+    2.33
+  ],
+  "n_bands": 0,
+  "file": "初级帐篷_建造.glb",
+  "bytes": 351064,
+  "detail": "low",
+  "src_tris": 748,
+  "src_verts": 1500,
+  "check": {
+    "BODY_RIG": 0,
+    "body_parent": null,
+    "body_mod": [],
+    "body_anim": false,
+    "body_tris": 748,
+    "body_verts": 1500,
+    "src_tris": 748,
+    "src_verts": 1500,
+    "BODY_TRIS": 0,
+    "BVH_CROSS": 0,
+    "BOX_TALL": 0,
+    "scaf_top": 2.19,
+    "SCAF_OVER": 0.0,
+    "reveal_z0": 0.45,
+    "reveal_z1": 2.3,
+    "tri_body": 748,
+    "tri_site": 2596,
+    "ok": true
+  }
+}

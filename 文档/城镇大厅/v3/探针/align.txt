@@ -1,0 +1,341 @@
+ITEMS 739
+=== CLIP_CROSS 0 ===
+=== CLIP_INNER 1744 (前 24) ===
+   6  plinth_low               <-> apron_s
+   6  plinth_low               <-> apron_s.001
+   8  plinth_low               <-> apron_b
+   8  plinth_low               <-> step_4
+   8  plinth_low               <-> cheek
+   8  plinth_low               <-> cheek.001
+   4  plinth_mid               <-> plinth_cap
+   8  plinth_mid               <-> step_4
+   8  plinth_mid               <-> cheek
+   8  plinth_mid               <-> cheek.001
+   6  plinth_cap               <-> step_4
+   8  plinth_cap               <-> cheek
+   8  plinth_cap               <-> cheek.001
+   4  plinth_cap               <-> threshold
+   4  plinth_cap               <-> mass_core
+   4  plinth_cap               <-> mass_front_L
+   4  plinth_cap               <-> mass_front_R
+   8  plinth_cap               <-> dado
+   4  plinth_cap               <-> gate_jamb
+   4  plinth_cap               <-> gate_jamb.001
+   4  plinth_cap               <-> gate_post
+   4  plinth_cap               <-> gate_post.001
+   4  plinth_cap               <-> gate_leaf
+   4  plinth_cap               <-> gate_leaf.001
+=== CONTAIN 232 ===
+   gate_glow                 in  mass_front_T
+   gate_bar.001              in  mass_front_T
+   gate_bar2                 in  mass_front_T
+   gate_rail                 in  dado
+   gate_strap                in  dado
+   gate_stud                 in  dado
+   gate_ring                 in  dado
+   gate_rail.002             in  dado
+   gate_strap.002            in  dado
+   gate_stud.001             in  dado
+   gate_ring.001             in  dado
+   crest_g_spike0            in  gable_rake
+   crest_g_spike1            in  gable_rake
+   crest_g_gem0              in  gable_rake
+   crest_g_gem1              in  gable_rake
+   crest_g_spike1            in  gable_rake.001
+   crest_g_spike2            in  gable_rake.001
+   crest_g_gem1              in  gable_rake.001
+   crest_g_gem2              in  gable_rake.001
+   crest_g_edge              in  roof_f
+   crest_g_rim               in  roof_f
+   crest_g_field             in  roof_f
+   crest_g_band              in  roof_f
+   crest_g_spike0            in  roof_f
+   crest_g_spike1            in  roof_f
+   crest_g_spike2            in  roof_f
+   crest_g_gem0              in  roof_f
+   crest_g_gem1              in  roof_f
+   crest_g_gem2              in  roof_f
+   gable_fin_base            in  roof_f
+   gable_fin                 in  roof_f
+   clock_f_disc              in  clock_f_ring
+   clock_f_tick              in  clock_f_ring
+   clock_f_tick.001          in  clock_f_ring
+   clock_f_tick.002          in  clock_f_ring
+   clock_f_tick.003          in  clock_f_ring
+   clock_f_tick.004          in  clock_f_ring
+   clock_f_tick.005          in  clock_f_ring
+   clock_f_tick.006          in  clock_f_ring
+   clock_f_tick.007          in  clock_f_ring
+=== COPLANAR_UP 0 ===
+=== COPLANAR 390 ===
+   plinth_low               <-> apron_s                   @(2, -1) d=+0.000
+   plinth_low               <-> apron_s.001               @(2, -1) d=+0.000
+   plinth_low               <-> apron_b                   @(2, -1) d=+0.000
+   plinth_low               <-> step_4                    @(2, -1) d=+0.000
+   plinth_low               <-> cheek                     @(2, -1) d=+0.000
+   plinth_low               <-> cheek.001                 @(2, -1) d=+0.000
+   step_0                   <-> newel                     @(2, -1) d=+0.000
+   step_0                   <-> newel.001                 @(2, -1) d=+0.000
+   cheek                    <-> newel                     @(2, -1) d=+0.000
+   cheek.001                <-> newel.001                 @(2, -1) d=+0.000
+   threshold                <-> gate_post                 @(2, -1) d=+0.550
+   threshold                <-> gate_post.001             @(2, -1) d=+0.550
+   mass_core                <-> dado                      @(2, -1) d=+0.550
+   mass_core                <-> wing_mass                 @(2, -1) d=+0.550
+   mass_core                <-> wing_dado                 @(2, -1) d=+0.550
+   mass_core                <-> wing_dado_cap             @(1, 1) d=+2.560
+   mass_core                <-> wing_mass.001             @(2, -1) d=+0.550
+   mass_core                <-> wing_dado.001             @(2, -1) d=+0.550
+   mass_front_L             <-> dado                      @(2, -1) d=+0.550
+   mass_front_R             <-> dado                      @(2, -1) d=+0.550
+   mass_front_R             <-> wing_dado_cap.001         @(1, -1) d=+2.560
+   dado                     <-> gate_jamb                 @(2, -1) d=+0.550
+   dado                     <-> gate_jamb.001             @(2, -1) d=+0.550
+   dado                     <-> gate_post                 @(2, -1) d=+0.550
+   dado                     <-> gate_post.001             @(2, -1) d=+0.550
+   dado                     <-> wing_mass                 @(2, -1) d=+0.550
+   dado                     <-> wing_mass.001             @(2, -1) d=+0.550
+   dado_cap                 <-> wing_mass                 @(0, 1) d=-5.140
+   dado_cap                 <-> wing_mass.001             @(0, -1) d=+5.140
+   string                   <-> wing_mass                 @(0, 1) d=-5.140
+   string                   <-> wing_mass.001             @(0, -1) d=+5.140
+   band_m                   <-> wing_mass                 @(0, 1) d=-5.140
+   band_m                   <-> wing_band                 @(2, -1) d=+4.266
+   band_m                   <-> wing_mass.001             @(0, -1) d=+5.140
+   band_m                   <-> wing_band.001             @(2, -1) d=+4.266
+   band_t                   <-> wing_mass                 @(0, 1) d=-5.140
+   band_t                   <-> wing_mass.001             @(0, -1) d=+5.140
+   string2                  <-> wing_mass                 @(0, 1) d=-5.140
+   string2                  <-> wing_mass.001             @(0, -1) d=+5.140
+   string_b                 <-> wing_mass                 @(0, 1) d=-5.140
+   string_b                 <-> wing_mass.001             @(0, -1) d=+5.140
+   band_m_b                 <-> wing_mass                 @(0, 1) d=-5.140
+   band_m_b                 <-> wing_mass.001             @(0, -1) d=+5.140
+   band_eave                <-> win_c3_arch               @(2, -1) d=+11.080
+   pil_g_lo                 <-> pil_g_base                @(1, -1) d=+3.200
+   pil_g_lo                 <-> sconce_cap                @(0, 1) d=-1.420
+   pil_g_hi                 <-> pil_g_cap                 @(1, -1) d=+3.200
+   pil_g_hi                 <-> gable_sh_b                @(0, -1) d=-1.840
+   pil_g_lo.001             <-> pil_g_base.001            @(1, -1) d=+3.200
+   pil_g_lo.001             <-> sconce_cap.001            @(0, -1) d=+1.420
+   pil_g_hi.001             <-> pil_g_cap.001             @(1, -1) d=+3.200
+   pil_g_hi.001             <-> gable_sh_b.001            @(0, 1) d=+1.840
+   gate_arch                <-> gate_key                  @(1, -1) d=+3.180
+   gate_stile               <-> gate_rail                 @(1, -1) d=+3.100
+   gate_stile               <-> gate_rail.001             @(1, -1) d=+3.100
+   gate_stile.001           <-> gate_rail.002             @(1, -1) d=+3.100
+   gate_stile.001           <-> gate_rail.003             @(1, -1) d=+3.100
+   gate_bar.001             <-> gate_bar.002              @(1, 1) d=+3.122
+   gate_bar.001             <-> gate_bar2                 @(1, 1) d=+3.122
+   gate_bar.002             <-> gate_bar2                 @(1, 1) d=+3.122
+   gable_sill               <-> gable_sh_b                @(1, -1) d=+3.180
+   gable_sill               <-> gable_sh_b.001            @(1, -1) d=+3.180
+   crest_g_edge             <-> crest_g_rim               @(1, -1) d=+3.440
+   crest_g_rim              <-> crest_g_field             @(1, -1) d=+3.444
+   clock_f_hand             <-> clock_f_pin               @(1, -1) d=+1.319
+   clock_f_hand.001         <-> clock_f_pin               @(1, -1) d=+1.319
+   clock_s_hand             <-> clock_s_pin               @(0, -1) d=-1.211
+   clock_s_hand.001         <-> clock_s_pin               @(0, -1) d=-1.211
+   clock_s_hand.002         <-> clock_s_hand.003          @(0, 1) d=+1.211
+   clock_s_hand.002         <-> clock_s_pin.001           @(0, 1) d=+1.211
+   clock_s_hand.003         <-> clock_s_pin.001           @(0, 1) d=+1.211
+   bf_col                   <-> bf_arch                   @(1, -1) d=-1.380
+   bf_col                   <-> bf_arch_s                 @(0, 1) d=-1.110
+   bf_col_b                 <-> bf_arch                   @(0, 1) d=-1.070
+   bf_col_b                 <-> bf_arch_s                 @(1, 1) d=-1.020
+   bf_col.001               <-> bf_arch.001               @(1, -1) d=+1.060
+   bf_col.001               <-> bf_arch_s                 @(0, 1) d=-1.110
+   bf_col_b.001             <-> bf_arch.001               @(0, 1) d=-1.070
+   bf_col_b.001             <-> bf_arch_s                 @(1, -1) d=+1.020
+   bf_col.002               <-> bf_arch                   @(1, -1) d=-1.380
+   bf_col.002               <-> bf_arch_s.001             @(0, 1) d=+1.430
+   bf_col_b.002             <-> bf_arch                   @(0, -1) d=+1.070
+   bf_col_b.002             <-> bf_arch_s.001             @(1, 1) d=-1.020
+   bf_col.003               <-> bf_arch.001               @(1, -1) d=+1.060
+   bf_col.003               <-> bf_arch_s.001             @(0, 1) d=+1.430
+   bf_col_b.003             <-> bf_arch.001               @(0, -1) d=+1.070
+   bf_col_b.003             <-> bf_arch_s.001             @(1, -1) d=+1.020
+   bf_arch.001              <-> bf_arch_s                 @(2, -1) d=+19.960
+   bf_arch.001              <-> bf_arch_s.001             @(2, -1) d=+19.960
+   bf_cap                   <-> dm_base                   @(2, -1) d=+21.700
+   flag_crest_edge          <-> flag_crest_rim            @(1, 1) d=+0.031
+   flag_crest_rim           <-> flag_crest_field          @(1, -1) d=+0.007
+   win_c_glass              <-> win_c_jamb                @(0, 1) d=-0.810
+   win_c_glass              <-> win_c_jamb.001            @(0, -1) d=+0.810
+   win_c_mull               <-> win_c_trans               @(1, -1) d=+3.233
+   win_c3_glass             <-> win_c3_jamb               @(0, 1) d=-0.620
+   win_c3_glass             <-> win_c3_jamb.001           @(0, -1) d=+0.620
+   win_c3_mull              <-> win_c3_trans              @(1, -1) d=+3.233
+   win_f_glass              <-> win_f_jamb                @(0, 1) d=-4.275
+   win_f_glass              <-> win_f_jamb.001            @(0, -1) d=-2.925
+   win_f_mull               <-> win_f_trans               @(1, -1) d=+3.233
+   win_f2_side              <-> win_f2_top                @(1, -1) d=+3.195
+   win_f2_side              <-> win_f2_sill               @(1, -1) d=+3.195
+   win_f2_side.001          <-> win_f2_top                @(1, -1) d=+3.195
+   win_f2_side.001          <-> win_f2_sill               @(1, -1) d=+3.195
+   win_f2_top               <-> win_f2_key                @(1, -1) d=+3.195
+   win_f2_mull              <-> win_f2_trans              @(1, -1) d=+3.233
+   win_f3_side              <-> win_f3_top                @(1, -1) d=+3.195
+   win_f3_side              <-> win_f3_sill               @(1, -1) d=+3.195
+   win_f3_side.001          <-> win_f3_top                @(1, -1) d=+3.195
+   win_f3_side.001          <-> win_f3_sill               @(1, -1) d=+3.195
+   win_f3_top               <-> win_f3_key                @(1, -1) d=+3.195
+   win_f3_mull              <-> win_f3_trans              @(1, -1) d=+3.233
+   win_f_glass.001          <-> win_f_jamb.002            @(0, 1) d=+2.925
+   win_f_glass.001          <-> win_f_jamb.003            @(0, -1) d=+4.275
+   win_f_mull.001           <-> win_f_trans.001           @(1, -1) d=+3.233
+   win_f2_side.002          <-> win_f2_top.001            @(1, -1) d=+3.195
+   win_f2_side.002          <-> win_f2_sill.001           @(1, -1) d=+3.195
+   win_f2_side.003          <-> win_f2_top.001            @(1, -1) d=+3.195
+   win_f2_side.003          <-> win_f2_sill.001           @(1, -1) d=+3.195
+   win_f2_top.001           <-> win_f2_key.001            @(1, -1) d=+3.195
+   win_f2_mull.001          <-> win_f2_trans.001          @(1, -1) d=+3.233
+   win_f3_side.002          <-> win_f3_top.001            @(1, -1) d=+3.195
+   win_f3_side.002          <-> win_f3_sill.001           @(1, -1) d=+3.195
+   win_f3_side.003          <-> win_f3_top.001            @(1, -1) d=+3.195
+   win_f3_side.003          <-> win_f3_sill.001           @(1, -1) d=+3.195
+   win_f3_top.001           <-> win_f3_key.001            @(1, -1) d=+3.195
+   win_f3_mull.001          <-> win_f3_trans.001          @(1, -1) d=+3.233
+   win_b_glass              <-> win_b_jamb                @(0, 1) d=-3.850
+   win_b_glass              <-> win_b_jamb.001            @(0, -1) d=-2.550
+   win_b_mull               <-> win_b_trans               @(1, 1) d=-3.233
+   win_b2_side              <-> win_b2_top                @(1, 1) d=-3.195
+   win_b2_side              <-> win_b2_sill               @(1, 1) d=-3.195
+   win_b2_side.001          <-> win_b2_top                @(0, 1) d=-2.370
+   win_b2_side.001          <-> win_b2_sill               @(1, 1) d=-3.195
+   win_b2_top               <-> win_b2_key                @(1, 1) d=-3.195
+   win_b2_mull              <-> win_b2_trans              @(1, 1) d=-3.233
+   win_b3_side              <-> win_b3_top                @(1, 1) d=-3.195
+   win_b3_side              <-> win_b3_sill               @(1, 1) d=-3.195
+   win_b3_side.001          <-> win_b3_top                @(0, 1) d=-2.485
+   win_b3_side.001          <-> win_b3_sill               @(1, 1) d=-3.195
+   win_b3_top               <-> win_b3_key                @(1, 1) d=-3.195
+   win_b3_mull              <-> win_b3_trans              @(1, 1) d=-3.233
+   win_b_glass.001          <-> win_b_jamb.002            @(0, 1) d=+2.550
+   win_b_glass.001          <-> win_b_jamb.003            @(0, -1) d=+3.850
+   win_b_mull.001           <-> win_b_trans.001           @(1, 1) d=-3.233
+   win_b2_side.002          <-> win_b2_top.001            @(1, 1) d=-3.195
+   win_b2_side.002          <-> win_b2_sill.001           @(1, 1) d=-3.195
+   win_b2_side.003          <-> win_b2_top.001            @(0, 1) d=+4.030
+   win_b2_side.003          <-> win_b2_sill.001           @(1, 1) d=-3.195
+   win_b2_top.001           <-> win_b2_key.001            @(1, 1) d=-3.195
+   win_b2_mull.001          <-> win_b2_trans.001          @(1, 1) d=-3.233
+   win_b3_side.002          <-> win_b3_top.001            @(1, 1) d=-3.195
+   win_b3_side.002          <-> win_b3_sill.001           @(1, 1) d=-3.195
+   win_b3_side.003          <-> win_b3_top.001            @(0, 1) d=+3.815
+   win_b3_side.003          <-> win_b3_sill.001           @(1, 1) d=-3.195
+   win_b3_top.001           <-> win_b3_key.001            @(1, 1) d=-3.195
+   win_b3_mull.001          <-> win_b3_trans.001          @(1, 1) d=-3.233
+   win_s3_side              <-> win_s3_top                @(1, -1) d=-2.215
+   win_s3_side              <-> win_s3_sill               @(0, 1) d=-4.745
+   win_s3_side.001          <-> win_s3_top                @(0, 1) d=-4.745
+   win_s3_side.001          <-> win_s3_sill               @(0, 1) d=-4.745
+   win_s3_top               <-> win_s3_key                @(0, 1) d=-4.745
+   win_s3_side.002          <-> win_s3_top.001            @(1, -1) d=+0.885
+   win_s3_side.002          <-> win_s3_sill.001           @(0, 1) d=-4.745
+   win_s3_side.003          <-> win_s3_top.001            @(0, 1) d=-4.745
+   win_s3_side.003          <-> win_s3_sill.001           @(0, 1) d=-4.745
+   win_s3_top.001           <-> win_s3_key.001            @(0, 1) d=-4.745
+   win_s3_side.004          <-> win_s3_top.002            @(1, -1) d=-2.215
+   win_s3_side.004          <-> win_s3_sill.002           @(0, -1) d=+4.745
+   win_s3_side.005          <-> win_s3_top.002            @(1, 1) d=-0.885
+   win_s3_side.005          <-> win_s3_sill.002           @(0, -1) d=+4.745
+   win_s3_top.002           <-> win_s3_key.002            @(0, -1) d=+4.745
+   win_s3_side.006          <-> win_s3_top.003            @(1, -1) d=+0.885
+   win_s3_side.006          <-> win_s3_sill.003           @(0, -1) d=+4.745
+   win_s3_side.007          <-> win_s3_top.003            @(1, 1) d=+2.215
+   win_s3_side.007          <-> win_s3_sill.003           @(0, -1) d=+4.745
+   win_s3_top.003           <-> win_s3_key.003            @(0, -1) d=+4.745
+   roof_dorm_f_face         <-> roof_dorm_f_sd            @(0, -1) d=-3.600
+   roof_dorm_f_face         <-> roof_dorm_f_sd.001        @(0, 1) d=-2.200
+   roof_dorm_f_w_side       <-> roof_dorm_f_w_top         @(1, -1) d=+3.500
+   roof_dorm_f_w_side       <-> roof_dorm_f_w_sill        @(1, -1) d=+3.500
+   roof_dorm_f_w_side.001   <-> roof_dorm_f_w_top         @(1, -1) d=+3.500
+   roof_dorm_f_w_side.001   <-> roof_dorm_f_w_sill        @(1, -1) d=+3.500
+   roof_dorm_f_w_top        <-> roof_dorm_f_w_key         @(1, -1) d=+3.500
+   roof_dorm_f_w_mull       <-> roof_dorm_f_w_trans       @(1, -1) d=+3.538
+   roof_dorm_f_face.001     <-> roof_dorm_f_sd.002        @(0, -1) d=+2.200
+   roof_dorm_f_face.001     <-> roof_dorm_f_sd.003        @(0, 1) d=+3.600
+   roof_dorm_f_w_side.002   <-> roof_dorm_f_w_top.001     @(1, -1) d=+3.500
+   roof_dorm_f_w_side.002   <-> roof_dorm_f_w_sill.001    @(1, -1) d=+3.500
+   roof_dorm_f_w_side.003   <-> roof_dorm_f_w_top.001     @(1, -1) d=+3.500
+   roof_dorm_f_w_side.003   <-> roof_dorm_f_w_sill.001    @(1, -1) d=+3.500
+   roof_dorm_f_w_top.001    <-> roof_dorm_f_w_key.001     @(1, -1) d=+3.500
+   roof_dorm_f_w_mull.001   <-> roof_dorm_f_w_trans.001   @(1, -1) d=+3.538
+   wing_mass                <-> wing_dado                 @(2, -1) d=+0.550
+   wing_eave_o              <-> wing_eave_b               @(2, -1) d=+8.500
+   wing_roof_o              <-> wing_roof_i               @(1, -1) d=-3.140
+   wing_tile_o              <-> wing_tile_i               @(1, 1) d=-2.366
+   wing_tile_o.001          <-> wing_tile_i.001           @(1, 1) d=-1.914
+   wing_tile_o.002          <-> wing_tile_i.002           @(1, 1) d=-1.461
+   wing_tile_o.003          <-> wing_tile_i.003           @(1, 1) d=-1.009
+   wing_tile_o.004          <-> wing_tile_i.004           @(1, 1) d=-0.556
+   wing_tile_o.005          <-> wing_tile_i.005           @(1, 1) d=-0.104
+   wing_tile_o.006          <-> wing_tile_i.006           @(1, 1) d=+0.349
+   wing_tile_o.007          <-> wing_tile_i.007           @(1, 1) d=+0.801
+   wing_tile_o.008          <-> wing_tile_i.008           @(1, 1) d=+1.254
+   wing_tile_o.009          <-> wing_tile_i.009           @(1, 1) d=+1.706
+   win_w_glass              <-> win_w_jamb                @(0, 1) d=-7.325
+   win_w_glass              <-> win_w_jamb.001            @(0, -1) d=-6.275
+   win_w_mull               <-> win_w_trans               @(1, -1) d=+2.483
+   win_w2_side              <-> win_w2_top                @(1, -1) d=+2.445
+   win_w2_side              <-> win_w2_sill               @(1, -1) d=+2.445
+   win_w2_side.001          <-> win_w2_top                @(1, -1) d=+2.445
+   win_w2_side.001          <-> win_w2_sill               @(1, -1) d=+2.445
+   win_w2_top               <-> win_w2_key                @(1, -1) d=+2.445
+   win_w2_mull              <-> win_w2_trans              @(1, -1) d=+2.483
+   win_wo_glass             <-> win_wo_arch               @(2, -1) d=+4.012
+   win_wo_glass             <-> win_wo_mull               @(2, -1) d=+1.680
+   win_wo2_side             <-> win_wo2_top               @(1, -1) d=-1.650
+   win_wo2_side             <-> win_wo2_sill              @(0, 1) d=-8.395
+   win_wo2_side.001         <-> win_wo2_top               @(0, 1) d=-8.395
+   win_wo2_side.001         <-> win_wo2_sill              @(0, 1) d=-8.395
+   win_wo2_top              <-> win_wo2_key               @(0, 1) d=-8.395
+   win_wo_b_glass           <-> win_wo_b_arch             @(2, -1) d=+4.012
+   win_wo_b_glass           <-> win_wo_b_mull             @(2, -1) d=+1.680
+   win_wo2_b_side           <-> win_wo2_b_top             @(1, -1) d=+0.750
+   win_wo2_b_side           <-> win_wo2_b_sill            @(0, 1) d=-8.395
+   win_wo2_b_side.001       <-> win_wo2_b_top             @(0, 1) d=-8.395
+   win_wo2_b_side.001       <-> win_wo2_b_sill            @(0, 1) d=-8.395
+   win_wo2_b_top            <-> win_wo2_b_key             @(0, 1) d=-8.395
+   wing_dado.001            <-> wing_dado_cap.001         @(1, -1) d=-3.160
+   wing_eave_o.001          <-> wing_eave_b.001           @(2, -1) d=+8.500
+   wing_roof_o.001          <-> wing_roof_i.001           @(1, -1) d=-3.140
+   wing_tile_o.010          <-> wing_tile_i.010           @(1, -1) d=-2.456
+   wing_tile_o.011          <-> wing_tile_i.011           @(1, -1) d=-2.004
+   wing_tile_o.012          <-> wing_tile_i.012           @(1, -1) d=-1.551
+   wing_tile_o.013          <-> wing_tile_i.013           @(1, -1) d=-1.099
+   wing_tile_o.014          <-> wing_tile_i.014           @(1, -1) d=-0.646
+   wing_tile_o.015          <-> wing_tile_i.015           @(1, -1) d=-0.194
+   wing_tile_o.016          <-> wing_tile_i.016           @(1, -1) d=+0.259
+   wing_tile_o.017          <-> wing_tile_i.017           @(1, -1) d=+0.711
+   wing_tile_o.018          <-> wing_tile_i.018           @(1, -1) d=+1.164
+   wing_tile_o.019          <-> wing_tile_i.019           @(1, -1) d=+1.616
+   wing_barge_f.002         <-> wing_barge_f.003          @(1, -1) d=+2.430
+   wing_barge_b.002         <-> wing_barge_b.003          @(1, -1) d=-3.360
+   win_w_glass.001          <-> win_w_jamb.002            @(0, 1) d=+6.275
+   win_w_glass.001          <-> win_w_jamb.003            @(0, -1) d=+7.325
+   win_w_mull.001           <-> win_w_trans.001           @(1, -1) d=+2.483
+   win_w2_side.002          <-> win_w2_top.001            @(1, -1) d=+2.445
+   win_w2_side.002          <-> win_w2_sill.001           @(1, -1) d=+2.445
+   win_w2_side.003          <-> win_w2_top.001            @(1, -1) d=+2.445
+   win_w2_side.003          <-> win_w2_sill.001           @(1, -1) d=+2.445
+   win_w2_top.001           <-> win_w2_key.001            @(1, -1) d=+2.445
+   win_w2_mull.001          <-> win_w2_trans.001          @(1, -1) d=+2.483
+   win_wo_glass.001         <-> win_wo_arch.001           @(2, -1) d=+4.012
+   win_wo_glass.001         <-> win_wo_mull.001           @(2, -1) d=+1.680
+   win_wo2_side.002         <-> win_wo2_top.001           @(1, -1) d=-1.650
+   win_wo2_side.002         <-> win_wo2_sill.001          @(0, -1) d=+8.395
+   win_wo2_side.003         <-> win_wo2_top.001           @(1, 1) d=-0.450
+   win_wo2_side.003         <-> win_wo2_sill.001          @(0, -1) d=+8.395
+   win_wo2_top.001          <-> win_wo2_key.001           @(0, -1) d=+8.395
+   win_wo_b_glass.001       <-> win_wo_b_arch.001         @(2, -1) d=+4.012
+   win_wo_b_glass.001       <-> win_wo_b_mull.001         @(2, -1) d=+1.680
+   win_wo2_b_side.002       <-> win_wo2_b_top.001         @(1, -1) d=+0.750
+   win_wo2_b_side.002       <-> win_wo2_b_sill.001        @(0, -1) d=+8.395
+   win_wo2_b_side.003       <-> win_wo2_b_top.001         @(1, 1) d=+1.950
+   win_wo2_b_side.003       <-> win_wo2_b_sill.001        @(0, -1) d=+8.395
+   win_wo2_b_top.001        <-> win_wo2_b_key.001         @(0, -1) d=+8.395
+=== FLOAT 1 ===
+   bf_beam                  bb (-1.21, -0.06, 21.3) .. (1.21, 0.06, 21.42)
+DONE

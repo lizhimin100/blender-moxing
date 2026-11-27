@@ -1,0 +1,316 @@
+{
+ "asset": "弓箭手",
+ "base": "v1",
+ "diff": [
+  "大件:长弓 1.16 m",
+  "装饰:兜帽衬边",
+  "装饰:披风",
+  "装饰:箭筒"
+ ],
+ "tris": 6576,
+ "bones": [
+  "root",
+  "hips",
+  "spine",
+  "chest",
+  "neck",
+  "head",
+  "shoulder_R",
+  "upperarm_R",
+  "forearm_R",
+  "hand_R",
+  "weapon_R",
+  "shoulder_L",
+  "upperarm_L",
+  "forearm_L",
+  "hand_L",
+  "weapon_L",
+  "bow_up",
+  "bow_dn",
+  "thigh_R",
+  "shin_R",
+  "foot_R",
+  "toe_R",
+  "thigh_L",
+  "shin_L",
+  "foot_L",
+  "toe_L"
+ ],
+ "materials": [
+  "主体",
+  "team",
+  "team_trim"
+ ],
+ "audit": {
+  "name": "弓箭手",
+  "parts": 25,
+  "tris": 6536,
+  "cells": 2120,
+  "z_cells": 17.0,
+  "offgrid": 0,
+  "ground": true,
+  "isolated": 0,
+  "cross": [],
+  "sleeves": "4/4",
+  "bad": []
+ },
+ "anims": [
+  {
+   "name": "attack",
+   "f0": 0,
+   "f1": 54,
+   "sec": 1.8,
+   "zmin": -0.0,
+   "scl": 1.63,
+   "loop_d": null
+  },
+  {
+   "name": "cast",
+   "f0": 0,
+   "f1": 44,
+   "sec": 1.47,
+   "zmin": 0.0008,
+   "scl": 1.0,
+   "loop_d": null
+  },
+  {
+   "name": "death",
+   "f0": 0,
+   "f1": 58,
+   "sec": 1.93,
+   "zmin": -0.3841,
+   "scl": 1.0,
+   "loop_d": null
+  },
+  {
+   "name": "hurt",
+   "f0": 0,
+   "f1": 14,
+   "sec": 0.47,
+   "zmin": -0.0,
+   "scl": 1.0,
+   "loop_d": null
+  },
+  {
+   "name": "idle",
+   "f0": 0,
+   "f1": 60,
+   "sec": 2.0,
+   "zmin": 0.0001,
+   "scl": 1.0,
+   "loop_d": 0.0
+  },
+  {
+   "name": "walk",
+   "f0": 0,
+   "f1": 26,
+   "sec": 0.87,
+   "zmin": 0.0013,
+   "scl": 1.0,
+   "loop_d": 0.0
+  }
+ ],
+ "team_ratio": 0.0907,
+ "parts": [
+  {
+   "name": "foot_R",
+   "bone": "foot_R",
+   "cells": 64,
+   "extras": 1,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "toe_R",
+   "bone": "toe_R",
+   "cells": 16,
+   "extras": 1,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "shin_R",
+   "bone": "shin_R",
+   "cells": 128,
+   "extras": 2,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "thigh_R",
+   "bone": "thigh_R",
+   "cells": 88,
+   "extras": 0,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "foot_L",
+   "bone": "foot_L",
+   "cells": 64,
+   "extras": 1,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "toe_L",
+   "bone": "toe_L",
+   "cells": 16,
+   "extras": 1,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "shin_L",
+   "bone": "shin_L",
+   "cells": 128,
+   "extras": 2,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "thigh_L",
+   "bone": "thigh_L",
+   "cells": 88,
+   "extras": 0,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "pelvis",
+   "bone": "hips",
+   "cells": 112,
+   "extras": 2,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "torso",
+   "bone": "chest",
+   "cells": 528,
+   "extras": 3,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "neck",
+   "bone": "neck",
+   "cells": 8,
+   "extras": 0,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "upperarm_R",
+   "bone": "upperarm_R",
+   "cells": 72,
+   "extras": 3,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "forearm_R",
+   "bone": "forearm_R",
+   "cells": 64,
+   "extras": 1,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "hand_R",
+   "bone": "hand_R",
+   "cells": 64,
+   "extras": 2,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "upperarm_L",
+   "bone": "upperarm_L",
+   "cells": 72,
+   "extras": 3,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "forearm_L",
+   "bone": "forearm_L",
+   "cells": 64,
+   "extras": 6,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "hand_L",
+   "bone": "hand_L",
+   "cells": 64,
+   "extras": 2,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "head",
+   "bone": "head",
+   "cells": 480,
+   "extras": 10,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "cape",
+   "bone": "chest",
+   "cells": 0,
+   "extras": 2,
+   "soft": true,
+   "big": false
+  },
+  {
+   "name": "quiver",
+   "bone": "chest",
+   "cells": 0,
+   "extras": 3,
+   "soft": false,
+   "big": false
+  },
+  {
+   "name": "quiver_arrows",
+   "bone": "chest",
+   "cells": 0,
+   "extras": 9,
+   "soft": true,
+   "big": false
+  },
+  {
+   "name": "bow",
+   "bone": "weapon_L",
+   "cells": 0,
+   "extras": 3,
+   "soft": false,
+   "big": true
+  },
+  {
+   "name": "bowstring_up",
+   "bone": "bow_up",
+   "cells": 0,
+   "extras": 1,
+   "soft": true,
+   "big": true
+  },
+  {
+   "name": "bowstring_dn",
+   "bone": "bow_dn",
+   "cells": 0,
+   "extras": 0,
+   "soft": true,
+   "big": true
+  },
+  {
+   "name": "arrow",
+   "bone": "weapon_R",
+   "cells": 0,
+   "extras": 3,
+   "soft": false,
+   "big": true
+  }
+ ]
+}

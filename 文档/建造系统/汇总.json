@@ -1,0 +1,1108 @@
+{
+  "铁匠铺": {
+    "id": "铁匠铺",
+    "src": "铁匠铺_手游_近.glb",
+    "footprint": [
+      9.931,
+      11.81
+    ],
+    "height": 11.83,
+    "yaw": 0,
+    "attach": {
+      "hoist": [
+        -5.27,
+        -4.22,
+        3.076
+      ],
+      "banner": [
+        -5.02,
+        8.19,
+        0.0
+      ]
+    },
+    "body": [
+      -4.72,
+      5.211,
+      -3.92,
+      7.89
+    ],
+    "bbox_lo": [
+      -4.72,
+      -3.92,
+      0.0
+    ],
+    "bbox_hi": [
+      5.211,
+      7.89,
+      11.83
+    ],
+    "z0": 1.0,
+    "z_rev1": 11.83,
+    "rev": 2.937,
+    "t_rev0": 0.46,
+    "t_rev1": 3.397,
+    "t_dis0": 3.657,
+    "t_dis1": 4.157,
+    "t_clean": 4.217,
+    "t_end": 5.167,
+    "lifts": [
+      0.585,
+      1.182,
+      1.779,
+      2.375
+    ],
+    "n_lifts": 4,
+    "reveal": {
+      "axis": "z",
+      "z0": 1.0,
+      "z1": 11.83,
+      "t0": 0.46,
+      "t1": 3.397
+    },
+    "body_size": [
+      9.931,
+      11.81,
+      11.83
+    ],
+    "n_bands": 0,
+    "file": "铁匠铺_建造.glb",
+    "bytes": 1522552,
+    "detail": "low",
+    "src_tris": 14614,
+    "src_verts": 29230,
+    "check": {
+      "BODY_RIG": 0,
+      "body_parent": null,
+      "body_mod": [],
+      "body_anim": false,
+      "body_tris": 14614,
+      "body_verts": 29230,
+      "src_tris": 14614,
+      "src_verts": 29230,
+      "BODY_TRIS": 0,
+      "BVH_CROSS": 0,
+      "BOX_TALL": 0,
+      "scaf_top": 9.35,
+      "SCAF_OVER": 0.0,
+      "reveal_z0": 1.0,
+      "reveal_z1": 11.83,
+      "tri_body": 14614,
+      "tri_site": 4324,
+      "ok": true
+    }
+  },
+  "兵营": {
+    "id": "兵营",
+    "src": "兵营_手游_近.glb",
+    "footprint": [
+      11.08,
+      14.73
+    ],
+    "height": 11.6,
+    "yaw": 0,
+    "attach": {
+      "hoist": [
+        -6.09,
+        -4.64,
+        3.016
+      ],
+      "banner": [
+        -5.84,
+        10.69,
+        0.0
+      ]
+    },
+    "body": [
+      -5.54,
+      5.54,
+      -4.34,
+      10.39
+    ],
+    "bbox_lo": [
+      -5.54,
+      -4.34,
+      0.0
+    ],
+    "bbox_hi": [
+      5.54,
+      10.39,
+      11.6
+    ],
+    "z0": 1.0,
+    "z_rev1": 11.6,
+    "rev": 2.92,
+    "t_rev0": 0.46,
+    "t_rev1": 3.38,
+    "t_dis0": 3.64,
+    "t_dis1": 4.14,
+    "t_clean": 4.2,
+    "t_end": 5.15,
+    "lifts": [
+      0.591,
+      1.197,
+      1.803,
+      2.409
+    ],
+    "n_lifts": 4,
+    "reveal": {
+      "axis": "z",
+      "z0": 1.0,
+      "z1": 11.6,
+      "t0": 0.46,
+      "t1": 3.38
+    },
+    "body_size": [
+      11.08,
+      14.73,
+      11.6
+    ],
+    "n_bands": 0,
+    "file": "兵营_建造.glb",
+    "bytes": 1760488,
+    "detail": "low",
+    "src_tris": 17440,
+    "src_verts": 36072,
+    "check": {
+      "BODY_RIG": 0,
+      "body_parent": null,
+      "body_mod": [],
+      "body_anim": false,
+      "body_tris": 17440,
+      "body_verts": 36072,
+      "src_tris": 17440,
+      "src_verts": 36072,
+      "BODY_TRIS": 0,
+      "BVH_CROSS": 0,
+      "BOX_TALL": 0,
+      "scaf_top": 9.35,
+      "SCAF_OVER": 0.0,
+      "reveal_z0": 1.0,
+      "reveal_z1": 11.6,
+      "tri_body": 17440,
+      "tri_site": 4324,
+      "ok": true
+    }
+  },
+  "城镇大厅": {
+    "id": "城镇大厅",
+    "src": "城镇大厅_手游_近.glb",
+    "footprint": [
+      18.1,
+      8.99
+    ],
+    "height": 25.15,
+    "yaw": 0,
+    "attach": {
+      "hoist": [
+        -9.6,
+        -4.22,
+        3.4
+      ],
+      "banner": [
+        -9.35,
+        5.37,
+        0.0
+      ]
+    },
+    "body": [
+      -9.05,
+      9.05,
+      -3.92,
+      5.07
+    ],
+    "bbox_lo": [
+      -9.05,
+      -3.92,
+      -0.027
+    ],
+    "bbox_hi": [
+      9.05,
+      5.07,
+      25.15
+    ],
+    "z0": 1.0,
+    "z_rev1": 25.15,
+    "rev": 3.55,
+    "t_rev0": 0.46,
+    "t_rev1": 4.01,
+    "t_dis0": 4.27,
+    "t_dis1": 4.95,
+    "t_clean": 5.01,
+    "t_end": 5.96,
+    "lifts": [
+      0.436,
+      0.76,
+      1.083,
+      1.407,
+      1.73,
+      2.053
+    ],
+    "n_lifts": 6,
+    "reveal": {
+      "axis": "z",
+      "z0": 1.0,
+      "z1": 25.15,
+      "t0": 0.46,
+      "t1": 4.01
+    },
+    "body_size": [
+      18.1,
+      8.99,
+      25.177
+    ],
+    "n_bands": 0,
+    "file": "城镇大厅_建造.glb",
+    "bytes": 1833152,
+    "detail": "low",
+    "src_tris": 17340,
+    "src_verts": 33420,
+    "check": {
+      "BODY_RIG": 0,
+      "body_parent": null,
+      "body_mod": [],
+      "body_anim": false,
+      "body_tris": 17340,
+      "body_verts": 33420,
+      "src_tris": 17340,
+      "src_verts": 33420,
+      "BODY_TRIS": 0,
+      "BVH_CROSS": 0,
+      "BOX_TALL": 0,
+      "scaf_top": 13.75,
+      "SCAF_OVER": 0.0,
+      "reveal_z0": 1.0,
+      "reveal_z1": 25.15,
+      "tri_body": 17340,
+      "tri_site": 5596,
+      "ok": true
+    }
+  },
+  "哨塔": {
+    "id": "哨塔",
+    "src": "哨塔_手游_近.glb",
+    "footprint": [
+      7.16,
+      7.12
+    ],
+    "height": 17.34,
+    "yaw": 0,
+    "attach": {
+      "hoist": [
+        -4.13,
+        -3.64,
+        3.4
+      ],
+      "banner": [
+        -3.88,
+        4.08,
+        0.0
+      ]
+    },
+    "body": [
+      -3.58,
+      3.58,
+      -3.34,
+      3.78
+    ],
+    "bbox_lo": [
+      -3.58,
+      -3.34,
+      0.0
+    ],
+    "bbox_hi": [
+      3.58,
+      3.78,
+      17.34
+    ],
+    "z0": 1.0,
+    "z_rev1": 17.34,
+    "rev": 3.35,
+    "t_rev0": 0.46,
+    "t_rev1": 3.81,
+    "t_dis0": 4.071,
+    "t_dis1": 4.75,
+    "t_clean": 4.81,
+    "t_end": 5.76,
+    "lifts": [
+      0.506,
+      0.957,
+      1.408,
+      1.859,
+      2.31,
+      2.761
+    ],
+    "n_lifts": 6,
+    "reveal": {
+      "axis": "z",
+      "z0": 1.0,
+      "z1": 17.34,
+      "t0": 0.46,
+      "t1": 3.81
+    },
+    "body_size": [
+      7.16,
+      7.12,
+      17.34
+    ],
+    "n_bands": 0,
+    "file": "哨塔_建造.glb",
+    "bytes": 1251984,
+    "detail": "low",
+    "src_tris": 9624,
+    "src_verts": 19436,
+    "check": {
+      "BODY_RIG": 0,
+      "body_parent": null,
+      "body_mod": [],
+      "body_anim": false,
+      "body_tris": 9624,
+      "body_verts": 19436,
+      "src_tris": 9624,
+      "src_verts": 19436,
+      "BODY_TRIS": 0,
+      "BVH_CROSS": 0,
+      "BOX_TALL": 0,
+      "scaf_top": 13.75,
+      "SCAF_OVER": 0.0,
+      "reveal_z0": 1.0,
+      "reveal_z1": 17.34,
+      "tri_body": 9624,
+      "tri_site": 5068,
+      "ok": true
+    }
+  },
+  "农场": {
+    "id": "农场",
+    "src": "农场_手游_近.glb",
+    "footprint": [
+      15.35,
+      12.75
+    ],
+    "height": 10.11,
+    "yaw": 0,
+    "attach": {
+      "hoist": [
+        -8.05,
+        -4.35,
+        2.629
+      ],
+      "banner": [
+        -7.8,
+        9.0,
+        0.0
+      ]
+    },
+    "body": [
+      -7.5,
+      7.85,
+      -4.05,
+      8.7
+    ],
+    "bbox_lo": [
+      -7.5,
+      -4.05,
+      0.0
+    ],
+    "bbox_hi": [
+      7.85,
+      8.7,
+      10.11
+    ],
+    "z0": 1.0,
+    "z_rev1": 10.11,
+    "rev": 2.808,
+    "t_rev0": 0.46,
+    "t_rev1": 3.268,
+    "t_dis0": 3.528,
+    "t_dis1": 4.028,
+    "t_clean": 4.088,
+    "t_end": 5.038,
+    "lifts": [
+      0.63,
+      1.308,
+      1.986,
+      2.664
+    ],
+    "n_lifts": 4,
+    "reveal": {
+      "axis": "z",
+      "z0": 1.0,
+      "z1": 10.11,
+      "t0": 0.46,
+      "t1": 3.268
+    },
+    "body_size": [
+      15.35,
+      12.75,
+      10.11
+    ],
+    "n_bands": 0,
+    "file": "农场_建造.glb",
+    "bytes": 1207480,
+    "detail": "low",
+    "src_tris": 10321,
+    "src_verts": 20190,
+    "check": {
+      "BODY_RIG": 0,
+      "body_parent": null,
+      "body_mod": [],
+      "body_anim": false,
+      "body_tris": 10321,
+      "body_verts": 20190,
+      "src_tris": 10321,
+      "src_verts": 20190,
+      "BODY_TRIS": 0,
+      "BVH_CROSS": 0,
+      "BOX_TALL": 0,
+      "scaf_top": 9.35,
+      "SCAF_OVER": 0.0,
+      "reveal_z0": 1.0,
+      "reveal_z1": 10.11,
+      "tri_body": 10321,
+      "tri_site": 4492,
+      "ok": true
+    }
+  },
+  "伐木场": {
+    "id": "伐木场",
+    "src": "伐木场_手游_近.glb",
+    "footprint": [
+      16.811,
+      10.921
+    ],
+    "height": 7.725,
+    "yaw": 0,
+    "attach": {
+      "hoist": [
+        -8.7,
+        -4.65,
+        2.008
+      ],
+      "banner": [
+        -8.45,
+        6.871,
+        0.0
+      ]
+    },
+    "body": [
+      -8.15,
+      8.661,
+      -4.35,
+      6.571
+    ],
+    "bbox_lo": [
+      -8.15,
+      -4.35,
+      0.0
+    ],
+    "bbox_hi": [
+      8.661,
+      6.571,
+      7.725
+    ],
+    "z0": 0.772,
+    "z_rev1": 7.725,
+    "rev": 2.629,
+    "t_rev0": 0.46,
+    "t_rev1": 3.089,
+    "t_dis0": 3.349,
+    "t_dis1": 3.759,
+    "t_clean": 3.819,
+    "t_end": 4.769,
+    "lifts": [
+      0.8,
+      1.632,
+      2.464
+    ],
+    "n_lifts": 3,
+    "reveal": {
+      "axis": "z",
+      "z0": 0.772,
+      "z1": 7.725,
+      "t0": 0.46,
+      "t1": 3.089
+    },
+    "body_size": [
+      16.811,
+      10.921,
+      7.725
+    ],
+    "n_bands": 0,
+    "file": "伐木场_建造.glb",
+    "bytes": 1183688,
+    "detail": "low",
+    "src_tris": 11324,
+    "src_verts": 21088,
+    "check": {
+      "BODY_RIG": 0,
+      "body_parent": null,
+      "body_mod": [],
+      "body_anim": false,
+      "body_tris": 11324,
+      "body_verts": 21088,
+      "src_tris": 11324,
+      "src_verts": 21088,
+      "BODY_TRIS": 0,
+      "BVH_CROSS": 0,
+      "BOX_TALL": 0,
+      "scaf_top": 7.15,
+      "SCAF_OVER": 0.0,
+      "reveal_z0": 0.772,
+      "reveal_z1": 7.725,
+      "tri_body": 11324,
+      "tri_site": 3940,
+      "ok": true
+    }
+  },
+  "神秘圣地": {
+    "id": "神秘圣地",
+    "src": "神秘圣地_手游_近.glb",
+    "footprint": [
+      13.7,
+      14.17
+    ],
+    "height": 16.18,
+    "yaw": 0,
+    "attach": {
+      "hoist": [
+        -7.4,
+        -6.97,
+        3.4
+      ],
+      "banner": [
+        -7.15,
+        7.8,
+        0.0
+      ]
+    },
+    "body": [
+      -6.85,
+      6.85,
+      -6.67,
+      7.5
+    ],
+    "bbox_lo": [
+      -6.85,
+      -6.67,
+      0.0
+    ],
+    "bbox_hi": [
+      6.85,
+      7.5,
+      16.18
+    ],
+    "z0": 1.0,
+    "z_rev1": 16.18,
+    "rev": 3.263,
+    "t_rev0": 0.46,
+    "t_rev1": 3.723,
+    "t_dis0": 3.983,
+    "t_dis1": 4.663,
+    "t_clean": 4.723,
+    "t_end": 5.673,
+    "lifts": [
+      0.518,
+      0.991,
+      1.464,
+      1.937,
+      2.41,
+      2.882
+    ],
+    "n_lifts": 6,
+    "reveal": {
+      "axis": "z",
+      "z0": 1.0,
+      "z1": 16.18,
+      "t0": 0.46,
+      "t1": 3.723
+    },
+    "body_size": [
+      13.7,
+      14.17,
+      16.18
+    ],
+    "n_bands": 0,
+    "file": "神秘圣地_建造.glb",
+    "bytes": 1520028,
+    "detail": "low",
+    "src_tris": 13018,
+    "src_verts": 25321,
+    "check": {
+      "BODY_RIG": 0,
+      "body_parent": null,
+      "body_mod": [],
+      "body_anim": false,
+      "body_tris": 13018,
+      "body_verts": 25321,
+      "src_tris": 13018,
+      "src_verts": 25321,
+      "BODY_TRIS": 0,
+      "BVH_CROSS": 0,
+      "BOX_TALL": 0,
+      "scaf_top": 13.75,
+      "SCAF_OVER": 0.0,
+      "reveal_z0": 1.0,
+      "reveal_z1": 16.18,
+      "tri_body": 13018,
+      "tri_site": 5596,
+      "ok": true
+    }
+  },
+  "蒸汽车坊": {
+    "id": "蒸汽车坊",
+    "src": "蒸汽车坊_手游_近.glb",
+    "footprint": [
+      12.16,
+      14.48
+    ],
+    "height": 10.04,
+    "yaw": 0,
+    "attach": {
+      "hoist": [
+        -7.93,
+        -7.35,
+        2.61
+      ],
+      "banner": [
+        -7.68,
+        7.73,
+        0.0
+      ]
+    },
+    "body": [
+      -7.38,
+      4.78,
+      -7.05,
+      7.43
+    ],
+    "bbox_lo": [
+      -7.38,
+      -7.05,
+      0.0
+    ],
+    "bbox_hi": [
+      4.78,
+      7.43,
+      10.04
+    ],
+    "z0": 1.0,
+    "z_rev1": 10.04,
+    "rev": 2.803,
+    "t_rev0": 0.46,
+    "t_rev1": 3.263,
+    "t_dis0": 3.523,
+    "t_dis1": 4.023,
+    "t_clean": 4.083,
+    "t_end": 5.033,
+    "lifts": [
+      0.632,
+      1.314,
+      1.996,
+      2.679
+    ],
+    "n_lifts": 4,
+    "reveal": {
+      "axis": "z",
+      "z0": 1.0,
+      "z1": 10.04,
+      "t0": 0.46,
+      "t1": 3.263
+    },
+    "body_size": [
+      12.16,
+      14.48,
+      10.04
+    ],
+    "n_bands": 0,
+    "file": "蒸汽车坊_建造.glb",
+    "bytes": 1158840,
+    "detail": "low",
+    "src_tris": 9795,
+    "src_verts": 19115,
+    "check": {
+      "BODY_RIG": 0,
+      "body_parent": null,
+      "body_mod": [],
+      "body_anim": false,
+      "body_tris": 9795,
+      "body_verts": 19115,
+      "src_tris": 9795,
+      "src_verts": 19115,
+      "BODY_TRIS": 0,
+      "BVH_CROSS": 0,
+      "BOX_TALL": 0,
+      "scaf_top": 9.35,
+      "SCAF_OVER": 0.0,
+      "reveal_z0": 1.0,
+      "reveal_z1": 10.04,
+      "tri_body": 9795,
+      "tri_site": 4324,
+      "ok": true
+    }
+  },
+  "箭塔": {
+    "id": "箭塔",
+    "src": "箭塔_手游_近.glb",
+    "footprint": [
+      7.08,
+      7.026
+    ],
+    "height": 17.46,
+    "yaw": 0,
+    "attach": {
+      "hoist": [
+        -4.09,
+        -3.6,
+        3.4
+      ],
+      "banner": [
+        -3.84,
+        4.026,
+        0.0
+      ]
+    },
+    "body": [
+      -3.54,
+      3.54,
+      -3.3,
+      3.726
+    ],
+    "bbox_lo": [
+      -3.54,
+      -3.3,
+      0.0
+    ],
+    "bbox_hi": [
+      3.54,
+      3.726,
+      17.46
+    ],
+    "z0": 1.0,
+    "z_rev1": 17.46,
+    "rev": 3.359,
+    "t_rev0": 0.46,
+    "t_rev1": 3.819,
+    "t_dis0": 4.079,
+    "t_dis1": 4.759,
+    "t_clean": 4.819,
+    "t_end": 5.769,
+    "lifts": [
+      0.505,
+      0.954,
+      1.403,
+      1.852,
+      2.301,
+      2.75
+    ],
+    "n_lifts": 6,
+    "reveal": {
+      "axis": "z",
+      "z0": 1.0,
+      "z1": 17.46,
+      "t0": 0.46,
+      "t1": 3.819
+    },
+    "body_size": [
+      7.08,
+      7.026,
+      17.46
+    ],
+    "n_bands": 0,
+    "file": "箭塔_建造.glb",
+    "bytes": 1074776,
+    "detail": "low",
+    "src_tris": 7140,
+    "src_verts": 14346,
+    "check": {
+      "BODY_RIG": 0,
+      "body_parent": null,
+      "body_mod": [],
+      "body_anim": false,
+      "body_tris": 7140,
+      "body_verts": 14346,
+      "src_tris": 7140,
+      "src_verts": 14346,
+      "BODY_TRIS": 0,
+      "BVH_CROSS": 0,
+      "BOX_TALL": 0,
+      "scaf_top": 13.75,
+      "SCAF_OVER": 0.0,
+      "reveal_z0": 1.0,
+      "reveal_z1": 17.46,
+      "tri_body": 7140,
+      "tri_site": 5068,
+      "ok": true
+    }
+  },
+  "地牢": {
+    "id": "地牢",
+    "src": "地牢_手游_近.glb",
+    "footprint": [
+      10.958,
+      10.68
+    ],
+    "height": 8.57,
+    "yaw": 0,
+    "attach": {
+      "hoist": [
+        -5.75,
+        -4.3,
+        2.228
+      ],
+      "banner": [
+        -5.5,
+        6.98,
+        0.0
+      ]
+    },
+    "body": [
+      -5.2,
+      5.758,
+      -4.0,
+      6.68
+    ],
+    "bbox_lo": [
+      -5.2,
+      -4.0,
+      0.0
+    ],
+    "bbox_hi": [
+      5.758,
+      6.68,
+      8.57
+    ],
+    "z0": 0.857,
+    "z_rev1": 8.57,
+    "rev": 2.693,
+    "t_rev0": 0.46,
+    "t_rev1": 3.153,
+    "t_dis0": 3.413,
+    "t_dis1": 3.823,
+    "t_clean": 3.883,
+    "t_end": 4.833,
+    "lifts": [
+      0.729,
+      1.497,
+      2.265
+    ],
+    "n_lifts": 3,
+    "reveal": {
+      "axis": "z",
+      "z0": 0.857,
+      "z1": 8.57,
+      "t0": 0.46,
+      "t1": 3.153
+    },
+    "body_size": [
+      10.958,
+      10.68,
+      8.57
+    ],
+    "n_bands": 0,
+    "file": "地牢_建造.glb",
+    "bytes": 1069192,
+    "detail": "low",
+    "src_tris": 8704,
+    "src_verts": 17931,
+    "check": {
+      "BODY_RIG": 0,
+      "body_parent": null,
+      "body_mod": [],
+      "body_anim": false,
+      "body_tris": 8704,
+      "body_verts": 17931,
+      "src_tris": 8704,
+      "src_verts": 17931,
+      "BODY_TRIS": 0,
+      "BVH_CROSS": 0,
+      "BOX_TALL": 0,
+      "scaf_top": 7.15,
+      "SCAF_OVER": 0.0,
+      "reveal_z0": 0.857,
+      "reveal_z1": 8.57,
+      "tri_body": 8704,
+      "tri_site": 3820,
+      "ok": true
+    }
+  },
+  "地下城入口": {
+    "id": "地下城入口",
+    "src": "地下城入口_手游_近.glb",
+    "footprint": [
+      14.6,
+      12.171
+    ],
+    "height": 9.18,
+    "yaw": 0,
+    "attach": {
+      "hoist": [
+        -7.85,
+        -5.85,
+        2.387
+      ],
+      "banner": [
+        -7.6,
+        6.921,
+        0.0
+      ]
+    },
+    "body": [
+      -7.3,
+      7.3,
+      -5.55,
+      6.621
+    ],
+    "bbox_lo": [
+      -7.3,
+      -5.55,
+      0.0
+    ],
+    "bbox_hi": [
+      7.3,
+      6.621,
+      9.18
+    ],
+    "z0": 0.918,
+    "z_rev1": 9.18,
+    "rev": 2.738,
+    "t_rev0": 0.46,
+    "t_rev1": 3.198,
+    "t_dis0": 3.458,
+    "t_dis1": 3.869,
+    "t_clean": 3.929,
+    "t_end": 4.878,
+    "lifts": [
+      0.685,
+      1.414,
+      2.143
+    ],
+    "n_lifts": 3,
+    "reveal": {
+      "axis": "z",
+      "z0": 0.918,
+      "z1": 9.18,
+      "t0": 0.46,
+      "t1": 3.198
+    },
+    "body_size": [
+      14.6,
+      12.171,
+      9.18
+    ],
+    "n_bands": 0,
+    "file": "地下城入口_建造.glb",
+    "bytes": 1088504,
+    "detail": "low",
+    "src_tris": 8696,
+    "src_verts": 17896,
+    "check": {
+      "BODY_RIG": 0,
+      "body_parent": null,
+      "body_mod": [],
+      "body_anim": false,
+      "body_tris": 8696,
+      "body_verts": 17896,
+      "src_tris": 8696,
+      "src_verts": 17896,
+      "BODY_TRIS": 0,
+      "BVH_CROSS": 0,
+      "BOX_TALL": 0,
+      "scaf_top": 7.15,
+      "SCAF_OVER": 0.0,
+      "reveal_z0": 0.918,
+      "reveal_z1": 9.18,
+      "tri_body": 8696,
+      "tri_site": 3940,
+      "ok": true
+    }
+  },
+  "酒馆内部": {
+    "id": "酒馆内部",
+    "src": "酒馆内部_手游_近.glb",
+    "footprint": [
+      10.83,
+      9.08
+    ],
+    "height": 3.49,
+    "yaw": 0,
+    "attach": {
+      "hoist": [
+        -6.03,
+        -4.7,
+        0.907
+      ],
+      "banner": [
+        -5.78,
+        4.98,
+        0.0
+      ]
+    },
+    "body": [
+      -5.48,
+      5.35,
+      -4.4,
+      4.68
+    ],
+    "bbox_lo": [
+      -5.48,
+      -4.4,
+      0.0
+    ],
+    "bbox_hi": [
+      5.35,
+      4.68,
+      3.49
+    ],
+    "z0": 0.45,
+    "z_rev1": 3.49,
+    "rev": 2.312,
+    "t_rev0": 0.46,
+    "t_rev1": 2.772,
+    "t_dis0": 3.032,
+    "t_dis1": 3.262,
+    "t_clean": 3.322,
+    "t_end": 4.272,
+    "lifts": [
+      1.591
+    ],
+    "n_lifts": 1,
+    "reveal": {
+      "axis": "z",
+      "z0": 0.45,
+      "z1": 3.49,
+      "t0": 0.46,
+      "t1": 2.772
+    },
+    "body_size": [
+      10.83,
+      9.08,
+      3.49
+    ],
+    "n_bands": 0,
+    "file": "酒馆内部_建造.glb",
+    "bytes": 987164,
+    "detail": "low",
+    "src_tris": 9754,
+    "src_verts": 18814,
+    "check": {
+      "BODY_RIG": 0,
+      "body_parent": null,
+      "body_mod": [],
+      "body_anim": false,
+      "body_tris": 9754,
+      "body_verts": 18814,
+      "src_tris": 9754,
+      "src_verts": 18814,
+      "BODY_TRIS": 0,
+      "BVH_CROSS": 0,
+      "BOX_TALL": 0,
+      "scaf_top": 2.75,
+      "SCAF_OVER": 0.0,
+      "reveal_z0": 0.45,
+      "reveal_z1": 3.49,
+      "tri_body": 9754,
+      "tri_site": 2812,
+      "ok": true
+    }
+  }
+}

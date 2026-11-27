@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>单位预览 · 秘法</title>
+<style>
+  :root { --bg:#0d0f13; --panel:#14171d; --line:#242a34; --txt:#e6e9ef; --dim:#8790a0; --gold:#d9ae55; --cyan:#4fd8ff; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; height:100%; background:var(--bg); color:var(--txt); overflow:hidden;
+    font:13px/1.6 "Inter","PingFang SC","Microsoft YaHei",system-ui,sans-serif; }
+  #view { position:fixed; inset:0; }
+  #bar { position:fixed; left:16px; top:16px; z-index:5; background:rgba(20,23,29,.94);
+    border:1px solid var(--line); border-radius:10px; padding:12px 14px; min-width:250px;
+    backdrop-filter:blur(8px); }
+  #bar h1 { margin:0 0 10px; font-size:11px; letter-spacing:.16em; color:var(--gold); font-weight:600; }
+  .lab { font-size:10px; letter-spacing:.12em; color:var(--dim); margin:10px 0 5px; }
+  .row { display:flex; gap:6px; flex-wrap:wrap; }
+  button { background:#191d25; color:var(--txt); border:1px solid var(--line); border-radius:6px;
+    padding:6px 10px; font:inherit; font-size:12px; cursor:pointer; transition:.12s; }
+  button:hover { border-color:#3a4456; background:#1e232c; }
+  button.on { border-color:var(--gold); background:#241f12; color:#f2dc9b; }
+  #hud { position:fixed; left:16px; bottom:16px; z-index:5; color:var(--dim); font-size:11px;
+    font-family:ui-monospace,Consolas,monospace; background:rgba(20,23,29,.88);
+    border:1px solid var(--line); border-radius:7px; padding:7px 10px; white-space:pre; line-height:1.7; }
+  #tip { position:fixed; right:16px; bottom:16px; z-index:5; color:var(--dim); font-size:11px; text-align:right; }
+  #title { position:fixed; right:18px; top:18px; z-index:5; text-align:right; }
+  #title b { display:block; font-size:22px; letter-spacing:.06em; color:#f0e4c8; font-weight:600; }
+  #title span { font-size:11px; letter-spacing:.18em; color:var(--dim); }
+  #load { position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+    background:var(--bg); z-index:20; color:var(--dim); letter-spacing:.2em; font-size:12px; }
+</style>
+</head>
+<body>
+<div id="view"></div>
+<div id="load">载入中…</div>
+
+<div id="bar">
+  <h1>单位 · 格网档 + 精模</h1>
+  <div class="lab">单位</div>
+  <div class="row" id="units">
+    <button data-u="sp" class="on">长枪兵</button>
+    <button data-u="ar">弓箭手</button>
+    <button data-u="sb">破法者</button>
+    <button data-u="mg">魔金傀儡</button>
+    <button data-u="kn">骑士</button>
+    <button data-u="gs">豺狼人萨满</button>
+    <button data-u="gw">豺狼人战士</button>
+    <button data-u="gr">豺狼人斥候</button>
+  </div>
+  <div class="lab">精度</div>
+  <div class="row" id="lods">
+    <button data-l="hi" class="on">细分</button>
+    <button data-l="lo">低模</button>
+  </div>
+  <div class="lab">动作</div>
+  <div class="row" id="anims"></div>
+</div>
+
+<div id="title"><b id="uname">长枪兵</b><span id="ukind">SPELLBREAKER</span></div>
+<div id="hud"></div>
+<div id="tip">左键旋转 · 右键平移 · 滚轮缩放<br>空格 暂停/播放</div>
+
+<script type="importmap">
+{ "imports": {
+    "three": "./preview/vendor/three.module.js",
+    "three/addons/": "./preview/vendor/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from './preview/vendor/GLTFLoader.js';
+import { OrbitControls } from './preview/vendor/OrbitControls.js';
+
+const UNITS = {
+  cb: {
+    name: '弩兵', en: 'CROSSBOWMAN',
+    files: {
+      hi: 'assets/单位/联盟/弩兵/方块人_弩兵.glb',
+      lo: 'assets/单位/联盟/弩兵/方块人_弩兵.glb',
+    },
+    anims: ['idle', 'idle_b', 'walk', 'shoot', 'reload', 'hurt', 'death'],
+    animName: { idle:'待机·端弩', idle_b:'待机·换气', walk:'移动', shoot:'击发',
+                reload:'装填', hurt:'受击', death:'阵亡·丢弩倒地' },
+    height: 1.72, cam: 3.0,
+    note: '方块人 24 骨 · 4.5k tri · 7 动作 · 手与弩分离 0 穿透 · 队色 #2E5FB4 / #F1CD79',
+  },
+  if: {
+    name: '联盟步兵', en: 'FOOTMAN',
+    files: {
+      hi: 'assets/单位/联盟/联盟步兵/方块人_联盟步兵.glb',
+      lo: 'assets/单位/联盟/联盟步兵/方块人_联盟步兵.glb',
+    },
+    anims: ['idle', 'walk', 'attack', 'hurt', 'death',
+            'guard_raise', 'guard_idle', 'guard_walk', 'guard_attack',
+            'guard_hurt', 'guard_death', 'guard_lower'],
+    animName: { idle:'待机', walk:'移动', attack:'攻击·斜劈', hurt:'受击', death:'阵亡·后仰倒地',
+                guard_raise:'举盾·起手', guard_idle:'举盾·待机', guard_walk:'举盾·移动',
+                guard_attack:'举盾·盾击+刺', guard_hurt:'举盾·受击',
+                guard_death:'举盾·阵亡', guard_lower:'举盾·收势' },
+    height: 1.755, cam: 3.0,
+    note: '方块人 25 骨 · 3.4k tri · 12 动作（举盾是一整套，可叠在 idle/walk/attack/hurt/death 上）· 队色 #2E5FB4 / #F1CD79',
+  },
+  sp: {
+    name: '长枪兵', en: 'SPEARMAN',
+    files: {
+      hi: 'assets/单位/联盟/长枪兵/长枪兵.glb',
+      lo: 'assets/单位/联盟/长枪兵/长枪兵_手游_中.glb',
+    },
+    anims: ['idle', 'walk', 'attack', 'hurt', 'death', 'cast'],
+    animName: { idle:'休闲·拄枪观察', walk:'移动·行军', attack:'攻击·单手直刺',
+                hurt:'受击', death:'阵亡·跪倒前扑', cast:'举枪·备战' },
+    height: 1.70, cam: 3.0,
+    note: '格网档 v4 · 24 骨 · 6.1k tri（中 2.4k / 远 1.5k）· 单手直刺 · 队色 #2E5FB4 / #F1CD79',
+  },
+  ar: {
+    name: '弓箭手', en: 'ARCHER',
+    files: {
+      hi: 'assets/单位/联盟/弓箭手/弓箭手.glb',
+      lo: 'assets/单位/联盟/弓箭手/弓箭手_手游_中.glb',
+    },
+    anims: ['idle', 'walk', 'attack', 'hurt', 'death', 'cast'],
+    animName: { idle:'休闲·持弓观察', walk:'移动·行军', attack:'攻击·举弓满弦',
+                hurt:'受击', death:'阵亡·后仰躺倒', cast:'举弓·备战' },
+    height: 1.70, cam: 3.0,
+    note: '格网档 v4 · 26 骨（+弓弦上下段）· 6.6k tri（中 2.9k / 远 2.2k）· 弓弦可拉开 · 队色 #2E5FB4 / #F1CD79',
+  },
+  sb: {
+    name: '破法者', en: 'SPELLBREAKER',
+    files: {
+      hi: 'assets/单位/联盟/破法者/破法者.glb',
+      lo: 'assets/单位/联盟/破法者/破法者_低模.glb',
+    },
+    anims: ['idle', 'idle_alt', 'walk', 'attack', 'cast', 'hurt', 'death'],
+    animName: { idle:'叉腰', idle_alt:'摇头', walk:'移动', attack:'抛刃', cast:'施法', hurt:'受击', death:'阵亡' },
+    height: 1.80, cam: 3.4,
+    note: '26 骨 · 23.0k tri（低模 9.5k）· 7 动作 · 队色 #2E5FB4 / #F1CD79',
+  },
+  mg: {
+    name: '魔金傀儡', en: 'ARCANE GOLEM',
+    files: {
+      hi: 'assets/单位/联盟/魔金傀儡/魔金傀儡.glb',
+      lo: 'assets/单位/联盟/魔金傀儡/魔金傀儡_低模.glb',
+    },
+    anims: ['idle', 'walk', 'attack', 'attack_alt', 'dash', 'hurt', 'death'],
+    animName: { idle:'待机·纹路', walk:'移动', attack:'右拳', attack_alt:'左拳', dash:'冲撞', hurt:'受击', death:'阵亡' },
+    height: 4.30, cam: 8.2,
+    note: '26 骨 · 25.4k tri（低模 9.0k）· 抛光金 · 队色 #2E5FB4 / #F1CD79',
+  },
+  kn: {
+    name: '骑士', en: 'KNIGHT',
+    files: {
+      hi: 'assets/单位/联盟/骑士/骑士.glb',
+      lo: 'assets/单位/联盟/骑士/骑士_低模.glb',
+    },
+    anims: ['idle', 'walk', 'attack', 'dash', 'hurt', 'death'],
+    animName: { idle:'休闲·侧身观察', walk:'移动·快步', attack:'攻击·夹枪突刺',
+                dash:'冲刺·人立前摇', hurt:'受击', death:'阵亡·摔马' },
+    height: 2.82, cam: 5.8,
+    note: '41 骨 · 23.2k tri（低模 9.8k）· 人马一体 · 队色 #2E5FB4 / #F1CD79',
+  },
+  gw: {
+    name: '豺狼人战士', en: 'GNOLL WARRIOR',
+    files: {
+      hi: 'assets/单位/野怪/豺狼人/豺狼人战士/豺狼人战士.glb',
+      lo: 'assets/单位/野怪/豺狼人/豺狼人战士/豺狼人战士_低模.glb',
+    },
+    anims: ['idle', 'walk', 'attack', 'roar', 'hurt', 'death'],
+    animName: { idle:'休闲·侧身观察', walk:'移动·大跨步', attack:'攻击·踏一步劈',
+                roar:'吼叫·张臂抬头', hurt:'受击', death:'阵亡·丢刀盾倒地' },
+    height: 2.11, cam: 4.1,
+    note: '棕皮 · 锈铁肩甲 · 刀盾 · 失落阵营配色 #743A2E / #A99578',
+  },
+  gr: {
+    name: '豺狼人斥候', en: 'GNOLL SCOUT',
+    files: {
+      hi: 'assets/单位/野怪/豺狼人/豺狼人斥候/豺狼人斥候.glb',
+      lo: 'assets/单位/野怪/豺狼人/豺狼人斥候/豺狼人斥候_低模.glb',
+    },
+    anims: ['idle', 'walk', 'attack', 'hurt', 'death'],
+    animName: { idle:'休闲·蹲伏观察', walk:'移动·压低快走', attack:'攻击·双匕连刺',
+                hurt:'受击', death:'阵亡·匕首插胸前倒' },
+    height: 1.83, cam: 3.5,
+    note: '连帽披风 · 双匕首 · 棕灰皮 · 失落阵营配色 #743A2E / #A99578',
+  },
+  gs: {
+    name: '豺狼人萨满', en: 'GNOLL SHAMAN',
+    files: {
+      hi: 'assets/单位/野怪/豺狼人/豺狼人萨满/豺狼人萨满.glb',
+      lo: 'assets/单位/野怪/豺狼人/豺狼人萨满/豺狼人萨满_低模.glb',
+    },
+    anims: ['idle', 'walk', 'attack', 'cast', 'hurt', 'death'],
+    animName: { idle:'休闲·举杖蓄电', walk:'移动', attack:'攻击·电球', cast:'施法·竖举引电',
+                hurt:'受击', death:'阵亡·倒地脱杖' },
+    height: 2.01, cam: 3.9,
+    note: '蓝皮肤 · 骨甲 · 青辉巫杖 · 失落阵营配色 #743A2E / #A99578',
+  },
+};
+
+const hudEl = document.getElementById('hud');
+const loadEl = document.getElementById('load');
+const Q = new URLSearchParams(location.search);
+let curUnit = UNITS[Q.get('u')] ? Q.get('u') : 'sb';
+let curLod = 'hi';
+let curAnim = 'idle';
+
+// ---------- 渲染器 ----------
+const host = document.getElementById('view');
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.02;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+host.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0d0f13);
+scene.fog = new THREE.Fog(0x0d0f13, 14, 42);
+
+const camera = new THREE.PerspectiveCamera(32, innerWidth / innerHeight, 0.1, 200);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.08;
+controls.minDistance = 1.2;
+controls.maxDistance = 30;
+controls.maxPolarAngle = Math.PI * 0.495;
+
+// 布光：一主一补一轮廓 + 环境（金属必须有环境才不发黑）
+scene.add(new THREE.HemisphereLight(0x9fb6d6, 0x1a1712, 0.55));
+const key = new THREE.DirectionalLight(0xfff2dc, 2.4);
+key.position.set(-4, 7, 5);
+key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048);
+key.shadow.camera.near = 0.5; key.shadow.camera.far = 30;
+key.shadow.camera.left = -6; key.shadow.camera.right = 6;
+key.shadow.camera.top = 8; key.shadow.camera.bottom = -2;
+key.shadow.bias = -0.0008;
+scene.add(key);
+const fill = new THREE.DirectionalLight(0x9dc4ff, 0.7);
+fill.position.set(5, 3, 3);
+scene.add(fill);
+const rim = new THREE.DirectionalLight(0xffd9a0, 1.1);
+rim.position.set(1, 4, -6);
+scene.add(rim);
+
+// 环境贴图（用 PMREM 从渐变天空烘一张，金属才有反射）
+const pmrem = new THREE.PMREMGenerator(renderer);
+const skyGeo = new THREE.SphereGeometry(20, 24, 16);
+const skyMat = new THREE.ShaderMaterial({
+  side: THREE.BackSide,
+  uniforms: {},
+  vertexShader: 'varying vec3 vP; void main(){ vP = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }',
+  fragmentShader: `varying vec3 vP; void main(){
+      float h = normalize(vP).y * 0.5 + 0.5;
+      vec3 lo = vec3(0.045,0.050,0.060), hi = vec3(0.42,0.48,0.58);
+      gl_FragColor = vec4(mix(lo, hi, smoothstep(0.0,1.0,h)), 1.0); }`
+});
+const envScene = new THREE.Scene();
+envScene.add(new THREE.Mesh(skyGeo, skyMat));
+const envRT = pmrem.fromScene(envScene, 0.04);
+scene.environment = envRT.texture;
+
+// 地面
+const gMat = new THREE.MeshStandardMaterial({ color: 0x171a1f, roughness: 0.92, metalness: 0.0 });
+const ground = new THREE.Mesh(new THREE.CircleGeometry(20, 64), gMat);
+ground.rotation.x = -Math.PI / 2;
+ground.receiveShadow = true;
+scene.add(ground);
+const grid = new THREE.GridHelper(24, 24, 0x2a3038, 0x1c2127);
+grid.position.y = 0.002;
+scene.add(grid);
+
+// ---------- 载入 ----------
+const loader = new GLTFLoader();
+const cache = {};
+let root = null, mixer = null, clipMap = {}, clipName = '', curHeight = 2;
+
+function disposeRoot() {
+  if (!root) return;
+  scene.remove(root);
+  root.traverse(o => { if (o.geometry) o.geometry.dispose(); });
+  root = null;
+  if (mixer) { mixer.stopAllAction(); mixer = null; }
+}
+
+function frameCamera(h) {
+  const dist = h * 2.05;
+  camera.position.set(dist * 0.62, h * 0.72, dist * 0.78);
+  controls.target.set(0, h * 0.50, 0);
+  controls.update();
+  key.shadow.camera.top = h * 1.3;
+  key.shadow.camera.bottom = -h * 0.3;
+  key.shadow.camera.left = -h * 0.9;
+  key.shadow.camera.right = h * 0.9;
+  key.shadow.camera.updateProjectionMatrix();
+}
+
+function play(name) {
+  if (!mixer || !clipMap[name]) return;
+  curAnim = name;
+  const next = clipMap[name];
+  const act = mixer.clipAction(next);
+  const looping = (name === 'idle' || name === 'walk');
+  if (clipName === name && looping) return;
+  mixer.stopAllAction();
+  act.reset().setLoop(name === 'idle' || name === 'walk' ? THREE.LoopRepeat : THREE.LoopOnce, Infinity);
+  act.clampWhenFinished = true;
+  act.play();
+  clipName = name;
+  [...document.querySelectorAll('#anims button')].forEach(b => b.classList.toggle('on', b.dataset.a === name));
+}
+
+function buildAnimButtons(list, names) {
+  list.innerHTML = '';
+  names.forEach((n, i) => {
+    const b = document.createElement('button');
+    b.dataset.a = n;
+    b.textContent = (UNITS[curUnit].animName || {})[n] || n;
+    b.title = n;
+    if (i === 0) b.classList.add('on');
+    b.onclick = () => play(n);
+    list.appendChild(b);
+  });
+}
+
+function loadUnit(unitKey, lod) {
+  const U = UNITS[unitKey];
+  const file = U.files[lod];
+  const key = unitKey + ':' + lod;
+  document.getElementById('uname').textContent = U.name;
+  document.getElementById('ukind').textContent = U.en;
+  loadEl.style.display = 'flex';
+  loadEl.textContent = '载入 ' + U.name + ' · ' + (lod === 'hi' ? '细分' : '低模') + ' …';
+
+  const after = (gltf) => {
+    disposeRoot();
+    root = gltf.scene;
+    root.traverse(o => {
+      if (o.isMesh) {
+        o.castShadow = true; o.receiveShadow = true; o.frustumCulled = false;
+        const ms = Array.isArray(o.material) ? o.material : [o.material];
+        ms.forEach(m => {
+          if (!m) return;
+          if (m.name === 'team') m.color.set('#2E5FB4');
+          else if (m.name === 'team_trim') m.color.set('#F1CD79');
+        });
+      }
+    });
+    scene.add(root);
+    clipMap = {};
+    (gltf.animations || []).forEach(c => { clipMap[c.name] = c; });
+    mixer = new THREE.AnimationMixer(root);
+    clipName = '';
+    curHeight = U.height;
+    frameCamera(U.height);
+    const names = U.anims.filter(n => clipMap[n]);
+    buildAnimButtons(document.getElementById('anims'), names.length ? names : Object.keys(clipMap));
+    play(names[0] || Object.keys(clipMap)[0]);
+    let tris = 0;
+    root.traverse(o => {
+      if (o.isMesh && o.geometry) {
+        const g = o.geometry;
+        tris += (g.index ? g.index.count : g.attributes.position.count) / 3;
+      }
+    });
+    hudEl.textContent =
+      U.name + ' · ' + (lod === 'hi' ? '细分档' : '低模档') + '\n' +
+      '三角面 ' + Math.round(tris).toLocaleString() + '\n' +
+      '动作 ' + (gltf.animations || []).length + ' 条\n' +
+      U.note;
+    loadEl.style.display = 'none';
+  };
+
+  if (cache[key]) { after(cache[key]); return; }
+  loader.load(file, (gltf) => { cache[key] = gltf; after(gltf); },
+    (e) => {
+      if (e.total) loadEl.textContent = '载入 ' + Math.round(e.loaded / e.total * 100) + '%';
+    },
+    (err) => {
+      loadEl.textContent = '⚠ 载入失败：' + file + '（请用本地 HTTP 服务打开，不要 file://）';
+      console.error(err);
+    });
+}
+
+// ---------- 交互 ----------
+document.getElementById('units').addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return;
+  curUnit = b.dataset.u;
+  [...document.querySelectorAll('#units button')].forEach(x => x.classList.toggle('on', x === b));
+  loadUnit(curUnit, curLod);
+});
+document.getElementById('lods').addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return;
+  curLod = b.dataset.l;
+  [...document.querySelectorAll('#lods button')].forEach(x => x.classList.toggle('on', x === b));
+  loadUnit(curUnit, curLod);
+});
+addEventListener('keydown', (e) => {
+  if (e.code === 'Space') {
+    e.preventDefault();
+    if (!mixer) return;
+    const act = mixer.clipAction(clipMap[curAnim]);
+    if (act.paused) { act.paused = false; } else { act.paused = true; }
+  }
+});
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+const clock = new THREE.Clock();
+function tick() {
+  requestAnimationFrame(tick);
+  const dt = clock.getDelta();
+  if (mixer) mixer.update(dt);
+  controls.update();
+  renderer.render(scene, camera);
+}
+
+if (Q.get('u') && UNITS[Q.get('u')]) {
+  curUnit = Q.get('u');
+  [...document.querySelectorAll('#units button')].forEach(x => x.classList.toggle('on', x.dataset.u === curUnit));
+}
+loadUnit(curUnit, curLod);
+tick();
+</script>
+</body>
+</html>

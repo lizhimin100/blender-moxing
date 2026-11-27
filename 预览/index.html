@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>铁誓军团 · 体素建筑预览台</title>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#15181f; --panel2:#1b1f28; --line:#262b36;
+    --txt:#e8eaef; --dim:#8b93a3; --accent:#c9a227; --team:#b8352c;
+    --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--txt);
+    font:13px/1.5 "Inter","Sarasa Gothic SC","PingFang SC","Microsoft YaHei",sans-serif;
+    -webkit-font-smoothing:antialiased;overflow:hidden}
+  #app{display:flex;height:100%}
+  /* ---------- sidebar ---------- */
+  aside{width:286px;min-width:286px;background:var(--panel);border-right:1px solid var(--line);
+    display:flex;flex-direction:column;overflow:hidden}
+  .brand{padding:16px 16px 12px;border-bottom:1px solid var(--line)}
+  .brand h1{margin:0;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .brand p{margin:4px 0 0;font-size:11px;color:var(--dim);letter-spacing:.04em}
+  .scroll{overflow-y:auto;flex:1;padding-bottom:24px}
+  .scroll::-webkit-scrollbar{width:8px}
+  .scroll::-webkit-scrollbar-thumb{background:#2b3140;border-radius:4px}
+  section{padding:12px 14px;border-bottom:1px solid var(--line)}
+  section h2{margin:0 0 9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+  .mods{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .mod{background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:8px 9px;
+    cursor:pointer;transition:.12s;text-align:left}
+  .mod:hover{border-color:#3b4457;background:#1f2431}
+  .mod.on{border-color:var(--accent);background:#221f14;box-shadow:inset 0 0 0 1px #3a3113}
+  .mod b{display:block;font-size:12px;font-weight:600}
+  .mod span{display:block;font-size:10px;color:var(--dim);margin-top:1px;font-family:var(--mono)}
+  .anims{display:flex;flex-direction:column;gap:3px}
+  .an{display:flex;justify-content:space-between;align-items:center;padding:6px 9px;border-radius:4px;
+    cursor:pointer;border:1px solid transparent;font-size:12px}
+  .an:hover{background:var(--panel2)}
+  .an.on{background:#241f12;border-color:#4a3c14;color:#f0d98a}
+  .an em{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--dim)}
+  .an.on em{color:#b09a55}
+  .teams{display:flex;gap:7px}
+  .sw{width:30px;height:30px;border-radius:5px;cursor:pointer;border:2px solid transparent;
+    position:relative;transition:.12s}
+  .sw:hover{transform:translateY(-1px)}
+  .sw.on{border-color:#fff;box-shadow:0 0 0 2px #0f1115,0 0 12px rgba(255,255,255,.18)}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:4px 0;font-size:12px}
+  .row label{color:#c3c9d6}
+  input[type=range]{-webkit-appearance:none;width:100%;height:3px;background:#2c3240;border-radius:2px;outline:none}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;border-radius:50%;
+    background:var(--accent);cursor:pointer;box-shadow:0 0 0 3px rgba(201,162,39,.16)}
+  .ck{display:flex;align-items:center;gap:6px;font-size:11.5px;color:#c3c9d6;cursor:pointer;padding:3px 0}
+  .ck input{accent-color:var(--accent)}
+  /* ---------- stage ---------- */
+  main{flex:1;position:relative;min-width:0}
+  canvas{display:block}
+  .hud{position:absolute;left:18px;top:16px;pointer-events:none}
+  .hud h2{margin:0;font-size:19px;font-weight:600;letter-spacing:.02em}
+  .hud p{margin:3px 0 0;font-size:11px;color:var(--dim);font-family:var(--mono);letter-spacing:.03em}
+  .badge{display:inline-block;margin-top:8px;font:10px/1 var(--mono);letter-spacing:.1em;
+    padding:4px 7px;border:1px solid #3a3222;background:#211d12;color:#c9a227;border-radius:3px}
+  .tl{position:absolute;left:18px;right:18px;bottom:16px;background:rgba(18,21,28,.9);
+    border:1px solid var(--line);border-radius:7px;padding:10px 13px 8px;backdrop-filter:blur(8px)}
+  .tl .top{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+  .tl .t{font:11px/1 var(--mono);color:var(--dim);min-width:104px}
+  .tl .nm{font-size:12px;font-weight:600;letter-spacing:.02em}
+  .tl button{background:#232936;border:1px solid var(--line);color:var(--txt);border-radius:4px;
+    padding:4px 9px;font-size:11px;cursor:pointer}
+  .tl button:hover{background:#2c3342}
+  .track{position:relative;height:22px;background:#1a1e27;border-radius:4px;overflow:hidden;cursor:pointer}
+  .fill{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,#3a3016,#6b5a20);width:0}
+  .hitmark{position:absolute;top:0;bottom:0;width:2px;background:#e05a4a;box-shadow:0 0 8px #e05a4a}
+  .hitlab{position:absolute;top:-1px;font:9px/1 var(--mono);color:#ff8f80;transform:translateX(3px)}
+  .clk{position:absolute;top:0;bottom:0;width:2px;background:#f2e6b8}
+  .tick{position:absolute;top:0;bottom:0;width:1px;background:#3c455a}
+  .stagebar{display:flex;gap:3px;margin-top:8px}
+  .stagebar div{flex:1;height:17px;border-radius:2px;background:#171b23;color:#6d7688;
+    font:9px/17px var(--mono);text-align:center;white-space:nowrap;overflow:hidden;
+    transition:background .15s,color .15s}
+  .stagebar div.on{background:#3b3113;color:#e8d79b}
+  .stagebar div.done{background:#1e232c;color:#8b93a3}
+  .foot{position:absolute;right:18px;bottom:74px;white-space:pre;font:10px/1.6 var(--mono);color:#5d6577;text-align:right;pointer-events:none}
+  .loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    background:var(--bg);color:var(--dim);font-family:var(--mono);font-size:12px;letter-spacing:.1em;z-index:9}
+</style>
+</head>
+<body>
+<div id="app">
+  <aside>
+    <div class="brand">
+      <h1>Ironbound Legion</h1>
+      <p>体素建筑 · PBR 资产 / 施工动画预览</p>
+    </div>
+    <div class="scroll">
+      <section>
+        <h2>建筑 Buildings</h2>
+        <div class="mods" id="buildings"></div>
+      </section>
+      <section>
+        <h2>动作 Animation</h2>
+        <div class="anims" id="anims"></div>
+      </section>
+      <section>
+        <h2>阵营色 Team Color</h2>
+        <div class="teams" id="teams"></div>
+        <div class="row" style="margin-top:9px">
+          <label>染色强度</label><span id="tv" style="font-family:var(--mono);color:#8b93a3">1.00</span>
+        </div>
+        <input type="range" id="tint" min="0" max="1" step="0.01" value="1">
+      </section>
+      <section>
+        <h2>诊断 Debug</h2>
+        <label class="ck"><input type="checkbox" id="dbgWire"> 线框（体素面密度）</label>
+        <label class="ck"><input type="checkbox" id="dbgGrid" checked> 地面网格</label>
+        <label class="ck"><input type="checkbox" id="dbgShadow" checked> 接触阴影</label>
+        <div class="row"><label>播放速度</label><span id="sv" style="font-family:var(--mono);color:#8b93a3">1.00×</span></div>
+        <input type="range" id="spd" min="0" max="2" step="0.05" value="1">
+      </section>
+    </div>
+  </aside>
+  <main>
+    <div class="hud">
+      <h2 id="hTitle">—</h2>
+      <p id="hSub"></p>
+      <div class="badge" id="hBadge">BIND POSE</div>
+    </div>
+    <div class="tl">
+      <div class="top">
+        <button id="btnPlay">暂停</button>
+        <button id="btnLoop">循环 开</button>
+        <span class="nm" id="tlName">—</span>
+        <span class="t" id="tlTime">0.00 / 0.00s</span>
+        <span class="t" id="tlInfo" style="margin-left:auto;text-align:right"></span>
+      </div>
+      <div class="track" id="track">
+        <div class="fill" id="fill"></div>
+        <div id="ticks"></div>
+        <div class="hitmark" id="hitmark" style="display:none"></div>
+        <div class="hitlab" id="hitlab" style="display:none"></div>
+        <div class="clk" id="clk" style="left:0"></div>
+      </div>
+      <div class="stagebar" id="stagebar"></div>
+    </div>
+    <div class="foot" id="foot"></div>
+    <div class="loading" id="loading">正在装配资产…</div>
+  </main>
+</div>
+<script type="importmap">
+{ "imports": {
+    "three": "./vendor/three.module.js",
+    "three/addons/": "./vendor/"
+} }
+</script>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

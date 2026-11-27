@@ -1,0 +1,69 @@
+{
+  "file": "豪华帐篷.glb",
+  "bytes": 127524,
+  "meshes": 4,
+  "tris": 1508,
+  "materials": [
+    "team",
+    "team_trim",
+    "主体",
+    "自发光"
+  ],
+  "mat_count": 4,
+  "bbox_min": [
+    -3.263,
+    -2.863,
+    -0.03
+  ],
+  "bbox_max": [
+    3.263,
+    2.863,
+    3.858
+  ],
+  "size": [
+    6.526,
+    5.726,
+    3.888
+  ],
+  "grounded": true,
+  "zmin": -0.03,
+  "front_ok": true,
+  "mats_ok": true,
+  "tris_ok": true,
+  "skins": 0,
+  "animations": [],
+  "static_ok": true,
+  "ok": true,
+  "asset_name": "豪华帐篷",
+  "kind": "帐篷",
+  "note": "木地台 + 四角柱 + 四坡顶 + 内衬 + 门帘 + 双旗杆",
+  "team_frac": 0.0557,
+  "tiers": {
+    "初级帐篷": {
+      "half_w": 1.3,
+      "half_d": 1.25,
+      "h": 2.3,
+      "poles": 1,
+      "layers": 1,
+      "stakes": 4
+    },
+    "中等帐篷": {
+      "half_w": 1.8,
+      "half_d": 1.65,
+      "h": 2.95,
+      "poles": 2,
+      "layers": 2,
+      "stakes": 6
+    },
+    "豪华帐篷": {
+      "half_w": 2.45,
+      "half_d": 2.25,
+      "h": 3.85,
+      "poles": 4,
+      "layers": 3,
+      "stakes": 8
+    }
+  },
+  "team_ok": true,
+  "superseded_note": "同名 <名>.glb 已由 export_new_assets.py 重出为标准档（细分）；本回执记录的是状态档那次构建（4 材质）。升级态不受影响。"
+}

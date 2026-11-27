@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>联盟七建筑 · 微缩线 · 1 m 格</title>
+<style>
+  :root{
+    --gold:#D9A441; --gold-l:#E8C77E; --ink:#0C1420; --panel:#141F33;
+    --line:rgba(217,164,65,.28); --txt:#E8E2D4; --dim:#8C93A3;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:#0B1220;color:var(--txt);
+    font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;overflow:hidden}
+  #app{position:fixed;inset:0}
+  canvas{display:block}
+
+  .hud{position:absolute;pointer-events:none;z-index:5}
+  .title{left:28px;top:22px}
+  .title h1{margin:0;font-size:22px;letter-spacing:.14em;font-weight:700}
+  .title .sub{margin-top:6px;font-size:11.5px;letter-spacing:.22em;color:var(--gold-l);opacity:.85}
+  .title .rule{width:44px;height:2px;background:var(--gold);margin:12px 0 0}
+
+  .spec{right:28px;top:22px;min-width:210px;text-align:right;font-size:12px;line-height:1.9;color:var(--dim)}
+  .spec b{color:var(--txt);font-weight:600}
+  .spec .num{color:var(--gold-l);font-variant-numeric:tabular-nums}
+
+  .bar{left:50%;bottom:26px;transform:translateX(-50%);display:flex;gap:8px;
+       background:rgba(15,23,38,.86);border:1px solid var(--line);padding:9px;
+       border-radius:10px;backdrop-filter:blur(8px);pointer-events:auto}
+  .bar button{appearance:none;border:1px solid transparent;background:transparent;color:var(--dim);
+    font:600 13px/1 "Microsoft YaHei",sans-serif;letter-spacing:.08em;padding:9px 15px;border-radius:7px;
+    cursor:pointer;transition:.16s}
+  .bar button:hover{color:var(--txt);background:rgba(255,255,255,.05)}
+  .bar button.on{background:linear-gradient(180deg,rgba(217,164,65,.22),rgba(217,164,65,.10));
+    color:var(--gold-l);border-color:rgba(217,164,65,.55)}
+  .bar .sep{width:1px;background:var(--line);margin:2px 4px}
+
+  .pal{left:28px;bottom:26px;display:flex;gap:7px;align-items:center;pointer-events:none}
+  .pal .sw{width:16px;height:16px;border-radius:3px;border:1px solid rgba(0,0,0,.4)}
+  .pal .lb{font-size:10.5px;letter-spacing:.16em;color:var(--dim);margin-left:8px}
+
+  .fac{left:50%;bottom:86px;transform:translateX(-50%);display:flex;gap:6px;align-items:center;
+       background:rgba(15,23,38,.86);border:1px solid var(--line);padding:7px 9px;
+       border-radius:10px;backdrop-filter:blur(8px);pointer-events:auto}
+  .fac span.lb{font-size:10.5px;letter-spacing:.16em;color:var(--dim);margin:0 6px 0 2px}
+  .fac button{appearance:none;border:1px solid transparent;background:transparent;color:var(--dim);
+    font:600 12px/1 "Microsoft YaHei",sans-serif;letter-spacing:.06em;padding:7px 11px;border-radius:6px;
+    cursor:pointer;transition:.16s;display:flex;align-items:center;gap:6px}
+  .fac button i{width:11px;height:11px;border-radius:2px;display:inline-block;
+    box-shadow:0 0 0 1px rgba(0,0,0,.45) inset}
+  .fac button:hover{color:var(--txt);background:rgba(255,255,255,.05)}
+  .fac button.on{color:var(--gold-l);border-color:rgba(217,164,65,.55);background:rgba(217,164,65,.10)}
+
+  .note{left:28px;bottom:64px;font-size:11px;color:var(--dim);letter-spacing:.06em;opacity:.8}
+  .hint{right:28px;bottom:26px;font-size:11px;color:var(--dim);letter-spacing:.06em;opacity:.75;text-align:right}
+  .load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+        color:var(--dim);font-size:13px;letter-spacing:.2em;z-index:9;transition:.4s}
+
+  .pick{left:50%;top:22px;transform:translateX(-50%);display:flex;gap:6px;
+        background:rgba(15,23,38,.86);border:1px solid var(--line);padding:7px 9px;
+        border-radius:10px;backdrop-filter:blur(8px);pointer-events:auto}
+  .pick .lb{font-size:10.5px;letter-spacing:.16em;color:var(--dim);margin:0 8px 0 4px;align-self:center}
+  .pick button{appearance:none;border:1px solid transparent;background:transparent;color:var(--dim);
+    font:600 12.5px/1 "Microsoft YaHei",sans-serif;letter-spacing:.1em;padding:8px 13px;border-radius:7px;
+    cursor:pointer;transition:.16s}
+  .pick button:hover{color:var(--txt);background:rgba(255,255,255,.05)}
+  .pick button.on{color:var(--gold-l);border-color:rgba(217,164,65,.55);background:rgba(217,164,65,.10)}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<div class="hud title">
+  <h1 id="h1">城镇大厅 · TOWN HALL</h1>
+  <div class="sub">联盟七建筑 · 微缩线 · 1 m 格 · WC3 体块语法</div>
+  <div class="rule"></div>
+</div>
+
+<div class="hud spec" id="spec"></div>
+
+<div class="hud pick" id="pick"><span class="lb">建筑</span></div>
+
+<div class="hud bar">
+  <button data-star="1">★ 1 星</button>
+  <button data-star="2">★ 2 星</button>
+  <button data-star="3" class="on">★ 3 星</button>
+  <div class="sep"></div>
+  <button data-mode="compare">三档并排</button>
+  <div class="sep"></div>
+  <button id="btn-wire">线框</button>
+  <button id="btn-spin">自转</button>
+</div>
+
+<div class="hud fac" id="fac"></div>
+
+<div class="hud note" id="note">底座 1.000 × 1.000 × 0.080 m　主体 ≤ 0.960 m</div>
+<div class="hud pal" id="pal"></div>
+<div class="hud hint">左键旋转 · 滚轮缩放 · 右键平移</div>
+<div class="load" id="load">载入模型…</div>
+
+<script type="importmap">
+{ "imports": {
+    "three": "./preview/vendor/three.module.js",
+    "three/addons/": "./preview/vendor/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from './preview/vendor/GLTFLoader.js';
+import { OrbitControls } from './preview/vendor/OrbitControls.js';
+
+// ---------------------------------------------------------------- 两座建筑
+// 城镇大厅 = 四槽制历史资产；兵营 = 两槽制（Mat_Neutral / Mat_TeamColor）。
+// 预览器同时认两套材质名，队色按钮对两者都生效。
+const BUILDINGS = {
+  th: {
+    cn: '城镇大厅', en: 'TOWN HALL',
+    dir: 'assets/建筑/联盟/城镇大厅_微缩/',
+    file: s => `城镇大厅_${s}星.glb`,
+    slots: '2（Mat_Neutral / Mat_TeamColor）',
+    pal: [['#6B6152','底座'], ['#8A7E68','台基'], ['#B8B4A8','浅灰暖石'], ['#D2CEC1','石亮'], ['#6E4A2E','深橡木'], ['#E2D8C5','灰泥'], ['#5A6470','冷铁'], ['#D9A441','暖金'], ['#FF6A20','炉火'], ['#D8A838','麦田']],
+    info: {
+      1: { name: '市政厅 · 钟亭', h: '0.624 m', tris: 1322, team: 23.5, span: '0.75 × 0.81', desc: '单层半木构 + 厚蓝瓦顶 + 石阶门廊 + 脊上矮钟亭（市政四件套：钟面 / 拱门 / 蓝瓦 / 挂旗）' },
+      2: { name: '主城 Keep · 角楼', h: '0.876 m', tris: 1472, team: 18.1, span: '0.83 × 0.86', desc: 'L 型石砌主体 + 前左角楼（锯齿垛口）+ 竖脊门楼 + 长旗；墙换石、体量分叉' },
+      3: { name: '城堡 · 四角塔', h: '0.989 m', tris: 1854, team: 13.1, span: '0.92 × 0.93', desc: '四角塔围合 + 幕墙 + 中央大厅 + 门楼 + 金脊；包络线 0.43→0.55→0.61→0.85 金字塔' },
+    },
+  },
+  bk: {
+    cn: '兵营', en: 'BARRACKS',
+    dir: 'assets/建筑/联盟/兵营_微缩/',
+    file: s => `兵营_${s}星.glb`,
+    slots: '2（Mat_Neutral / Mat_TeamColor）',
+    pal: [['#6B6152','底座'], ['#8A7E68','台基'], ['#B8B4A8','浅灰暖石'], ['#D2CEC1','石亮'], ['#6E4A2E','深橡木'], ['#E2D8C5','灰泥'], ['#5A6470','冷铁'], ['#D9A441','暖金'], ['#FF6A20','炉火'], ['#D8A838','麦田']],
+    info: {
+      1: { name: '木石营棚 · 大拱门', h: '0.620 m', tris: 1276, team: 7.1, span: '0.75 × 0.73', desc: '矮营棚 + 夸张宽大的半圆拱门 + 平顶垛口 + 木栏；正面没有一片斜瓦' },
+      2: { name: '石砌营房 · 扶壁', h: '0.838 m', tris: 1492, team: 10.1, span: '0.80 × 0.78', desc: '全面石砌 + 拱门两侧阶梯扶壁 + 后半层蓝瓦军械库 + 矮石前庭' },
+      3: { name: '皇家要塞 · 双门楼', h: '0.966 m', tris: 1496, team: 14.2, span: '0.93 × 0.92', desc: '双层城门楼 + 双哨堡（蓝锥顶）+ 铁栅 + 金交叉剑盾徽 + 后方蓝瓦营房' },
+    },
+  },
+  fm: {
+    cn: '农场', en: 'FARM',
+    dir: 'assets/建筑/联盟/农场_微缩/',
+    file: s => `农场_${s}星.glb`,
+    slots: '2（Mat_Neutral / Mat_TeamColor）',
+    pal: [['#6B6152','底座'], ['#8A7E68','台基'], ['#B8B4A8','浅灰暖石'], ['#D2CEC1','石亮'], ['#6E4A2E','深橡木'], ['#E2D8C5','灰泥'], ['#5A6470','冷铁'], ['#D9A441','暖金'], ['#FF6A20','炉火'], ['#D8A838','麦田']],
+    info: {
+      1: { name: '农舍 · 麦田', h: '0.671 m', tris: 1050, team: 17.5, span: '0.70 × 0.70', desc: '半木构农舍 + 麦田 + 栅栏 + 草捆' },
+      2: { name: '谷仓农场 · 筒仓', h: '0.778 m', tris: 1294, team: 18.0, span: '0.90 × 0.81', desc: '谷仓（双开大门）+ 筒仓 + 农舍 + 前庭' },
+      3: { name: '风车农场 · 三体量', h: '0.955 m', tris: 1496, team: 16.8, span: '0.92 × 0.90', desc: '风车塔（四叶队色帆）+ 谷仓 + 筒仓 + 成垄麦田 + 板车 + 稻草人' },
+    },
+  },
+  sm: {
+    cn: '铁匠铺', en: 'BLACKSMITH',
+    dir: 'assets/建筑/联盟/铁匠铺_微缩/',
+    file: s => `铁匠铺_${s}星.glb`,
+    slots: '2（Mat_Neutral / Mat_TeamColor）',
+    pal: [['#6B6152','底座'], ['#8A7E68','台基'], ['#B8B4A8','浅灰暖石'], ['#D2CEC1','石亮'], ['#6E4A2E','深橡木'], ['#E2D8C5','灰泥'], ['#5A6470','冷铁'], ['#D9A441','暖金'], ['#FF6A20','炉火'], ['#D8A838','麦田']],
+    info: {
+      1: { name: '敞棚铁铺 · 炉膛', h: '0.657 m', tris: 924, team: 18.2, span: '0.70 × 0.68', desc: '敞棚 + 石砌炉膛（橙红炉口）+ 铁砧 + 水桶' },
+      2: { name: '石砌铁铺 · 烟囱', h: '0.784 m', tris: 1294, team: 18.4, span: '0.91 × 0.80', desc: '石砌铺面 + 高烟囱 + 侧挂工作间 + 磨石 + 武器架' },
+      3: { name: '大师工坊 · 双炉', h: '0.951 m', tris: 1466, team: 17.3, span: '0.92 × 0.86', desc: '双烟囱 + 门前披檐 + 金砧徽章 + 铁锭堆' },
+    },
+  },
+  lm: {
+    cn: '伐木场', en: 'LUMBER MILL',
+    dir: 'assets/建筑/联盟/伐木场_微缩/',
+    file: s => `伐木场_${s}星.glb`,
+    slots: '2（Mat_Neutral / Mat_TeamColor）',
+    pal: [['#6B6152','底座'], ['#8A7E68','台基'], ['#B8B4A8','浅灰暖石'], ['#D2CEC1','石亮'], ['#6E4A2E','深橡木'], ['#E2D8C5','灰泥'], ['#5A6470','冷铁'], ['#D9A441','暖金'], ['#FF6A20','炉火'], ['#D8A838','麦田']],
+    info: {
+      1: { name: '敞棚锯木 · 原木', h: '0.622 m', tris: 1188, team: 21.8, span: '0.77 × 0.84', desc: '敞棚 + 原木堆 + 锯木架' },
+      2: { name: '石基磨坊 · 圆锯', h: '0.791 m', tris: 1244, team: 15.6, span: '0.86 × 0.86', desc: '石基磨坊 + 立式圆锯 + 原木坡道 + 木板堆' },
+      3: { name: '吊木工场 · 扒杆', h: '1.012 m', tris: 1360, team: 13.8, span: '0.93 × 0.89', desc: '吊木扒杆 + 大圆锯 + 原木堆 + 板车' },
+    },
+  },
+  wt: {
+    cn: '哨塔', en: 'WATCH TOWER',
+    dir: 'assets/建筑/联盟/哨塔_微缩/',
+    file: s => `哨塔_${s}星.glb`,
+    slots: '2（Mat_Neutral / Mat_TeamColor）',
+    pal: [['#6B6152','底座'], ['#8A7E68','台基'], ['#B8B4A8','浅灰暖石'], ['#D2CEC1','石亮'], ['#6E4A2E','深橡木'], ['#E2D8C5','灰泥'], ['#5A6470','冷铁'], ['#D9A441','暖金'], ['#FF6A20','炉火'], ['#D8A838','麦田']],
+    info: {
+      1: { name: '木构哨塔 · 梯', h: '1.028 m', tris: 902, team: 16.5, span: '0.64 × 0.74', desc: '四根外撇木腿 + 横箍 + 梯 + 带栏杆平台 + 蓝锥顶' },
+      2: { name: '石基哨塔 · 混构', h: '1.168 m', tris: 886, team: 14.2, span: '0.72 × 0.80', desc: '石砌塔身 + 上段木构瞭望室 + 出挑平台 + 蓝锥顶' },
+      3: { name: '石砌哨塔 · 瞭望室', h: '1.368 m', tris: 1366, team: 11.1, span: '0.86 × 0.86', desc: '全石塔 + 阶梯扶壁 + 挑石垛口 + 木构瞭望室 + 矮四坡顶' },
+    },
+  },
+  at: {
+    cn: '箭塔', en: 'ARROW TOWER',
+    dir: 'assets/建筑/联盟/箭塔_微缩/',
+    file: s => `箭塔_${s}星.glb`,
+    slots: '2（Mat_Neutral / Mat_TeamColor）',
+    pal: [['#6B6152','底座'], ['#8A7E68','台基'], ['#B8B4A8','浅灰暖石'], ['#D2CEC1','石亮'], ['#6E4A2E','深橡木'], ['#E2D8C5','灰泥'], ['#5A6470','冷铁'], ['#D9A441','暖金'], ['#FF6A20','炉火'], ['#D8A838','麦田']],
+    info: {
+      1: { name: '石砌箭塔 · 斗堡', h: '0.944 m', tris: 1012, team: 5.5, span: '0.66 × 0.69', desc: '石塔 + 正面木斗堡 + 四垛 + 长垂幔' },
+      2: { name: '双耳箭塔 · 锥顶', h: '1.096 m', tris: 1304, team: 6.2, span: '0.76 × 0.76', desc: '加高 + 双耳斗堡（蓝锥顶）+ 腰线 + 矮院墙' },
+      3: { name: '皇家箭塔 · 弩炮', h: '1.386 m', tris: 1498, team: 4.5, span: '0.86 × 0.87', desc: '厚塔 + 四角外挑小塔 + 托石 + 弩炮 + 四面垂幔' },
+    },
+  },
+};
+
+const FACTIONS = {
+  '联盟':     { team: '#2554A8', trim: '#E4B455' },
+  '失落帝国': { team: '#743A2E', trim: '#A99578' },
+  '中立':     { team: '#4C6B58', trim: '#B9A87A' },
+  '霜誓':     { team: '#2F6F86', trim: '#CBD6D8' },
+};
+
+let bid = 'bk';
+
+const app = document.getElementById('app');
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.NoToneMapping;   // 顶点色必须原样出
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+app.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0E1726);
+scene.fog = new THREE.Fog(0x0E1726, 6, 16);
+
+const camera = new THREE.PerspectiveCamera(34, innerWidth / innerHeight, 0.05, 60);
+camera.position.set(2.05, 1.55, -2.35);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 0.52, 0);
+controls.enableDamping = true;
+controls.dampingFactor = 0.075;
+controls.minDistance = 1.2;
+controls.maxDistance = 8;
+controls.maxPolarAngle = Math.PI * 0.495;
+
+scene.add(new THREE.HemisphereLight(0xD6E2F5, 0x59503E, 0.90));
+const key = new THREE.DirectionalLight(0xFFF3E0, 1.62);
+key.position.set(1.9, 4.6, 3.1);
+key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048);
+key.shadow.camera.near = 0.5;
+key.shadow.camera.far = 14;
+key.shadow.camera.left = -2.6;
+key.shadow.camera.right = 2.6;
+key.shadow.camera.top = 2.6;
+key.shadow.camera.bottom = -2.6;
+key.shadow.bias = -0.0009;
+key.shadow.normalBias = 0.02;
+scene.add(key);
+const rim = new THREE.DirectionalLight(0xA8BEE4, 0.42);
+rim.position.set(-2.8, 2.2, -2.4);
+scene.add(rim);
+
+// 1 m 棋盘格地面
+const TILE = 1.0;
+const gridTex = (() => {
+  const c = document.createElement('canvas');
+  c.width = c.height = 512;
+  const g = c.getContext('2d');
+  g.fillStyle = '#2C3648';
+  g.fillRect(0, 0, 512, 512);
+  g.fillStyle = '#323D51';
+  g.fillRect(0, 0, 256, 256);
+  g.fillRect(256, 256, 256, 256);
+  g.strokeStyle = 'rgba(217,164,65,0.20)';
+  g.lineWidth = 3;
+  g.strokeRect(0, 0, 512, 512);
+  const t = new THREE.CanvasTexture(c);
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = 8;
+  return t;
+})();
+gridTex.repeat.set(14 / TILE, 14 / TILE);
+const ground = new THREE.Mesh(
+  new THREE.PlaneGeometry(14, 14),
+  new THREE.MeshStandardMaterial({ map: gridTex, roughness: 0.95, metalness: 0 })
+);
+ground.rotation.x = -Math.PI / 2;
+ground.position.y = -0.002;
+ground.receiveShadow = true;
+scene.add(ground);
+
+const loader = new GLTFLoader();
+const wraps = {};
+let mode = 'single';
+let current = 3;
+let wire = false;
+let faction = '联盟';
+
+function prep(root) {
+  const mats = { team: null, trim: null };
+  root.traverse(o => {
+    if (o.isMesh) {
+      o.castShadow = true;
+      o.receiveShadow = true;
+      o.material.vertexColors = true;
+      o.material.side = THREE.FrontSide;
+      const n = o.material.name;
+      if (n === 'team' || n === 'Mat_TeamColor') mats.team = o.material;
+      if (n === 'team_trim') mats.trim = o.material;
+    }
+  });
+  root.userData.mats = mats;
+  return root;
+}
+
+function applyFaction(name) {
+  faction = name;
+  const f = FACTIONS[name];
+  Object.values(wraps).forEach(byStar => Object.values(byStar).forEach(w => {
+    const m = w.children[0].userData.mats;
+    if (m && m.team) m.team.color.set(f.team);
+    if (m && m.trim) m.trim.color.set(f.trim);
+  }));
+  document.querySelectorAll('#fac button').forEach(b =>
+    b.classList.toggle('on', b.dataset.fac === name));
+  spec();
+}
+
+function trisOf(root) {
+  let n = 0;
+  root.traverse(o => {
+    if (o.isMesh && o.geometry.index) n += o.geometry.index.count / 3;
+  });
+  return Math.round(n);
+}
+
+function place() {
+  const all = [1, 2, 3];
+  Object.entries(wraps).forEach(([k, byStar]) => {
+    all.forEach(s => {
+      const w = byStar[s];
+      if (!w) return;
+      w.visible = (k === bid) && ((mode === 'single') ? s === current : true);
+      if (mode === 'compare' && k === bid) {
+        w.position.set(-(s - 2) * 1.32, 0, 0);   // 相机在 −Z，X 反着放才是 1→2→3
+        w.scale.setScalar(0.98);
+      } else {
+        w.position.set(0, 0, 0);
+        w.scale.setScalar(1);
+      }
+    });
+  });
+  const box = new THREE.Box3();
+  all.forEach(s => {
+    const w = wraps[bid][s];
+    if (w && w.visible) box.expandByObject(w);
+  });
+  if (box.isEmpty()) return;
+  const size = box.getSize(new THREE.Vector3());
+  const center = box.getCenter(new THREE.Vector3());
+  controls.target.set(center.x, Math.max(0.44, size.y * 0.47), center.z);
+  const d = mode === 'compare' ? 6.1 : 3.75;
+  const dir = new THREE.Vector3(0.62, 0.62, -0.72).normalize();
+  camera.position.copy(new THREE.Vector3(center.x, 0, center.z)).addScaledVector(dir, d);
+  camera.updateProjectionMatrix();
+}
+
+function spec() {
+  const B = BUILDINGS[bid];
+  const el = document.getElementById('spec');
+  if (mode === 'compare') {
+    el.innerHTML = [1, 2, 3].map(s => {
+      const i = B.info[s];
+      return `<div><b>★${s} ${i.name}</b>　<span class="num">${i.h}</span>　<span class="num">${i.tris}</span> tri</div>`;
+    }).join('') + `<div style="margin-top:8px;opacity:.75">同格 1.0 × 1.0 m · 共用一套零件</div>`;
+    return;
+  }
+  const i = B.info[current];
+  el.innerHTML = `
+    <div><b>★${current} ${i.name}</b></div>
+    <div>高度　<span class="num">${i.h}</span></div>
+    <div>三角面　<span class="num">${i.tris}</span></div>
+    <div>队色　<span class="num">${i.team}%</span>　<span style="opacity:.7">${faction}</span></div>
+    <div>材质槽　<span class="num">${B.slots}</span></div>
+    <div style="max-width:230px;margin-left:auto;opacity:.8;margin-top:6px">${i.desc}</div>`;
+}
+
+function paintStatic() {
+  const B = BUILDINGS[bid];
+  document.getElementById('h1').textContent = `${B.cn} · ${B.en}`;
+  document.getElementById('note').textContent = '底座 1.000 × 1.000 × 0.080 m　主体 ≤ 0.960 m';
+  document.getElementById('pal').innerHTML =
+    B.pal.map(([c, n]) => `<span class="sw" style="background:${c}" title="${n}"></span>`).join('') +
+    `<span class="lb">主体色板</span>`;
+  document.querySelectorAll('#pick button').forEach(b =>
+    b.classList.toggle('on', b.dataset.bid === bid));
+}
+
+function setWire(v) {
+  wire = v;
+  Object.values(wraps).forEach(byStar => Object.values(byStar).forEach(w => {
+    w.traverse(o => { if (o.isMesh) o.material.wireframe = wire; });
+  }));
+  document.getElementById('btn-wire').classList.toggle('on', wire);
+}
+
+// ---------------------------------------------------------------- 加载
+const jobs = [];
+Object.entries(BUILDINGS).forEach(([k, B]) => {
+  [1, 2, 3].forEach(s => {
+    jobs.push(new Promise((res, rej) => {
+      loader.load(B.dir + B.file(s), g => res([k, s, g.scene]), undefined, rej);
+    }));
+  });
+});
+
+Promise.all(jobs).then(list => {
+  list.forEach(([k, s, root]) => {
+    prep(root);
+    const w = new THREE.Group();
+    w.add(root);
+    if (!wraps[k]) wraps[k] = {};
+    wraps[k][s] = w;
+    scene.add(w);
+    BUILDINGS[k].info[s].tris = trisOf(root);
+  });
+  const q = new URLSearchParams(location.search);
+  if (q.get('b') && BUILDINGS[q.get('b')]) bid = q.get('b');
+  if (q.get('m') === 'compare') {
+    mode = 'compare';
+    document.querySelectorAll('.bar button[data-star]').forEach(x => x.classList.remove('on'));
+    document.querySelector('.bar button[data-mode]').classList.add('on');
+  } else if (q.get('s')) {
+    current = +q.get('s');
+    document.querySelectorAll('.bar button[data-star]').forEach(x =>
+      x.classList.toggle('on', +x.dataset.star === current));
+  }
+  if (q.get('f') && FACTIONS[q.get('f')]) faction = q.get('f');
+  paintStatic(); place(); applyFaction(faction); spec();
+  document.getElementById('load').style.opacity = 0;
+  setTimeout(() => document.getElementById('load').remove(), 500);
+}).catch(e => {
+  document.getElementById('load').textContent = '载入失败：' + e;
+});
+
+// ---------------------------------------------------------------- 交互
+document.querySelectorAll('.bar button[data-star]').forEach(b => {
+  b.onclick = () => {
+    document.querySelectorAll('.bar button[data-star]').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    document.querySelector('.bar button[data-mode]').classList.remove('on');
+    current = +b.dataset.star;
+    mode = 'single';
+    place(); spec();
+  };
+});
+document.querySelector('.bar button[data-mode]').onclick = (e) => {
+  document.querySelectorAll('.bar button[data-star]').forEach(x => x.classList.remove('on'));
+  e.target.classList.add('on');
+  mode = 'compare';
+  place(); spec();
+};
+document.getElementById('btn-wire').onclick = () => setWire(!wire);
+let spin = false;
+document.getElementById('btn-spin').onclick = (e) => {
+  spin = !spin;
+  e.target.classList.toggle('on', spin);
+};
+
+const facBar = document.getElementById('fac');
+facBar.innerHTML = `<span class="lb">队色</span>` + Object.entries(FACTIONS).map(([n, f]) =>
+  `<button data-fac="${n}"><i style="background:${f.team}"></i>${n}</button>`).join('');
+facBar.querySelectorAll('button').forEach(b => {
+  b.onclick = () => applyFaction(b.dataset.fac);
+});
+
+const pick = document.getElementById('pick');
+Object.entries(BUILDINGS).forEach(([k, B]) => {
+  const btn = document.createElement('button');
+  btn.dataset.bid = k;
+  btn.textContent = B.cn;
+  btn.onclick = () => {
+    bid = k;
+    paintStatic(); place(); spec();
+  };
+  pick.appendChild(btn);
+});
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+const clock = new THREE.Clock();
+let acc = 0;
+function loop() {
+  requestAnimationFrame(loop);
+  const dt = clock.getDelta();
+  if (spin && !controls._dragging) {
+    acc += dt;
+    const t = acc * 0.16;
+    Object.values(wraps).forEach(byStar => Object.values(byStar).forEach(w => {
+      if (w.visible) w.rotation.y = Math.sin(t) * 0.26;
+    }));
+  }
+  controls.update();
+  renderer.render(scene, camera);
+}
+loop();
+
+controls.addEventListener('start', () => { controls._dragging = true; });
+controls.addEventListener('end', () => { controls._dragging = false; });
+</script>
+</body>
+</html>

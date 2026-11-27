@@ -16,3 +16,12 @@ venv/
 # 临时与日志
 *.tmp
 *.log
+
+# 本项目中间产物 / 缓存 / 本地预览生成物
+.workbuddy/
+docs/_tmp/
+文档/_tmp/
+build/_bundle/
+build/__pycache__/
+*.blend1
+*.blend2

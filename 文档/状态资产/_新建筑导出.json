@@ -1,0 +1,256 @@
+{
+  "buildings": {
+    "初级帐篷": {
+      "asset": "初级帐篷",
+      "note": "初级帐篷 · 6 边锥 + 中柱 + 4 根斜拉绳",
+      "variants": {
+        "初级帐篷_低模.glb": {
+          "meshes": 9,
+          "tris": 748,
+          "materials": [
+            "canvas",
+            "canvas_dark",
+            "glow",
+            "iron",
+            "site_rope",
+            "team",
+            "team_trim",
+            "wood_dark",
+            "wood_warm"
+          ],
+          "mat_count": 9,
+          "bbox_min": [
+            -1.783,
+            -1.563,
+            -0.03
+          ],
+          "bbox_max": [
+            1.783,
+            1.73,
+            2.3
+          ],
+          "size": [
+            3.566,
+            3.293,
+            2.33
+          ],
+          "grounded": true,
+          "front_ok": true,
+          "file": "初级帐篷_低模.glb",
+          "bytes": 47920,
+          "budget": 24000,
+          "over_budget": false,
+          "materials_ok": true
+        },
+        "初级帐篷.glb": {
+          "meshes": 9,
+          "tris": 6500,
+          "materials": [
+            "canvas",
+            "canvas_dark",
+            "glow",
+            "iron",
+            "site_rope",
+            "team",
+            "team_trim",
+            "wood_dark",
+            "wood_warm"
+          ],
+          "mat_count": 9,
+          "bbox_min": [
+            -1.783,
+            -1.563,
+            -0.03
+          ],
+          "bbox_max": [
+            1.783,
+            1.73,
+            2.3
+          ],
+          "size": [
+            3.566,
+            3.293,
+            2.33
+          ],
+          "grounded": true,
+          "front_ok": true,
+          "file": "初级帐篷.glb",
+          "bytes": 206412,
+          "budget": 70000,
+          "over_budget": false,
+          "materials_ok": true
+        }
+      },
+      "ok": true
+    },
+    "中等帐篷": {
+      "asset": "中等帐篷",
+      "note": "中等帐篷 · 两面坡脊帐 + 前檐披 + 6 根地钉",
+      "variants": {
+        "中等帐篷_低模.glb": {
+          "meshes": 9,
+          "tris": 1080,
+          "materials": [
+            "canvas",
+            "canvas_dark",
+            "glow",
+            "iron",
+            "site_rope",
+            "team",
+            "team_trim",
+            "wood_dark",
+            "wood_warm"
+          ],
+          "mat_count": 9,
+          "bbox_min": [
+            -2.383,
+            -1.804,
+            -0.03
+          ],
+          "bbox_max": [
+            2.383,
+            2.634,
+            2.962
+          ],
+          "size": [
+            4.766,
+            4.438,
+            2.992
+          ],
+          "grounded": true,
+          "front_ok": true,
+          "file": "中等帐篷_低模.glb",
+          "bytes": 66868,
+          "budget": 24000,
+          "over_budget": false,
+          "materials_ok": true
+        },
+        "中等帐篷.glb": {
+          "meshes": 9,
+          "tris": 4532,
+          "materials": [
+            "canvas",
+            "canvas_dark",
+            "glow",
+            "iron",
+            "site_rope",
+            "team",
+            "team_trim",
+            "wood_dark",
+            "wood_warm"
+          ],
+          "mat_count": 9,
+          "bbox_min": [
+            -2.383,
+            -1.804,
+            -0.03
+          ],
+          "bbox_max": [
+            2.383,
+            2.632,
+            2.962
+          ],
+          "size": [
+            4.766,
+            4.436,
+            2.992
+          ],
+          "grounded": true,
+          "front_ok": true,
+          "file": "中等帐篷.glb",
+          "bytes": 215448,
+          "budget": 70000,
+          "over_budget": false,
+          "materials_ok": true
+        }
+      },
+      "ok": true
+    },
+    "豪华帐篷": {
+      "asset": "豪华帐篷",
+      "note": "豪华帐篷 · 木地台 + 四坡顶 + 内衬 + 双旗杆",
+      "variants": {
+        "豪华帐篷_低模.glb": {
+          "meshes": 10,
+          "tris": 1508,
+          "materials": [
+            "canvas",
+            "canvas_dark",
+            "glow",
+            "iron",
+            "site_rope",
+            "team",
+            "team_trim",
+            "wood_dark",
+            "wood_mid",
+            "wood_warm"
+          ],
+          "mat_count": 10,
+          "bbox_min": [
+            -3.263,
+            -2.863,
+            -0.03
+          ],
+          "bbox_max": [
+            3.263,
+            2.863,
+            3.858
+          ],
+          "size": [
+            6.526,
+            5.726,
+            3.888
+          ],
+          "grounded": true,
+          "front_ok": true,
+          "file": "豪华帐篷_低模.glb",
+          "bytes": 91688,
+          "budget": 24000,
+          "over_budget": false,
+          "materials_ok": true
+        },
+        "豪华帐篷.glb": {
+          "meshes": 10,
+          "tris": 7424,
+          "materials": [
+            "canvas",
+            "canvas_dark",
+            "glow",
+            "iron",
+            "site_rope",
+            "team",
+            "team_trim",
+            "wood_dark",
+            "wood_mid",
+            "wood_warm"
+          ],
+          "mat_count": 10,
+          "bbox_min": [
+            -3.263,
+            -2.863,
+            -0.03
+          ],
+          "bbox_max": [
+            3.263,
+            2.863,
+            3.858
+          ],
+          "size": [
+            6.526,
+            5.726,
+            3.888
+          ],
+          "grounded": true,
+          "front_ok": true,
+          "file": "豪华帐篷.glb",
+          "bytes": 324004,
+          "budget": 70000,
+          "over_budget": false,
+          "materials_ok": true
+        }
+      },
+      "ok": true
+    }
+  },
+  "ok": true
+}

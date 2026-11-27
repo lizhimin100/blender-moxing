@@ -1,0 +1,92 @@
+{
+  "id": "兵营",
+  "src": "兵营_手游_近.glb",
+  "footprint": [
+    11.08,
+    14.73
+  ],
+  "height": 11.6,
+  "yaw": 0,
+  "attach": {
+    "hoist": [
+      -6.09,
+      -4.64,
+      3.016
+    ],
+    "banner": [
+      -5.84,
+      10.69,
+      0.0
+    ]
+  },
+  "body": [
+    -5.54,
+    5.54,
+    -4.34,
+    10.39
+  ],
+  "bbox_lo": [
+    -5.54,
+    -4.34,
+    0.0
+  ],
+  "bbox_hi": [
+    5.54,
+    10.39,
+    11.6
+  ],
+  "z0": 1.0,
+  "z_rev1": 11.6,
+  "rev": 2.92,
+  "t_rev0": 0.46,
+  "t_rev1": 3.38,
+  "t_dis0": 3.64,
+  "t_dis1": 4.14,
+  "t_clean": 4.2,
+  "t_end": 5.15,
+  "lifts": [
+    0.591,
+    1.197,
+    1.803,
+    2.409
+  ],
+  "n_lifts": 4,
+  "reveal": {
+    "axis": "z",
+    "z0": 1.0,
+    "z1": 11.6,
+    "t0": 0.46,
+    "t1": 3.38
+  },
+  "body_size": [
+    11.08,
+    14.73,
+    11.6
+  ],
+  "n_bands": 0,
+  "file": "兵营_建造.glb",
+  "bytes": 1760488,
+  "detail": "low",
+  "src_tris": 17440,
+  "src_verts": 36072,
+  "check": {
+    "BODY_RIG": 0,
+    "body_parent": null,
+    "body_mod": [],
+    "body_anim": false,
+    "body_tris": 17440,
+    "body_verts": 36072,
+    "src_tris": 17440,
+    "src_verts": 36072,
+    "BODY_TRIS": 0,
+    "BVH_CROSS": 0,
+    "BOX_TALL": 0,
+    "scaf_top": 9.35,
+    "SCAF_OVER": 0.0,
+    "reveal_z0": 1.0,
+    "reveal_z1": 11.6,
+    "tri_body": 17440,
+    "tri_site": 4324,
+    "ok": true
+  }
+}

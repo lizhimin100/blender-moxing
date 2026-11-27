@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>建筑预览 · 铁誓军团</title>
+<style>
+  :root { --bg:#0f1115; --panel:#15181f; --line:#262b36; --txt:#e8eaef; --dim:#8b93a3; --accent:#c9a227; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; height:100%; background:var(--bg); color:var(--txt); overflow:hidden;
+    font:13px/1.6 "Inter","PingFang SC","Microsoft YaHei",system-ui,sans-serif; }
+  #view { position:fixed; inset:0; }
+  #bar { position:fixed; left:16px; top:16px; z-index:5; background:rgba(21,24,31,.92);
+    border:1px solid var(--line); border-radius:8px; padding:10px 12px; backdrop-filter:blur(6px); }
+  #bar h1 { margin:0 0 8px; font-size:12px; letter-spacing:.12em; color:var(--accent); font-weight:600; }
+  .row { display:flex; gap:6px; margin-bottom:6px; }
+  .row:last-child { margin-bottom:0; }
+  button { background:#1b1f28; color:var(--txt); border:1px solid var(--line); border-radius:5px;
+    padding:6px 10px; font:inherit; font-size:12px; cursor:pointer; }
+  button:hover { border-color:#3b4457; background:#1f2431; }
+  button.on { border-color:var(--accent); background:#221f14; color:#f0d98a; }
+  #hud { position:fixed; left:16px; bottom:16px; z-index:5; color:var(--dim); font-size:11px;
+    font-family:ui-monospace,Consolas,monospace; background:rgba(21,24,31,.85);
+    border:1px solid var(--line); border-radius:6px; padding:6px 9px; white-space:pre; }
+  #tip { position:fixed; right:16px; bottom:16px; z-index:5; color:var(--dim); font-size:11px; }
+</style>
+</head>
+<body>
+<div id="view"></div>
+
+<div id="bar">
+  <h1>建筑预览</h1>
+  <div class="row" id="bs">
+    <button data-m="bs_low" class="on">铁匠铺 · 手游近</button>
+    <button data-m="bs_mid">手游中</button>
+    <button data-m="bs_far">手游远</button>
+    <button data-m="bs_hi">细分</button>
+  </div>
+  <div class="row" id="br">
+    <button data-m="br_low">兵营 · 低模</button>
+    <button data-m="br_hi">兵营 · 细分</button>
+  </div>
+  <div class="row" id="th">
+    <button data-m="th_low">城镇大厅 · 手游近</button>
+    <button data-m="th_mid">手游中</button>
+    <button data-m="th_far">手游远</button>
+    <button data-m="th_hi">细分</button>
+  </div>
+  <div class="row" id="wt">
+    <button data-m="wt_low">哨塔 · 手游近</button>
+    <button data-m="wt_mid">手游中</button>
+    <button data-m="wt_far">手游远</button>
+    <button data-m="wt_hi">细分</button>
+  </div>
+  <div class="row" id="at">
+    <button data-m="at_low">箭塔 · 手游近</button>
+    <button data-m="at_mid">手游中</button>
+    <button data-m="at_far">手游远</button>
+    <button data-m="at_hi">细分</button>
+    <button data-m="at_lo">低模</button>
+  </div>
+  <div class="row" id="fm">
+    <button data-m="fm_low">农场 · 手游近</button>
+    <button data-m="fm_mid">手游中</button>
+    <button data-m="fm_far">手游远</button>
+    <button data-m="fm_hi">细分</button>
+  </div>
+  <div class="row" id="lm">
+    <button data-m="lm_low">伐木场 · 手游近</button>
+    <button data-m="lm_mid">手游中</button>
+    <button data-m="lm_far">手游远</button>
+    <button data-m="lm_hi">细分</button>
+  </div>
+  <div class="row" id="ms">
+    <button data-m="ms_low">神秘圣地 · 手游近</button>
+    <button data-m="ms_mid">手游中</button>
+    <button data-m="ms_far">手游远</button>
+    <button data-m="ms_hi">细分</button>
+    <button data-m="ms_lo">低模</button>
+   </div>
+  <div class="row" id="sw">
+    <button data-m="sw_low">蒸汽车坊 · 手游近</button>
+    <button data-m="sw_mid">手游中</button>
+    <button data-m="sw_far">手游远</button>
+    <button data-m="sw_hi">细分</button>
+    <button data-m="sw_lo">低模</button>
+  </div>
+  <div class="row">
+    <button data-m="th_up1">城镇大厅 · 升级1</button>
+  </div>
+  <div class="row">
+    <button data-m="th_up2">城镇大厅 · 升级2</button>
+  </div>
+  <div class="row">
+    <button data-m="th_train">城镇大厅 · 训练</button>
+  </div>
+  <div class="row">
+    <button data-m="wt_up">哨塔 · 升级</button>
+  </div>
+  <div class="row">
+    <button data-m="br_train">兵营 · 训练</button>
+  </div>
+  <div class="row">
+    <button data-m="lm_res">伐木场 · 科研</button>
+  </div>
+  <div class="row">
+    <button data-m="bs_res">铁匠铺 · 科研</button>
+  </div>
+  <div class="row">
+    <button data-m="ms_train">神秘圣地 · 训练</button>
+  </div>
+  <div class="row">
+    <button data-m="sw_train">蒸汽车坊 · 训练</button>
+  </div>
+  <div class="row">
+    <button data-m="tn1">初级帐篷</button>
+    <button data-m="tn1_up">初级帐篷 · 升级</button>
+  </div>
+  <div class="row">
+    <button data-m="tn2">中等帐篷</button>
+    <button data-m="tn2_up">中等帐篷 · 升级</button>
+  </div>
+  <div class="row">
+    <button data-m="tn3">豪华帐篷</button>
+  </div>
+  <div class="row">
+    <button data-m="kh_mid">二本大厅 · 手游近</button>
+    <button data-m="kh_low">二本大厅 · 低模</button>
+    <button data-m="kh_hi">二本大厅 · 细分</button>
+  </div>
+  <div class="row">
+    <button id="wire">线框</button>
+    <button id="spin">自动旋转</button>
+    <button id="reset">复位视角</button>
+  </div>
+</div>
+
+<div id="hud">载入中…</div>
+<div id="tip">左键旋转 · 右键平移 · 滚轮缩放</div>
+
+<script type="importmap">
+{ "imports": {
+    "three": "./preview/vendor/three.module.js",
+    "three/addons/": "./preview/vendor/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from './preview/vendor/GLTFLoader.js';
+import { OrbitControls } from './preview/vendor/OrbitControls.js';
+
+const MODELS = {
+  bs_low: { file: 'assets/建筑/联盟/铁匠铺/铁匠铺_手游_近.glb', name: '铁匠铺', kind: '手游近景' },
+  bs_mid: { file: 'assets/建筑/联盟/铁匠铺/铁匠铺_手游_中.glb', name: '铁匠铺', kind: '手游中景' },
+  bs_far: { file: 'assets/建筑/联盟/铁匠铺/铁匠铺_手游_远.glb', name: '铁匠铺', kind: '手游远景' },
+  bs_hi:  { file: 'assets/建筑/联盟/铁匠铺/铁匠铺.glb',         name: '铁匠铺', kind: '细分' },
+  br_low: { file: 'assets/建筑/联盟/兵营/兵营_低模.glb',      name: '兵营',   kind: '低模' },
+  br_hi:  { file: 'assets/建筑/联盟/兵营/兵营.glb',          name: '兵营',   kind: '细分' },
+  th_low: { file: 'assets/建筑/联盟/城镇大厅/城镇大厅_手游_近.glb', name: '城镇大厅', kind: '手游近景' },
+  th_mid: { file: 'assets/建筑/联盟/城镇大厅/城镇大厅_手游_中.glb', name: '城镇大厅', kind: '手游中景' },
+  th_far: { file: 'assets/建筑/联盟/城镇大厅/城镇大厅_手游_远.glb', name: '城镇大厅', kind: '手游远景' },
+  th_hi:  { file: 'assets/建筑/联盟/城镇大厅/城镇大厅.glb',        name: '城镇大厅', kind: '细分' },
+  wt_low: { file: 'assets/建筑/联盟/哨塔/哨塔_手游_近.glb', name: '哨塔', kind: '手游近景' },
+  wt_mid: { file: 'assets/建筑/联盟/哨塔/哨塔_手游_中.glb', name: '哨塔', kind: '手游中景' },
+  wt_far: { file: 'assets/建筑/联盟/哨塔/哨塔_手游_远.glb', name: '哨塔', kind: '手游远景' },
+  wt_hi:  { file: 'assets/建筑/联盟/哨塔/哨塔.glb',        name: '哨塔', kind: '细分' },
+  at_low: { file: 'assets/建筑/联盟/箭塔/箭塔_手游_近.glb', name: '箭塔', kind: '手游近景' },
+  at_mid: { file: 'assets/建筑/联盟/箭塔/箭塔_手游_中.glb', name: '箭塔', kind: '手游中景' },
+  at_far: { file: 'assets/建筑/联盟/箭塔/箭塔_手游_远.glb', name: '箭塔', kind: '手游远景' },
+  at_hi:  { file: 'assets/建筑/联盟/箭塔/箭塔.glb',        name: '箭塔', kind: '细分' },
+  at_lo:  { file: 'assets/建筑/联盟/箭塔/箭塔_低模.glb',    name: '箭塔', kind: '低模' },
+  fm_low: { file: 'assets/建筑/联盟/农场/农场_手游_近.glb', name: '农场', kind: '手游近景' },
+  fm_mid: { file: 'assets/建筑/联盟/农场/农场_手游_中.glb', name: '农场', kind: '手游中景' },
+  fm_far: { file: 'assets/建筑/联盟/农场/农场_手游_远.glb', name: '农场', kind: '手游远景' },
+  fm_hi:  { file: 'assets/建筑/联盟/农场/农场.glb',        name: '农场', kind: '细分' },
+  lm_low: { file: 'assets/建筑/联盟/伐木场/伐木场_手游_近.glb', name: '伐木场', kind: '手游近景' },
+  lm_mid: { file: 'assets/建筑/联盟/伐木场/伐木场_手游_中.glb', name: '伐木场', kind: '手游中景' },
+  lm_far: { file: 'assets/建筑/联盟/伐木场/伐木场_手游_远.glb', name: '伐木场', kind: '手游远景' },
+  lm_hi:  { file: 'assets/建筑/联盟/伐木场/伐木场.glb',        name: '伐木场', kind: '细分' },
+  lm_lo:  { file: 'assets/建筑/联盟/伐木场/伐木场_低模.glb',    name: '伐木场', kind: '低模' },
+  ms_low: { file: 'assets/建筑/联盟/神秘圣地/神秘圣地_手游_近.glb', name: '神秘圣地', kind: '手游近景' },
+  ms_mid: { file: 'assets/建筑/联盟/神秘圣地/神秘圣地_手游_中.glb', name: '神秘圣地', kind: '手游中景' },
+  ms_far: { file: 'assets/建筑/联盟/神秘圣地/神秘圣地_手游_远.glb', name: '神秘圣地', kind: '手游远景' },
+  ms_hi:  { file: 'assets/建筑/联盟/神秘圣地/神秘圣地.glb',        name: '神秘圣地', kind: '细分' },
+  ms_lo:  { file: 'assets/建筑/联盟/神秘圣地/神秘圣地_低模.glb',    name: '神秘圣地', kind: '低模' },
+  sw_low: { file: 'assets/建筑/联盟/蒸汽车坊/蒸汽车坊_手游_近.glb', name: '蒸汽车坊', kind: '手游近景' },
+  sw_mid: { file: 'assets/建筑/联盟/蒸汽车坊/蒸汽车坊_手游_中.glb', name: '蒸汽车坊', kind: '手游中景' },
+  sw_far: { file: 'assets/建筑/联盟/蒸汽车坊/蒸汽车坊_手游_远.glb', name: '蒸汽车坊', kind: '手游远景' },
+  sw_hi:  { file: 'assets/建筑/联盟/蒸汽车坊/蒸汽车坊.glb',        name: '蒸汽车坊', kind: '细分' },
+  sw_lo:  { file: 'assets/建筑/联盟/蒸汽车坊/蒸汽车坊_低模.glb',    name: '蒸汽车坊', kind: '低模' },
+  fs_low: { file: 'assets/建筑/失落帝国/折壳入口/折壳入口_手游_近.glb', name: '折壳入口', kind: '手游近景' },
+  fs_mid: { file: 'assets/建筑/失落帝国/折壳入口/折壳入口_手游_中.glb', name: '折壳入口', kind: '手游中景' },
+  fs_far: { file: 'assets/建筑/失落帝国/折壳入口/折壳入口_手游_远.glb', name: '折壳入口', kind: '手游远景' },
+  fs_hi:  { file: 'assets/建筑/失落帝国/折壳入口/折壳入口.glb',        name: '折壳入口', kind: '细分' },
+  fs_lo:  { file: 'assets/建筑/失落帝国/折壳入口/折壳入口_低模.glb',    name: '折壳入口', kind: '低模' },
+  th_up1: { file: 'assets/建筑/联盟/城镇大厅/城镇大厅_升级1.glb', name: '城镇大厅_升级1', kind: '升级态 · 一本→二本' },
+  th_up2: { file: 'assets/建筑/联盟/城镇大厅/城镇大厅_升级2.glb', name: '城镇大厅_升级2', kind: '升级态 · 二本→三本' },
+  th_train: { file: 'assets/建筑/联盟/城镇大厅/城镇大厅_训练.glb', name: '城镇大厅_训练', kind: '训练态 · 门开' },
+  wt_up: { file: 'assets/建筑/联盟/哨塔/哨塔_升级.glb', name: '哨塔_升级', kind: '升级态 · 通用' },
+  br_train: { file: 'assets/建筑/联盟/兵营/兵营_训练.glb', name: '兵营_训练', kind: '训练态 · 武器架点亮' },
+  lm_res: { file: 'assets/建筑/联盟/伐木场/伐木场_科研.glb', name: '伐木场_科研', kind: '科研态 · research clip' },
+  bs_res: { file: 'assets/建筑/联盟/铁匠铺/铁匠铺_科研.glb', name: '铁匠铺_科研', kind: '科研态 · research clip' },
+  ms_train: { file: 'assets/建筑/联盟/神秘圣地/神秘圣地_训练.glb', name: '神秘圣地_训练', kind: '训练态 · 门前光' },
+  sw_train: { file: 'assets/建筑/联盟/蒸汽车坊/蒸汽车坊_训练.glb', name: '蒸汽车坊_训练', kind: '训练态 · 门开' },
+  tn1: { file: 'assets/建筑/联盟/初级帐篷/初级帐篷.glb', name: '初级帐篷', kind: '一级 · 单杆单布' },
+  tn1_up: { file: 'assets/建筑/联盟/初级帐篷/初级帐篷_升级.glb', name: '初级帐篷_升级', kind: '升级态' },
+  tn2: { file: 'assets/建筑/联盟/中等帐篷/中等帐篷.glb', name: '中等帐篷', kind: '二级 · 脊帐双层' },
+  tn2_up: { file: 'assets/建筑/联盟/中等帐篷/中等帐篷_升级.glb', name: '中等帐篷_升级', kind: '升级态' },
+  tn3: { file: 'assets/建筑/联盟/豪华帐篷/豪华帐篷.glb', name: '豪华帐篷', kind: '三级 · 四柱三层' },
+  kh_mid: { file: 'assets/建筑/联盟/城镇大厅二本/城镇大厅二本_手游_近.glb', name: '城镇大厅二本', kind: '手游近景' },
+  kh_low: { file: 'assets/建筑/联盟/城镇大厅二本/城镇大厅二本_低模.glb', name: '城镇大厅二本', kind: '低模' },
+  kh_hi: { file: 'assets/建筑/联盟/城镇大厅二本/城镇大厅二本.glb', name: '城镇大厅二本', kind: '细分' },
+};
+
+const hudEl = document.getElementById('hud');
+function fatal(msg) {
+  hudEl.textContent = '⚠ ' + msg;
+  hudEl.style.color = '#ff9c8a';
+}
+addEventListener('error', (e) => fatal(e.message || '脚本错误'));
+addEventListener('unhandledrejection', (e) => fatal((e.reason && e.reason.message) || 'Promise 拒绝'));
+
+const Q = new URLSearchParams(location.search);
+let current = MODELS[Q.get('m')] ? Q.get('m') : 'bs_low';
+
+// ---------- 渲染器 ----------
+const host = document.getElementById('view');
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+host.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#10131a');
+scene.fog = new THREE.Fog('#10131a', 46, 96);
+
+const camera = new THREE.PerspectiveCamera(38, innerWidth / innerHeight, 0.1, 400);
+camera.position.set(14, 12, 18);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.06;
+controls.maxPolarAngle = Math.PI * 0.495;
+controls.minDistance = 3;
+controls.maxDistance = 70;
+
+// ---------- 灯光（与出图脚本同一思路：暖主光 + 冷补光 + 半球环境）----------
+scene.add(new THREE.HemisphereLight('#a9c0e0', '#4a4033', 1.0));
+const key = new THREE.DirectionalLight('#fff2dc', 2.6);
+key.position.set(-16, 24, -16);
+key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048);
+const sc = 16;
+Object.assign(key.shadow.camera, { left: -sc, right: sc, top: sc, bottom: -sc, near: 1, far: 90 });
+key.shadow.camera.updateProjectionMatrix();
+key.shadow.bias = -0.0006;
+scene.add(key);
+const fill = new THREE.DirectionalLight('#9fb8ff', 0.75);
+fill.position.set(18, 10, 14);
+scene.add(fill);
+const rim = new THREE.DirectionalLight('#ffd9a8', 0.5);
+rim.position.set(4, 7, 20);
+scene.add(rim);
+
+// ---------- 地面 ----------
+const ground = new THREE.Mesh(
+  new THREE.CircleGeometry(60, 64),
+  new THREE.MeshStandardMaterial({ color: '#3b4034', roughness: 1, metalness: 0 })
+);
+ground.rotation.x = -Math.PI / 2;
+ground.receiveShadow = true;
+scene.add(ground);
+const grid = new THREE.GridHelper(60, 60, '#3a4352', '#2a3040');
+grid.position.y = 0.002;
+grid.material.transparent = true;
+grid.material.opacity = 0.35;
+scene.add(grid);
+
+// ---------- 载入 ----------
+const loader = new GLTFLoader();
+let root = null;
+let box0 = new THREE.Box3();
+const hud = document.getElementById('hud');
+const wireBtns = document.getElementById('wire');
+let wireOn = false;
+
+function frame(obj) {
+  const box = new THREE.Box3().setFromObject(obj);
+  const size = box.getSize(new THREE.Vector3());
+  const ctr = box.getCenter(new THREE.Vector3());
+  const r = Math.max(size.x, size.y, size.z) * 0.5;
+  const dist = r / Math.tan((camera.fov * Math.PI) / 360) * 1.55;
+  controls.target.copy(ctr);
+  camera.position.set(ctr.x - dist * 0.62, ctr.y + dist * 0.55, ctr.z - dist * 0.72);
+  camera.near = Math.max(0.1, dist / 120);
+  camera.far = dist * 12;
+  camera.updateProjectionMatrix();
+  controls.update();
+}
+
+function countTris(obj) {
+  let t = 0;
+  obj.traverse((o) => {
+    if (o.isMesh && o.geometry) {
+      const g = o.geometry;
+      t += g.index ? g.index.count / 3 : g.attributes.position.count / 3;
+    }
+  });
+  return Math.round(t);
+}
+
+async function load(key) {
+  if (!MODELS[key]) return;
+  current = key;
+  document.querySelectorAll('#bar button[data-m]').forEach((b) =>
+    b.classList.toggle('on', b.dataset.m === key)
+  );
+  const m = MODELS[key];
+  hud.textContent = `载入 ${m.name} · ${m.kind} …`;
+  if (root) { scene.remove(root); disposeTree(root); root = null; }
+  try {
+    const gltf = await loader.loadAsync(encodeURI(m.file));
+    root = gltf.scene;
+    root.traverse((o) => {
+      if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; }
+    });
+    scene.add(root);
+    if (!box0.isEmpty() === false) box0 = new THREE.Box3().setFromObject(root);
+    frame(root);
+    const tris = countTris(root);
+    const size = new THREE.Box3().setFromObject(root).getSize(new THREE.Vector3());
+    hud.textContent =
+      `${m.name} · ${m.kind}\n` +
+      `${tris.toLocaleString()} 三角面\n` +
+      `${size.x.toFixed(2)} × ${size.z.toFixed(2)} × ${size.y.toFixed(2)} m`;
+    history.replaceState(null, '', `?m=${key}`);
+  } catch (e) {
+    hud.textContent = '载入失败：' + (e?.message || e) + '\n（必须用 HTTP 打开，不能双击）';
+    console.error(e);
+  }
+}
+
+function disposeTree(obj) {
+  obj.traverse((o) => {
+    if (o.isMesh) {
+      o.geometry?.dispose?.();
+      const mats = Array.isArray(o.material) ? o.material : [o.material];
+      mats.forEach((mm) => mm?.dispose?.());
+    }
+  });
+}
+
+document.querySelectorAll('#bar button[data-m]').forEach((b) => {
+  b.onclick = () => load(b.dataset.m);
+});
+wireBtns.onclick = () => {
+  wireOn = !wireOn;
+  wireBtns.classList.toggle('on', wireOn);
+  root?.traverse((o) => { if (o.isMesh && o.material) o.material.wireframe = wireOn; });
+};
+let spin = false;
+document.getElementById('spin').onclick = (e) => {
+  spin = !spin;
+  e.currentTarget.classList.toggle('on', spin);
+};
+document.getElementById('reset').onclick = () => root && frame(root);
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+renderer.setAnimationLoop(() => {
+  if (spin && root) root.rotation.y += 0.004;
+  controls.update();
+  renderer.render(scene, camera);
+});
+
+load(current);
+</script>
+</body>
+</html>

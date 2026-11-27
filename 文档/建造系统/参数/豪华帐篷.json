@@ -1,0 +1,89 @@
+{
+  "id": "豪华帐篷",
+  "src": "豪华帐篷_手游_近.glb",
+  "footprint": [
+    6.526,
+    5.726
+  ],
+  "height": 3.858,
+  "yaw": 0,
+  "attach": {
+    "hoist": [
+      -3.813,
+      -3.163,
+      1.003
+    ],
+    "banner": [
+      -3.563,
+      3.163,
+      0.0
+    ]
+  },
+  "body": [
+    -3.263,
+    3.263,
+    -2.863,
+    2.863
+  ],
+  "bbox_lo": [
+    -3.263,
+    -2.863,
+    -0.03
+  ],
+  "bbox_hi": [
+    3.263,
+    2.863,
+    3.858
+  ],
+  "z0": 0.45,
+  "z_rev1": 3.858,
+  "rev": 2.339,
+  "t_rev0": 0.46,
+  "t_rev1": 2.799,
+  "t_dis0": 3.059,
+  "t_dis1": 3.289,
+  "t_clean": 3.349,
+  "t_end": 4.299,
+  "lifts": [
+    1.461
+  ],
+  "n_lifts": 1,
+  "reveal": {
+    "axis": "z",
+    "z0": 0.45,
+    "z1": 3.858,
+    "t0": 0.46,
+    "t1": 2.799
+  },
+  "body_size": [
+    6.526,
+    5.726,
+    3.888
+  ],
+  "n_bands": 0,
+  "file": "豪华帐篷_建造.glb",
+  "bytes": 420004,
+  "detail": "low",
+  "src_tris": 1508,
+  "src_verts": 3072,
+  "check": {
+    "BODY_RIG": 0,
+    "body_parent": null,
+    "body_mod": [],
+    "body_anim": false,
+    "body_tris": 1508,
+    "body_verts": 3072,
+    "src_tris": 1508,
+    "src_verts": 3072,
+    "BODY_TRIS": 0,
+    "BVH_CROSS": 0,
+    "BOX_TALL": 0,
+    "scaf_top": 2.75,
+    "SCAF_OVER": 0.0,
+    "reveal_z0": 0.45,
+    "reveal_z1": 3.858,
+    "tri_body": 1508,
+    "tri_site": 2740,
+    "ok": true
+  }
+}

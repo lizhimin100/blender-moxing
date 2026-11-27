@@ -1,0 +1,42 @@
+{
+  "file": "兵营_训练.glb",
+  "bytes": 1296764,
+  "meshes": 4,
+  "tris": 17692,
+  "materials": [
+    "team",
+    "team_trim",
+    "主体",
+    "自发光"
+  ],
+  "mat_count": 4,
+  "bbox_min": [
+    -5.54,
+    -4.34,
+    0.0
+  ],
+  "bbox_max": [
+    5.54,
+    10.39,
+    11.6
+  ],
+  "size": [
+    11.08,
+    14.73,
+    11.6
+  ],
+  "grounded": true,
+  "zmin": 0.0,
+  "front_ok": true,
+  "mats_ok": true,
+  "tris_ok": true,
+  "skins": 0,
+  "animations": [],
+  "static_ok": true,
+  "ok": true,
+  "asset_name": "兵营_训练",
+  "kind": "训练态",
+  "note": "门开 104°、武器架点亮；队色与旗由引擎侧切换",
+  "parts": 670,
+  "fx_parts": 21
+}

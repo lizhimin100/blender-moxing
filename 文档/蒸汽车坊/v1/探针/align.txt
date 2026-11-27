@@ -1,0 +1,382 @@
+ITEMS 707
+=== CLIP_CROSS 0 ===
+=== CLIP_INNER 1407 (前 24) ===
+   4  yard_soil                  <-> yard_core
+   4  yard_soil                  <-> yard_apron
+   6  yard_soil                  <-> yard_curb
+   6  yard_soil                  <-> yard_curb.001
+   4  yard_soil                  <-> yard_rubble
+   4  yard_soil                  <-> yard_rubble.001
+   4  yard_soil                  <-> yard_rubble.002
+   4  yard_soil                  <-> yard_rubble.003
+   4  yard_soil                  <-> yard_rubble.004
+   4  yard_soil                  <-> yard_rubble.005
+   4  yard_soil                  <-> yard_rubble.006
+   4  yard_soil                  <-> tuft
+   4  yard_soil                  <-> tuft.001
+   4  yard_soil                  <-> tuft.002
+   4  yard_soil                  <-> tuft.003
+   4  yard_soil                  <-> tuft.004
+   4  yard_soil                  <-> tuft.005
+   4  yard_soil                  <-> tuft.006
+   4  yard_soil                  <-> tuft.007
+   4  yard_soil                  <-> hall_plinth
+   4  yard_soil                  <-> back_ramp
+   4  yard_soil                  <-> ann_plinth
+   4  yard_soil                  <-> chim_base
+   4  yard_soil                  <-> prop_bench_leg
+=== CONTAIN 106 ===
+   yard_rubble.002             in  hall_plinth
+   tuft.006                    in  prop_bunker
+   tuft.007                    in  prop_bunker
+   door_leaf2                  in  hall_wall_f
+   door_leaf2_trim             in  hall_wall_f
+   door_leaf2_trim.001         in  hall_wall_f
+   door_leaf2_frame            in  hall_wall_f
+   door_leaf2_frame.001        in  hall_wall_f
+   door_leaf2_frame.002        in  hall_wall_f
+   door_leaf2_frame.003        in  hall_wall_f
+   door_leaf2_frame.004        in  hall_wall_f
+   door_leaf2_frame.005        in  hall_wall_f
+   her_leaf_edge               in  hall_wall_f
+   her_leaf_rim                in  hall_wall_f
+   her_leaf_field              in  hall_wall_f
+   her_leaf_band               in  hall_wall_f
+   her_leaf_spike0             in  hall_wall_f
+   her_leaf_spike1             in  hall_wall_f
+   her_leaf_spike2             in  hall_wall_f
+   her_leaf_gem0               in  hall_wall_f
+   her_leaf_gem1               in  hall_wall_f
+   her_leaf_gem2               in  hall_wall_f
+   door_leaf2_frame.002        in  hall_base
+   her_leaf_edge               in  door_leaf2
+   her_leaf_rim                in  door_leaf2
+   her_leaf_field              in  door_leaf2
+   her_leaf_band               in  door_leaf2
+   her_leaf_spike0             in  door_leaf2
+   her_leaf_spike1             in  door_leaf2
+   her_leaf_spike2             in  door_leaf2
+   her_leaf_gem0               in  door_leaf2
+   her_leaf_gem1               in  door_leaf2
+   her_leaf_gem2               in  door_leaf2
+   door_wlamp_glow             in  door_wlamp_body
+   door_chain                  in  door_hoist_br
+   door_chain.001              in  door_hoist_br
+   door_chain.002              in  door_hoist_br
+   door_chain.001              in  door_lamp_body
+   door_lamp_glow              in  door_lamp_body
+   step_edge                   in  step.001
+=== COPLANAR_UP 0 ===
+=== COPLANAR 498 ===
+   yard_soil                  <-> yard_curb                   @(1, -1) d=-6.150
+   yard_soil                  <-> yard_curb.001               @(1, -1) d=-6.150
+   yard_path.002              <-> yard_rut                    @(2, -1) d=+0.220
+   yard_path.003              <-> yard_rut                    @(2, -1) d=+0.220
+   yard_path.005              <-> yard_rut.001                @(2, -1) d=+0.220
+   yard_rubble.002            <-> hall_plinth                 @(2, -1) d=+0.217
+   yard_rubble.006            <-> hall_plinth                 @(2, -1) d=+0.218
+   yard_rubble.006            <-> back_ramp                   @(2, -1) d=+0.218
+   tuft.002                   <-> tuft.003                    @(2, -1) d=+0.220
+   tuft.004                   <-> tuft.005                    @(2, -1) d=+0.220
+   tuft.006                   <-> tuft.007                    @(2, -1) d=+0.220
+   tuft.006                   <-> prop_bunker                 @(2, -1) d=+0.220
+   tuft.007                   <-> prop_bunker                 @(2, -1) d=+0.220
+   hall_plinth                <-> ann_plinth                  @(2, -1) d=+0.220
+   hall_band_p                <-> door_inlay                  @(1, 1) d=+0.270
+   hall_band_p                <-> door_inlay.001              @(1, 1) d=+0.270
+   hall_mark                  <-> hall_wall_f                 @(2, -1) d=+1.300
+   hall_mark                  <-> hall_base                   @(2, -1) d=+1.300
+   hall_mark                  <-> hall_quoin                  @(2, -1) d=+1.300
+   hall_mark.001              <-> hall_wall_f                 @(2, -1) d=+1.300
+   hall_mark.001              <-> hall_base                   @(2, -1) d=+1.300
+   hall_mark.002              <-> hall_wall_f                 @(2, -1) d=+1.300
+   hall_mark.002              <-> hall_base                   @(2, -1) d=+1.300
+   hall_mark.003              <-> hall_wall_f                 @(2, -1) d=+1.300
+   hall_mark.003              <-> hall_base                   @(2, -1) d=+1.300
+   hall_mark.003              <-> hall_post_f.001             @(2, -1) d=+1.300
+   hall_mark.003              <-> door_reveal                 @(2, -1) d=+1.300
+   hall_mark.003              <-> door_plinth                 @(2, -1) d=+1.300
+   hall_mark.004              <-> hall_base                   @(2, -1) d=+1.300
+   hall_mark.005              <-> hall_base                   @(2, -1) d=+1.300
+   hall_mark.006              <-> hall_wall_f                 @(2, -1) d=+1.300
+   hall_mark.006              <-> hall_base                   @(2, -1) d=+1.300
+   hall_mark.006              <-> door_reveal.001             @(2, -1) d=+1.300
+   hall_mark.006              <-> door_inlay.001              @(0, 1) d=+4.360
+   hall_mark.006              <-> door_plinth.001             @(2, -1) d=+1.300
+   hall_mark.007              <-> hall_wall_r                 @(2, -1) d=+1.300
+   hall_mark.007              <-> hall_base                   @(2, -1) d=+1.300
+   hall_mark.007              <-> drv_hatch_frame             @(2, -1) d=+1.300
+   hall_mark.008              <-> hall_wall_r                 @(2, -1) d=+1.300
+   hall_mark.008              <-> hall_base                   @(2, -1) d=+1.300
+   hall_mark.009              <-> hall_wall_r                 @(2, -1) d=+1.300
+   hall_mark.009              <-> hall_base                   @(2, -1) d=+1.300
+   hall_mark.010              <-> hall_wall_r                 @(2, -1) d=+1.300
+   hall_mark.010              <-> hall_base                   @(2, -1) d=+1.300
+   hall_mark.011              <-> hall_wall_r                 @(2, -1) d=+1.300
+   hall_mark.011              <-> hall_base                   @(2, -1) d=+1.300
+   hall_wall_f                <-> hall_base                   @(2, -1) d=+1.300
+   hall_wall_f                <-> hall_quoin                  @(2, -1) d=+1.300
+   hall_wall_f                <-> hall_quoin.001              @(2, -1) d=+1.300
+   hall_wall_f                <-> hall_post_f                 @(2, -1) d=+1.300
+   hall_wall_f                <-> hall_post_f.001             @(2, -1) d=+1.300
+   hall_wall_f                <-> hall_post_f.002             @(2, -1) d=+1.300
+   hall_wall_f                <-> door_reveal                 @(2, -1) d=+1.300
+   hall_wall_f                <-> door_reveal.001             @(0, -1) d=+4.300
+   hall_wall_f                <-> door_plinth                 @(2, -1) d=+1.300
+   hall_wall_f                <-> door_plinth.001             @(2, -1) d=+1.300
+   hall_wall_f                <-> door_leaf_strap             @(1, 1) d=+0.200
+   hall_wall_f                <-> door_leaf_strap.001         @(1, 1) d=+0.200
+   hall_wall_f                <-> door_leaf_strap.002         @(1, 1) d=+0.200
+   hall_wall_f                <-> door_leaf_strap.003         @(1, 1) d=+0.200
+   hall_wall_b                <-> hall_base                   @(2, -1) d=+1.300
+   hall_wall_b                <-> hall_quoin.002              @(2, -1) d=+1.300
+   hall_wall_b                <-> hall_quoin.003              @(2, -1) d=+1.300
+   hall_wall_l                <-> hall_base                   @(2, -1) d=+1.300
+   hall_wall_r                <-> hall_base                   @(2, -1) d=+1.300
+   hall_base                  <-> hall_quoin                  @(2, -1) d=+1.300
+   hall_base                  <-> hall_quoin.001              @(2, -1) d=+1.300
+   hall_base                  <-> hall_quoin.002              @(2, -1) d=+1.300
+   hall_base                  <-> hall_quoin.003              @(2, -1) d=+1.300
+   hall_base                  <-> hall_post_f                 @(2, -1) d=+1.300
+   hall_base                  <-> hall_post_f.001             @(2, -1) d=+1.300
+   hall_base                  <-> hall_post_f.002             @(2, -1) d=+1.300
+   hall_base                  <-> door_back                   @(2, -1) d=+1.300
+   hall_base                  <-> door_reveal                 @(2, -1) d=+1.300
+   hall_base                  <-> door_reveal.001             @(2, -1) d=+1.300
+   hall_base                  <-> door_plinth                 @(2, -1) d=+1.300
+   hall_base                  <-> door_plinth.001             @(2, -1) d=+1.300
+   hall_base                  <-> drv_hatch_frame             @(2, -1) d=+1.300
+   hall_quoin                 <-> hall_plate                  @(0, -1) d=-0.630
+   hall_quoin.001             <-> hall_plate.001              @(0, 1) d=+5.230
+   hall_quoin.002             <-> hall_plate.002              @(0, -1) d=-0.630
+   hall_quoin.003             <-> hall_plate.003              @(0, 1) d=+5.230
+   hall_quoin.003             <-> drv_hatch_frame             @(2, -1) d=+1.302
+   hall_post_f                <-> hall_rail_f                 @(1, -1) d=+0.140
+   hall_post_f.001            <-> hall_rail_f                 @(1, -1) d=+0.140
+   hall_post_f.002            <-> hall_rail_f                 @(1, -1) d=+0.140
+   hall_post_f.002            <-> door_plinth.001             @(2, -1) d=+1.300
+   hall_rail_l                <-> win_l_f                     @(0, -1) d=-0.700
+   hall_rail_l                <-> win_l_f.002                 @(0, -1) d=-0.700
+   hall_rail_l                <-> win_l_f.003                 @(0, -1) d=-0.700
+   hall_rail_l                <-> win_l_f.004                 @(0, -1) d=-0.700
+   hall_rail_l                <-> win_l_f.006                 @(0, -1) d=-0.700
+   hall_rail_l                <-> win_l_f.007                 @(0, -1) d=-0.700
+   hall_rail_r                <-> win_s_f                     @(0, 1) d=+5.300
+   hall_rail_r                <-> win_s_f.002                 @(0, 1) d=+5.300
+   hall_rail_r                <-> win_s_f.003                 @(0, 1) d=+5.300
+   hall_band_s_t              <-> hall_cornice_b              @(0, -1) d=-0.700
+   hall_band_s.001            <-> hall_band_s_t.001           @(1, -1) d=-4.990
+   hall_band_s_t.001          <-> hall_cornice_b              @(0, 1) d=+5.300
+   hall_cornice               <-> mon_deck                    @(2, -1) d=+5.050
+   hall_cornice               <-> mon_body                    @(2, -1) d=+5.050
+   hall_cornice               <-> mon_sill                    @(2, -1) d=+5.050
+   hall_cornice               <-> mon_post                    @(2, -1) d=+5.050
+   hall_cornice               <-> mon_post.001                @(2, -1) d=+5.050
+   hall_cornice               <-> mon_post.002                @(2, -1) d=+5.050
+   hall_cornice               <-> mon_post.003                @(2, -1) d=+5.050
+   win_f.001                  <-> win_f_jamb.002              @(0, 1) d=+1.420
+   win_f.001                  <-> win_f_jamb.003              @(0, -1) d=+2.140
+   win_f.001                  <-> win_f_bar.001               @(1, -1) d=+0.245
+   win_s_f.001                <-> win_s_f.002                 @(0, 1) d=+5.302
+   win_s_f.002                <-> win_s_f.003                 @(0, 1) d=+5.302
+   win_l_f.001                <-> win_l_f.002                 @(0, 1) d=-0.627
+   win_l_f.002                <-> win_l_f.003                 @(0, 1) d=-0.627
+   win_l_f.004                <-> win_l_f.005                 @(1, -1) d=-4.085
+   win_l_f.004                <-> win_l_f.007                 @(1, -1) d=-4.085
+   win_l_f.005                <-> win_l_f.006                 @(0, 1) d=-0.627
+   win_l_f.006                <-> win_l_f.007                 @(0, 1) d=-0.627
+   win_l_bar.001              <-> win_l_bar2.001              @(0, 1) d=-0.635
+   back_door_jamb             <-> back_door_head              @(1, -1) d=-5.150
+   back_door_jamb.001         <-> back_door_head              @(1, -1) d=-5.150
+   door_back                  <-> door_reveal                 @(2, -1) d=+1.300
+   door_back                  <-> door_reveal.001             @(2, -1) d=+1.300
+   door_back                  <-> door_leaf_strap             @(1, -1) d=-0.320
+   door_back                  <-> door_leaf_strap.001         @(1, -1) d=-0.320
+   door_back                  <-> door_leaf_strap.002         @(1, -1) d=-0.320
+   door_back                  <-> door_leaf_strap.003         @(1, -1) d=-0.320
+   door_reveal                <-> door_plinth                 @(2, -1) d=+1.300
+   door_reveal.001            <-> door_plinth.001             @(2, -1) d=+1.300
+   door_jamb                  <-> door_plinth                 @(1, -1) d=+0.140
+   door_inlay                 <-> door_plinth                 @(0, 1) d=+2.330
+   door_jamb.001              <-> door_plinth.001             @(1, -1) d=+0.140
+   door_inlay.001             <-> door_plinth.001             @(0, -1) d=+4.270
+   door_leaf2_frame.002       <-> door_leaf2_frame.004        @(1, -1) d=+0.080
+   door_leaf2_frame.002       <-> door_leaf2_frame.005        @(1, -1) d=+0.080
+   door_leaf2_frame.003       <-> door_leaf2_frame.004        @(1, -1) d=+0.080
+   door_leaf2_frame.003       <-> door_leaf2_frame.005        @(1, -1) d=+0.080
+   door_pulley                <-> door_chain                  @(0, -1) d=+3.255
+   door_pulley                <-> door_lamp_cap               @(2, -1) d=+4.316
+   step.001                   <-> step_edge.001               @(1, 1) d=+0.980
+   step.001                   <-> step.002                    @(2, -1) d=+0.345
+   step.001                   <-> step.003                    @(2, -1) d=+0.345
+   step.002                   <-> step_edge.002               @(1, 1) d=+1.320
+   step.002                   <-> step.003                    @(2, -1) d=+0.345
+   step.003                   <-> step_edge.003               @(1, 1) d=+1.660
+   mon_deck                   <-> mon_body                    @(2, -1) d=+5.050
+   mon_deck                   <-> mon_sill                    @(2, -1) d=+5.050
+   mon_deck                   <-> mon_post                    @(2, -1) d=+5.050
+   mon_deck                   <-> mon_post.001                @(2, -1) d=+5.050
+   mon_deck                   <-> mon_post.002                @(2, -1) d=+5.050
+   mon_deck                   <-> mon_post.003                @(2, -1) d=+5.050
+   mon_body                   <-> mon_lip                     @(1, -1) d=-3.400
+   mon_body                   <-> mon_lip.001                 @(1, 1) d=+0.050
+   mon_body                   <-> mon_post                    @(2, -1) d=+5.050
+   mon_body                   <-> mon_post.001                @(2, -1) d=+5.050
+   mon_body                   <-> mon_post.002                @(2, -1) d=+5.050
+   mon_body                   <-> mon_post.003                @(2, -1) d=+5.050
+   mon_sill                   <-> mon_post.001                @(2, -1) d=+5.050
+   mon_sill                   <-> mon_post.003                @(2, -1) d=+5.050
+   mon_glass                  <-> mon_mull_h                  @(0, 1) d=+1.125
+   mon_glass.001              <-> mon_mull_h.001              @(0, 1) d=+2.250
+   mon_glass.002              <-> mon_mull_h.002              @(0, 1) d=+3.375
+   mon_glass.003              <-> mon_mull_h.003              @(0, 1) d=+4.500
+   mon_frame.001              <-> mon_frame.002               @(1, -1) d=+0.070
+   mon_frame.001              <-> mon_frame.003               @(1, -1) d=+0.070
+   mon_deck_top               <-> mon_body.001                @(2, -1) d=+6.280
+   mon_deck_top               <-> mon_sill.001                @(2, -1) d=+6.280
+   mon_deck_top               <-> mon_post.004                @(2, -1) d=+6.280
+   mon_deck_top               <-> mon_post.005                @(2, -1) d=+6.280
+   mon_deck_top               <-> mon_post.006                @(2, -1) d=+6.280
+   mon_deck_top               <-> mon_post.007                @(2, -1) d=+6.280
+   mon_deck_top               <-> mon_terr                    @(2, -1) d=+6.280
+   mon_body.001               <-> mon_lip.002                 @(1, -1) d=-3.220
+   mon_body.001               <-> mon_lip.003                 @(1, 1) d=-1.150
+   mon_body.001               <-> mon_post.004                @(2, -1) d=+6.280
+   mon_body.001               <-> mon_post.005                @(2, -1) d=+6.280
+   mon_body.001               <-> mon_post.006                @(2, -1) d=+6.280
+   mon_body.001               <-> mon_post.007                @(2, -1) d=+6.280
+   mon_body.001               <-> mon_terr                    @(2, -1) d=+6.280
+   mon_sill.001               <-> mon_post.005                @(2, -1) d=+6.280
+   mon_sill.001               <-> mon_post.007                @(2, -1) d=+6.280
+   mon_sill.001               <-> mon_terr                    @(2, -1) d=+6.280
+   mon_glass.004              <-> mon_mull_h.004              @(0, 1) d=+1.683
+   mon_glass.005              <-> mon_mull_h.005              @(0, 1) d=+2.817
+   mon_glass.006              <-> mon_mull_h.006              @(0, 1) d=+3.950
+   mon_frame.004              <-> mon_frame.006               @(1, -1) d=-1.130
+   mon_frame.004              <-> mon_frame.007               @(1, -1) d=-1.130
+   mon_frame.005              <-> mon_frame.006               @(1, -1) d=-1.130
+   mon_frame.005              <-> mon_frame.007               @(1, -1) d=-1.130
+   mon_frame.006              <-> mon_terr_seam               @(1, -1) d=-1.130
+   mon_frame.006              <-> mon_terr_seam.001           @(1, -1) d=-1.130
+   mon_frame.006              <-> mon_terr_seam.002           @(1, -1) d=-1.130
+   mon_frame.006              <-> mon_terr_seam.003           @(1, -1) d=-1.130
+   mon_deck_top.001           <-> mon_body.002                @(2, -1) d=+7.420
+   mon_deck_top.001           <-> mon_sill.002                @(2, -1) d=+7.420
+   mon_deck_top.001           <-> mon_post.008                @(2, -1) d=+7.420
+   mon_deck_top.001           <-> mon_post.009                @(2, -1) d=+7.420
+   mon_deck_top.001           <-> mon_post.010                @(2, -1) d=+7.420
+   mon_deck_top.001           <-> mon_post.011                @(2, -1) d=+7.420
+   mon_deck_top.001           <-> mon_terr.001                @(2, -1) d=+7.420
+   mon_seam.005               <-> mon_post.008                @(1, -1) d=-3.080
+   mon_seam.008               <-> mon_post.010                @(1, -1) d=-3.080
+   mon_post.005               <-> mon_terr                    @(2, -1) d=+6.280
+   mon_post.007               <-> mon_terr                    @(2, -1) d=+6.280
+   mon_body.002               <-> mon_lip.004                 @(1, -1) d=-3.060
+   mon_body.002               <-> mon_lip.005                 @(1, 1) d=-2.100
+   mon_body.002               <-> mon_post.008                @(2, -1) d=+7.420
+   mon_body.002               <-> mon_post.009                @(2, -1) d=+7.420
+   mon_body.002               <-> mon_post.010                @(2, -1) d=+7.420
+   mon_body.002               <-> mon_post.011                @(2, -1) d=+7.420
+   mon_body.002               <-> mon_terr.001                @(2, -1) d=+7.420
+   mon_sill.002               <-> mon_post.009                @(2, -1) d=+7.420
+   mon_sill.002               <-> mon_post.011                @(2, -1) d=+7.420
+   mon_sill.002               <-> mon_terr.001                @(2, -1) d=+7.420
+   mon_glass.007              <-> mon_mull_h.007              @(0, 1) d=+2.250
+   mon_glass.008              <-> mon_mull_h.008              @(0, 1) d=+3.400
+   mon_frame.008              <-> mon_frame.010               @(1, -1) d=-2.080
+   mon_frame.008              <-> mon_frame.011               @(1, -1) d=-2.080
+   mon_frame.009              <-> mon_frame.010               @(1, -1) d=-2.080
+   mon_frame.009              <-> mon_frame.011               @(1, -1) d=-2.080
+   mon_frame.010              <-> mon_terr_seam.004           @(1, -1) d=-2.080
+   mon_frame.010              <-> mon_terr_seam.005           @(1, -1) d=-2.080
+   mon_frame.010              <-> mon_terr_seam.006           @(1, -1) d=-2.080
+   mon_frame.010              <-> mon_terr_seam.007           @(1, -1) d=-2.080
+   mon_post.009               <-> mon_terr.001                @(2, -1) d=+7.420
+   mon_post.011               <-> mon_terr.001                @(2, -1) d=+7.420
+   mon_ladder                 <-> mon_rung                    @(1, -1) d=-1.035
+   mon_ladder                 <-> mon_rung.001                @(1, -1) d=-1.035
+   mon_ladder                 <-> mon_rung.002                @(1, -1) d=-1.035
+   mon_ladder                 <-> mon_rung.003                @(1, -1) d=-1.035
+   mon_ladder.001             <-> mon_rung                    @(1, -1) d=-1.035
+   mon_ladder.001             <-> mon_rung.001                @(1, -1) d=-1.035
+   mon_ladder.001             <-> mon_rung.002                @(1, -1) d=-1.035
+   mon_ladder.001             <-> mon_rung.003                @(1, -1) d=-1.035
+   mon_terr_seam.004          <-> mon_grate.003               @(2, -1) d=+7.477
+   mon_terr_seam.007          <-> mon_grate.005               @(2, -1) d=+7.477
+   mon_ladder.002             <-> mon_rung.004                @(1, -1) d=-1.985
+   mon_ladder.002             <-> mon_rung.005                @(1, -1) d=-1.985
+   mon_ladder.002             <-> mon_rung.006                @(1, -1) d=-1.985
+   mon_ladder.002             <-> mon_rung.007                @(1, -1) d=-1.985
+   mon_ladder.003             <-> mon_rung.004                @(1, -1) d=-1.985
+   mon_ladder.003             <-> mon_rung.005                @(1, -1) d=-1.985
+   mon_ladder.003             <-> mon_rung.006                @(1, -1) d=-1.985
+   mon_ladder.003             <-> mon_rung.007                @(1, -1) d=-1.985
+   ann_plinth                 <-> chim_base                   @(2, -1) d=+0.220
+   ann_body                   <-> boil_firebox                @(2, -1) d=+0.920
+   ann_band.003               <-> ann_vent_ring               @(2, -1) d=+3.915
+   ann_win_fL                 <-> ann_win_fT                  @(1, -1) d=+1.890
+   ann_win_fL                 <-> ann_win_fT.001              @(1, -1) d=+1.890
+   ann_win_fT                 <-> ann_win_fL.001              @(1, -1) d=+1.890
+   ann_win_fL.001             <-> ann_win_fT.001              @(1, -1) d=+1.890
+   chim_ladder                <-> chim_rung                   @(1, -1) d=-0.043
+   chim_ladder                <-> chim_rung.001               @(1, -1) d=-0.043
+   chim_ladder                <-> chim_rung.002               @(1, -1) d=-0.043
+   chim_ladder                <-> chim_rung.003               @(1, -1) d=-0.043
+   chim_ladder                <-> chim_rung.004               @(1, -1) d=-0.043
+   chim_ladder                <-> chim_rung.005               @(1, -1) d=-0.043
+   chim_ladder                <-> chim_rung.006               @(1, -1) d=-0.043
+   chim_ladder                <-> chim_rung.007               @(1, -1) d=-0.043
+   chim_ladder                <-> chim_rung.008               @(1, -1) d=-0.043
+   chim_ladder                <-> chim_rung.009               @(1, -1) d=-0.043
+   chim_ladder                <-> chim_rung.010               @(1, -1) d=-0.043
+   chim_ladder                <-> chim_rung.011               @(1, -1) d=-0.043
+   chim_ladder                <-> chim_rung.012               @(1, -1) d=-0.043
+   chim_ladder                <-> chim_rung.013               @(1, -1) d=-0.043
+   chim_ladder.001            <-> chim_rung                   @(1, -1) d=-0.043
+   chim_ladder.001            <-> chim_rung.001               @(1, -1) d=-0.043
+   chim_ladder.001            <-> chim_rung.002               @(1, -1) d=-0.043
+   chim_ladder.001            <-> chim_rung.003               @(1, -1) d=-0.043
+   chim_ladder.001            <-> chim_rung.004               @(1, -1) d=-0.043
+   chim_ladder.001            <-> chim_rung.005               @(1, -1) d=-0.043
+   chim_ladder.001            <-> chim_rung.006               @(1, -1) d=-0.043
+   chim_ladder.001            <-> chim_rung.007               @(1, -1) d=-0.043
+   chim_ladder.001            <-> chim_rung.008               @(1, -1) d=-0.043
+   chim_ladder.001            <-> chim_rung.009               @(1, -1) d=-0.043
+   chim_ladder.001            <-> chim_rung.010               @(1, -1) d=-0.043
+   chim_ladder.001            <-> chim_rung.011               @(1, -1) d=-0.043
+   chim_ladder.001            <-> chim_rung.012               @(1, -1) d=-0.043
+   chim_ladder.001            <-> chim_rung.013               @(1, -1) d=-0.043
+   crane_post                 <-> crane_node                  @(1, -1) d=+3.920
+   crane_post.001             <-> crane_node.001              @(1, -1) d=+3.920
+   crane_link.004             <-> crane_link.005              @(1, -1) d=+4.028
+   crane_link.006             <-> crane_link.007              @(1, -1) d=+4.028
+   carr_rail                  <-> carr_cross                  @(1, -1) d=+3.330
+   carr_rail                  <-> carr_cross.001              @(1, -1) d=+3.330
+   carr_rail                  <-> carr_cross.002              @(1, -1) d=+3.330
+   carr_rail                  <-> carr_spring                 @(0, -1) d=-3.070
+   carr_rail.001              <-> carr_cross                  @(1, 1) d=+4.770
+   carr_rail.001              <-> carr_cross.001              @(1, 1) d=+4.770
+   carr_rail.001              <-> carr_cross.002              @(1, 1) d=+4.770
+   carr_rail.001              <-> carr_spring.001             @(0, -1) d=-3.070
+   carr_wheelr_spk.002        <-> carr_wheelr_spk.003         @(1, -1) d=+3.208
+   carr_wheelr_spk.004        <-> carr_wheelr_spk.005         @(1, -1) d=+3.206
+   carr_wheelr_spk.006        <-> carr_wheelr_spk.007         @(1, -1) d=+3.204
+   carr_wheelr_spk.008        <-> carr_wheelr_spk.009         @(1, -1) d=+4.809
+   carr_wheelr_spk.010        <-> carr_wheelr_spk.011         @(1, -1) d=+4.808
+   carr_wheelr_spk.012        <-> carr_wheelr_spk.013         @(1, -1) d=+4.806
+   carr_wheelr_spk.014        <-> carr_wheelr_spk.015         @(1, -1) d=+4.804
+   carr_wheelf_spk.002        <-> carr_wheelf_spk.003         @(1, -1) d=+3.208
+   carr_wheelf_spk.004        <-> carr_wheelf_spk.005         @(1, -1) d=+3.206
+   carr_wheelf_spk.006        <-> carr_wheelf_spk.007         @(1, -1) d=+3.204
+   carr_wheelf_spk.008        <-> carr_wheelf_spk.009         @(1, -1) d=+4.809
+   carr_wheelf_spk.010        <-> carr_wheelf_spk.011         @(1, -1) d=+4.808
+   carr_wheelf_spk.012        <-> carr_wheelf_spk.013         @(1, -1) d=+4.806
+   carr_wheelf_spk.014        <-> carr_wheelf_spk.015         @(1, -1) d=+4.804
+   prop_wheel_disc.002        <-> prop_wheel_hub.002          @(2, -1) d=+0.340
+   roof_rail.001              <-> roof_rail_t                 @(1, -1) d=-4.895
+   roof_rail.002              <-> roof_rail_t                 @(1, -1) d=-4.895
+   roof_rail.003              <-> roof_rail_t                 @(1, -1) d=-4.895
+   roof_rail.004              <-> roof_rail_t                 @(1, -1) d=-4.895
+   roof_rail.005              <-> roof_rail_t                 @(1, -1) d=-4.895
+=== FLOAT 0 ===
+DONE

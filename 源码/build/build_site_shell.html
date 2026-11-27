@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>建造系统 v2 · 世界 Z 显影 · 铁誓军团</title>
+<style>
+  :root{
+    --bg:#0d0f14; --panel:#141821; --panel2:#1a1f2b; --line:#232937;
+    --txt:#e8ebf2; --dim:#8b93a3; --accent:#c9a227; --team:#2E5FB4;
+    --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--txt);overflow:hidden;
+    font:13px/1.55 "Inter","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  #app{display:flex;height:100%}
+  aside{width:286px;min-width:286px;background:var(--panel);border-right:1px solid var(--line);
+    display:flex;flex-direction:column;overflow:hidden}
+  .brand{padding:18px 16px 14px;border-bottom:1px solid var(--line)}
+  .brand h1{margin:0;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .brand p{margin:5px 0 0;font-size:11px;color:var(--dim);letter-spacing:.03em}
+  .scroll{overflow-y:auto;flex:1;padding-bottom:20px}
+  .scroll::-webkit-scrollbar{width:7px}
+  .scroll::-webkit-scrollbar-thumb{background:#2b3140;border-radius:4px}
+  section{padding:13px 14px;border-bottom:1px solid var(--line)}
+  section h2{margin:0 0 9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+  .mods{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .mod{background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:8px 9px;
+    cursor:pointer;transition:.12s;text-align:left;font:inherit;color:inherit}
+  .mod:hover{border-color:#3b4457;background:#1f2431}
+  .mod.on{border-color:var(--accent);background:#221f14;box-shadow:inset 0 0 0 1px #3a3113}
+  .mod b{display:block;font-size:12px;font-weight:600}
+  .mod span{display:block;font-size:10px;color:var(--dim);margin-top:1px;font-family:var(--mono)}
+  .ph{display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:4px;cursor:pointer;
+    border:1px solid transparent;font-size:12px}
+  .ph:hover{background:var(--panel2)}
+  .ph.on{background:#241f12;border-color:#4a3c14;color:#f0d98a}
+  .ph i{width:7px;height:7px;border-radius:2px;display:block}
+  .ph em{margin-left:auto;font-style:normal;font-family:var(--mono);font-size:10px;color:var(--dim)}
+  .sws{display:flex;gap:7px}
+  .sw{width:30px;height:30px;border-radius:5px;cursor:pointer;border:2px solid transparent;
+    transition:.12s;position:relative}
+  .sw:hover{transform:translateY(-1px)}
+  .sw.on{border-color:#fff;box-shadow:0 0 0 2px var(--bg),0 0 12px rgba(255,255,255,.16)}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:3px 0;font-size:12px}
+  .row label{color:#c3c9d6}
+  input[type=range]{-webkit-appearance:none;width:100%;height:3px;background:#2c3240;border-radius:2px;outline:none}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;border-radius:50%;
+    background:var(--accent);cursor:pointer;box-shadow:0 0 0 3px rgba(201,162,39,.16)}
+  .ck{display:flex;align-items:center;gap:7px;font-size:11.5px;color:#c3c9d6;cursor:pointer;padding:3px 0}
+  .ck input{accent-color:var(--accent)}
+  .cam{display:flex;gap:5px;margin-top:8px}
+  .cam button{flex:1;background:var(--panel2);border:1px solid var(--line);color:#c3c9d6;
+    border-radius:4px;padding:5px 0;font:inherit;font-size:11px;cursor:pointer}
+  .cam button:hover{border-color:#3b4457;color:#fff}
+  .jump{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-top:6px}
+  .jump button{background:var(--panel2);border:1px solid var(--line);color:#c3c9d6;border-radius:4px;
+    padding:5px 0;font:11px/1 var(--mono);cursor:pointer}
+  .jump button:hover{border-color:#4a3c14;color:#f0d98a}
+  main{flex:1;position:relative;min-width:0;display:flex;flex-direction:column}
+  #view{position:relative;flex:1;min-height:0}
+  canvas{display:block}
+  .hud{position:absolute;left:20px;top:18px;pointer-events:none}
+  .hud h2{margin:0;font-size:20px;font-weight:600;letter-spacing:.02em}
+  .hud p{margin:4px 0 0;font-size:11px;color:var(--dim);font-family:var(--mono);letter-spacing:.03em}
+  .badge{display:inline-block;margin-top:9px;font:10px/1 var(--mono);letter-spacing:.1em;
+    padding:5px 8px;border:1px solid #3a3222;background:#211d12;color:var(--accent);border-radius:3px}
+  .cut{position:absolute;right:20px;top:16px;text-align:right;pointer-events:none}
+  .cut b{display:block;font:600 27px/1 var(--mono);color:#f2e6b8;letter-spacing:-.02em}
+  .cut b small{font-size:13px;color:#8b93a3;font-weight:400}
+  .cut span{display:block;margin-top:6px;font:10px/1.6 var(--mono);color:#6f7789;letter-spacing:.06em}
+  .stat{position:absolute;right:20px;top:104px;text-align:right;font:10px/1.7 var(--mono);color:#5d6577;
+    pointer-events:none;white-space:pre}
+  .tl{margin:0 20px 16px;background:rgba(16,19,26,.92);
+    border:1px solid var(--line);border-radius:8px;padding:11px 14px 10px;backdrop-filter:blur(8px)}
+  .tl .top{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+  .tl button{background:#20262f;border:1px solid var(--line);color:var(--txt);border-radius:4px;
+    padding:5px 10px;font:inherit;font-size:11px;cursor:pointer}
+  .tl button:hover{background:#293040}
+  .tl .t{font:11px/1 var(--mono);color:var(--dim)}
+  .tl .nm{font-size:12px;font-weight:600;letter-spacing:.02em}
+  .track{position:relative;height:26px;border-radius:4px;overflow:hidden;cursor:pointer;
+    background:#171b23;display:flex}
+  .seg{height:100%;position:relative;transition:filter .15s}
+  .seg:hover{filter:brightness(1.35)}
+  .seg span{position:absolute;left:6px;top:6px;font:9px/1 var(--mono);color:rgba(255,255,255,.62);
+    letter-spacing:.06em;white-space:nowrap}
+  .liftick{position:absolute;top:0;bottom:0;width:1px;background:rgba(201,162,39,.30)}
+  .head{position:absolute;top:-2px;bottom:-2px;width:2px;background:#f2e6b8;
+    box-shadow:0 0 8px rgba(242,230,184,.7);pointer-events:none}
+  .foot{position:absolute;left:20px;bottom:12px;font:10px/1.7 var(--mono);color:#4e5566;pointer-events:none}
+  .loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    background:rgba(13,15,20,.86);color:var(--dim);font:11px/1 var(--mono);letter-spacing:.14em;z-index:9}
+</style>
+</head>
+<body>
+<div id="app">
+  <aside>
+    <div class="brand">
+      <h1>Build System · v2</h1>
+      <p>世界 Z 显影 / 本体零缩放 / 九座通用</p>
+    </div>
+    <div class="scroll">
+      <section>
+        <h2>建筑 Buildings</h2>
+        <div class="mods" id="list"></div>
+      </section>
+      <section>
+        <h2>阶段 Phases</h2>
+        <div id="phases"></div>
+      </section>
+      <section>
+        <h2>建造进度 Progress</h2>
+        <div class="jump" id="jump"></div>
+      </section>
+      <section>
+        <h2>阵营色 Team</h2>
+        <div class="sws" id="teams"></div>
+        <div class="row" style="margin-top:10px"><label>播放速度</label><span class="t" id="spdv">1.00×</span></div>
+        <input type="range" id="spd" min="0.25" max="2" step="0.05" value="1">
+      </section>
+      <section>
+        <h2>显示 Display</h2>
+        <label class="ck"><input type="checkbox" id="dbgGrid" checked> 地面网格</label>
+        <label class="ck"><input type="checkbox" id="dbgShadow" checked> 接触阴影</label>
+        <label class="ck"><input type="checkbox" id="dbgWire"> 线框</label>
+        <label class="ck"><input type="checkbox" id="dbgCut"> 显影切面高亮</label>
+        <div class="cam">
+          <button data-cam="q">3/4</button><button data-cam="t">俯视</button><button data-cam="f">正面</button>
+        </div>
+      </section>
+    </div>
+  </aside>
+  <main>
+   <div id="view">
+    <div class="hud">
+      <h2 id="hName">—</h2>
+      <p id="hSub"></p>
+      <div class="badge" id="hBadge">BUILD</div>
+    </div>
+    <div class="cut">
+      <b id="cutPct">0<small>%</small></b>
+      <span id="cutH">显影 0.00 m</span>
+    </div>
+    <div class="stat" id="stat"></div>
+    <div class="foot" id="foot">左键旋转 · 右键平移 · 滚轮缩放 · 空格 播放/暂停</div>
+    <div class="loading" id="loading">载入建造资产…</div>
+   </div>
+    <div class="tl">
+      <div class="top">
+        <button id="play">暂停</button>
+        <button id="loop">循环 开</button>
+        <span class="nm" id="tlName">—</span>
+        <span class="t" id="tlTime">0.00 / 0.00s</span>
+        <span class="t" id="tlInfo" style="margin-left:auto"></span>
+      </div>
+      <div class="track" id="track"><div class="head" id="head" style="left:0"></div></div>
+    </div>
+  </main>
+</div>
+<script type="importmap">
+{ "imports": {
+    "three": "./preview/vendor/three.module.js",
+    "three/addons/": "./preview/vendor/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from './preview/vendor/GLTFLoader.js';
+import { OrbitControls } from './preview/vendor/OrbitControls.js';
+
+const DATA = /*__DATA__*/;
+const TEAMS = [
+  { id:'blue',  name:'铁誓蓝', main:'#2E5FB4', trim:'#F1CD79' },
+  { id:'red',   name:'赤刃红', main:'#B4382E', trim:'#F0C879' },
+  { id:'green', name:'苍苔绿', main:'#2F7A5A', trim:'#D8C58A' },
+];
+
+const S = {
+  b: null, gltf: null, mixer: null, action: null, clip: null,
+  t: 0, playing: true, loop: true, speed: 1, team: TEAMS[0],
+  bodyMats: [], siteMats: [], cloned: new Map(), cut: 0,
+  uni: { uCut: { value: -1e3 }, uJag: { value: 0.032 }, uRaw: { value: new THREE.Color('#9a917f') } },
+};
+
+const $ = (id) => document.getElementById(id);
+
+/* ── 渲染器 / 场景 ── */
+const canvas = document.createElement('canvas');
+$('view').appendChild(canvas);
+const renderer = new THREE.WebGLRenderer({ canvas, antialias:true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.24;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#0d0f14');
+scene.fog = new THREE.Fog('#0d0f14', 120, 260);
+
+const camera = new THREE.PerspectiveCamera(30, 1, 0.5, 600);
+const controls = new OrbitControls(camera, canvas);
+controls.enableDamping = true;
+controls.dampingFactor = 0.075;
+controls.minDistance = 6;
+controls.maxDistance = 160;
+controls.maxPolarAngle = Math.PI * 0.495;
+
+const hemi = new THREE.HemisphereLight('#cfdae6', '#2b2a22', 0.85);
+scene.add(hemi);
+const key = new THREE.DirectionalLight('#fff6ea', 2.35);
+key.position.set(-16, 26, -14);
+key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048);
+key.shadow.bias = -0.0006;
+key.shadow.normalBias = 0.03;
+key.shadow.camera.left = -22; key.shadow.camera.right = 22;
+key.shadow.camera.top = 22; key.shadow.camera.bottom = -22;
+key.shadow.camera.near = 1; key.shadow.camera.far = 110;
+scene.add(key);
+const fill = new THREE.DirectionalLight('#a9c6ff', 0.62);
+fill.position.set(18, 10, 12);
+scene.add(fill);
+const rim = new THREE.DirectionalLight('#dce8ff', 0.35);
+rim.position.set(6, 14, 20);
+scene.add(rim);
+
+const ground = new THREE.Mesh(
+  new THREE.PlaneGeometry(400, 400),
+  new THREE.MeshStandardMaterial({ color:'#333b2c', roughness:1, metalness:0 })
+);
+ground.rotation.x = -Math.PI / 2;
+ground.receiveShadow = true;
+scene.add(ground);
+
+const grid = new THREE.GridHelper(120, 60, '#39422f', '#2f3729');
+grid.material.opacity = 0.55;
+grid.material.transparent = true;
+grid.position.y = 0.005;
+scene.add(grid);
+
+/* ── 世界 Z 遮罩：把建筑裁到 uCut 高度 ────────────────────────────────────
+   GLB 里建筑本体没有任何动画、没有骨；显影完全靠这一个 uniform。
+   引擎侧等价实现见 godot/build_reveal.gdshader（同一套数学）。            */
+const CLIP_HEAD = `
+  varying vec3 vWClip;
+`;
+function injectClip(shader, isDepth) {
+  shader.uniforms.uCut = S.uni.uCut;
+  shader.uniforms.uJag = S.uni.uJag;
+  shader.uniforms.uRaw = S.uni.uRaw;
+  shader.vertexShader = shader.vertexShader
+    .replace('#include <common>', '#include <common>\nvarying vec3 vWClip;')
+    .replace('#include <begin_vertex>', `#include <begin_vertex>
+      vWClip = (modelMatrix * vec4(transformed, 1.0)).xyz;`);
+  if (isDepth) {
+    shader.fragmentShader = shader.fragmentShader
+      .replace('#include <common>', `#include <common>
+        varying vec3 vWClip; uniform float uCut; uniform float uJag; uniform vec3 uRaw;`)
+      .replace('void main() {', `void main() {
+        float jag = (sin(vWClip.x*7.3)*0.5 + sin(vWClip.z*9.1+1.7)*0.35
+                   + sin(vWClip.x*23.0 + vWClip.z*17.0)*0.25) * uJag;
+        if (vWClip.y + jag > uCut) discard;`);
+  } else {
+    shader.fragmentShader = shader.fragmentShader
+      .replace('#include <common>', `#include <common>
+        varying vec3 vWClip; uniform float uCut; uniform float uJag; uniform vec3 uRaw;`)
+      .replace('void main() {', `void main() {
+        float jagA = (sin(vWClip.x*7.3)*0.5 + sin(vWClip.z*9.1+1.7)*0.35
+                    + sin(vWClip.x*23.0 + vWClip.z*17.0)*0.25) * uJag;
+        float zc = vWClip.y + jagA;
+        if (zc > uCut) discard;`)
+      .replace('vec4 diffuseColor = vec4( diffuse, opacity );',
+        `vec4 diffuseColor = vec4( diffuse, opacity );
+         // 背面 = 建筑内壁：压暗。截断面读作"看进没封顶的内部"，
+         // 而不是"一块完整的平屋顶"。
+         if (!gl_FrontFacing) diffuseColor.rgb *= 0.40;
+         float edge = smoothstep(uCut - 0.42, uCut, zc);
+         float grain = 0.5 + 0.5 * sin(vWClip.x*31.0 + vWClip.z*27.0 + vWClip.y*19.0);
+         diffuseColor.rgb = mix(diffuseColor.rgb, uRaw * (0.84 + 0.30*grain), edge * 0.58);`);
+  }
+  shader.fragmentShader = shader.fragmentShader;
+}
+function patchBuilding(mesh) {
+  // 关键：建筑必须用**克隆材质**。glTF 里 `team` / `team_trim` 是建筑和套件共用的，
+  // 直接把遮罩打在共享实例上，脚手架上的队色箍、挂旗、挂幡会被一起裁掉。
+  const old = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+  const out = old.map((m) => {
+    if (!m) return m;
+    if (S.cloned.has(m)) return S.cloned.get(m);
+    const c = m.clone();
+    c.name = m.name;
+    c.side = THREE.DoubleSide;
+    c.onBeforeCompile = (sh) => injectClip(sh, false);
+    c.customProgramCacheKey = () => 'buildclip-v2';
+    S.cloned.set(m, c);
+    S.bodyMats.push(c);
+    return c;
+  });
+  mesh.material = Array.isArray(mesh.material) ? out : out[0];
+  const dm = new THREE.MeshDepthMaterial({ depthPacking: THREE.RGBADepthPacking });
+  dm.side = THREE.DoubleSide;
+  dm.onBeforeCompile = (sh) => injectClip(sh, true);
+  dm.customProgramCacheKey = () => 'buildclip-depth-v2';
+  mesh.customDepthMaterial = dm;
+}
+
+/* ── 侧栏 ── */
+function buildList() {
+  const host = $('list');
+  DATA.buildings.forEach((b) => {
+    const el = document.createElement('button');
+    el.className = 'mod' + (b.id === DATA.buildings[0].id ? ' on' : '');
+    el.dataset.id = b.id;
+    el.innerHTML = `<b>${b.cn}</b><span>${b.nl} 步架 · ${b.h.toFixed(1)}m</span>`;
+    el.onclick = () => load(b.id);
+    host.appendChild(el);
+  });
+}
+
+TEAMS.forEach((t, i) => {
+  const el = document.createElement('div');
+  el.className = 'sw' + (i === 0 ? ' on' : '');
+  el.style.background = `linear-gradient(135deg, ${t.main} 0 62%, ${t.trim} 62% 100%)`;
+  el.title = t.name;
+  el.onclick = () => {
+    S.team = t;
+    document.querySelectorAll('.sw').forEach((x) => x.classList.remove('on'));
+    el.classList.add('on');
+    applyTeam();
+  };
+  $('teams').appendChild(el);
+});
+
+function applyTeam() {
+  const m = new THREE.Color(S.team.main);
+  const tr = new THREE.Color(S.team.trim);
+  S.bodyMats.concat(S.siteMats).forEach((mat) => {
+    if (mat.name === 'team') mat.color.copy(m);
+    if (mat.name === 'team_trim') mat.color.copy(tr);
+  });
+}
+
+/* ── 阶段分段 ── */
+function phasesOf(b) {
+  return [
+    { n:'放线备料', a:0, z:b.t_rev0, c:'#6f6248' },
+    { n:'显影施工', a:b.t_rev0, z:b.t_rev1, c:'#c9a227' },
+    { n:'撤架',     a:b.t_rev1, z:b.t_clean, c:'#8a7440' },
+    { n:'清场',     a:b.t_clean, z:b.t_end, c:'#4c5568' },
+  ];
+}
+
+function buildPhases(b) {
+  const host = $('phases');
+  host.innerHTML = '';
+  phasesOf(b).forEach((p) => {
+    const el = document.createElement('div');
+    el.className = 'ph';
+    el.innerHTML = `<i style="background:${p.c}"></i>${p.n}<em>${p.a.toFixed(2)}s</em>`;
+    el.onclick = () => { setTime(p.a + 0.02); S.playing = true; $('play').textContent = '暂停'; };
+    host.appendChild(el);
+  });
+  const tr = $('track');
+  tr.querySelectorAll('.seg,.liftick').forEach((x) => x.remove());
+  phasesOf(b).forEach((p) => {
+    const d = document.createElement('div');
+    d.className = 'seg';
+    d.style.width = ((p.z - p.a) / b.t_end * 100) + '%';
+    d.style.background = p.c;
+    d.innerHTML = `<span>${p.n}</span>`;
+    d.onclick = (e) => { e.stopPropagation(); setTime(p.a + 0.03); };
+    tr.insertBefore(d, $('head'));
+  });
+  b.lifts.forEach((t) => {
+    const d = document.createElement('div');
+    d.className = 'liftick';
+    d.style.left = (t / b.t_end * 100) + '%';
+    tr.insertBefore(d, $('head'));
+  });
+  const jr = $('jump');
+  jr.innerHTML = '';
+  [0, 25, 50, 75, 100].forEach((v) => {
+    const btn = document.createElement('button');
+    btn.textContent = v + '%';
+    btn.onclick = () => seekProgress(v / 100);
+    jr.appendChild(btn);
+  });
+}
+
+function progressOf(b, t) {
+  if (!b) return 0;
+  return Math.max(0, Math.min(1, (t - b.t_rev0) / Math.max(b.rev, 1e-6)));
+}
+function timeOfProgress(b, p) {
+  return b.t_rev0 + b.rev * Math.max(0, Math.min(1, p));
+}
+function seekProgress(p) {
+  setTime(timeOfProgress(S.b, p));
+  S.playing = false;
+  $('play').textContent = '播放';
+}
+
+/* ── 载入 ── */
+async function load(id) {
+  const b = DATA.buildings.find((x) => x.id === id) || DATA.buildings[0];
+  S.b = b;
+  $('loading').style.display = 'flex';
+  $('loading').textContent = '载入 ' + b.cn;
+  document.querySelectorAll('.mod').forEach((x) => x.classList.toggle('on', x.dataset.id === b.id));
+
+  if (S.gltf) {
+    scene.remove(S.gltf.scene);
+    S.gltf = null; S.mixer = null; S.bodyMats = []; S.siteMats = []; S.cloned.clear();
+  }
+  const loader = new GLTFLoader();
+  const g = await loader.loadAsync(b.file);
+  S.gltf = g;
+  const root = g.scene;
+  root.traverse((o) => {
+    if (!o.isMesh) return;
+    o.castShadow = true;
+    o.receiveShadow = true;
+    o.frustumCulled = false;
+    const isBody = o.name === 'Building' || o.parent?.name === 'Building';
+    if (isBody) patchBuilding(o);
+    else (Array.isArray(o.material) ? o.material : [o.material]).forEach((m) => {
+      if (m && !S.siteMats.includes(m)) S.siteMats.push(m);
+    });
+  });
+  scene.add(root);
+
+  const box = new THREE.Box3().setFromObject(root);
+  const size = box.getSize(new THREE.Vector3());
+  S.center = new THREE.Vector3(0, size.y * 0.40, 0);
+  S.size = size;
+  S.radius = Math.max(size.x, size.y, size.z);
+
+  S.clip = g.animations.find((a) => a.name === 'build') || g.animations[0];
+  S.mixer = new THREE.AnimationMixer(root);
+  S.action = S.mixer.clipAction(S.clip);
+  S.action.play();
+
+  $('hName').textContent = b.cn;
+  $('hSub').textContent = `${b.fp[0].toFixed(1)} × ${b.fp[1].toFixed(1)} × ${b.h.toFixed(1)} m`;
+  $('hBadge').textContent = `${b.nl} LIFTS · Z-CLIP ${b.z0.toFixed(2)}→${b.h.toFixed(1)}m`;
+  $('tlName').textContent = b.cn + ' · 建造';
+  $('tlInfo').textContent = `${(b.kb/1024).toFixed(2)} MB · clip ${S.clip.duration.toFixed(2)}s · 本体零骨零缩放`;
+  $('stat').textContent = `tris ${b.tri_body + b.tri_site}\nbody ${b.tri_body} + site ${b.tri_site}\nreveal ${b.z0.toFixed(2)}–${b.h.toFixed(2)} m`;
+
+  buildPhases(b);
+  applyTeam();
+  const q = new URLSearchParams(location.search);
+  const tq = q.get('team');
+  if (tq) {
+    const tm = TEAMS.find((x) => x.id === tq);
+    if (tm) {
+      S.team = tm;
+      document.querySelectorAll('.sw').forEach((x, i) => x.classList.toggle('on', TEAMS[i].id === tq));
+    }
+  }
+  applyTeam();
+  setCam(q.get('cam') || 'q');
+  let t0 = 0;
+  if (q.has('p')) t0 = timeOfProgress(b, +q.get('p'));
+  else if (q.has('t')) t0 = Math.max(0, +q.get('t'));
+  setTime(t0);
+  S.playing = !q.has('t') && !q.has('p') && !q.has('pause');
+  $('play').textContent = S.playing ? '暂停' : '播放';
+  $('loading').style.display = 'none';
+}
+
+/* ── 相机 ── */
+function setCam(kind) {
+  if (!S.center) return;
+  const c = S.center;
+  const half = THREE.MathUtils.degToRad(camera.fov * 0.5);
+  const fitH = (S.size.y * 0.58 + 1.4) / Math.tan(half);
+  const fitW = (Math.hypot(S.size.x, S.size.z) * 0.58 + 1.4) / (Math.tan(half) * Math.max(camera.aspect, 0.6));
+  const dist = Math.max(fitH, fitW) * 1.12;
+  let az = -34, el = 24;
+  if (kind === 't') el = 62;
+  if (kind === 'f') { az = 0; el = 12; }
+  const a = az * Math.PI / 180, e = el * Math.PI / 180;
+  camera.position.set(
+    c.x + Math.sin(a) * Math.cos(e) * dist,
+    c.y + Math.sin(e) * dist + S.radius * 0.10,
+    c.z - Math.cos(a) * Math.cos(e) * dist
+  );
+  camera.fov = kind === 'f' ? 22 : 30;
+  camera.updateProjectionMatrix();
+  controls.target.copy(c);
+  controls.update();
+}
+
+/* ── 时间轴 ── */
+function setTime(t) {
+  if (!S.clip) return;
+  const b = S.b;
+  S.t = Math.max(0, Math.min(S.clip.duration, t));
+  S.action.time = S.t;
+  S.mixer.update(0);
+
+  const p = progressOf(b, S.t);
+  const done = p >= 0.9999;
+  S.cut = done ? b.h + 3 : b.z0 + (b.h - b.z0) * p;
+  S.uni.uCut.value = S.cut;
+  S.uni.uJag.value = done ? 0 : 0.034;
+
+  $('head').style.left = (S.t / S.clip.duration * 100) + '%';
+  $('tlTime').textContent = `${S.t.toFixed(2)} / ${S.clip.duration.toFixed(2)}s`;
+  $('cutPct').innerHTML = `${Math.round(p * 100)}<small>%</small>`;
+  $('cutH').textContent = `显影 ${Math.min(S.cut, b.h).toFixed(2)} / ${b.h.toFixed(2)} m`;
+  const phs = phasesOf(b);
+  let cur = 0;
+  phs.forEach((q, i) => { if (S.t >= q.a) cur = i; });
+  document.querySelectorAll('.ph').forEach((el, i) => el.classList.toggle('on', i === cur));
+}
+
+$('play').onclick = () => {
+  S.playing = !S.playing;
+  $('play').textContent = S.playing ? '暂停' : '播放';
+  if (S.playing && S.t >= S.clip.duration - 0.01) setTime(0);
+};
+$('loop').onclick = () => {
+  S.loop = !S.loop;
+  $('loop').textContent = '循环 ' + (S.loop ? '开' : '关');
+};
+$('spd').oninput = (e) => {
+  S.speed = +e.target.value;
+  $('spdv').textContent = S.speed.toFixed(2) + '×';
+};
+$('dbgGrid').onchange = (e) => { grid.visible = e.target.checked; };
+$('dbgShadow').onchange = (e) => { renderer.shadowMap.enabled = e.target.checked; ground.material.needsUpdate = true; };
+$('dbgWire').onchange = (e) => {
+  S.bodyMats.concat(S.siteMats).forEach((m) => { m.wireframe = e.target.checked; });
+};
+$('dbgCut').onchange = (e) => { S.uni.uRaw.value.set(e.target.checked ? '#ff9d2e' : '#9a917f'); };
+document.querySelectorAll('.cam button').forEach((b) => { b.onclick = () => setCam(b.dataset.cam); });
+
+const track = $('track');
+let drag = false;
+const seek = (e) => {
+  const r = track.getBoundingClientRect();
+  setTime((e.clientX - r.left) / r.width * S.clip.duration);
+};
+track.addEventListener('pointerdown', (e) => { drag = true; seek(e); });
+addEventListener('pointermove', (e) => { if (drag) seek(e); });
+addEventListener('pointerup', () => { drag = false; });
+addEventListener('keydown', (e) => {
+  if (e.code === 'Space') { e.preventDefault(); $('play').click(); }
+});
+
+function resize() {
+  const w = canvas.parentElement.clientWidth, h = canvas.parentElement.clientHeight;
+  renderer.setSize(w, h, false);
+  // setSize(..., false) 不写 style：canvas 的无 style 布局尺寸等于 drawingBuffer，
+  // 高 DPI 下会变成 1.5 倍并被容器裁掉右下角。必须自己钉住 CSS 尺寸。
+  canvas.style.width = w + 'px';
+  canvas.style.height = h + 'px';
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+}
+addEventListener('resize', resize);
+new ResizeObserver(resize).observe($('view'));
+resize();
+
+const clock = new THREE.Clock();
+function tick() {
+  requestAnimationFrame(tick);
+  const dt = clock.getDelta();
+  if (S.playing && S.clip) {
+    let t = S.t + dt * S.speed;
+    if (t >= S.clip.duration) {
+      if (S.loop) t = 0;
+      else { t = S.clip.duration; S.playing = false; $('play').textContent = '播放'; }
+    }
+    setTime(t);
+  }
+  controls.update();
+  renderer.render(scene, camera);
+}
+
+buildList();
+const __q = new URLSearchParams(location.search);
+load(__q.get('b') || DATA.buildings[0].id);
+tick();
+
+/* 给自动化 / 调试留的钩子（截图脚本用 getBoundingClientRect 前先对齐） */
+window.__build = { S, camera, controls, setTime, setCam, seekProgress, progressOf };
+</script>
+</body>
+</html>

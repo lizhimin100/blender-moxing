@@ -1,0 +1,215 @@
+ITEMS 401
+=== CLIP_CROSS 0 ===
+=== CLIP_INNER 746 (前 24) ===
+   8  yard_soil                <-> yard_curb
+   8  yard_soil                <-> yard_curb.001
+   6  yard_soil                <-> yard_curb_b
+   8  yard_soil                <-> plinth_lo
+   4  yard_soil                <-> step0
+   4  yard_soil                <-> step1
+   4  yard_soil                <-> rack_a_foot
+   8  yard_soil                <-> barrel_y
+   3  yard_soil                <-> pebble_
+   3  yard_soil                <-> pebble_.001
+   3  yard_soil                <-> pebble_.002
+   3  yard_soil                <-> pebble_.003
+   4  yard_soil                <-> tuft_
+   4  yard_soil                <-> tuft_.001
+   5  yard_soil                <-> tuft_.002
+   4  yard_soil                <-> tuft_.003
+   4  yard_soil                <-> tuft_.004
+   5  yard_soil                <-> tuft_.005
+   4  yard_soil                <-> tuft_.006
+   4  yard_soil                <-> tuft_.007
+   5  yard_soil                <-> tuft_.008
+   4  yard_soil                <-> tuft_.009
+   4  yard_soil                <-> tuft_.010
+   5  yard_soil                <-> tuft_.011
+=== CONTAIN 19 ===
+   gate_tymp_bar             in  sb_front_T
+   bal_plate                 in  para_wall
+   bal_turn                  in  para_wall
+   bal_rim                   in  para_wall
+   bal_crate                 in  para_wall
+   ball_                     in  para_wall
+   ball_.001                 in  para_wall
+   rope_                     in  para_wall
+   rope_.001                 in  para_wall
+   barrel_d_hoop             in  para_wall
+   barrel_d_hoop.001         in  para_wall
+   braz_base                 in  para_wall
+   braz_base2                in  para_wall
+   braz_bowl                 in  para_wall
+   bal_plate                 in  kick_rail
+   rope_                     in  kick_rail
+   bal_post_band             in  cap_rail
+   box_door                  in  box_body
+   flag_trim                 in  flag_pole
+=== COPLANAR_UP 0 ===
+=== COPLANAR 226 ===
+   yard_soil                <-> plinth_lo                 @(2, -1) d=+0.000
+   step0                    <-> step1                     @(2, -1) d=+0.160
+   sb_core                  <-> sb_dado_b                 @(2, -1) d=+0.420
+   sb_core                  <-> sb_dado_r                 @(2, -1) d=+0.420
+   sb_core                  <-> sb_dado_l                 @(2, -1) d=+0.420
+   sb_core                  <-> bt_shaft                  @(2, -1) d=+0.420
+   sb_core                  <-> bt_foot                   @(2, -1) d=+0.420
+   sb_core                  <-> bt_shaft.001              @(2, -1) d=+0.420
+   sb_core                  <-> bt_foot.001               @(2, -1) d=+0.420
+   sb_core                  <-> bt_shaft.002              @(2, -1) d=+0.420
+   sb_core                  <-> bt_foot.002               @(2, -1) d=+0.420
+   sb_core                  <-> bt_shaft.003              @(2, -1) d=+0.420
+   sb_core                  <-> bt_foot.003               @(2, -1) d=+0.420
+   sb_core                  <-> gate_thresh               @(2, -1) d=+0.420
+   sb_core                  <-> wall_core                 @(2, -1) d=+0.420
+   sb_core                  <-> wall_core.001             @(2, -1) d=+0.420
+   sb_front_L               <-> sb_dado_l                 @(2, -1) d=+0.420
+   sb_front_L               <-> sb_dado_fl                @(2, -1) d=+0.420
+   sb_front_L               <-> bt_shaft.001              @(2, -1) d=+0.420
+   sb_front_L               <-> bt_foot.001               @(2, -1) d=+0.420
+   sb_front_L               <-> gate_thresh               @(2, -1) d=+0.420
+   sb_front_L               <-> wall_core                 @(2, -1) d=+0.420
+   sb_front_R               <-> sb_dado_r                 @(2, -1) d=+0.420
+   sb_front_R               <-> sb_dado_fr                @(2, -1) d=+0.420
+   sb_front_R               <-> bt_shaft.003              @(2, -1) d=+0.420
+   sb_front_R               <-> bt_foot.003               @(2, -1) d=+0.420
+   sb_front_R               <-> gate_thresh               @(2, -1) d=+0.420
+   sb_front_R               <-> wall_core.001             @(2, -1) d=+0.420
+   sb_dado_b                <-> bt_shaft                  @(2, -1) d=+0.420
+   sb_dado_b                <-> bt_foot                   @(2, -1) d=+0.420
+   sb_dado_b                <-> bt_shaft.002              @(2, -1) d=+0.420
+   sb_dado_b                <-> bt_foot.002               @(2, -1) d=+0.420
+   sb_dado_r                <-> bt_shaft.002              @(2, -1) d=+0.420
+   sb_dado_r                <-> bt_foot.002               @(2, -1) d=+0.420
+   sb_dado_r                <-> bt_shaft.003              @(2, -1) d=+0.420
+   sb_dado_r                <-> bt_foot.003               @(2, -1) d=+0.420
+   sb_dado_r                <-> wall_core.001             @(2, -1) d=+0.420
+   sb_dado_l                <-> bt_shaft                  @(2, -1) d=+0.420
+   sb_dado_l                <-> bt_foot                   @(2, -1) d=+0.420
+   sb_dado_l                <-> bt_shaft.001              @(2, -1) d=+0.420
+   sb_dado_l                <-> bt_foot.001               @(2, -1) d=+0.420
+   sb_dado_l                <-> wall_core                 @(2, -1) d=+0.420
+   sb_dado_fr               <-> bt_shaft.003              @(2, -1) d=+0.420
+   sb_dado_fr               <-> bt_foot.003               @(2, -1) d=+0.420
+   sb_dado_fr               <-> wall_core.001             @(2, -1) d=+0.420
+   sb_dado_fl               <-> bt_shaft.001              @(2, -1) d=+0.420
+   sb_dado_fl               <-> bt_foot.001               @(2, -1) d=+0.420
+   sb_dado_fl               <-> wall_core                 @(2, -1) d=+0.420
+   bt_shaft                 <-> bt_foot                   @(2, -1) d=+0.420
+   bt_shaft.001             <-> bt_foot.001               @(2, -1) d=+0.420
+   bt_shaft.001             <-> wall_core                 @(2, -1) d=+0.420
+   bt_shaft.001             <-> wall_end                  @(2, -1) d=+0.420
+   bt_foot.001              <-> wall_core                 @(2, -1) d=+0.420
+   bt_foot.001              <-> wall_end                  @(2, -1) d=+0.420
+   bt_shaft.002             <-> bt_foot.002               @(2, -1) d=+0.420
+   bt_shaft.003             <-> bt_foot.003               @(2, -1) d=+0.420
+   bt_shaft.003             <-> wall_core.001             @(2, -1) d=+0.420
+   bt_shaft.003             <-> wall_end.001              @(2, -1) d=+0.420
+   bt_foot.003              <-> wall_core.001             @(2, -1) d=+0.420
+   bt_foot.003              <-> wall_end.001              @(2, -1) d=+0.420
+   sb_cap                   <-> s1_wall                   @(2, -1) d=+4.580
+   sb_cap                   <-> s1_pil                    @(2, -1) d=+4.580
+   sb_cap                   <-> s1_pil.001                @(2, -1) d=+4.580
+   sb_cap                   <-> s1_pil.002                @(2, -1) d=+4.580
+   sb_cap                   <-> s1_pil.003                @(2, -1) d=+4.580
+   gate_plank.006           <-> gate_ring                 @(1, -1) d=+2.215
+   gate_plank.007           <-> gate_ring                 @(1, -1) d=+2.215
+   gate_band                <-> gate_team                 @(1, -1) d=+2.235
+   gate_post_cap            <-> gate_lintel               @(1, -1) d=+2.395
+   gate_post_cap.001        <-> gate_lintel               @(1, -1) d=+2.395
+   s1_wall                  <-> s1_pil                    @(2, -1) d=+4.580
+   s1_wall                  <-> s1_pil.001                @(2, -1) d=+4.580
+   s1_wall                  <-> s1_pil.002                @(2, -1) d=+4.580
+   s1_wall                  <-> s1_pil.003                @(2, -1) d=+4.580
+   s2_bandring              <-> s2_wall                   @(2, -1) d=+8.180
+   s2_bandring              <-> s2_pil                    @(2, -1) d=+8.180
+   s2_bandring              <-> s2_pil.001                @(2, -1) d=+8.180
+   s2_bandring              <-> s2_pil.002                @(2, -1) d=+8.180
+   s2_bandring              <-> s2_pil.003                @(2, -1) d=+8.180
+   s2_wall                  <-> s2_pil                    @(2, -1) d=+8.180
+   s2_wall                  <-> s2_pil.001                @(2, -1) d=+8.180
+   s2_wall                  <-> s2_pil.002                @(2, -1) d=+8.180
+   s2_wall                  <-> s2_pil.003                @(2, -1) d=+8.180
+   slot_2_back              <-> slot_2_h                  @(0, 1) d=+0.200
+   gf_deck                  <-> para_wall                 @(1, -1) d=-2.700
+   gf_fascia                <-> para_corner               @(0, 1) d=+2.780
+   gf_fascia                <-> para_corner.001           @(1, 1) d=+2.780
+   gf_fascia                <-> para_corner.002           @(1, -1) d=-2.780
+   gf_fascia                <-> para_corner.003           @(1, -1) d=-2.780
+   para_wall                <-> kick_rail                 @(2, -1) d=+11.440
+   para_wall                <-> para_corner               @(2, -1) d=+11.440
+   para_wall                <-> para_corner.001           @(2, -1) d=+11.440
+   para_wall                <-> para_corner.002           @(2, -1) d=+11.440
+   para_wall                <-> para_corner.003           @(2, -1) d=+11.440
+   kick_rail                <-> para_corner               @(2, -1) d=+11.440
+   kick_rail                <-> para_corner.001           @(2, -1) d=+11.440
+   kick_rail                <-> para_corner.002           @(2, -1) d=+11.440
+   kick_rail                <-> para_corner.003           @(2, -1) d=+11.440
+   cap_rail                 <-> para_embrasure            @(2, -1) d=+11.980
+   bal_post                 <-> bal_stock                 @(2, -1) d=+12.660
+   bal_fletch.001           <-> bal_fletch.002            @(1, -1) d=+0.540
+   bal_crank.001            <-> bal_crank_grip.001        @(0, 1) d=+0.520
+   box_body                 <-> box_skirt                 @(2, -1) d=+11.400
+   box_body                 <-> box_post                  @(2, -1) d=+11.400
+   box_body                 <-> box_post.001              @(2, -1) d=+11.400
+   box_body                 <-> box_post.002              @(2, -1) d=+11.400
+   box_body                 <-> box_post.003              @(2, -1) d=+11.400
+   box_body                 <-> box_door                  @(0, -1) d=+0.980
+   box_skirt                <-> box_post                  @(2, -1) d=+11.400
+   box_skirt                <-> box_post.001              @(2, -1) d=+11.400
+   box_skirt                <-> box_post.002              @(2, -1) d=+11.400
+   box_skirt                <-> box_post.003              @(2, -1) d=+11.400
+   box_skirt                <-> box_door_jamb             @(0, -1) d=+0.950
+   box_skirt                <-> box_door_jamb.001         @(0, -1) d=+0.950
+   box_door_jamb            <-> box_door_head             @(1, -1) d=-2.150
+   box_door_jamb.001        <-> box_door_head             @(0, 1) d=+1.030
+   box_win_jamb             <-> box_win_head              @(1, -1) d=-0.980
+   box_win_jamb             <-> box_win_sill              @(1, -1) d=-0.980
+   box_win_jamb.001         <-> box_win_head              @(1, -1) d=-0.980
+   box_win_jamb.001         <-> box_win_sill              @(1, -1) d=-0.980
+   crest_flag_edge          <-> crest_flag_rim            @(1, -1) d=-1.653
+   wall_core                <-> wall_end                  @(2, -1) d=+0.420
+   wall_cap                 <-> wall_end                  @(1, -1) d=+2.010
+   wall_core.001            <-> wall_end.001              @(2, -1) d=+0.420
+   wall_cap.001             <-> wall_end.001              @(1, -1) d=+2.010
+   rack_a_foot              <-> rack_a_post               @(0, -1) d=-3.610
+   rack_a_foot              <-> rack_a_post.001           @(0, 1) d=-2.470
+   rack_a_rail              <-> rack_a_shaft              @(1, -1) d=+3.295
+   rack_a_rail              <-> rack_a_shaft.001          @(1, -1) d=+3.295
+   rack_a_rail              <-> rack_a_shaft.002          @(1, 1) d=+3.385
+   rack_a_rail              <-> rack_a_shaft.003          @(1, -1) d=+3.295
+   rack_a_rail              <-> rack_a_shaft.004          @(1, -1) d=+3.295
+   rack_a_rail              <-> rack_a_shaft.005          @(1, 1) d=+3.385
+   rack_a_rail              <-> rack_a_shaft.006          @(1, -1) d=+3.295
+   rack_a_rail              <-> rack_a_shaft.007          @(1, -1) d=+3.295
+   rack_a_rail              <-> rack_a_shaft.008          @(1, 1) d=+3.385
+   rack_a_rail              <-> rack_a_shaft.009          @(1, -1) d=+3.295
+   rack_a_rail              <-> rack_a_shaft.010          @(1, -1) d=+3.295
+   rack_a_rail              <-> rack_a_shaft.011          @(1, 1) d=+3.385
+   rack_a_rail.001          <-> rack_a_shaft              @(1, -1) d=+3.295
+   rack_a_rail.001          <-> rack_a_shaft.001          @(1, -1) d=+3.295
+   rack_a_rail.001          <-> rack_a_shaft.002          @(1, 1) d=+3.385
+   rack_a_rail.001          <-> rack_a_shaft.003          @(1, -1) d=+3.295
+   rack_a_rail.001          <-> rack_a_shaft.004          @(1, -1) d=+3.295
+   rack_a_rail.001          <-> rack_a_shaft.005          @(1, 1) d=+3.385
+   rack_a_rail.001          <-> rack_a_shaft.006          @(1, -1) d=+3.295
+   rack_a_rail.001          <-> rack_a_shaft.007          @(1, -1) d=+3.295
+   rack_a_rail.001          <-> rack_a_shaft.008          @(1, 1) d=+3.385
+   rack_a_rail.001          <-> rack_a_shaft.009          @(1, -1) d=+3.295
+   rack_a_rail.001          <-> rack_a_shaft.010          @(1, -1) d=+3.295
+   rack_a_rail.001          <-> rack_a_shaft.011          @(1, 1) d=+3.385
+   tuft_.001                <-> tuft_.002                 @(2, -1) d=+0.153
+   tuft_.003                <-> tuft_.004                 @(2, -1) d=+0.154
+   tuft_.003                <-> tuft_.005                 @(2, -1) d=+0.154
+   tuft_.004                <-> tuft_.005                 @(2, -1) d=+0.153
+   tuft_.006                <-> tuft_.007                 @(2, -1) d=+0.154
+   tuft_.006                <-> tuft_.008                 @(2, -1) d=+0.154
+   tuft_.007                <-> tuft_.008                 @(2, -1) d=+0.153
+   tuft_.009                <-> tuft_.010                 @(2, -1) d=+0.154
+   tuft_.009                <-> tuft_.011                 @(2, -1) d=+0.154
+   tuft_.010                <-> tuft_.011                 @(2, -1) d=+0.153
+   tuft_.012                <-> tuft_.013                 @(2, -1) d=+0.154
+   tuft_.012                <-> tuft_.014                 @(2, -1) d=+0.154
+   tuft_.013                <-> tuft_.014                 @(2, -1) d=+0.153
+=== FLOAT 0 ===
+DONE
